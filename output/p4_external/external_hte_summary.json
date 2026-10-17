@@ -1,0 +1,148 @@
+{
+  "Buchwald-Hartwig (Ahneman et al.)": {
+    "reactions": 3955,
+    "pairs": 15,
+    "conditions": 264,
+    "mean_yield_percent": 33.0852588793282,
+    "pair_variance_share": 0.42591714670493475,
+    "row_r2": 0.9089895652930069,
+    "row_pair_level_r2": 0.9972774170458261,
+    "row_within_pair_r2": 0.843488027158856,
+    "row_sister_well_mean_r2": 0.4204408619833752,
+    "group_r2": 0.6955525051604778,
+    "group_pair_level_r2": 0.6943262285629273,
+    "group_within_pair_r2": 0.6964622906147934,
+    "group_both_seen_share": 0.0,
+    "r2_lost": 0.21343706013252906,
+    "per_seed": [
+      {
+        "seed": 42,
+        "row_r2": 0.9074082640154149,
+        "row_pair_level_r2": 0.997467749798497,
+        "row_within_pair_r2": 0.8405923349238541,
+        "row_sister_well_mean_r2": 0.4196791717683088,
+        "group_r2": 0.6715291365969316,
+        "group_pair_level_r2": 0.6605872535627018,
+        "group_within_pair_r2": 0.6796470164025543,
+        "group_both_seen_share": 0.0
+      },
+      {
+        "seed": 20261007,
+        "row_r2": 0.9102167286676844,
+        "row_pair_level_r2": 0.9969920647053204,
+        "row_within_pair_r2": 0.8458373393210464,
+        "row_sister_well_mean_r2": 0.4195774880866774,
+        "group_r2": 0.6965321773427701,
+        "group_pair_level_r2": 0.6698458443685895,
+        "group_within_pair_r2": 0.7163310038207642,
+        "group_both_seen_share": 0.0
+      },
+      {
+        "seed": 20261008,
+        "row_r2": 0.9087477774922198,
+        "row_pair_level_r2": 0.9972850887842303,
+        "row_within_pair_r2": 0.8430611631194371,
+        "row_sister_well_mean_r2": 0.4219702152824727,
+        "group_r2": 0.7237287585501593,
+        "group_pair_level_r2": 0.7244055149252917,
+        "group_within_pair_r2": 0.7232266670094409,
+        "group_both_seen_share": 0.0
+      },
+      {
+        "seed": 20261009,
+        "row_r2": 0.9063993662052978,
+        "row_pair_level_r2": 0.9974006849263274,
+        "row_within_pair_r2": 0.838884682926426,
+        "row_sister_well_mean_r2": 0.42051277338700754,
+        "group_r2": 0.6921532961222246,
+        "group_pair_level_r2": 0.7047407950793139,
+        "group_within_pair_r2": 0.6828145193077231,
+        "group_both_seen_share": 0.0
+      },
+      {
+        "seed": 20261010,
+        "row_r2": 0.9121756900844178,
+        "row_pair_level_r2": 0.9972414970147546,
+        "row_within_pair_r2": 0.8490646155035158,
+        "row_sister_well_mean_r2": 0.42046466139240957,
+        "group_r2": 0.6938191571903041,
+        "group_pair_level_r2": 0.7120517348787393,
+        "group_within_pair_r2": 0.6802922465334844,
+        "group_both_seen_share": 0.0
+      }
+    ]
+  },
+  "Suzuki-Miyaura (Perera et al.)": {
+    "reactions": 5760,
+    "pairs": 15,
+    "conditions": 576,
+    "mean_yield_percent": 40.10945768153988,
+    "pair_variance_share": 0.3844710221676638,
+    "row_r2": 0.8393767992295835,
+    "row_pair_level_r2": 0.9997298751713639,
+    "row_within_pair_r2": 0.7392172401586563,
+    "row_sister_well_mean_r2": 0.3807838881962026,
+    "group_r2": 0.04365816469396242,
+    "group_pair_level_r2": -0.09546533493060409,
+    "group_within_pair_r2": 0.1305573295335575,
+    "group_both_seen_share": 0.8,
+    "r2_lost": 0.7957186345356211,
+    "per_seed": [
+      {
+        "seed": 42,
+        "row_r2": 0.839506641221581,
+        "row_pair_level_r2": 0.9997566291172715,
+        "row_within_pair_r2": 0.7394114728907828,
+        "row_sister_well_mean_r2": 0.38072451069899194,
+        "group_r2": 0.3060008305094739,
+        "group_pair_level_r2": 0.35506728979496194,
+        "group_within_pair_r2": 0.2753529935512953,
+        "group_both_seen_share": 0.8
+      },
+      {
+        "seed": 20261007,
+        "row_r2": 0.8386504386950945,
+        "row_pair_level_r2": 0.9997110445461947,
+        "row_within_pair_r2": 0.7380489430830016,
+        "row_sister_well_mean_r2": 0.3810973983576804,
+        "group_r2": 0.27060366579595674,
+        "group_pair_level_r2": 0.34076964086879424,
+        "group_within_pair_r2": 0.22677667286924386,
+        "group_both_seen_share": 0.8
+      },
+      {
+        "seed": 20261008,
+        "row_r2": 0.8370236910725328,
+        "row_pair_level_r2": 0.999742230642103,
+        "row_within_pair_r2": 0.7353866187542528,
+        "row_sister_well_mean_r2": 0.3815325541504725,
+        "group_r2": -0.3025699155653907,
+        "group_pair_level_r2": -0.6130596954473992,
+        "group_within_pair_r2": -0.10863213628448554,
+        "group_both_seen_share": 0.8
+      },
+      {
+        "seed": 20261009,
+        "row_r2": 0.8410950386087129,
+        "row_pair_level_r2": 0.9997078401396816,
+        "row_within_pair_r2": 0.7420224877951926,
+        "row_sister_well_mean_r2": 0.38074204768423736,
+        "group_r2": 0.12905803971539542,
+        "group_pair_level_r2": -0.0675075560728422,
+        "group_within_pair_r2": 0.2518366224587165,
+        "group_both_seen_share": 0.8
+      },
+      {
+        "seed": 20261010,
+        "row_r2": 0.8406081865499964,
+        "row_pair_level_r2": 0.9997316314115686,
+        "row_within_pair_r2": 0.7412166782700516,
+        "row_sister_well_mean_r2": 0.379822930089631,
+        "group_r2": -0.18480179698562327,
+        "group_pair_level_r2": -0.4925963537965352,
+        "group_within_pair_r2": 0.007452495073017373,
+        "group_both_seen_share": 0.8
+      }
+    ]
+  }
+}

@@ -1,0 +1,741 @@
+{
+  "screens": 18,
+  "prediction_rows": 3401780,
+  "pooled_seed_protocol_groups": 180,
+  "stratum_seed_protocol_groups": 540,
+  "original_baseline_sha256": "9300226c6ccbd634a0505c7117c9eb21025973da503032358234267e43afc815",
+  "rank_results": {
+    "all_screens": {
+      "screens": 18,
+      "positive_delta_screens": 18,
+      "median_delta_r2": 0.2461257337952092,
+      "metric_rho": {
+        "r2": 0.5067079463364293,
+        "mae": 0.9669762641898865,
+        "rmse": 0.8782249742002064
+      },
+      "r2_order": {
+        "row": [
+          "Acylation",
+          "SNAr",
+          "Grignard",
+          "Suzuki Bpin",
+          "Kumada",
+          "Chan-Lam",
+          "Heck",
+          "Suzuki",
+          "Esterification",
+          "Ullmann",
+          "Reductive-amination",
+          "Pd-carbonylation",
+          "Sonogashira",
+          "Buchwald-Hartwig",
+          "Hiyama",
+          "C-O competitive reactions",
+          "Minisci",
+          "Allylic-substitution"
+        ],
+        "group": [
+          "Acylation",
+          "Heck",
+          "Esterification",
+          "Chan-Lam",
+          "Buchwald-Hartwig",
+          "SNAr",
+          "Suzuki",
+          "Ullmann",
+          "Reductive-amination",
+          "Kumada",
+          "Hiyama",
+          "Suzuki Bpin",
+          "Sonogashira",
+          "C-O competitive reactions",
+          "Minisci",
+          "Grignard",
+          "Pd-carbonylation",
+          "Allylic-substitution"
+        ]
+      },
+      "by_seed": [
+        {
+          "seed": 42,
+          "metric_rho": {
+            "r2": 0.4633642930856553,
+            "mae": 0.9731682146542827,
+            "rmse": 0.894736842105263
+          },
+          "r2_order": {
+            "row": [
+              "Acylation",
+              "SNAr",
+              "Grignard",
+              "Suzuki Bpin",
+              "Kumada",
+              "Chan-Lam",
+              "Heck",
+              "Suzuki",
+              "Reductive-amination",
+              "Ullmann",
+              "Esterification",
+              "Sonogashira",
+              "Pd-carbonylation",
+              "Buchwald-Hartwig",
+              "C-O competitive reactions",
+              "Hiyama",
+              "Minisci",
+              "Allylic-substitution"
+            ],
+            "group": [
+              "Acylation",
+              "Heck",
+              "Esterification",
+              "SNAr",
+              "Buchwald-Hartwig",
+              "Chan-Lam",
+              "Kumada",
+              "Suzuki",
+              "Ullmann",
+              "Reductive-amination",
+              "Hiyama",
+              "Minisci",
+              "Suzuki Bpin",
+              "Sonogashira",
+              "C-O competitive reactions",
+              "Pd-carbonylation",
+              "Grignard",
+              "Allylic-substitution"
+            ]
+          }
+        },
+        {
+          "seed": 20261007,
+          "metric_rho": {
+            "r2": 0.3931888544891641,
+            "mae": 0.9484004127966976,
+            "rmse": 0.7997936016511867
+          },
+          "r2_order": {
+            "row": [
+              "Acylation",
+              "SNAr",
+              "Grignard",
+              "Suzuki Bpin",
+              "Kumada",
+              "Chan-Lam",
+              "Heck",
+              "Suzuki",
+              "Esterification",
+              "Pd-carbonylation",
+              "Ullmann",
+              "Reductive-amination",
+              "Sonogashira",
+              "Buchwald-Hartwig",
+              "C-O competitive reactions",
+              "Minisci",
+              "Hiyama",
+              "Allylic-substitution"
+            ],
+            "group": [
+              "Acylation",
+              "Heck",
+              "Esterification",
+              "Chan-Lam",
+              "Buchwald-Hartwig",
+              "Suzuki",
+              "Ullmann",
+              "Kumada",
+              "SNAr",
+              "Reductive-amination",
+              "Minisci",
+              "Hiyama",
+              "Sonogashira",
+              "Suzuki Bpin",
+              "Grignard",
+              "C-O competitive reactions",
+              "Allylic-substitution",
+              "Pd-carbonylation"
+            ]
+          }
+        },
+        {
+          "seed": 20261008,
+          "metric_rho": {
+            "r2": 0.5665634674922602,
+            "mae": 0.9628482972136224,
+            "rmse": 0.8617131062951496
+          },
+          "r2_order": {
+            "row": [
+              "Acylation",
+              "SNAr",
+              "Grignard",
+              "Suzuki Bpin",
+              "Kumada",
+              "Chan-Lam",
+              "Heck",
+              "Suzuki",
+              "Reductive-amination",
+              "Esterification",
+              "Ullmann",
+              "Pd-carbonylation",
+              "Sonogashira",
+              "Buchwald-Hartwig",
+              "Hiyama",
+              "C-O competitive reactions",
+              "Minisci",
+              "Allylic-substitution"
+            ],
+            "group": [
+              "Acylation",
+              "Heck",
+              "Chan-Lam",
+              "Esterification",
+              "SNAr",
+              "Buchwald-Hartwig",
+              "Reductive-amination",
+              "Suzuki",
+              "Hiyama",
+              "Kumada",
+              "Ullmann",
+              "Suzuki Bpin",
+              "Sonogashira",
+              "Pd-carbonylation",
+              "Grignard",
+              "C-O competitive reactions",
+              "Minisci",
+              "Allylic-substitution"
+            ]
+          }
+        },
+        {
+          "seed": 20261009,
+          "metric_rho": {
+            "r2": 0.4613003095975232,
+            "mae": 0.9711042311661506,
+            "rmse": 0.8555211558307534
+          },
+          "r2_order": {
+            "row": [
+              "Acylation",
+              "SNAr",
+              "Grignard",
+              "Suzuki Bpin",
+              "Kumada",
+              "Chan-Lam",
+              "Heck",
+              "Esterification",
+              "Suzuki",
+              "Ullmann",
+              "Reductive-amination",
+              "Sonogashira",
+              "Pd-carbonylation",
+              "Buchwald-Hartwig",
+              "C-O competitive reactions",
+              "Hiyama",
+              "Minisci",
+              "Allylic-substitution"
+            ],
+            "group": [
+              "Acylation",
+              "Heck",
+              "Esterification",
+              "Buchwald-Hartwig",
+              "Ullmann",
+              "Chan-Lam",
+              "SNAr",
+              "Suzuki",
+              "Pd-carbonylation",
+              "Reductive-amination",
+              "Hiyama",
+              "Kumada",
+              "Suzuki Bpin",
+              "Sonogashira",
+              "Grignard",
+              "C-O competitive reactions",
+              "Minisci",
+              "Allylic-substitution"
+            ]
+          }
+        },
+        {
+          "seed": 20261010,
+          "metric_rho": {
+            "r2": 0.3952528379772961,
+            "mae": 0.9669762641898865,
+            "rmse": 0.8782249742002064
+          },
+          "r2_order": {
+            "row": [
+              "Acylation",
+              "SNAr",
+              "Grignard",
+              "Suzuki Bpin",
+              "Chan-Lam",
+              "Kumada",
+              "Pd-carbonylation",
+              "Heck",
+              "Suzuki",
+              "Esterification",
+              "Ullmann",
+              "Reductive-amination",
+              "Sonogashira",
+              "Buchwald-Hartwig",
+              "Hiyama",
+              "Minisci",
+              "C-O competitive reactions",
+              "Allylic-substitution"
+            ],
+            "group": [
+              "Acylation",
+              "Heck",
+              "Esterification",
+              "Buchwald-Hartwig",
+              "SNAr",
+              "Kumada",
+              "Reductive-amination",
+              "Suzuki",
+              "Chan-Lam",
+              "Ullmann",
+              "Hiyama",
+              "Pd-carbonylation",
+              "Sonogashira",
+              "Suzuki Bpin",
+              "C-O competitive reactions",
+              "Allylic-substitution",
+              "Grignard",
+              "Minisci"
+            ]
+          }
+        }
+      ]
+    },
+    "mean_yield_at_least_5pct": {
+      "screens": 11,
+      "positive_delta_screens": 11,
+      "median_delta_r2": 0.21310919189220492,
+      "metric_rho": {
+        "r2": 0.018181818181818184,
+        "mae": 0.8636363636363636,
+        "rmse": 0.5
+      },
+      "r2_order": {
+        "row": [
+          "Acylation",
+          "Grignard",
+          "Suzuki Bpin",
+          "Kumada",
+          "Heck",
+          "Suzuki",
+          "Esterification",
+          "Ullmann",
+          "Reductive-amination",
+          "Sonogashira",
+          "Buchwald-Hartwig"
+        ],
+        "group": [
+          "Acylation",
+          "Heck",
+          "Esterification",
+          "Buchwald-Hartwig",
+          "Suzuki",
+          "Ullmann",
+          "Reductive-amination",
+          "Kumada",
+          "Suzuki Bpin",
+          "Sonogashira",
+          "Grignard"
+        ]
+      },
+      "by_seed": [
+        {
+          "seed": 42,
+          "metric_rho": {
+            "r2": 0.02727272727272728,
+            "mae": 0.8909090909090911,
+            "rmse": 0.5545454545454546
+          },
+          "r2_order": {
+            "row": [
+              "Acylation",
+              "Grignard",
+              "Suzuki Bpin",
+              "Kumada",
+              "Heck",
+              "Suzuki",
+              "Reductive-amination",
+              "Ullmann",
+              "Esterification",
+              "Sonogashira",
+              "Buchwald-Hartwig"
+            ],
+            "group": [
+              "Acylation",
+              "Heck",
+              "Esterification",
+              "Buchwald-Hartwig",
+              "Kumada",
+              "Suzuki",
+              "Ullmann",
+              "Reductive-amination",
+              "Suzuki Bpin",
+              "Sonogashira",
+              "Grignard"
+            ]
+          }
+        },
+        {
+          "seed": 20261007,
+          "metric_rho": {
+            "r2": 0.0,
+            "mae": 0.8909090909090911,
+            "rmse": 0.44545454545454555
+          },
+          "r2_order": {
+            "row": [
+              "Acylation",
+              "Grignard",
+              "Suzuki Bpin",
+              "Kumada",
+              "Heck",
+              "Suzuki",
+              "Esterification",
+              "Ullmann",
+              "Reductive-amination",
+              "Sonogashira",
+              "Buchwald-Hartwig"
+            ],
+            "group": [
+              "Acylation",
+              "Heck",
+              "Esterification",
+              "Buchwald-Hartwig",
+              "Suzuki",
+              "Ullmann",
+              "Kumada",
+              "Reductive-amination",
+              "Sonogashira",
+              "Suzuki Bpin",
+              "Grignard"
+            ]
+          }
+        },
+        {
+          "seed": 20261008,
+          "metric_rho": {
+            "r2": 0.02727272727272728,
+            "mae": 0.8636363636363636,
+            "rmse": 0.5272727272727273
+          },
+          "r2_order": {
+            "row": [
+              "Acylation",
+              "Grignard",
+              "Suzuki Bpin",
+              "Kumada",
+              "Heck",
+              "Suzuki",
+              "Reductive-amination",
+              "Esterification",
+              "Ullmann",
+              "Sonogashira",
+              "Buchwald-Hartwig"
+            ],
+            "group": [
+              "Acylation",
+              "Heck",
+              "Esterification",
+              "Buchwald-Hartwig",
+              "Reductive-amination",
+              "Suzuki",
+              "Kumada",
+              "Ullmann",
+              "Suzuki Bpin",
+              "Sonogashira",
+              "Grignard"
+            ]
+          }
+        },
+        {
+          "seed": 20261009,
+          "metric_rho": {
+            "r2": 0.02727272727272728,
+            "mae": 0.8909090909090911,
+            "rmse": 0.3727272727272728
+          },
+          "r2_order": {
+            "row": [
+              "Acylation",
+              "Grignard",
+              "Suzuki Bpin",
+              "Kumada",
+              "Heck",
+              "Esterification",
+              "Suzuki",
+              "Ullmann",
+              "Reductive-amination",
+              "Sonogashira",
+              "Buchwald-Hartwig"
+            ],
+            "group": [
+              "Acylation",
+              "Heck",
+              "Esterification",
+              "Buchwald-Hartwig",
+              "Ullmann",
+              "Suzuki",
+              "Reductive-amination",
+              "Kumada",
+              "Suzuki Bpin",
+              "Sonogashira",
+              "Grignard"
+            ]
+          }
+        },
+        {
+          "seed": 20261010,
+          "metric_rho": {
+            "r2": 0.018181818181818184,
+            "mae": 0.8636363636363636,
+            "rmse": 0.46363636363636374
+          },
+          "r2_order": {
+            "row": [
+              "Acylation",
+              "Grignard",
+              "Suzuki Bpin",
+              "Kumada",
+              "Heck",
+              "Suzuki",
+              "Esterification",
+              "Ullmann",
+              "Reductive-amination",
+              "Sonogashira",
+              "Buchwald-Hartwig"
+            ],
+            "group": [
+              "Acylation",
+              "Heck",
+              "Esterification",
+              "Buchwald-Hartwig",
+              "Kumada",
+              "Reductive-amination",
+              "Suzuki",
+              "Ullmann",
+              "Sonogashira",
+              "Suzuki Bpin",
+              "Grignard"
+            ]
+          }
+        }
+      ]
+    },
+    "mean_yield_at_least_10pct": {
+      "screens": 10,
+      "positive_delta_screens": 10,
+      "median_delta_r2": 0.21259635555124667,
+      "metric_rho": {
+        "r2": 0.006060606060606061,
+        "mae": 0.8181818181818182,
+        "rmse": 0.4787878787878787
+      },
+      "r2_order": {
+        "row": [
+          "Acylation",
+          "Grignard",
+          "Suzuki Bpin",
+          "Kumada",
+          "Heck",
+          "Suzuki",
+          "Esterification",
+          "Ullmann",
+          "Sonogashira",
+          "Buchwald-Hartwig"
+        ],
+        "group": [
+          "Acylation",
+          "Heck",
+          "Esterification",
+          "Buchwald-Hartwig",
+          "Suzuki",
+          "Ullmann",
+          "Kumada",
+          "Suzuki Bpin",
+          "Sonogashira",
+          "Grignard"
+        ]
+      },
+      "by_seed": [
+        {
+          "seed": 42,
+          "metric_rho": {
+            "r2": 0.0303030303030303,
+            "mae": 0.8545454545454544,
+            "rmse": 0.5515151515151515
+          },
+          "r2_order": {
+            "row": [
+              "Acylation",
+              "Grignard",
+              "Suzuki Bpin",
+              "Kumada",
+              "Heck",
+              "Suzuki",
+              "Ullmann",
+              "Esterification",
+              "Sonogashira",
+              "Buchwald-Hartwig"
+            ],
+            "group": [
+              "Acylation",
+              "Heck",
+              "Esterification",
+              "Buchwald-Hartwig",
+              "Kumada",
+              "Suzuki",
+              "Ullmann",
+              "Suzuki Bpin",
+              "Sonogashira",
+              "Grignard"
+            ]
+          }
+        },
+        {
+          "seed": 20261007,
+          "metric_rho": {
+            "r2": -0.06666666666666665,
+            "mae": 0.8545454545454544,
+            "rmse": 0.49090909090909085
+          },
+          "r2_order": {
+            "row": [
+              "Acylation",
+              "Grignard",
+              "Suzuki Bpin",
+              "Kumada",
+              "Heck",
+              "Suzuki",
+              "Esterification",
+              "Ullmann",
+              "Sonogashira",
+              "Buchwald-Hartwig"
+            ],
+            "group": [
+              "Acylation",
+              "Heck",
+              "Esterification",
+              "Buchwald-Hartwig",
+              "Suzuki",
+              "Ullmann",
+              "Kumada",
+              "Sonogashira",
+              "Suzuki Bpin",
+              "Grignard"
+            ]
+          }
+        },
+        {
+          "seed": 20261008,
+          "metric_rho": {
+            "r2": 0.05454545454545454,
+            "mae": 0.8181818181818182,
+            "rmse": 0.41818181818181815
+          },
+          "r2_order": {
+            "row": [
+              "Acylation",
+              "Grignard",
+              "Suzuki Bpin",
+              "Kumada",
+              "Heck",
+              "Suzuki",
+              "Esterification",
+              "Ullmann",
+              "Sonogashira",
+              "Buchwald-Hartwig"
+            ],
+            "group": [
+              "Acylation",
+              "Heck",
+              "Esterification",
+              "Buchwald-Hartwig",
+              "Suzuki",
+              "Kumada",
+              "Ullmann",
+              "Suzuki Bpin",
+              "Sonogashira",
+              "Grignard"
+            ]
+          }
+        },
+        {
+          "seed": 20261009,
+          "metric_rho": {
+            "r2": 0.01818181818181818,
+            "mae": 0.8545454545454544,
+            "rmse": 0.406060606060606
+          },
+          "r2_order": {
+            "row": [
+              "Acylation",
+              "Grignard",
+              "Suzuki Bpin",
+              "Kumada",
+              "Heck",
+              "Esterification",
+              "Suzuki",
+              "Ullmann",
+              "Sonogashira",
+              "Buchwald-Hartwig"
+            ],
+            "group": [
+              "Acylation",
+              "Heck",
+              "Esterification",
+              "Buchwald-Hartwig",
+              "Ullmann",
+              "Suzuki",
+              "Kumada",
+              "Suzuki Bpin",
+              "Sonogashira",
+              "Grignard"
+            ]
+          }
+        },
+        {
+          "seed": 20261010,
+          "metric_rho": {
+            "r2": 0.006060606060606061,
+            "mae": 0.8181818181818182,
+            "rmse": 0.41818181818181815
+          },
+          "r2_order": {
+            "row": [
+              "Acylation",
+              "Grignard",
+              "Suzuki Bpin",
+              "Kumada",
+              "Heck",
+              "Suzuki",
+              "Esterification",
+              "Ullmann",
+              "Sonogashira",
+              "Buchwald-Hartwig"
+            ],
+            "group": [
+              "Acylation",
+              "Heck",
+              "Esterification",
+              "Buchwald-Hartwig",
+              "Kumada",
+              "Suzuki",
+              "Ullmann",
+              "Sonogashira",
+              "Suzuki Bpin",
+              "Grignard"
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

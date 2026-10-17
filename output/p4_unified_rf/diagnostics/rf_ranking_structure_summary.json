@@ -1,0 +1,387 @@
+{
+  "variance_structure_rho": {
+    "all_18": {
+      "pair_variance_share_vs_rf_delta_r2": 0.5376676986584108,
+      "pair_variance_share_vs_rf_group_r2": -0.25696594427244585,
+      "pair_variance_share_vs_rf_row_r2": 0.4179566563467492,
+      "condition_variance_share_vs_rf_delta_r2": -0.5067079463364293,
+      "condition_variance_share_vs_rf_group_r2": 0.5067079463364293,
+      "condition_variance_share_vs_rf_row_r2": 0.21362229102167182
+    },
+    "mean_yield_at_least_5pct": {
+      "pair_variance_share_vs_rf_delta_r2": 0.690909090909091,
+      "pair_variance_share_vs_rf_group_r2": -0.7000000000000001,
+      "pair_variance_share_vs_rf_row_r2": 0.48181818181818187,
+      "condition_variance_share_vs_rf_delta_r2": -0.3545454545454546,
+      "condition_variance_share_vs_rf_group_r2": 0.4909090909090909,
+      "condition_variance_share_vs_rf_row_r2": -0.018181818181818184
+    }
+  },
+  "raw_mae_vs_median_mae_rho": {
+    "all_18": {
+      "row": 0.9525283797729618,
+      "group": 0.9587203302373581
+    },
+    "mean_yield_at_least_5pct": {
+      "row": 0.881818181818182,
+      "group": 0.9
+    }
+  },
+  "pair_share_vs_both_seen_relative_mae_increase_rho": {
+    "all_18": 0.5521155830753354,
+    "mean_yield_at_least_5pct": 0.8090909090909091
+  },
+  "pairwise_reversals_mean_yield_at_least_5pct": {
+    "pairs": 55,
+    "reversed_in_mean": 27,
+    "reversed_in_all_seeds": 23
+  },
+  "ranks_mean_yield_at_least_5pct": {
+    "row": {
+      "42": {
+        "Acylation": 1,
+        "Suzuki": 6,
+        "Buchwald-Hartwig": 11,
+        "Esterification": 9,
+        "Grignard": 2,
+        "Heck": 5,
+        "Kumada": 4,
+        "Reductive-amination": 7,
+        "Sonogashira": 10,
+        "Suzuki Bpin": 3,
+        "Ullmann": 8
+      },
+      "20261007": {
+        "Acylation": 1,
+        "Suzuki": 6,
+        "Buchwald-Hartwig": 11,
+        "Esterification": 7,
+        "Grignard": 2,
+        "Heck": 5,
+        "Kumada": 4,
+        "Reductive-amination": 9,
+        "Sonogashira": 10,
+        "Suzuki Bpin": 3,
+        "Ullmann": 8
+      },
+      "20261008": {
+        "Acylation": 1,
+        "Suzuki": 6,
+        "Buchwald-Hartwig": 11,
+        "Esterification": 8,
+        "Grignard": 2,
+        "Heck": 5,
+        "Kumada": 4,
+        "Reductive-amination": 7,
+        "Sonogashira": 10,
+        "Suzuki Bpin": 3,
+        "Ullmann": 9
+      },
+      "20261009": {
+        "Acylation": 1,
+        "Suzuki": 7,
+        "Buchwald-Hartwig": 11,
+        "Esterification": 6,
+        "Grignard": 2,
+        "Heck": 5,
+        "Kumada": 4,
+        "Reductive-amination": 9,
+        "Sonogashira": 10,
+        "Suzuki Bpin": 3,
+        "Ullmann": 8
+      },
+      "20261010": {
+        "Acylation": 1,
+        "Suzuki": 6,
+        "Buchwald-Hartwig": 11,
+        "Esterification": 7,
+        "Grignard": 2,
+        "Heck": 5,
+        "Kumada": 4,
+        "Reductive-amination": 9,
+        "Sonogashira": 10,
+        "Suzuki Bpin": 3,
+        "Ullmann": 8
+      },
+      "mean": {
+        "Acylation": 1,
+        "Suzuki": 6,
+        "Buchwald-Hartwig": 11,
+        "Esterification": 7,
+        "Grignard": 2,
+        "Heck": 5,
+        "Kumada": 4,
+        "Reductive-amination": 9,
+        "Sonogashira": 10,
+        "Suzuki Bpin": 3,
+        "Ullmann": 8
+      }
+    },
+    "group": {
+      "42": {
+        "Acylation": 1,
+        "Suzuki": 6,
+        "Buchwald-Hartwig": 4,
+        "Esterification": 3,
+        "Grignard": 11,
+        "Heck": 2,
+        "Kumada": 5,
+        "Reductive-amination": 8,
+        "Sonogashira": 10,
+        "Suzuki Bpin": 9,
+        "Ullmann": 7
+      },
+      "20261007": {
+        "Acylation": 1,
+        "Suzuki": 5,
+        "Buchwald-Hartwig": 4,
+        "Esterification": 3,
+        "Grignard": 11,
+        "Heck": 2,
+        "Kumada": 7,
+        "Reductive-amination": 8,
+        "Sonogashira": 9,
+        "Suzuki Bpin": 10,
+        "Ullmann": 6
+      },
+      "20261008": {
+        "Acylation": 1,
+        "Suzuki": 6,
+        "Buchwald-Hartwig": 4,
+        "Esterification": 3,
+        "Grignard": 11,
+        "Heck": 2,
+        "Kumada": 7,
+        "Reductive-amination": 5,
+        "Sonogashira": 10,
+        "Suzuki Bpin": 9,
+        "Ullmann": 8
+      },
+      "20261009": {
+        "Acylation": 1,
+        "Suzuki": 6,
+        "Buchwald-Hartwig": 4,
+        "Esterification": 3,
+        "Grignard": 11,
+        "Heck": 2,
+        "Kumada": 8,
+        "Reductive-amination": 7,
+        "Sonogashira": 10,
+        "Suzuki Bpin": 9,
+        "Ullmann": 5
+      },
+      "20261010": {
+        "Acylation": 1,
+        "Suzuki": 7,
+        "Buchwald-Hartwig": 4,
+        "Esterification": 3,
+        "Grignard": 11,
+        "Heck": 2,
+        "Kumada": 5,
+        "Reductive-amination": 6,
+        "Sonogashira": 9,
+        "Suzuki Bpin": 10,
+        "Ullmann": 8
+      },
+      "mean": {
+        "Acylation": 1,
+        "Suzuki": 5,
+        "Buchwald-Hartwig": 4,
+        "Esterification": 3,
+        "Grignard": 11,
+        "Heck": 2,
+        "Kumada": 8,
+        "Reductive-amination": 7,
+        "Sonogashira": 10,
+        "Suzuki Bpin": 9,
+        "Ullmann": 6
+      }
+    }
+  },
+  "rank_rho_r2_screen_bootstrap": {
+    "all_18": {
+      "rho": 0.5067079463364293,
+      "draws_used": 10000,
+      "low_2.5": -0.011613869863013682,
+      "high_97.5": 0.860125260960334
+    },
+    "mean_yield_at_least_5pct": {
+      "rho": 0.018181818181818184,
+      "draws_used": 10000,
+      "low_2.5": -0.7889579476329014,
+      "high_97.5": 0.7403846153846152
+    }
+  },
+  "mean_yield_cutoff_sweep": [
+    {
+      "mean_yield_cutoff_percent": 0,
+      "screens": 18,
+      "rho_r2": 0.5067079463364293
+    },
+    {
+      "mean_yield_cutoff_percent": 1,
+      "screens": 18,
+      "rho_r2": 0.5067079463364293
+    },
+    {
+      "mean_yield_cutoff_percent": 2,
+      "screens": 17,
+      "rho_r2": 0.4926470588235295
+    },
+    {
+      "mean_yield_cutoff_percent": 3,
+      "screens": 16,
+      "rho_r2": 0.45
+    },
+    {
+      "mean_yield_cutoff_percent": 4,
+      "screens": 14,
+      "rho_r2": 0.23076923076923075
+    },
+    {
+      "mean_yield_cutoff_percent": 5,
+      "screens": 11,
+      "rho_r2": 0.018181818181818184
+    },
+    {
+      "mean_yield_cutoff_percent": 6,
+      "screens": 11,
+      "rho_r2": 0.018181818181818184
+    },
+    {
+      "mean_yield_cutoff_percent": 7,
+      "screens": 11,
+      "rho_r2": 0.018181818181818184
+    },
+    {
+      "mean_yield_cutoff_percent": 8,
+      "screens": 10,
+      "rho_r2": 0.006060606060606061
+    },
+    {
+      "mean_yield_cutoff_percent": 9,
+      "screens": 10,
+      "rho_r2": 0.006060606060606061
+    },
+    {
+      "mean_yield_cutoff_percent": 10,
+      "screens": 10,
+      "rho_r2": 0.006060606060606061
+    },
+    {
+      "mean_yield_cutoff_percent": 11,
+      "screens": 10,
+      "rho_r2": 0.006060606060606061
+    },
+    {
+      "mean_yield_cutoff_percent": 12,
+      "screens": 7,
+      "rho_r2": 0.14285714285714288
+    }
+  ],
+  "two_design_properties": {
+    "all_18": {
+      "partial_rho_pair_share_given_sparsity": 0.6557184962209645,
+      "partial_rho_sparsity_given_pair_share": 0.7117709674302866,
+      "rho_rank_sum_vs_rf_delta_r2": 0.7755962814173,
+      "rho_sparsity_vs_share_of_test_wells_with_an_unseen_substrate": 0.9174406604747163
+    },
+    "mean_yield_at_least_5pct": {
+      "partial_rho_pair_share_given_sparsity": 0.7674598134217786,
+      "partial_rho_sparsity_given_pair_share": 0.7546503519512792,
+      "rho_rank_sum_vs_rf_delta_r2": 0.8924695430162098,
+      "rho_sparsity_vs_share_of_test_wells_with_an_unseen_substrate": 0.9454545454545454
+    }
+  },
+  "pair_level_decomposition": {
+    "all_18": {
+      "median_row_pair_level_r2": 0.8237192909242516,
+      "median_group_pair_level_r2": 0.23379432630429842,
+      "median_row_within_pair_r2": 0.23844843487622713,
+      "median_group_within_pair_r2": 0.23797909680897214,
+      "rho_group_pair_level_r2_vs_rf_delta_r2": -0.8204334365325078
+    },
+    "mean_yield_at_least_5pct": {
+      "median_row_pair_level_r2": 0.8244780631487316,
+      "median_group_pair_level_r2": 0.23479580703508995,
+      "median_row_within_pair_r2": 0.3404275268213958,
+      "median_group_within_pair_r2": 0.34123899555408854,
+      "rho_group_pair_level_r2_vs_rf_delta_r2": -0.881818181818182
+    }
+  },
+  "sister_well_mean": {
+    "all_18": {
+      "median_row_r2": 0.42482125025822426,
+      "screens_at_or_above_rf_row_r2": 4,
+      "rho_vs_pair_variance_share": 0.9876160990712075,
+      "max_abs_difference_from_pair_variance_share": 0.04921771142201464
+    },
+    "mean_yield_at_least_5pct": {
+      "median_row_r2": 0.4062123899965832,
+      "screens_at_or_above_rf_row_r2": 1,
+      "rho_vs_pair_variance_share": 1.0,
+      "max_abs_difference_from_pair_variance_share": 0.039770933250686924
+    }
+  },
+  "condition_adjusted_pair_share": {
+    "all_18": {
+      "rho_vs_pair_variance_share": 0.981424148606811,
+      "rho_vs_rf_delta_r2": 0.4592363261093911,
+      "p_vs_rf_delta_r2": 0.05521566198726722,
+      "max_abs_difference_from_pair_variance_share": 0.07355446834969298
+    },
+    "mean_yield_at_least_5pct": {
+      "rho_vs_pair_variance_share": 0.990909090909091,
+      "rho_vs_rf_delta_r2": 0.6545454545454547,
+      "p_vs_rf_delta_r2": 0.028864598957001886,
+      "max_abs_difference_from_pair_variance_share": 0.07355446834969298
+    }
+  },
+  "pairing_design_rho": {
+    "all_18": {
+      "substrate_levels_per_pair_vs_rf_delta_r2": 0.6202270381836945,
+      "p_substrate_levels_per_pair_vs_rf_delta_r2": 0.006032002847171171,
+      "substrate_levels_per_pair_vs_pair_variance_share": 0.038183694530443756,
+      "median_partners_range": [
+        1.0,
+        12.0
+      ],
+      "grid_fill_range": [
+        0.039373704812341696,
+        0.20606060606060606
+      ]
+    },
+    "mean_yield_at_least_5pct": {
+      "substrate_levels_per_pair_vs_rf_delta_r2": 0.6727272727272727,
+      "p_substrate_levels_per_pair_vs_rf_delta_r2": 0.023313039833185972,
+      "substrate_levels_per_pair_vs_pair_variance_share": 0.20000000000000004,
+      "median_partners_range": [
+        1.0,
+        12.0
+      ],
+      "grid_fill_range": [
+        0.039373704812341696,
+        0.16295707472178061
+      ]
+    }
+  },
+  "plate_structure": {
+    "max_pairs_per_plate": 1,
+    "pairs_on_multiple_plates_total": 281,
+    "screens_with_at_least_10_multi_plate_pairs": [
+      "Acylation",
+      "Suzuki",
+      "Buchwald-Hartwig",
+      "Chan-Lam"
+    ],
+    "max_within_pair_between_plate_share_of_screen_variance": 0.020513124395194107,
+    "multi_plate_pairs_within_pair_between_plate_share_range": [
+      0.021769343108915266,
+      0.059519934877234226
+    ],
+    "multi_plate_pairs_between_pair_share_range": [
+      0.19114644204835685,
+      0.5585181940025302
+    ]
+  }
+}

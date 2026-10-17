@@ -1,0 +1,3565 @@
+{
+  "schema_version": 1,
+  "provenance": {
+    "input_path": "pooled_model_results.json",
+    "input_sha256": "e318ffd9729324e045f83058ec728fc40d22b2635486ea8a00038dc6ae5a2225",
+    "script_path": "p4_saved_score_diagnostics_20261008.py",
+    "script_sha256": "aada36797e1d253a24ae2aaf1c883f586097672c0da33f5717e3f13d7367e85a",
+    "upstream_input_sha256": {
+      "data/p4_screens.json": "9300226c6ccbd634a0505c7117c9eb21025973da503032358234267e43afc815",
+      "data/p4_records.csv.gz": "dfef7751ca7ea031bf6cbbd57f44ae26204d61c3d336e598d46b5a9932adb639",
+      "data/p4_grouped_folds.csv.gz": "fadc835c994aaf4cccb105d7c4eee119acfec8d5f1e432248f6c0cdea374b423",
+      "predictions": "84d2e2aff56be36d9a29a3e68166305da35258b3eb075c14655e8e45a808add6"
+    },
+    "screen_mean_score_field": "sources[].summary.{row,group}.{r2,mae,rmse}.mean",
+    "seed_score_field": "sources[].pooled_by_seed.{row,group}[] matched on seed",
+    "score_producer_script_path": "score_predictions.py",
+    "score_producer_script_sha256": "fbecde7491a1632a1ace00b191c9d177d7e9aa859a91657c95f891cc623a1919"
+  },
+  "definitions": {
+    "score_basis": "saved per-seed pooled out-of-fold scores and their saved five-seed means",
+    "metric_directions": {
+      "r2": "higher is better",
+      "mae": "lower is better",
+      "rmse": "lower is better"
+    },
+    "spearman": "correlation of row and group average-tie ranks within the same metric and screen subset",
+    "subset": "whole-screen finite numeric mean yield >= 0.05, including zeros; no row filtering",
+    "selection": "retrospective top-k screen selection by descending saved row R2 or grouped R2",
+    "selection_evaluation": "equal-weight mean saved grouped R2 of the selected screens; group choice minus row choice",
+    "matching_seed_selection": "selection and grouped-score evaluation use the same saved seed",
+    "tie_break": "exact score ties in top-k selection are broken alphabetically by source_name",
+    "discordance": "an unordered screen pair has opposite strict R2 ordering under row and group splits; tied pairs are not discordant",
+    "leave_one_screen_out": "omit each retained screen in turn and recompute row/group R2 Spearman across the remaining ten screens",
+    "seed_ranges": "minimum and maximum across five overlapping saved seed estimates; descriptive ranges, not confidence intervals",
+    "analysis_operations": "rank, compare and average saved scores; no model fits, predictions or loss regeneration"
+  },
+  "population": {
+    "seeds": [
+      42,
+      20261007,
+      20261008,
+      20261009,
+      20261010
+    ],
+    "all_screen_count": 18,
+    "all_screen_names": [
+      "Acylation",
+      "Suzuki",
+      "Buchwald-Hartwig",
+      "Allylic-substitution",
+      "C-O competitive reactions",
+      "Chan-Lam",
+      "Esterification",
+      "Grignard",
+      "Heck",
+      "Hiyama",
+      "Kumada",
+      "Minisci",
+      "Pd-carbonylation",
+      "Reductive-amination",
+      "SNAr",
+      "Sonogashira",
+      "Suzuki Bpin",
+      "Ullmann"
+    ],
+    "mean_yield_threshold_fraction": 0.05,
+    "retained_screen_count": 11,
+    "retained_screen_names": [
+      "Acylation",
+      "Suzuki",
+      "Buchwald-Hartwig",
+      "Esterification",
+      "Grignard",
+      "Heck",
+      "Kumada",
+      "Reductive-amination",
+      "Sonogashira",
+      "Suzuki Bpin",
+      "Ullmann"
+    ],
+    "excluded_screen_names": [
+      "Allylic-substitution",
+      "C-O competitive reactions",
+      "Chan-Lam",
+      "Hiyama",
+      "Minisci",
+      "Pd-carbonylation",
+      "SNAr"
+    ]
+  },
+  "metric_rank_concordance": {
+    "all_screens": {
+      "screen_count": 18,
+      "screen_mean": {
+        "r2": 0.7275541795665634,
+        "mae": 0.954592363261094,
+        "rmse": 0.9484004127966976
+      },
+      "by_seed": [
+        {
+          "seed": 42,
+          "rho": {
+            "r2": 0.6449948400412797,
+            "mae": 0.9484004127966976,
+            "rmse": 0.9566563467492261
+          }
+        },
+        {
+          "seed": 20261007,
+          "rho": {
+            "r2": 0.6470588235294118,
+            "mae": 0.8926728586171312,
+            "rmse": 0.8926728586171312
+          }
+        },
+        {
+          "seed": 20261008,
+          "rho": {
+            "r2": 0.6697626418988648,
+            "mae": 0.894736842105263,
+            "rmse": 0.9215686274509803
+          }
+        },
+        {
+          "seed": 20261009,
+          "rho": {
+            "r2": 0.6883384932920537,
+            "mae": 0.9669762641898865,
+            "rmse": 0.9525283797729618
+          }
+        },
+        {
+          "seed": 20261010,
+          "rho": {
+            "r2": 0.7110423116615068,
+            "mae": 0.9607843137254902,
+            "rmse": 0.9525283797729618
+          }
+        }
+      ],
+      "seed_rho_ranges": {
+        "r2": {
+          "min": 0.6449948400412797,
+          "max": 0.7110423116615068,
+          "range": 0.06604747162022706
+        },
+        "mae": {
+          "min": 0.8926728586171312,
+          "max": 0.9669762641898865,
+          "range": 0.07430340557275528
+        },
+        "rmse": {
+          "min": 0.8926728586171312,
+          "max": 0.9566563467492261,
+          "range": 0.06398348813209487
+        }
+      }
+    },
+    "mean_yield_ge_0_05": {
+      "screen_count": 11,
+      "screen_mean": {
+        "r2": 0.45454545454545453,
+        "mae": 0.8636363636363636,
+        "rmse": 0.8090909090909091
+      },
+      "by_seed": [
+        {
+          "seed": 42,
+          "rho": {
+            "r2": 0.39090909090909093,
+            "mae": 0.8545454545454546,
+            "rmse": 0.8454545454545455
+          }
+        },
+        {
+          "seed": 20261007,
+          "rho": {
+            "r2": 0.39090909090909093,
+            "mae": 0.881818181818182,
+            "rmse": 0.8090909090909091
+          }
+        },
+        {
+          "seed": 20261008,
+          "rho": {
+            "r2": 0.3727272727272728,
+            "mae": 0.7363636363636363,
+            "rmse": 0.6818181818181819
+          }
+        },
+        {
+          "seed": 20261009,
+          "rho": {
+            "r2": 0.2545454545454546,
+            "mae": 0.8909090909090911,
+            "rmse": 0.8272727272727273
+          }
+        },
+        {
+          "seed": 20261010,
+          "rho": {
+            "r2": 0.4000000000000001,
+            "mae": 0.8909090909090911,
+            "rmse": 0.8272727272727273
+          }
+        }
+      ],
+      "seed_rho_ranges": {
+        "r2": {
+          "min": 0.2545454545454546,
+          "max": 0.4000000000000001,
+          "range": 0.1454545454545455
+        },
+        "mae": {
+          "min": 0.7363636363636363,
+          "max": 0.8909090909090911,
+          "range": 0.15454545454545476
+        },
+        "rmse": {
+          "min": 0.6818181818181819,
+          "max": 0.8454545454545455,
+          "range": 0.16363636363636358
+        }
+      }
+    }
+  },
+  "retrospective_selection": {
+    "screen_mean": {
+      "row_order": [
+        "Acylation",
+        "Heck",
+        "Ullmann",
+        "Suzuki Bpin",
+        "Kumada",
+        "Suzuki",
+        "Sonogashira",
+        "Grignard",
+        "Esterification",
+        "Reductive-amination",
+        "Buchwald-Hartwig"
+      ],
+      "group_order": [
+        "Acylation",
+        "Heck",
+        "Ullmann",
+        "Suzuki",
+        "Buchwald-Hartwig",
+        "Esterification",
+        "Reductive-amination",
+        "Sonogashira",
+        "Kumada",
+        "Suzuki Bpin",
+        "Grignard"
+      ],
+      "by_k": [
+        {
+          "k": 1,
+          "row_selected": [
+            "Acylation"
+          ],
+          "group_selected": [
+            "Acylation"
+          ],
+          "overlap": [
+            "Acylation"
+          ],
+          "overlap_count": 1,
+          "group_r2_mean_row_selected": 0.5738318398876328,
+          "group_r2_mean_group_selected": 0.5738318398876328,
+          "group_minus_row_selected_r2": 0.0
+        },
+        {
+          "k": 2,
+          "row_selected": [
+            "Acylation",
+            "Heck"
+          ],
+          "group_selected": [
+            "Acylation",
+            "Heck"
+          ],
+          "overlap": [
+            "Acylation",
+            "Heck"
+          ],
+          "overlap_count": 2,
+          "group_r2_mean_row_selected": 0.5085784107099638,
+          "group_r2_mean_group_selected": 0.5085784107099638,
+          "group_minus_row_selected_r2": 0.0
+        },
+        {
+          "k": 3,
+          "row_selected": [
+            "Acylation",
+            "Heck",
+            "Ullmann"
+          ],
+          "group_selected": [
+            "Acylation",
+            "Heck",
+            "Ullmann"
+          ],
+          "overlap": [
+            "Acylation",
+            "Heck",
+            "Ullmann"
+          ],
+          "overlap_count": 3,
+          "group_r2_mean_row_selected": 0.44610184352242527,
+          "group_r2_mean_group_selected": 0.44610184352242527,
+          "group_minus_row_selected_r2": 0.0
+        },
+        {
+          "k": 4,
+          "row_selected": [
+            "Acylation",
+            "Heck",
+            "Ullmann",
+            "Suzuki Bpin"
+          ],
+          "group_selected": [
+            "Acylation",
+            "Heck",
+            "Ullmann",
+            "Suzuki"
+          ],
+          "overlap": [
+            "Acylation",
+            "Heck",
+            "Ullmann"
+          ],
+          "overlap_count": 3,
+          "group_r2_mean_row_selected": 0.3767027531836023,
+          "group_r2_mean_group_selected": 0.41465834642224375,
+          "group_minus_row_selected_r2": 0.03795559323864145
+        },
+        {
+          "k": 5,
+          "row_selected": [
+            "Acylation",
+            "Heck",
+            "Ullmann",
+            "Suzuki Bpin",
+            "Kumada"
+          ],
+          "group_selected": [
+            "Acylation",
+            "Heck",
+            "Ullmann",
+            "Suzuki",
+            "Buchwald-Hartwig"
+          ],
+          "overlap": [
+            "Acylation",
+            "Heck",
+            "Ullmann"
+          ],
+          "overlap_count": 3,
+          "group_r2_mean_row_selected": 0.3401026338294665,
+          "group_r2_mean_group_selected": 0.3919209388526484,
+          "group_minus_row_selected_r2": 0.05181830502318191
+        },
+        {
+          "k": 6,
+          "row_selected": [
+            "Acylation",
+            "Heck",
+            "Ullmann",
+            "Suzuki Bpin",
+            "Kumada",
+            "Suzuki"
+          ],
+          "group_selected": [
+            "Acylation",
+            "Heck",
+            "Ullmann",
+            "Suzuki",
+            "Buchwald-Hartwig",
+            "Esterification"
+          ],
+          "overlap": [
+            "Acylation",
+            "Heck",
+            "Suzuki",
+            "Ullmann"
+          ],
+          "overlap_count": 4,
+          "group_r2_mean_row_selected": 0.3368068373781719,
+          "group_r2_mean_group_selected": 0.37518090705830204,
+          "group_minus_row_selected_r2": 0.03837406968013013
+        },
+        {
+          "k": 7,
+          "row_selected": [
+            "Acylation",
+            "Heck",
+            "Ullmann",
+            "Suzuki Bpin",
+            "Kumada",
+            "Suzuki",
+            "Sonogashira"
+          ],
+          "group_selected": [
+            "Acylation",
+            "Heck",
+            "Ullmann",
+            "Suzuki",
+            "Buchwald-Hartwig",
+            "Esterification",
+            "Reductive-amination"
+          ],
+          "overlap": [
+            "Acylation",
+            "Heck",
+            "Suzuki",
+            "Ullmann"
+          ],
+          "overlap_count": 4,
+          "group_r2_mean_row_selected": 0.320924075189219,
+          "group_r2_mean_group_selected": 0.35603334722692115,
+          "group_minus_row_selected_r2": 0.035109272037702144
+        },
+        {
+          "k": 8,
+          "row_selected": [
+            "Acylation",
+            "Heck",
+            "Ullmann",
+            "Suzuki Bpin",
+            "Kumada",
+            "Suzuki",
+            "Sonogashira",
+            "Grignard"
+          ],
+          "group_selected": [
+            "Acylation",
+            "Heck",
+            "Ullmann",
+            "Suzuki",
+            "Buchwald-Hartwig",
+            "Esterification",
+            "Reductive-amination",
+            "Sonogashira"
+          ],
+          "overlap": [
+            "Acylation",
+            "Heck",
+            "Sonogashira",
+            "Suzuki",
+            "Ullmann"
+          ],
+          "overlap_count": 5,
+          "group_r2_mean_row_selected": 0.2954754501198517,
+          "group_r2_mean_group_selected": 0.3397326165804937,
+          "group_minus_row_selected_r2": 0.04425716646064198
+        },
+        {
+          "k": 9,
+          "row_selected": [
+            "Acylation",
+            "Heck",
+            "Ullmann",
+            "Suzuki Bpin",
+            "Kumada",
+            "Suzuki",
+            "Sonogashira",
+            "Grignard",
+            "Esterification"
+          ],
+          "group_selected": [
+            "Acylation",
+            "Heck",
+            "Ullmann",
+            "Suzuki",
+            "Buchwald-Hartwig",
+            "Esterification",
+            "Reductive-amination",
+            "Sonogashira",
+            "Kumada"
+          ],
+          "overlap": [
+            "Acylation",
+            "Esterification",
+            "Heck",
+            "Kumada",
+            "Sonogashira",
+            "Suzuki",
+            "Ullmann"
+          ],
+          "overlap_count": 7,
+          "group_r2_mean_row_selected": 0.295031594338376,
+          "group_r2_mean_group_selected": 0.3235070098952081,
+          "group_minus_row_selected_r2": 0.028475415556832084
+        },
+        {
+          "k": 10,
+          "row_selected": [
+            "Acylation",
+            "Heck",
+            "Ullmann",
+            "Suzuki Bpin",
+            "Kumada",
+            "Suzuki",
+            "Sonogashira",
+            "Grignard",
+            "Esterification",
+            "Reductive-amination"
+          ],
+          "group_selected": [
+            "Acylation",
+            "Heck",
+            "Ullmann",
+            "Suzuki",
+            "Buchwald-Hartwig",
+            "Esterification",
+            "Reductive-amination",
+            "Sonogashira",
+            "Kumada",
+            "Suzuki Bpin"
+          ],
+          "overlap": [
+            "Acylation",
+            "Esterification",
+            "Heck",
+            "Kumada",
+            "Reductive-amination",
+            "Sonogashira",
+            "Suzuki",
+            "Suzuki Bpin",
+            "Ullmann"
+          ],
+          "overlap_count": 9,
+          "group_r2_mean_row_selected": 0.28964323372840195,
+          "group_r2_mean_group_selected": 0.3080068571224006,
+          "group_minus_row_selected_r2": 0.018363623393998663
+        },
+        {
+          "k": 11,
+          "row_selected": [
+            "Acylation",
+            "Heck",
+            "Ullmann",
+            "Suzuki Bpin",
+            "Kumada",
+            "Suzuki",
+            "Sonogashira",
+            "Grignard",
+            "Esterification",
+            "Reductive-amination",
+            "Buchwald-Hartwig"
+          ],
+          "group_selected": [
+            "Acylation",
+            "Heck",
+            "Ullmann",
+            "Suzuki",
+            "Buchwald-Hartwig",
+            "Esterification",
+            "Reductive-amination",
+            "Sonogashira",
+            "Kumada",
+            "Suzuki Bpin",
+            "Grignard"
+          ],
+          "overlap": [
+            "Acylation",
+            "Buchwald-Hartwig",
+            "Esterification",
+            "Grignard",
+            "Heck",
+            "Kumada",
+            "Reductive-amination",
+            "Sonogashira",
+            "Suzuki",
+            "Suzuki Bpin",
+            "Ullmann"
+          ],
+          "overlap_count": 11,
+          "group_r2_mean_row_selected": 0.2906730587143897,
+          "group_r2_mean_group_selected": 0.2906730587143897,
+          "group_minus_row_selected_r2": 0.0
+        }
+      ]
+    },
+    "by_seed": [
+      {
+        "seed": 42,
+        "row_order": [
+          "Acylation",
+          "Ullmann",
+          "Suzuki Bpin",
+          "Heck",
+          "Kumada",
+          "Suzuki",
+          "Sonogashira",
+          "Grignard",
+          "Esterification",
+          "Reductive-amination",
+          "Buchwald-Hartwig"
+        ],
+        "group_order": [
+          "Acylation",
+          "Heck",
+          "Suzuki",
+          "Ullmann",
+          "Buchwald-Hartwig",
+          "Esterification",
+          "Reductive-amination",
+          "Kumada",
+          "Suzuki Bpin",
+          "Sonogashira",
+          "Grignard"
+        ],
+        "by_k": [
+          {
+            "k": 1,
+            "row_selected": [
+              "Acylation"
+            ],
+            "group_selected": [
+              "Acylation"
+            ],
+            "overlap": [
+              "Acylation"
+            ],
+            "overlap_count": 1,
+            "group_r2_mean_row_selected": 0.5458746732859413,
+            "group_r2_mean_group_selected": 0.5458746732859413,
+            "group_minus_row_selected_r2": 0.0
+          },
+          {
+            "k": 2,
+            "row_selected": [
+              "Acylation",
+              "Ullmann"
+            ],
+            "group_selected": [
+              "Acylation",
+              "Heck"
+            ],
+            "overlap": [
+              "Acylation"
+            ],
+            "overlap_count": 1,
+            "group_r2_mean_row_selected": 0.4323992980955135,
+            "group_r2_mean_group_selected": 0.5100624582635698,
+            "group_minus_row_selected_r2": 0.0776631601680563
+          },
+          {
+            "k": 3,
+            "row_selected": [
+              "Acylation",
+              "Ullmann",
+              "Suzuki Bpin"
+            ],
+            "group_selected": [
+              "Acylation",
+              "Heck",
+              "Suzuki"
+            ],
+            "overlap": [
+              "Acylation"
+            ],
+            "overlap_count": 1,
+            "group_r2_mean_row_selected": 0.35918302577688466,
+            "group_r2_mean_group_selected": 0.448634672372933,
+            "group_minus_row_selected_r2": 0.08945164659604832
+          },
+          {
+            "k": 4,
+            "row_selected": [
+              "Acylation",
+              "Ullmann",
+              "Suzuki Bpin",
+              "Heck"
+            ],
+            "group_selected": [
+              "Acylation",
+              "Heck",
+              "Suzuki",
+              "Ullmann"
+            ],
+            "overlap": [
+              "Acylation",
+              "Heck",
+              "Ullmann"
+            ],
+            "overlap_count": 3,
+            "group_r2_mean_row_selected": 0.387949830142963,
+            "group_r2_mean_group_selected": 0.41620698500597114,
+            "group_minus_row_selected_r2": 0.028257154863008116
+          },
+          {
+            "k": 5,
+            "row_selected": [
+              "Acylation",
+              "Ullmann",
+              "Suzuki Bpin",
+              "Heck",
+              "Kumada"
+            ],
+            "group_selected": [
+              "Acylation",
+              "Heck",
+              "Suzuki",
+              "Ullmann",
+              "Buchwald-Hartwig"
+            ],
+            "overlap": [
+              "Acylation",
+              "Heck",
+              "Ullmann"
+            ],
+            "overlap_count": 3,
+            "group_r2_mean_row_selected": 0.35823317149545,
+            "group_r2_mean_group_selected": 0.39579413762899834,
+            "group_minus_row_selected_r2": 0.03756096613354837
+          },
+          {
+            "k": 6,
+            "row_selected": [
+              "Acylation",
+              "Ullmann",
+              "Suzuki Bpin",
+              "Heck",
+              "Kumada",
+              "Suzuki"
+            ],
+            "group_selected": [
+              "Acylation",
+              "Heck",
+              "Suzuki",
+              "Ullmann",
+              "Buchwald-Hartwig",
+              "Esterification"
+            ],
+            "overlap": [
+              "Acylation",
+              "Heck",
+              "Suzuki",
+              "Ullmann"
+            ],
+            "overlap_count": 4,
+            "group_r2_mean_row_selected": 0.35282415967815156,
+            "group_r2_mean_group_selected": 0.37350233254938836,
+            "group_minus_row_selected_r2": 0.0206781728712368
+          },
+          {
+            "k": 7,
+            "row_selected": [
+              "Acylation",
+              "Ullmann",
+              "Suzuki Bpin",
+              "Heck",
+              "Kumada",
+              "Suzuki",
+              "Sonogashira"
+            ],
+            "group_selected": [
+              "Acylation",
+              "Heck",
+              "Suzuki",
+              "Ullmann",
+              "Buchwald-Hartwig",
+              "Esterification",
+              "Reductive-amination"
+            ],
+            "overlap": [
+              "Acylation",
+              "Heck",
+              "Suzuki",
+              "Ullmann"
+            ],
+            "overlap_count": 4,
+            "group_r2_mean_row_selected": 0.3305373554947232,
+            "group_r2_mean_group_selected": 0.354952492157583,
+            "group_minus_row_selected_r2": 0.024415136662859827
+          },
+          {
+            "k": 8,
+            "row_selected": [
+              "Acylation",
+              "Ullmann",
+              "Suzuki Bpin",
+              "Heck",
+              "Kumada",
+              "Suzuki",
+              "Sonogashira",
+              "Grignard"
+            ],
+            "group_selected": [
+              "Acylation",
+              "Heck",
+              "Suzuki",
+              "Ullmann",
+              "Buchwald-Hartwig",
+              "Esterification",
+              "Reductive-amination",
+              "Kumada"
+            ],
+            "overlap": [
+              "Acylation",
+              "Heck",
+              "Kumada",
+              "Suzuki",
+              "Ullmann"
+            ],
+            "overlap_count": 5,
+            "group_r2_mean_row_selected": 0.30288740926443825,
+            "group_r2_mean_group_selected": 0.34050424775105986,
+            "group_minus_row_selected_r2": 0.03761683848662162
+          },
+          {
+            "k": 9,
+            "row_selected": [
+              "Acylation",
+              "Ullmann",
+              "Suzuki Bpin",
+              "Heck",
+              "Kumada",
+              "Suzuki",
+              "Sonogashira",
+              "Grignard",
+              "Esterification"
+            ],
+            "group_selected": [
+              "Acylation",
+              "Heck",
+              "Suzuki",
+              "Ullmann",
+              "Buchwald-Hartwig",
+              "Esterification",
+              "Reductive-amination",
+              "Kumada",
+              "Suzuki Bpin"
+            ],
+            "overlap": [
+              "Acylation",
+              "Esterification",
+              "Heck",
+              "Kumada",
+              "Suzuki",
+              "Suzuki Bpin",
+              "Ullmann"
+            ],
+            "overlap_count": 7,
+            "group_r2_mean_row_selected": 0.298349175696316,
+            "group_r2_mean_group_selected": 0.326309384794234,
+            "group_minus_row_selected_r2": 0.027960209097917965
+          },
+          {
+            "k": 10,
+            "row_selected": [
+              "Acylation",
+              "Ullmann",
+              "Suzuki Bpin",
+              "Heck",
+              "Kumada",
+              "Suzuki",
+              "Sonogashira",
+              "Grignard",
+              "Esterification",
+              "Reductive-amination"
+            ],
+            "group_selected": [
+              "Acylation",
+              "Heck",
+              "Suzuki",
+              "Ullmann",
+              "Buchwald-Hartwig",
+              "Esterification",
+              "Reductive-amination",
+              "Kumada",
+              "Suzuki Bpin",
+              "Sonogashira"
+            ],
+            "overlap": [
+              "Acylation",
+              "Esterification",
+              "Heck",
+              "Kumada",
+              "Reductive-amination",
+              "Sonogashira",
+              "Suzuki",
+              "Suzuki Bpin",
+              "Ullmann"
+            ],
+            "overlap_count": 9,
+            "group_r2_mean_row_selected": 0.29287960310735955,
+            "group_r2_mean_group_selected": 0.31336009935422593,
+            "group_minus_row_selected_r2": 0.020480496246866375
+          },
+          {
+            "k": 11,
+            "row_selected": [
+              "Acylation",
+              "Ullmann",
+              "Suzuki Bpin",
+              "Heck",
+              "Kumada",
+              "Suzuki",
+              "Sonogashira",
+              "Grignard",
+              "Esterification",
+              "Reductive-amination",
+              "Buchwald-Hartwig"
+            ],
+            "group_selected": [
+              "Acylation",
+              "Heck",
+              "Suzuki",
+              "Ullmann",
+              "Buchwald-Hartwig",
+              "Esterification",
+              "Reductive-amination",
+              "Kumada",
+              "Suzuki Bpin",
+              "Sonogashira",
+              "Grignard"
+            ],
+            "overlap": [
+              "Acylation",
+              "Buchwald-Hartwig",
+              "Esterification",
+              "Grignard",
+              "Heck",
+              "Kumada",
+              "Reductive-amination",
+              "Sonogashira",
+              "Suzuki",
+              "Suzuki Bpin",
+              "Ullmann"
+            ],
+            "overlap_count": 11,
+            "group_r2_mean_row_selected": 0.2948126162904275,
+            "group_r2_mean_group_selected": 0.2948126162904275,
+            "group_minus_row_selected_r2": 0.0
+          }
+        ]
+      },
+      {
+        "seed": 20261007,
+        "row_order": [
+          "Acylation",
+          "Heck",
+          "Suzuki Bpin",
+          "Ullmann",
+          "Sonogashira",
+          "Suzuki",
+          "Kumada",
+          "Grignard",
+          "Reductive-amination",
+          "Esterification",
+          "Buchwald-Hartwig"
+        ],
+        "group_order": [
+          "Acylation",
+          "Heck",
+          "Suzuki",
+          "Ullmann",
+          "Esterification",
+          "Buchwald-Hartwig",
+          "Reductive-amination",
+          "Sonogashira",
+          "Kumada",
+          "Suzuki Bpin",
+          "Grignard"
+        ],
+        "by_k": [
+          {
+            "k": 1,
+            "row_selected": [
+              "Acylation"
+            ],
+            "group_selected": [
+              "Acylation"
+            ],
+            "overlap": [
+              "Acylation"
+            ],
+            "overlap_count": 1,
+            "group_r2_mean_row_selected": 0.5857347159757388,
+            "group_r2_mean_group_selected": 0.5857347159757388,
+            "group_minus_row_selected_r2": 0.0
+          },
+          {
+            "k": 2,
+            "row_selected": [
+              "Acylation",
+              "Heck"
+            ],
+            "group_selected": [
+              "Acylation",
+              "Heck"
+            ],
+            "overlap": [
+              "Acylation",
+              "Heck"
+            ],
+            "overlap_count": 2,
+            "group_r2_mean_row_selected": 0.5032943726941321,
+            "group_r2_mean_group_selected": 0.5032943726941321,
+            "group_minus_row_selected_r2": 0.0
+          },
+          {
+            "k": 3,
+            "row_selected": [
+              "Acylation",
+              "Heck",
+              "Suzuki Bpin"
+            ],
+            "group_selected": [
+              "Acylation",
+              "Heck",
+              "Suzuki"
+            ],
+            "overlap": [
+              "Acylation",
+              "Heck"
+            ],
+            "overlap_count": 2,
+            "group_r2_mean_row_selected": 0.3777563617724973,
+            "group_r2_mean_group_selected": 0.44668284354142074,
+            "group_minus_row_selected_r2": 0.06892648176892346
+          },
+          {
+            "k": 4,
+            "row_selected": [
+              "Acylation",
+              "Heck",
+              "Suzuki Bpin",
+              "Ullmann"
+            ],
+            "group_selected": [
+              "Acylation",
+              "Heck",
+              "Suzuki",
+              "Ullmann"
+            ],
+            "overlap": [
+              "Acylation",
+              "Heck",
+              "Ullmann"
+            ],
+            "overlap_count": 3,
+            "group_r2_mean_row_selected": 0.3624038926518366,
+            "group_r2_mean_group_selected": 0.4140987539785292,
+            "group_minus_row_selected_r2": 0.0516948613266926
+          },
+          {
+            "k": 5,
+            "row_selected": [
+              "Acylation",
+              "Heck",
+              "Suzuki Bpin",
+              "Ullmann",
+              "Sonogashira"
+            ],
+            "group_selected": [
+              "Acylation",
+              "Heck",
+              "Suzuki",
+              "Ullmann",
+              "Esterification"
+            ],
+            "overlap": [
+              "Acylation",
+              "Heck",
+              "Ullmann"
+            ],
+            "overlap_count": 3,
+            "group_r2_mean_row_selected": 0.32862232682462333,
+            "group_r2_mean_group_selected": 0.39366507799584144,
+            "group_minus_row_selected_r2": 0.0650427511712181
+          },
+          {
+            "k": 6,
+            "row_selected": [
+              "Acylation",
+              "Heck",
+              "Suzuki Bpin",
+              "Ullmann",
+              "Sonogashira",
+              "Suzuki"
+            ],
+            "group_selected": [
+              "Acylation",
+              "Heck",
+              "Suzuki",
+              "Ullmann",
+              "Esterification",
+              "Buchwald-Hartwig"
+            ],
+            "overlap": [
+              "Acylation",
+              "Heck",
+              "Suzuki",
+              "Ullmann"
+            ],
+            "overlap_count": 4,
+            "group_r2_mean_row_selected": 0.32942856989318575,
+            "group_r2_mean_group_selected": 0.3734275040943836,
+            "group_minus_row_selected_r2": 0.043998934201197826
+          },
+          {
+            "k": 7,
+            "row_selected": [
+              "Acylation",
+              "Heck",
+              "Suzuki Bpin",
+              "Ullmann",
+              "Sonogashira",
+              "Suzuki",
+              "Kumada"
+            ],
+            "group_selected": [
+              "Acylation",
+              "Heck",
+              "Suzuki",
+              "Ullmann",
+              "Esterification",
+              "Buchwald-Hartwig",
+              "Reductive-amination"
+            ],
+            "overlap": [
+              "Acylation",
+              "Heck",
+              "Suzuki",
+              "Ullmann"
+            ],
+            "overlap_count": 4,
+            "group_r2_mean_row_selected": 0.30963753980559355,
+            "group_r2_mean_group_selected": 0.3528798678709167,
+            "group_minus_row_selected_r2": 0.04324232806532313
+          },
+          {
+            "k": 8,
+            "row_selected": [
+              "Acylation",
+              "Heck",
+              "Suzuki Bpin",
+              "Ullmann",
+              "Sonogashira",
+              "Suzuki",
+              "Kumada",
+              "Grignard"
+            ],
+            "group_selected": [
+              "Acylation",
+              "Heck",
+              "Suzuki",
+              "Ullmann",
+              "Esterification",
+              "Buchwald-Hartwig",
+              "Reductive-amination",
+              "Sonogashira"
+            ],
+            "overlap": [
+              "Acylation",
+              "Heck",
+              "Sonogashira",
+              "Suzuki",
+              "Ullmann"
+            ],
+            "overlap_count": 5,
+            "group_r2_mean_row_selected": 0.279702790908159,
+            "group_r2_mean_group_selected": 0.33295689232652337,
+            "group_minus_row_selected_r2": 0.05325410141836434
+          },
+          {
+            "k": 9,
+            "row_selected": [
+              "Acylation",
+              "Heck",
+              "Suzuki Bpin",
+              "Ullmann",
+              "Sonogashira",
+              "Suzuki",
+              "Kumada",
+              "Grignard",
+              "Reductive-amination"
+            ],
+            "group_selected": [
+              "Acylation",
+              "Heck",
+              "Suzuki",
+              "Ullmann",
+              "Esterification",
+              "Buchwald-Hartwig",
+              "Reductive-amination",
+              "Sonogashira",
+              "Kumada"
+            ],
+            "overlap": [
+              "Acylation",
+              "Heck",
+              "Kumada",
+              "Reductive-amination",
+              "Sonogashira",
+              "Suzuki",
+              "Ullmann"
+            ],
+            "overlap_count": 7,
+            "group_r2_mean_row_selected": 0.2741351530883764,
+            "group_r2_mean_group_selected": 0.3171718330991364,
+            "group_minus_row_selected_r2": 0.04303668001076
+          },
+          {
+            "k": 10,
+            "row_selected": [
+              "Acylation",
+              "Heck",
+              "Suzuki Bpin",
+              "Ullmann",
+              "Sonogashira",
+              "Suzuki",
+              "Kumada",
+              "Grignard",
+              "Reductive-amination",
+              "Esterification"
+            ],
+            "group_selected": [
+              "Acylation",
+              "Heck",
+              "Suzuki",
+              "Ullmann",
+              "Esterification",
+              "Buchwald-Hartwig",
+              "Reductive-amination",
+              "Sonogashira",
+              "Kumada",
+              "Suzuki Bpin"
+            ],
+            "overlap": [
+              "Acylation",
+              "Esterification",
+              "Heck",
+              "Kumada",
+              "Reductive-amination",
+              "Sonogashira",
+              "Suzuki",
+              "Suzuki Bpin",
+              "Ullmann"
+            ],
+            "overlap_count": 9,
+            "group_r2_mean_row_selected": 0.2779146751860478,
+            "group_r2_mean_group_selected": 0.29812268378214546,
+            "group_minus_row_selected_r2": 0.02020800859609767
+          },
+          {
+            "k": 11,
+            "row_selected": [
+              "Acylation",
+              "Heck",
+              "Suzuki Bpin",
+              "Ullmann",
+              "Sonogashira",
+              "Suzuki",
+              "Kumada",
+              "Grignard",
+              "Reductive-amination",
+              "Esterification",
+              "Buchwald-Hartwig"
+            ],
+            "group_selected": [
+              "Acylation",
+              "Heck",
+              "Suzuki",
+              "Ullmann",
+              "Esterification",
+              "Buchwald-Hartwig",
+              "Reductive-amination",
+              "Sonogashira",
+              "Kumada",
+              "Suzuki Bpin",
+              "Grignard"
+            ],
+            "overlap": [
+              "Acylation",
+              "Buchwald-Hartwig",
+              "Esterification",
+              "Grignard",
+              "Heck",
+              "Kumada",
+              "Reductive-amination",
+              "Sonogashira",
+              "Suzuki",
+              "Suzuki Bpin",
+              "Ullmann"
+            ],
+            "overlap_count": 11,
+            "group_r2_mean_row_selected": 0.27739876240432476,
+            "group_r2_mean_group_selected": 0.27739876240432476,
+            "group_minus_row_selected_r2": 0.0
+          }
+        ]
+      },
+      {
+        "seed": 20261008,
+        "row_order": [
+          "Acylation",
+          "Ullmann",
+          "Suzuki Bpin",
+          "Heck",
+          "Kumada",
+          "Suzuki",
+          "Sonogashira",
+          "Grignard",
+          "Reductive-amination",
+          "Esterification",
+          "Buchwald-Hartwig"
+        ],
+        "group_order": [
+          "Acylation",
+          "Heck",
+          "Suzuki",
+          "Ullmann",
+          "Esterification",
+          "Buchwald-Hartwig",
+          "Sonogashira",
+          "Reductive-amination",
+          "Suzuki Bpin",
+          "Kumada",
+          "Grignard"
+        ],
+        "by_k": [
+          {
+            "k": 1,
+            "row_selected": [
+              "Acylation"
+            ],
+            "group_selected": [
+              "Acylation"
+            ],
+            "overlap": [
+              "Acylation"
+            ],
+            "overlap_count": 1,
+            "group_r2_mean_row_selected": 0.5681956133269896,
+            "group_r2_mean_group_selected": 0.5681956133269896,
+            "group_minus_row_selected_r2": 0.0
+          },
+          {
+            "k": 2,
+            "row_selected": [
+              "Acylation",
+              "Ullmann"
+            ],
+            "group_selected": [
+              "Acylation",
+              "Heck"
+            ],
+            "overlap": [
+              "Acylation"
+            ],
+            "overlap_count": 1,
+            "group_r2_mean_row_selected": 0.43481003043187266,
+            "group_r2_mean_group_selected": 0.5282371004975804,
+            "group_minus_row_selected_r2": 0.09342707006570777
+          },
+          {
+            "k": 3,
+            "row_selected": [
+              "Acylation",
+              "Ullmann",
+              "Suzuki Bpin"
+            ],
+            "group_selected": [
+              "Acylation",
+              "Heck",
+              "Suzuki"
+            ],
+            "overlap": [
+              "Acylation"
+            ],
+            "overlap_count": 1,
+            "group_r2_mean_row_selected": 0.34751267182620454,
+            "group_r2_mean_group_selected": 0.4603366786185887,
+            "group_minus_row_selected_r2": 0.11282400679238413
+          },
+          {
+            "k": 4,
+            "row_selected": [
+              "Acylation",
+              "Ullmann",
+              "Suzuki Bpin",
+              "Heck"
+            ],
+            "group_selected": [
+              "Acylation",
+              "Heck",
+              "Suzuki",
+              "Ullmann"
+            ],
+            "overlap": [
+              "Acylation",
+              "Heck",
+              "Ullmann"
+            ],
+            "overlap_count": 3,
+            "group_r2_mean_row_selected": 0.38270415078669623,
+            "group_r2_mean_group_selected": 0.42060862084813044,
+            "group_minus_row_selected_r2": 0.037904470061434214
+          },
+          {
+            "k": 5,
+            "row_selected": [
+              "Acylation",
+              "Ullmann",
+              "Suzuki Bpin",
+              "Heck",
+              "Kumada"
+            ],
+            "group_selected": [
+              "Acylation",
+              "Heck",
+              "Suzuki",
+              "Ullmann",
+              "Esterification"
+            ],
+            "overlap": [
+              "Acylation",
+              "Heck",
+              "Ullmann"
+            ],
+            "overlap_count": 3,
+            "group_r2_mean_row_selected": 0.3302889022705798,
+            "group_r2_mean_group_selected": 0.39487427582072226,
+            "group_minus_row_selected_r2": 0.06458537355014249
+          },
+          {
+            "k": 6,
+            "row_selected": [
+              "Acylation",
+              "Ullmann",
+              "Suzuki Bpin",
+              "Heck",
+              "Kumada",
+              "Suzuki"
+            ],
+            "group_selected": [
+              "Acylation",
+              "Heck",
+              "Suzuki",
+              "Ullmann",
+              "Esterification",
+              "Buchwald-Hartwig"
+            ],
+            "overlap": [
+              "Acylation",
+              "Heck",
+              "Suzuki",
+              "Ullmann"
+            ],
+            "overlap_count": 4,
+            "group_r2_mean_row_selected": 0.32933005770225066,
+            "group_r2_mean_group_selected": 0.3759959791698227,
+            "group_minus_row_selected_r2": 0.046665921467572036
+          },
+          {
+            "k": 7,
+            "row_selected": [
+              "Acylation",
+              "Ullmann",
+              "Suzuki Bpin",
+              "Heck",
+              "Kumada",
+              "Suzuki",
+              "Sonogashira"
+            ],
+            "group_selected": [
+              "Acylation",
+              "Heck",
+              "Suzuki",
+              "Ullmann",
+              "Esterification",
+              "Buchwald-Hartwig",
+              "Sonogashira"
+            ],
+            "overlap": [
+              "Acylation",
+              "Heck",
+              "Sonogashira",
+              "Suzuki",
+              "Ullmann"
+            ],
+            "overlap_count": 5,
+            "group_r2_mean_row_selected": 0.3207597999013308,
+            "group_r2_mean_group_selected": 0.36075916115924966,
+            "group_minus_row_selected_r2": 0.039999361257918864
+          },
+          {
+            "k": 8,
+            "row_selected": [
+              "Acylation",
+              "Ullmann",
+              "Suzuki Bpin",
+              "Heck",
+              "Kumada",
+              "Suzuki",
+              "Sonogashira",
+              "Grignard"
+            ],
+            "group_selected": [
+              "Acylation",
+              "Heck",
+              "Suzuki",
+              "Ullmann",
+              "Esterification",
+              "Buchwald-Hartwig",
+              "Sonogashira",
+              "Reductive-amination"
+            ],
+            "overlap": [
+              "Acylation",
+              "Heck",
+              "Sonogashira",
+              "Suzuki",
+              "Ullmann"
+            ],
+            "overlap_count": 5,
+            "group_r2_mean_row_selected": 0.29209202144350466,
+            "group_r2_mean_group_selected": 0.34396419083814955,
+            "group_minus_row_selected_r2": 0.051872169394644896
+          },
+          {
+            "k": 9,
+            "row_selected": [
+              "Acylation",
+              "Ullmann",
+              "Suzuki Bpin",
+              "Heck",
+              "Kumada",
+              "Suzuki",
+              "Sonogashira",
+              "Grignard",
+              "Reductive-amination"
+            ],
+            "group_selected": [
+              "Acylation",
+              "Heck",
+              "Suzuki",
+              "Ullmann",
+              "Esterification",
+              "Buchwald-Hartwig",
+              "Sonogashira",
+              "Reductive-amination",
+              "Suzuki Bpin"
+            ],
+            "overlap": [
+              "Acylation",
+              "Heck",
+              "Reductive-amination",
+              "Sonogashira",
+              "Suzuki",
+              "Suzuki Bpin",
+              "Ullmann"
+            ],
+            "overlap_count": 7,
+            "group_r2_mean_row_selected": 0.2847928411264984,
+            "group_r2_mean_group_selected": 0.3249590534800072,
+            "group_minus_row_selected_r2": 0.04016621235350881
+          },
+          {
+            "k": 10,
+            "row_selected": [
+              "Acylation",
+              "Ullmann",
+              "Suzuki Bpin",
+              "Heck",
+              "Kumada",
+              "Suzuki",
+              "Sonogashira",
+              "Grignard",
+              "Reductive-amination",
+              "Esterification"
+            ],
+            "group_selected": [
+              "Acylation",
+              "Heck",
+              "Suzuki",
+              "Ullmann",
+              "Esterification",
+              "Buchwald-Hartwig",
+              "Sonogashira",
+              "Reductive-amination",
+              "Suzuki Bpin",
+              "Kumada"
+            ],
+            "overlap": [
+              "Acylation",
+              "Esterification",
+              "Heck",
+              "Kumada",
+              "Reductive-amination",
+              "Sonogashira",
+              "Suzuki",
+              "Suzuki Bpin",
+              "Ullmann"
+            ],
+            "overlap_count": 9,
+            "group_r2_mean_row_selected": 0.2855072465849575,
+            "group_r2_mean_group_selected": 0.30452593895261787,
+            "group_minus_row_selected_r2": 0.01901869236766035
+          },
+          {
+            "k": 11,
+            "row_selected": [
+              "Acylation",
+              "Ullmann",
+              "Suzuki Bpin",
+              "Heck",
+              "Kumada",
+              "Suzuki",
+              "Sonogashira",
+              "Grignard",
+              "Reductive-amination",
+              "Esterification",
+              "Buchwald-Hartwig"
+            ],
+            "group_selected": [
+              "Acylation",
+              "Heck",
+              "Suzuki",
+              "Ullmann",
+              "Esterification",
+              "Buchwald-Hartwig",
+              "Sonogashira",
+              "Reductive-amination",
+              "Suzuki Bpin",
+              "Kumada",
+              "Grignard"
+            ],
+            "overlap": [
+              "Acylation",
+              "Buchwald-Hartwig",
+              "Esterification",
+              "Grignard",
+              "Heck",
+              "Kumada",
+              "Reductive-amination",
+              "Sonogashira",
+              "Suzuki",
+              "Suzuki Bpin",
+              "Ullmann"
+            ],
+            "overlap_count": 11,
+            "group_r2_mean_row_selected": 0.28515245106953635,
+            "group_r2_mean_group_selected": 0.28515245106953635,
+            "group_minus_row_selected_r2": 0.0
+          }
+        ]
+      },
+      {
+        "seed": 20261009,
+        "row_order": [
+          "Acylation",
+          "Suzuki Bpin",
+          "Heck",
+          "Ullmann",
+          "Suzuki",
+          "Kumada",
+          "Sonogashira",
+          "Grignard",
+          "Esterification",
+          "Reductive-amination",
+          "Buchwald-Hartwig"
+        ],
+        "group_order": [
+          "Acylation",
+          "Heck",
+          "Esterification",
+          "Ullmann",
+          "Suzuki",
+          "Buchwald-Hartwig",
+          "Reductive-amination",
+          "Kumada",
+          "Sonogashira",
+          "Grignard",
+          "Suzuki Bpin"
+        ],
+        "by_k": [
+          {
+            "k": 1,
+            "row_selected": [
+              "Acylation"
+            ],
+            "group_selected": [
+              "Acylation"
+            ],
+            "overlap": [
+              "Acylation"
+            ],
+            "overlap_count": 1,
+            "group_r2_mean_row_selected": 0.5781200408193798,
+            "group_r2_mean_group_selected": 0.5781200408193798,
+            "group_minus_row_selected_r2": 0.0
+          },
+          {
+            "k": 2,
+            "row_selected": [
+              "Acylation",
+              "Suzuki Bpin"
+            ],
+            "group_selected": [
+              "Acylation",
+              "Heck"
+            ],
+            "overlap": [
+              "Acylation"
+            ],
+            "overlap_count": 1,
+            "group_r2_mean_row_selected": 0.3440067767354161,
+            "group_r2_mean_group_selected": 0.4717483690920562,
+            "group_minus_row_selected_r2": 0.12774159235664012
+          },
+          {
+            "k": 3,
+            "row_selected": [
+              "Acylation",
+              "Suzuki Bpin",
+              "Heck"
+            ],
+            "group_selected": [
+              "Acylation",
+              "Heck",
+              "Esterification"
+            ],
+            "overlap": [
+              "Acylation",
+              "Heck"
+            ],
+            "overlap_count": 2,
+            "group_r2_mean_row_selected": 0.3511300836118549,
+            "group_r2_mean_group_selected": 0.42364785055288606,
+            "group_minus_row_selected_r2": 0.07251776694103118
+          },
+          {
+            "k": 4,
+            "row_selected": [
+              "Acylation",
+              "Suzuki Bpin",
+              "Heck",
+              "Ullmann"
+            ],
+            "group_selected": [
+              "Acylation",
+              "Heck",
+              "Esterification",
+              "Ullmann"
+            ],
+            "overlap": [
+              "Acylation",
+              "Heck",
+              "Ullmann"
+            ],
+            "overlap_count": 3,
+            "group_r2_mean_row_selected": 0.3438133761360276,
+            "group_r2_mean_group_selected": 0.39820170134180094,
+            "group_minus_row_selected_r2": 0.05438832520577336
+          },
+          {
+            "k": 5,
+            "row_selected": [
+              "Acylation",
+              "Suzuki Bpin",
+              "Heck",
+              "Ullmann",
+              "Suzuki"
+            ],
+            "group_selected": [
+              "Acylation",
+              "Heck",
+              "Esterification",
+              "Ullmann",
+              "Suzuki"
+            ],
+            "overlap": [
+              "Acylation",
+              "Heck",
+              "Suzuki",
+              "Ullmann"
+            ],
+            "overlap_count": 4,
+            "group_r2_mean_row_selected": 0.3369720162283284,
+            "group_r2_mean_group_selected": 0.3804826763929471,
+            "group_minus_row_selected_r2": 0.043510660164618686
+          },
+          {
+            "k": 6,
+            "row_selected": [
+              "Acylation",
+              "Suzuki Bpin",
+              "Heck",
+              "Ullmann",
+              "Suzuki",
+              "Kumada"
+            ],
+            "group_selected": [
+              "Acylation",
+              "Heck",
+              "Esterification",
+              "Ullmann",
+              "Suzuki",
+              "Buchwald-Hartwig"
+            ],
+            "overlap": [
+              "Acylation",
+              "Heck",
+              "Suzuki",
+              "Ullmann"
+            ],
+            "overlap_count": 4,
+            "group_r2_mean_row_selected": 0.3233342851881287,
+            "group_r2_mean_group_selected": 0.36822248327347334,
+            "group_minus_row_selected_r2": 0.044888198085344666
+          },
+          {
+            "k": 7,
+            "row_selected": [
+              "Acylation",
+              "Suzuki Bpin",
+              "Heck",
+              "Ullmann",
+              "Suzuki",
+              "Kumada",
+              "Sonogashira"
+            ],
+            "group_selected": [
+              "Acylation",
+              "Heck",
+              "Esterification",
+              "Ullmann",
+              "Suzuki",
+              "Buchwald-Hartwig",
+              "Reductive-amination"
+            ],
+            "overlap": [
+              "Acylation",
+              "Heck",
+              "Suzuki",
+              "Ullmann"
+            ],
+            "overlap_count": 4,
+            "group_r2_mean_row_selected": 0.3113468528506636,
+            "group_r2_mean_group_selected": 0.35359780948068753,
+            "group_minus_row_selected_r2": 0.04225095663002393
+          },
+          {
+            "k": 8,
+            "row_selected": [
+              "Acylation",
+              "Suzuki Bpin",
+              "Heck",
+              "Ullmann",
+              "Suzuki",
+              "Kumada",
+              "Sonogashira",
+              "Grignard"
+            ],
+            "group_selected": [
+              "Acylation",
+              "Heck",
+              "Esterification",
+              "Ullmann",
+              "Suzuki",
+              "Buchwald-Hartwig",
+              "Reductive-amination",
+              "Kumada"
+            ],
+            "overlap": [
+              "Acylation",
+              "Heck",
+              "Kumada",
+              "Suzuki",
+              "Ullmann"
+            ],
+            "overlap_count": 5,
+            "group_r2_mean_row_selected": 0.2918207624639153,
+            "group_r2_mean_group_selected": 0.3412912870439928,
+            "group_minus_row_selected_r2": 0.0494705245800775
+          },
+          {
+            "k": 9,
+            "row_selected": [
+              "Acylation",
+              "Suzuki Bpin",
+              "Heck",
+              "Ullmann",
+              "Suzuki",
+              "Kumada",
+              "Sonogashira",
+              "Grignard",
+              "Esterification"
+            ],
+            "group_selected": [
+              "Acylation",
+              "Heck",
+              "Esterification",
+              "Ullmann",
+              "Suzuki",
+              "Buchwald-Hartwig",
+              "Reductive-amination",
+              "Kumada",
+              "Sonogashira"
+            ],
+            "overlap": [
+              "Acylation",
+              "Esterification",
+              "Heck",
+              "Kumada",
+              "Sonogashira",
+              "Suzuki",
+              "Ullmann"
+            ],
+            "overlap_count": 7,
+            "group_r2_mean_row_selected": 0.2957792125762076,
+            "group_r2_mean_group_selected": 0.3299725061308684,
+            "group_minus_row_selected_r2": 0.03419329355466083
+          },
+          {
+            "k": 10,
+            "row_selected": [
+              "Acylation",
+              "Suzuki Bpin",
+              "Heck",
+              "Ullmann",
+              "Suzuki",
+              "Kumada",
+              "Sonogashira",
+              "Grignard",
+              "Esterification",
+              "Reductive-amination"
+            ],
+            "group_selected": [
+              "Acylation",
+              "Heck",
+              "Esterification",
+              "Ullmann",
+              "Suzuki",
+              "Buchwald-Hartwig",
+              "Reductive-amination",
+              "Kumada",
+              "Sonogashira",
+              "Grignard"
+            ],
+            "overlap": [
+              "Acylation",
+              "Esterification",
+              "Grignard",
+              "Heck",
+              "Kumada",
+              "Reductive-amination",
+              "Sonogashira",
+              "Suzuki",
+              "Ullmann"
+            ],
+            "overlap_count": 9,
+            "group_r2_mean_row_selected": 0.29278626799098406,
+            "group_r2_mean_group_selected": 0.3124890684934493,
+            "group_minus_row_selected_r2": 0.019702800502465256
+          },
+          {
+            "k": 11,
+            "row_selected": [
+              "Acylation",
+              "Suzuki Bpin",
+              "Heck",
+              "Ullmann",
+              "Suzuki",
+              "Kumada",
+              "Sonogashira",
+              "Grignard",
+              "Esterification",
+              "Reductive-amination",
+              "Buchwald-Hartwig"
+            ],
+            "group_selected": [
+              "Acylation",
+              "Heck",
+              "Esterification",
+              "Ullmann",
+              "Suzuki",
+              "Buchwald-Hartwig",
+              "Reductive-amination",
+              "Kumada",
+              "Sonogashira",
+              "Grignard",
+              "Suzuki Bpin"
+            ],
+            "overlap": [
+              "Acylation",
+              "Buchwald-Hartwig",
+              "Esterification",
+              "Grignard",
+              "Heck",
+              "Kumada",
+              "Reductive-amination",
+              "Sonogashira",
+              "Suzuki",
+              "Suzuki Bpin",
+              "Ullmann"
+            ],
+            "overlap_count": 11,
+            "group_r2_mean_row_selected": 0.2940712906896314,
+            "group_r2_mean_group_selected": 0.2940712906896314,
+            "group_minus_row_selected_r2": 0.0
+          }
+        ]
+      },
+      {
+        "seed": 20261010,
+        "row_order": [
+          "Acylation",
+          "Heck",
+          "Suzuki Bpin",
+          "Ullmann",
+          "Sonogashira",
+          "Suzuki",
+          "Kumada",
+          "Grignard",
+          "Esterification",
+          "Reductive-amination",
+          "Buchwald-Hartwig"
+        ],
+        "group_order": [
+          "Acylation",
+          "Heck",
+          "Ullmann",
+          "Buchwald-Hartwig",
+          "Suzuki",
+          "Esterification",
+          "Reductive-amination",
+          "Sonogashira",
+          "Suzuki Bpin",
+          "Kumada",
+          "Grignard"
+        ],
+        "by_k": [
+          {
+            "k": 1,
+            "row_selected": [
+              "Acylation"
+            ],
+            "group_selected": [
+              "Acylation"
+            ],
+            "overlap": [
+              "Acylation"
+            ],
+            "overlap_count": 1,
+            "group_r2_mean_row_selected": 0.591234156030114,
+            "group_r2_mean_group_selected": 0.591234156030114,
+            "group_minus_row_selected_r2": 0.0
+          },
+          {
+            "k": 2,
+            "row_selected": [
+              "Acylation",
+              "Heck"
+            ],
+            "group_selected": [
+              "Acylation",
+              "Heck"
+            ],
+            "overlap": [
+              "Acylation",
+              "Heck"
+            ],
+            "overlap_count": 2,
+            "group_r2_mean_row_selected": 0.52954975300248,
+            "group_r2_mean_group_selected": 0.52954975300248,
+            "group_minus_row_selected_r2": 0.0
+          },
+          {
+            "k": 3,
+            "row_selected": [
+              "Acylation",
+              "Heck",
+              "Suzuki Bpin"
+            ],
+            "group_selected": [
+              "Acylation",
+              "Heck",
+              "Ullmann"
+            ],
+            "overlap": [
+              "Acylation",
+              "Heck"
+            ],
+            "overlap_count": 2,
+            "group_r2_mean_row_selected": 0.4264615428351505,
+            "group_r2_mean_group_selected": 0.46876164743382015,
+            "group_minus_row_selected_r2": 0.042300104598669674
+          },
+          {
+            "k": 4,
+            "row_selected": [
+              "Acylation",
+              "Heck",
+              "Suzuki Bpin",
+              "Ullmann"
+            ],
+            "group_selected": [
+              "Acylation",
+              "Heck",
+              "Ullmann",
+              "Buchwald-Hartwig"
+            ],
+            "overlap": [
+              "Acylation",
+              "Heck",
+              "Ullmann"
+            ],
+            "overlap_count": 3,
+            "group_r2_mean_row_selected": 0.40664251620048797,
+            "group_r2_mean_group_selected": 0.4340582722182914,
+            "group_minus_row_selected_r2": 0.02741575601780344
+          },
+          {
+            "k": 5,
+            "row_selected": [
+              "Acylation",
+              "Heck",
+              "Suzuki Bpin",
+              "Ullmann",
+              "Sonogashira"
+            ],
+            "group_selected": [
+              "Acylation",
+              "Heck",
+              "Ullmann",
+              "Buchwald-Hartwig",
+              "Suzuki"
+            ],
+            "overlap": [
+              "Acylation",
+              "Heck",
+              "Ullmann"
+            ],
+            "overlap_count": 3,
+            "group_r2_mean_row_selected": 0.37112689384957054,
+            "group_r2_mean_group_selected": 0.40889821343917326,
+            "group_minus_row_selected_r2": 0.037771319589602725
+          },
+          {
+            "k": 6,
+            "row_selected": [
+              "Acylation",
+              "Heck",
+              "Suzuki Bpin",
+              "Ullmann",
+              "Sonogashira",
+              "Suzuki"
+            ],
+            "group_selected": [
+              "Acylation",
+              "Heck",
+              "Ullmann",
+              "Buchwald-Hartwig",
+              "Suzuki",
+              "Esterification"
+            ],
+            "overlap": [
+              "Acylation",
+              "Heck",
+              "Suzuki",
+              "Ullmann"
+            ],
+            "overlap_count": 4,
+            "group_r2_mean_row_selected": 0.3606487412617589,
+            "group_r2_mean_group_selected": 0.38475623620444227,
+            "group_minus_row_selected_r2": 0.024107494942683383
+          },
+          {
+            "k": 7,
+            "row_selected": [
+              "Acylation",
+              "Heck",
+              "Suzuki Bpin",
+              "Ullmann",
+              "Sonogashira",
+              "Suzuki",
+              "Kumada"
+            ],
+            "group_selected": [
+              "Acylation",
+              "Heck",
+              "Ullmann",
+              "Buchwald-Hartwig",
+              "Suzuki",
+              "Esterification",
+              "Reductive-amination"
+            ],
+            "overlap": [
+              "Acylation",
+              "Heck",
+              "Suzuki",
+              "Ullmann"
+            ],
+            "overlap_count": 4,
+            "group_r2_mean_row_selected": 0.33233882789378383,
+            "group_r2_mean_group_selected": 0.36411152753836334,
+            "group_minus_row_selected_r2": 0.031772699644579516
+          },
+          {
+            "k": 8,
+            "row_selected": [
+              "Acylation",
+              "Heck",
+              "Suzuki Bpin",
+              "Ullmann",
+              "Sonogashira",
+              "Suzuki",
+              "Kumada",
+              "Grignard"
+            ],
+            "group_selected": [
+              "Acylation",
+              "Heck",
+              "Ullmann",
+              "Buchwald-Hartwig",
+              "Suzuki",
+              "Esterification",
+              "Reductive-amination",
+              "Sonogashira"
+            ],
+            "overlap": [
+              "Acylation",
+              "Heck",
+              "Sonogashira",
+              "Suzuki",
+              "Ullmann"
+            ],
+            "overlap_count": 5,
+            "group_r2_mean_row_selected": 0.31087426651924144,
+            "group_r2_mean_group_selected": 0.3472306371518055,
+            "group_minus_row_selected_r2": 0.03635637063256408
+          },
+          {
+            "k": 9,
+            "row_selected": [
+              "Acylation",
+              "Heck",
+              "Suzuki Bpin",
+              "Ullmann",
+              "Sonogashira",
+              "Suzuki",
+              "Kumada",
+              "Grignard",
+              "Esterification"
+            ],
+            "group_selected": [
+              "Acylation",
+              "Heck",
+              "Ullmann",
+              "Buchwald-Hartwig",
+              "Suzuki",
+              "Esterification",
+              "Reductive-amination",
+              "Sonogashira",
+              "Suzuki Bpin"
+            ],
+            "overlap": [
+              "Acylation",
+              "Esterification",
+              "Heck",
+              "Sonogashira",
+              "Suzuki",
+              "Suzuki Bpin",
+              "Ullmann"
+            ],
+            "overlap_count": 7,
+            "group_r2_mean_row_selected": 0.30567116468719097,
+            "group_r2_mean_group_selected": 0.33312557996832615,
+            "group_minus_row_selected_r2": 0.02745441528113518
+          },
+          {
+            "k": 10,
+            "row_selected": [
+              "Acylation",
+              "Heck",
+              "Suzuki Bpin",
+              "Ullmann",
+              "Sonogashira",
+              "Suzuki",
+              "Kumada",
+              "Grignard",
+              "Esterification",
+              "Reductive-amination"
+            ],
+            "group_selected": [
+              "Acylation",
+              "Heck",
+              "Ullmann",
+              "Buchwald-Hartwig",
+              "Suzuki",
+              "Esterification",
+              "Reductive-amination",
+              "Sonogashira",
+              "Suzuki Bpin",
+              "Kumada"
+            ],
+            "overlap": [
+              "Acylation",
+              "Esterification",
+              "Heck",
+              "Kumada",
+              "Reductive-amination",
+              "Sonogashira",
+              "Suzuki",
+              "Suzuki Bpin",
+              "Ullmann"
+            ],
+            "overlap_count": 9,
+            "group_r2_mean_row_selected": 0.2991283757726608,
+            "group_r2_mean_group_selected": 0.3160609567400869,
+            "group_minus_row_selected_r2": 0.01693258096742606
+          },
+          {
+            "k": 11,
+            "row_selected": [
+              "Acylation",
+              "Heck",
+              "Suzuki Bpin",
+              "Ullmann",
+              "Sonogashira",
+              "Suzuki",
+              "Kumada",
+              "Grignard",
+              "Esterification",
+              "Reductive-amination",
+              "Buchwald-Hartwig"
+            ],
+            "group_selected": [
+              "Acylation",
+              "Heck",
+              "Ullmann",
+              "Buchwald-Hartwig",
+              "Suzuki",
+              "Esterification",
+              "Reductive-amination",
+              "Sonogashira",
+              "Suzuki Bpin",
+              "Kumada",
+              "Grignard"
+            ],
+            "overlap": [
+              "Acylation",
+              "Buchwald-Hartwig",
+              "Esterification",
+              "Grignard",
+              "Heck",
+              "Kumada",
+              "Reductive-amination",
+              "Sonogashira",
+              "Suzuki",
+              "Suzuki Bpin",
+              "Ullmann"
+            ],
+            "overlap_count": 11,
+            "group_r2_mean_row_selected": 0.3019301731180285,
+            "group_r2_mean_group_selected": 0.3019301731180285,
+            "group_minus_row_selected_r2": 0.0
+          }
+        ]
+      }
+    ],
+    "seed_ranges_by_k": [
+      {
+        "k": 1,
+        "overlap_count": {
+          "min": 1,
+          "max": 1,
+          "range": 0
+        },
+        "group_r2_mean_row_selected": {
+          "min": 0.5458746732859413,
+          "max": 0.591234156030114,
+          "range": 0.045359482744172674
+        },
+        "group_r2_mean_group_selected": {
+          "min": 0.5458746732859413,
+          "max": 0.591234156030114,
+          "range": 0.045359482744172674
+        },
+        "group_minus_row_selected_r2": {
+          "min": 0.0,
+          "max": 0.0,
+          "range": 0.0
+        }
+      },
+      {
+        "k": 2,
+        "overlap_count": {
+          "min": 1,
+          "max": 2,
+          "range": 1
+        },
+        "group_r2_mean_row_selected": {
+          "min": 0.3440067767354161,
+          "max": 0.52954975300248,
+          "range": 0.1855429762670639
+        },
+        "group_r2_mean_group_selected": {
+          "min": 0.4717483690920562,
+          "max": 0.52954975300248,
+          "range": 0.057801383910423776
+        },
+        "group_minus_row_selected_r2": {
+          "min": 0.0,
+          "max": 0.12774159235664012,
+          "range": 0.12774159235664012
+        }
+      },
+      {
+        "k": 3,
+        "overlap_count": {
+          "min": 1,
+          "max": 2,
+          "range": 1
+        },
+        "group_r2_mean_row_selected": {
+          "min": 0.34751267182620454,
+          "max": 0.4264615428351505,
+          "range": 0.07894887100894593
+        },
+        "group_r2_mean_group_selected": {
+          "min": 0.42364785055288606,
+          "max": 0.46876164743382015,
+          "range": 0.04511379688093409
+        },
+        "group_minus_row_selected_r2": {
+          "min": 0.042300104598669674,
+          "max": 0.11282400679238413,
+          "range": 0.07052390219371446
+        }
+      },
+      {
+        "k": 4,
+        "overlap_count": {
+          "min": 3,
+          "max": 3,
+          "range": 0
+        },
+        "group_r2_mean_row_selected": {
+          "min": 0.3438133761360276,
+          "max": 0.40664251620048797,
+          "range": 0.06282914006446039
+        },
+        "group_r2_mean_group_selected": {
+          "min": 0.39820170134180094,
+          "max": 0.4340582722182914,
+          "range": 0.03585657087649047
+        },
+        "group_minus_row_selected_r2": {
+          "min": 0.02741575601780344,
+          "max": 0.05438832520577336,
+          "range": 0.02697256918796992
+        }
+      },
+      {
+        "k": 5,
+        "overlap_count": {
+          "min": 3,
+          "max": 4,
+          "range": 1
+        },
+        "group_r2_mean_row_selected": {
+          "min": 0.32862232682462333,
+          "max": 0.37112689384957054,
+          "range": 0.042504567024947204
+        },
+        "group_r2_mean_group_selected": {
+          "min": 0.3804826763929471,
+          "max": 0.40889821343917326,
+          "range": 0.02841553704622618
+        },
+        "group_minus_row_selected_r2": {
+          "min": 0.03756096613354837,
+          "max": 0.0650427511712181,
+          "range": 0.027481785037669737
+        }
+      },
+      {
+        "k": 6,
+        "overlap_count": {
+          "min": 4,
+          "max": 4,
+          "range": 0
+        },
+        "group_r2_mean_row_selected": {
+          "min": 0.3233342851881287,
+          "max": 0.3606487412617589,
+          "range": 0.03731445607363021
+        },
+        "group_r2_mean_group_selected": {
+          "min": 0.36822248327347334,
+          "max": 0.38475623620444227,
+          "range": 0.016533752930968926
+        },
+        "group_minus_row_selected_r2": {
+          "min": 0.0206781728712368,
+          "max": 0.046665921467572036,
+          "range": 0.025987748596335236
+        }
+      },
+      {
+        "k": 7,
+        "overlap_count": {
+          "min": 4,
+          "max": 5,
+          "range": 1
+        },
+        "group_r2_mean_row_selected": {
+          "min": 0.30963753980559355,
+          "max": 0.33233882789378383,
+          "range": 0.022701288088190275
+        },
+        "group_r2_mean_group_selected": {
+          "min": 0.3528798678709167,
+          "max": 0.36411152753836334,
+          "range": 0.011231659667446658
+        },
+        "group_minus_row_selected_r2": {
+          "min": 0.024415136662859827,
+          "max": 0.04324232806532313,
+          "range": 0.018827191402463306
+        }
+      },
+      {
+        "k": 8,
+        "overlap_count": {
+          "min": 5,
+          "max": 5,
+          "range": 0
+        },
+        "group_r2_mean_row_selected": {
+          "min": 0.279702790908159,
+          "max": 0.31087426651924144,
+          "range": 0.03117147561108241
+        },
+        "group_r2_mean_group_selected": {
+          "min": 0.33295689232652337,
+          "max": 0.3472306371518055,
+          "range": 0.014273744825282153
+        },
+        "group_minus_row_selected_r2": {
+          "min": 0.03635637063256408,
+          "max": 0.05325410141836434,
+          "range": 0.016897730785800258
+        }
+      },
+      {
+        "k": 9,
+        "overlap_count": {
+          "min": 7,
+          "max": 7,
+          "range": 0
+        },
+        "group_r2_mean_row_selected": {
+          "min": 0.2741351530883764,
+          "max": 0.30567116468719097,
+          "range": 0.031536011598814584
+        },
+        "group_r2_mean_group_selected": {
+          "min": 0.3171718330991364,
+          "max": 0.33312557996832615,
+          "range": 0.015953746869189767
+        },
+        "group_minus_row_selected_r2": {
+          "min": 0.02745441528113518,
+          "max": 0.04303668001076,
+          "range": 0.015582264729624817
+        }
+      },
+      {
+        "k": 10,
+        "overlap_count": {
+          "min": 9,
+          "max": 9,
+          "range": 0
+        },
+        "group_r2_mean_row_selected": {
+          "min": 0.2779146751860478,
+          "max": 0.2991283757726608,
+          "range": 0.021213700586613038
+        },
+        "group_r2_mean_group_selected": {
+          "min": 0.29812268378214546,
+          "max": 0.3160609567400869,
+          "range": 0.017938272957941426
+        },
+        "group_minus_row_selected_r2": {
+          "min": 0.01693258096742606,
+          "max": 0.020480496246866375,
+          "range": 0.003547915279440317
+        }
+      },
+      {
+        "k": 11,
+        "overlap_count": {
+          "min": 11,
+          "max": 11,
+          "range": 0
+        },
+        "group_r2_mean_row_selected": {
+          "min": 0.27739876240432476,
+          "max": 0.3019301731180285,
+          "range": 0.02453141071370374
+        },
+        "group_r2_mean_group_selected": {
+          "min": 0.27739876240432476,
+          "max": 0.3019301731180285,
+          "range": 0.02453141071370374
+        },
+        "group_minus_row_selected_r2": {
+          "min": 0.0,
+          "max": 0.0,
+          "range": 0.0
+        }
+      }
+    ]
+  },
+  "r2_discordant_pairs": {
+    "screen_mean": {
+      "total_pairs": 55,
+      "tied_pair_count": 0,
+      "discordant_count": 19,
+      "discordant_fraction_all_pairs": 0.34545454545454546,
+      "pairs": [
+        {
+          "row_preferred": "Esterification",
+          "group_preferred": "Buchwald-Hartwig"
+        },
+        {
+          "row_preferred": "Grignard",
+          "group_preferred": "Buchwald-Hartwig"
+        },
+        {
+          "row_preferred": "Kumada",
+          "group_preferred": "Buchwald-Hartwig"
+        },
+        {
+          "row_preferred": "Reductive-amination",
+          "group_preferred": "Buchwald-Hartwig"
+        },
+        {
+          "row_preferred": "Sonogashira",
+          "group_preferred": "Buchwald-Hartwig"
+        },
+        {
+          "row_preferred": "Suzuki Bpin",
+          "group_preferred": "Buchwald-Hartwig"
+        },
+        {
+          "row_preferred": "Grignard",
+          "group_preferred": "Esterification"
+        },
+        {
+          "row_preferred": "Kumada",
+          "group_preferred": "Esterification"
+        },
+        {
+          "row_preferred": "Sonogashira",
+          "group_preferred": "Esterification"
+        },
+        {
+          "row_preferred": "Suzuki Bpin",
+          "group_preferred": "Esterification"
+        },
+        {
+          "row_preferred": "Grignard",
+          "group_preferred": "Reductive-amination"
+        },
+        {
+          "row_preferred": "Kumada",
+          "group_preferred": "Reductive-amination"
+        },
+        {
+          "row_preferred": "Kumada",
+          "group_preferred": "Sonogashira"
+        },
+        {
+          "row_preferred": "Kumada",
+          "group_preferred": "Suzuki"
+        },
+        {
+          "row_preferred": "Suzuki Bpin",
+          "group_preferred": "Kumada"
+        },
+        {
+          "row_preferred": "Sonogashira",
+          "group_preferred": "Reductive-amination"
+        },
+        {
+          "row_preferred": "Suzuki Bpin",
+          "group_preferred": "Reductive-amination"
+        },
+        {
+          "row_preferred": "Suzuki Bpin",
+          "group_preferred": "Sonogashira"
+        },
+        {
+          "row_preferred": "Suzuki Bpin",
+          "group_preferred": "Suzuki"
+        }
+      ]
+    },
+    "by_seed": [
+      {
+        "seed": 42,
+        "total_pairs": 55,
+        "tied_pair_count": 0,
+        "discordant_count": 20,
+        "discordant_fraction_all_pairs": 0.36363636363636365,
+        "pairs": [
+          {
+            "row_preferred": "Esterification",
+            "group_preferred": "Buchwald-Hartwig"
+          },
+          {
+            "row_preferred": "Grignard",
+            "group_preferred": "Buchwald-Hartwig"
+          },
+          {
+            "row_preferred": "Kumada",
+            "group_preferred": "Buchwald-Hartwig"
+          },
+          {
+            "row_preferred": "Reductive-amination",
+            "group_preferred": "Buchwald-Hartwig"
+          },
+          {
+            "row_preferred": "Sonogashira",
+            "group_preferred": "Buchwald-Hartwig"
+          },
+          {
+            "row_preferred": "Suzuki Bpin",
+            "group_preferred": "Buchwald-Hartwig"
+          },
+          {
+            "row_preferred": "Grignard",
+            "group_preferred": "Esterification"
+          },
+          {
+            "row_preferred": "Kumada",
+            "group_preferred": "Esterification"
+          },
+          {
+            "row_preferred": "Sonogashira",
+            "group_preferred": "Esterification"
+          },
+          {
+            "row_preferred": "Suzuki Bpin",
+            "group_preferred": "Esterification"
+          },
+          {
+            "row_preferred": "Grignard",
+            "group_preferred": "Reductive-amination"
+          },
+          {
+            "row_preferred": "Suzuki Bpin",
+            "group_preferred": "Heck"
+          },
+          {
+            "row_preferred": "Ullmann",
+            "group_preferred": "Heck"
+          },
+          {
+            "row_preferred": "Kumada",
+            "group_preferred": "Reductive-amination"
+          },
+          {
+            "row_preferred": "Kumada",
+            "group_preferred": "Suzuki"
+          },
+          {
+            "row_preferred": "Suzuki Bpin",
+            "group_preferred": "Kumada"
+          },
+          {
+            "row_preferred": "Sonogashira",
+            "group_preferred": "Reductive-amination"
+          },
+          {
+            "row_preferred": "Suzuki Bpin",
+            "group_preferred": "Reductive-amination"
+          },
+          {
+            "row_preferred": "Suzuki Bpin",
+            "group_preferred": "Suzuki"
+          },
+          {
+            "row_preferred": "Ullmann",
+            "group_preferred": "Suzuki"
+          }
+        ]
+      },
+      {
+        "seed": 20261007,
+        "total_pairs": 55,
+        "tied_pair_count": 0,
+        "discordant_count": 20,
+        "discordant_fraction_all_pairs": 0.36363636363636365,
+        "pairs": [
+          {
+            "row_preferred": "Grignard",
+            "group_preferred": "Buchwald-Hartwig"
+          },
+          {
+            "row_preferred": "Kumada",
+            "group_preferred": "Buchwald-Hartwig"
+          },
+          {
+            "row_preferred": "Reductive-amination",
+            "group_preferred": "Buchwald-Hartwig"
+          },
+          {
+            "row_preferred": "Sonogashira",
+            "group_preferred": "Buchwald-Hartwig"
+          },
+          {
+            "row_preferred": "Suzuki Bpin",
+            "group_preferred": "Buchwald-Hartwig"
+          },
+          {
+            "row_preferred": "Grignard",
+            "group_preferred": "Esterification"
+          },
+          {
+            "row_preferred": "Kumada",
+            "group_preferred": "Esterification"
+          },
+          {
+            "row_preferred": "Reductive-amination",
+            "group_preferred": "Esterification"
+          },
+          {
+            "row_preferred": "Sonogashira",
+            "group_preferred": "Esterification"
+          },
+          {
+            "row_preferred": "Suzuki Bpin",
+            "group_preferred": "Esterification"
+          },
+          {
+            "row_preferred": "Grignard",
+            "group_preferred": "Reductive-amination"
+          },
+          {
+            "row_preferred": "Kumada",
+            "group_preferred": "Reductive-amination"
+          },
+          {
+            "row_preferred": "Suzuki Bpin",
+            "group_preferred": "Kumada"
+          },
+          {
+            "row_preferred": "Sonogashira",
+            "group_preferred": "Reductive-amination"
+          },
+          {
+            "row_preferred": "Suzuki Bpin",
+            "group_preferred": "Reductive-amination"
+          },
+          {
+            "row_preferred": "Sonogashira",
+            "group_preferred": "Suzuki"
+          },
+          {
+            "row_preferred": "Suzuki Bpin",
+            "group_preferred": "Sonogashira"
+          },
+          {
+            "row_preferred": "Suzuki Bpin",
+            "group_preferred": "Suzuki"
+          },
+          {
+            "row_preferred": "Ullmann",
+            "group_preferred": "Suzuki"
+          },
+          {
+            "row_preferred": "Suzuki Bpin",
+            "group_preferred": "Ullmann"
+          }
+        ]
+      },
+      {
+        "seed": 20261008,
+        "total_pairs": 55,
+        "tied_pair_count": 0,
+        "discordant_count": 20,
+        "discordant_fraction_all_pairs": 0.36363636363636365,
+        "pairs": [
+          {
+            "row_preferred": "Grignard",
+            "group_preferred": "Buchwald-Hartwig"
+          },
+          {
+            "row_preferred": "Kumada",
+            "group_preferred": "Buchwald-Hartwig"
+          },
+          {
+            "row_preferred": "Reductive-amination",
+            "group_preferred": "Buchwald-Hartwig"
+          },
+          {
+            "row_preferred": "Sonogashira",
+            "group_preferred": "Buchwald-Hartwig"
+          },
+          {
+            "row_preferred": "Suzuki Bpin",
+            "group_preferred": "Buchwald-Hartwig"
+          },
+          {
+            "row_preferred": "Grignard",
+            "group_preferred": "Esterification"
+          },
+          {
+            "row_preferred": "Kumada",
+            "group_preferred": "Esterification"
+          },
+          {
+            "row_preferred": "Reductive-amination",
+            "group_preferred": "Esterification"
+          },
+          {
+            "row_preferred": "Sonogashira",
+            "group_preferred": "Esterification"
+          },
+          {
+            "row_preferred": "Suzuki Bpin",
+            "group_preferred": "Esterification"
+          },
+          {
+            "row_preferred": "Grignard",
+            "group_preferred": "Reductive-amination"
+          },
+          {
+            "row_preferred": "Suzuki Bpin",
+            "group_preferred": "Heck"
+          },
+          {
+            "row_preferred": "Ullmann",
+            "group_preferred": "Heck"
+          },
+          {
+            "row_preferred": "Kumada",
+            "group_preferred": "Reductive-amination"
+          },
+          {
+            "row_preferred": "Kumada",
+            "group_preferred": "Sonogashira"
+          },
+          {
+            "row_preferred": "Kumada",
+            "group_preferred": "Suzuki"
+          },
+          {
+            "row_preferred": "Suzuki Bpin",
+            "group_preferred": "Reductive-amination"
+          },
+          {
+            "row_preferred": "Suzuki Bpin",
+            "group_preferred": "Sonogashira"
+          },
+          {
+            "row_preferred": "Suzuki Bpin",
+            "group_preferred": "Suzuki"
+          },
+          {
+            "row_preferred": "Ullmann",
+            "group_preferred": "Suzuki"
+          }
+        ]
+      },
+      {
+        "seed": 20261009,
+        "total_pairs": 55,
+        "tied_pair_count": 0,
+        "discordant_count": 21,
+        "discordant_fraction_all_pairs": 0.38181818181818183,
+        "pairs": [
+          {
+            "row_preferred": "Grignard",
+            "group_preferred": "Buchwald-Hartwig"
+          },
+          {
+            "row_preferred": "Kumada",
+            "group_preferred": "Buchwald-Hartwig"
+          },
+          {
+            "row_preferred": "Reductive-amination",
+            "group_preferred": "Buchwald-Hartwig"
+          },
+          {
+            "row_preferred": "Sonogashira",
+            "group_preferred": "Buchwald-Hartwig"
+          },
+          {
+            "row_preferred": "Suzuki Bpin",
+            "group_preferred": "Buchwald-Hartwig"
+          },
+          {
+            "row_preferred": "Grignard",
+            "group_preferred": "Esterification"
+          },
+          {
+            "row_preferred": "Kumada",
+            "group_preferred": "Esterification"
+          },
+          {
+            "row_preferred": "Sonogashira",
+            "group_preferred": "Esterification"
+          },
+          {
+            "row_preferred": "Suzuki",
+            "group_preferred": "Esterification"
+          },
+          {
+            "row_preferred": "Suzuki Bpin",
+            "group_preferred": "Esterification"
+          },
+          {
+            "row_preferred": "Ullmann",
+            "group_preferred": "Esterification"
+          },
+          {
+            "row_preferred": "Grignard",
+            "group_preferred": "Reductive-amination"
+          },
+          {
+            "row_preferred": "Suzuki Bpin",
+            "group_preferred": "Grignard"
+          },
+          {
+            "row_preferred": "Suzuki Bpin",
+            "group_preferred": "Heck"
+          },
+          {
+            "row_preferred": "Kumada",
+            "group_preferred": "Reductive-amination"
+          },
+          {
+            "row_preferred": "Suzuki Bpin",
+            "group_preferred": "Kumada"
+          },
+          {
+            "row_preferred": "Sonogashira",
+            "group_preferred": "Reductive-amination"
+          },
+          {
+            "row_preferred": "Suzuki Bpin",
+            "group_preferred": "Reductive-amination"
+          },
+          {
+            "row_preferred": "Suzuki Bpin",
+            "group_preferred": "Sonogashira"
+          },
+          {
+            "row_preferred": "Suzuki Bpin",
+            "group_preferred": "Suzuki"
+          },
+          {
+            "row_preferred": "Suzuki Bpin",
+            "group_preferred": "Ullmann"
+          }
+        ]
+      },
+      {
+        "seed": 20261010,
+        "total_pairs": 55,
+        "tied_pair_count": 0,
+        "discordant_count": 19,
+        "discordant_fraction_all_pairs": 0.34545454545454546,
+        "pairs": [
+          {
+            "row_preferred": "Esterification",
+            "group_preferred": "Buchwald-Hartwig"
+          },
+          {
+            "row_preferred": "Grignard",
+            "group_preferred": "Buchwald-Hartwig"
+          },
+          {
+            "row_preferred": "Kumada",
+            "group_preferred": "Buchwald-Hartwig"
+          },
+          {
+            "row_preferred": "Reductive-amination",
+            "group_preferred": "Buchwald-Hartwig"
+          },
+          {
+            "row_preferred": "Sonogashira",
+            "group_preferred": "Buchwald-Hartwig"
+          },
+          {
+            "row_preferred": "Suzuki",
+            "group_preferred": "Buchwald-Hartwig"
+          },
+          {
+            "row_preferred": "Suzuki Bpin",
+            "group_preferred": "Buchwald-Hartwig"
+          },
+          {
+            "row_preferred": "Grignard",
+            "group_preferred": "Esterification"
+          },
+          {
+            "row_preferred": "Kumada",
+            "group_preferred": "Esterification"
+          },
+          {
+            "row_preferred": "Sonogashira",
+            "group_preferred": "Esterification"
+          },
+          {
+            "row_preferred": "Suzuki Bpin",
+            "group_preferred": "Esterification"
+          },
+          {
+            "row_preferred": "Grignard",
+            "group_preferred": "Reductive-amination"
+          },
+          {
+            "row_preferred": "Kumada",
+            "group_preferred": "Reductive-amination"
+          },
+          {
+            "row_preferred": "Sonogashira",
+            "group_preferred": "Reductive-amination"
+          },
+          {
+            "row_preferred": "Suzuki Bpin",
+            "group_preferred": "Reductive-amination"
+          },
+          {
+            "row_preferred": "Sonogashira",
+            "group_preferred": "Suzuki"
+          },
+          {
+            "row_preferred": "Suzuki Bpin",
+            "group_preferred": "Sonogashira"
+          },
+          {
+            "row_preferred": "Suzuki Bpin",
+            "group_preferred": "Suzuki"
+          },
+          {
+            "row_preferred": "Suzuki Bpin",
+            "group_preferred": "Ullmann"
+          }
+        ]
+      }
+    ],
+    "seed_discordant_count_range": {
+      "min": 19,
+      "max": 21,
+      "range": 2
+    }
+  },
+  "leave_one_screen_out_r2": {
+    "screen_mean": {
+      "remaining_screen_count": 10,
+      "by_omitted_screen": [
+        {
+          "omitted_screen": "Acylation",
+          "rho": 0.2727272727272727
+        },
+        {
+          "omitted_screen": "Suzuki",
+          "rho": 0.406060606060606
+        },
+        {
+          "omitted_screen": "Buchwald-Hartwig",
+          "rho": 0.5515151515151515
+        },
+        {
+          "omitted_screen": "Esterification",
+          "rho": 0.5393939393939393
+        },
+        {
+          "omitted_screen": "Grignard",
+          "rho": 0.4545454545454545
+        },
+        {
+          "omitted_screen": "Heck",
+          "rho": 0.2727272727272727
+        },
+        {
+          "omitted_screen": "Kumada",
+          "rho": 0.5636363636363636
+        },
+        {
+          "omitted_screen": "Reductive-amination",
+          "rho": 0.5393939393939393
+        },
+        {
+          "omitted_screen": "Sonogashira",
+          "rho": 0.5151515151515151
+        },
+        {
+          "omitted_screen": "Suzuki Bpin",
+          "rho": 0.5636363636363636
+        },
+        {
+          "omitted_screen": "Ullmann",
+          "rho": 0.2727272727272727
+        }
+      ],
+      "rho_range": {
+        "min": 0.2727272727272727,
+        "max": 0.5636363636363636,
+        "range": 0.2909090909090909
+      }
+    },
+    "by_seed": [
+      {
+        "seed": 42,
+        "remaining_screen_count": 10,
+        "by_omitted_screen": [
+          {
+            "omitted_screen": "Acylation",
+            "rho": 0.18787878787878787
+          },
+          {
+            "omitted_screen": "Suzuki",
+            "rho": 0.35757575757575755
+          },
+          {
+            "omitted_screen": "Buchwald-Hartwig",
+            "rho": 0.4787878787878787
+          },
+          {
+            "omitted_screen": "Esterification",
+            "rho": 0.4666666666666666
+          },
+          {
+            "omitted_screen": "Grignard",
+            "rho": 0.3696969696969697
+          },
+          {
+            "omitted_screen": "Heck",
+            "rho": 0.29696969696969694
+          },
+          {
+            "omitted_screen": "Kumada",
+            "rho": 0.4666666666666666
+          },
+          {
+            "omitted_screen": "Reductive-amination",
+            "rho": 0.4666666666666666
+          },
+          {
+            "omitted_screen": "Sonogashira",
+            "rho": 0.3696969696969697
+          },
+          {
+            "omitted_screen": "Suzuki Bpin",
+            "rho": 0.5393939393939393
+          },
+          {
+            "omitted_screen": "Ullmann",
+            "rho": 0.2606060606060606
+          }
+        ],
+        "rho_range": {
+          "min": 0.18787878787878787,
+          "max": 0.5393939393939393,
+          "range": 0.35151515151515145
+        }
+      },
+      {
+        "seed": 20261007,
+        "remaining_screen_count": 10,
+        "by_omitted_screen": [
+          {
+            "omitted_screen": "Acylation",
+            "rho": 0.18787878787878787
+          },
+          {
+            "omitted_screen": "Suzuki",
+            "rho": 0.34545454545454546
+          },
+          {
+            "omitted_screen": "Buchwald-Hartwig",
+            "rho": 0.4666666666666666
+          },
+          {
+            "omitted_screen": "Esterification",
+            "rho": 0.4666666666666666
+          },
+          {
+            "omitted_screen": "Grignard",
+            "rho": 0.3696969696969697
+          },
+          {
+            "omitted_screen": "Heck",
+            "rho": 0.18787878787878787
+          },
+          {
+            "omitted_screen": "Kumada",
+            "rho": 0.41818181818181815
+          },
+          {
+            "omitted_screen": "Reductive-amination",
+            "rho": 0.4787878787878787
+          },
+          {
+            "omitted_screen": "Sonogashira",
+            "rho": 0.4787878787878787
+          },
+          {
+            "omitted_screen": "Suzuki Bpin",
+            "rho": 0.5636363636363636
+          },
+          {
+            "omitted_screen": "Ullmann",
+            "rho": 0.29696969696969694
+          }
+        ],
+        "rho_range": {
+          "min": 0.18787878787878787,
+          "max": 0.5636363636363636,
+          "range": 0.37575757575757573
+        }
+      },
+      {
+        "seed": 20261008,
+        "remaining_screen_count": 10,
+        "by_omitted_screen": [
+          {
+            "omitted_screen": "Acylation",
+            "rho": 0.16363636363636364
+          },
+          {
+            "omitted_screen": "Suzuki",
+            "rho": 0.35757575757575755
+          },
+          {
+            "omitted_screen": "Buchwald-Hartwig",
+            "rho": 0.4424242424242424
+          },
+          {
+            "omitted_screen": "Esterification",
+            "rho": 0.4424242424242424
+          },
+          {
+            "omitted_screen": "Grignard",
+            "rho": 0.33333333333333326
+          },
+          {
+            "omitted_screen": "Heck",
+            "rho": 0.2727272727272727
+          },
+          {
+            "omitted_screen": "Kumada",
+            "rho": 0.4545454545454545
+          },
+          {
+            "omitted_screen": "Reductive-amination",
+            "rho": 0.43030303030303024
+          },
+          {
+            "omitted_screen": "Sonogashira",
+            "rho": 0.3939393939393939
+          },
+          {
+            "omitted_screen": "Suzuki Bpin",
+            "rho": 0.5393939393939393
+          },
+          {
+            "omitted_screen": "Ullmann",
+            "rho": 0.23636363636363633
+          }
+        ],
+        "rho_range": {
+          "min": 0.16363636363636364,
+          "max": 0.5393939393939393,
+          "range": 0.3757575757575757
+        }
+      },
+      {
+        "seed": 20261009,
+        "remaining_screen_count": 10,
+        "by_omitted_screen": [
+          {
+            "omitted_screen": "Acylation",
+            "rho": 0.006060606060606061
+          },
+          {
+            "omitted_screen": "Suzuki",
+            "rho": 0.17575757575757575
+          },
+          {
+            "omitted_screen": "Buchwald-Hartwig",
+            "rho": 0.2727272727272727
+          },
+          {
+            "omitted_screen": "Esterification",
+            "rho": 0.3696969696969697
+          },
+          {
+            "omitted_screen": "Grignard",
+            "rho": 0.28484848484848485
+          },
+          {
+            "omitted_screen": "Heck",
+            "rho": 0.11515151515151514
+          },
+          {
+            "omitted_screen": "Kumada",
+            "rho": 0.28484848484848485
+          },
+          {
+            "omitted_screen": "Reductive-amination",
+            "rho": 0.2727272727272727
+          },
+          {
+            "omitted_screen": "Sonogashira",
+            "rho": 0.28484848484848485
+          },
+          {
+            "omitted_screen": "Suzuki Bpin",
+            "rho": 0.5515151515151515
+          },
+          {
+            "omitted_screen": "Ullmann",
+            "rho": 0.17575757575757575
+          }
+        ],
+        "rho_range": {
+          "min": 0.006060606060606061,
+          "max": 0.5515151515151515,
+          "range": 0.5454545454545454
+        }
+      },
+      {
+        "seed": 20261010,
+        "remaining_screen_count": 10,
+        "by_omitted_screen": [
+          {
+            "omitted_screen": "Acylation",
+            "rho": 0.19999999999999998
+          },
+          {
+            "omitted_screen": "Suzuki",
+            "rho": 0.38181818181818183
+          },
+          {
+            "omitted_screen": "Buchwald-Hartwig",
+            "rho": 0.5515151515151515
+          },
+          {
+            "omitted_screen": "Esterification",
+            "rho": 0.49090909090909085
+          },
+          {
+            "omitted_screen": "Grignard",
+            "rho": 0.3939393939393939
+          },
+          {
+            "omitted_screen": "Heck",
+            "rho": 0.19999999999999998
+          },
+          {
+            "omitted_screen": "Kumada",
+            "rho": 0.3939393939393939
+          },
+          {
+            "omitted_screen": "Reductive-amination",
+            "rho": 0.49090909090909085
+          },
+          {
+            "omitted_screen": "Sonogashira",
+            "rho": 0.4666666666666666
+          },
+          {
+            "omitted_screen": "Suzuki Bpin",
+            "rho": 0.5272727272727272
+          },
+          {
+            "omitted_screen": "Ullmann",
+            "rho": 0.2727272727272727
+          }
+        ],
+        "rho_range": {
+          "min": 0.19999999999999998,
+          "max": 0.5515151515151515,
+          "range": 0.35151515151515156
+        }
+      }
+    ],
+    "seed_rho_ranges_by_omitted_screen": [
+      {
+        "omitted_screen": "Acylation",
+        "min": 0.006060606060606061,
+        "max": 0.19999999999999998,
+        "range": 0.1939393939393939
+      },
+      {
+        "omitted_screen": "Suzuki",
+        "min": 0.17575757575757575,
+        "max": 0.38181818181818183,
+        "range": 0.20606060606060608
+      },
+      {
+        "omitted_screen": "Buchwald-Hartwig",
+        "min": 0.2727272727272727,
+        "max": 0.5515151515151515,
+        "range": 0.2787878787878788
+      },
+      {
+        "omitted_screen": "Esterification",
+        "min": 0.3696969696969697,
+        "max": 0.49090909090909085,
+        "range": 0.12121212121212116
+      },
+      {
+        "omitted_screen": "Grignard",
+        "min": 0.28484848484848485,
+        "max": 0.3939393939393939,
+        "range": 0.10909090909090907
+      },
+      {
+        "omitted_screen": "Heck",
+        "min": 0.11515151515151514,
+        "max": 0.29696969696969694,
+        "range": 0.1818181818181818
+      },
+      {
+        "omitted_screen": "Kumada",
+        "min": 0.28484848484848485,
+        "max": 0.4666666666666666,
+        "range": 0.18181818181818177
+      },
+      {
+        "omitted_screen": "Reductive-amination",
+        "min": 0.2727272727272727,
+        "max": 0.49090909090909085,
+        "range": 0.21818181818181814
+      },
+      {
+        "omitted_screen": "Sonogashira",
+        "min": 0.28484848484848485,
+        "max": 0.4787878787878787,
+        "range": 0.19393939393939386
+      },
+      {
+        "omitted_screen": "Suzuki Bpin",
+        "min": 0.5272727272727272,
+        "max": 0.5636363636363636,
+        "range": 0.036363636363636376
+      },
+      {
+        "omitted_screen": "Ullmann",
+        "min": 0.17575757575757575,
+        "max": 0.29696969696969694,
+        "range": 0.12121212121212119
+      }
+    ]
+  },
+  "status": "completed"
+}

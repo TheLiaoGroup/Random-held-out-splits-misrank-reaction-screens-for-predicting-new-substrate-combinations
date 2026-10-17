@@ -1,0 +1,326 @@
+{
+  "schema_version": 1,
+  "release_kind": "final_oof_not_resumable",
+  "status": "completed",
+  "model_name": "RandomForestRegressor_fixed_Suzuki_parameters",
+  "configuration_signature": "7356fff4230891e2ab9a1ccd3230d5c0443f32c17bd6ae9fcc95aad77099c19f",
+  "complete_source_count": 18,
+  "complete_folds": 900,
+  "complete_prediction_rows": 3401780,
+  "model_parameters": {
+    "bootstrap": true,
+    "ccp_alpha": 0.0,
+    "criterion": "squared_error",
+    "max_depth": null,
+    "max_features": 1.0,
+    "max_leaf_nodes": null,
+    "max_samples": null,
+    "min_impurity_decrease": 0.0,
+    "min_samples_leaf": 1,
+    "min_samples_split": 2,
+    "min_weight_fraction_leaf": 0.0,
+    "monotonic_cst": null,
+    "n_estimators": 100,
+    "n_jobs": 4,
+    "oob_score": false,
+    "random_state": 42,
+    "verbose": 0,
+    "warm_start": false
+  },
+  "seeds": [
+    42,
+    20261007,
+    20261008,
+    20261009,
+    20261010
+  ],
+  "protocols": [
+    "group",
+    "row"
+  ],
+  "n_splits": 5,
+  "versions": {
+    "python": "3.13.3",
+    "numpy": "2.2.5",
+    "pandas": "2.2.3",
+    "scikit_learn": "1.6.1",
+    "scipy": "1.15.2",
+    "xgboost": "3.0.2",
+    "rdkit": "2025.03.2"
+  },
+  "sources": [
+    {
+      "source_name": "Acylation",
+      "source_slug": "Acylation",
+      "status": "completed",
+      "reaction_family": "Acylation",
+      "numeric_records": 88762,
+      "mean_yield_fraction": 0.2524297000441256,
+      "floor_source": false,
+      "oof_predictions": {
+        "path": "sources/Acylation/oof_predictions.csv.gz",
+        "sha256": "2420f0df441d57002ceff34f5740165083a7e4cfdc15fc1b4abc6ebe30800145",
+        "rows": 887620
+      }
+    },
+    {
+      "source_name": "Suzuki",
+      "source_slug": "Suzuki",
+      "status": "completed",
+      "reaction_family": "Suzuki",
+      "numeric_records": 41229,
+      "mean_yield_fraction": 0.28386478524780456,
+      "floor_source": false,
+      "oof_predictions": {
+        "path": "sources/Suzuki/oof_predictions.csv.gz",
+        "sha256": "8b3a4f2d2167419b97047278b59a5c85a6b85574e7466c2ff98b4e009e6e9110",
+        "rows": 412290
+      }
+    },
+    {
+      "source_name": "Buchwald-Hartwig",
+      "source_slug": "Buchwald-Hartwig",
+      "status": "completed",
+      "reaction_family": "Buchwald-Hartwig",
+      "numeric_records": 47682,
+      "mean_yield_fraction": 0.11507681371711774,
+      "floor_source": false,
+      "oof_predictions": {
+        "path": "sources/Buchwald-Hartwig/oof_predictions.csv.gz",
+        "sha256": "39b8d2da4bde3d88aa8298a22ee9c6b2f83e7feb416fe878ab19376fa1fe179b",
+        "rows": 476820
+      }
+    },
+    {
+      "source_name": "Allylic-substitution",
+      "source_slug": "Allylic-substitution",
+      "status": "completed",
+      "reaction_family": "Allylic-substitution",
+      "numeric_records": 5036,
+      "mean_yield_fraction": 0.03661203398979006,
+      "floor_source": true,
+      "oof_predictions": {
+        "path": "sources/Allylic-substitution/oof_predictions.csv.gz",
+        "sha256": "40b2b5fb5e4a2c926239aa68a478ea410b5706f8105a73fe14b201995f9d4db7",
+        "rows": 50360
+      }
+    },
+    {
+      "source_name": "C-O competitive reactions",
+      "source_slug": "C-O_competitive_reactions",
+      "status": "completed",
+      "reaction_family": "C-O competitive reactions",
+      "numeric_records": 8110,
+      "mean_yield_fraction": 0.030329888418950506,
+      "floor_source": true,
+      "oof_predictions": {
+        "path": "sources/C-O_competitive_reactions/oof_predictions.csv.gz",
+        "sha256": "2bf38eb4cca5b81db293dbbeae4eb65adc18bbe7f2b6e9a835e144ff8349ac02",
+        "rows": 81100
+      }
+    },
+    {
+      "source_name": "Chan-Lam",
+      "source_slug": "Chan-Lam",
+      "status": "completed",
+      "reaction_family": "Chan-Lam",
+      "numeric_records": 13723,
+      "mean_yield_fraction": 0.04356410973730234,
+      "floor_source": true,
+      "oof_predictions": {
+        "path": "sources/Chan-Lam/oof_predictions.csv.gz",
+        "sha256": "90a35e538eda0833b91db9f4bff1ed01b406823377f02f0c79e21c20d3d92f2f",
+        "rows": 137230
+      }
+    },
+    {
+      "source_name": "Esterification",
+      "source_slug": "Esterification",
+      "status": "completed",
+      "reaction_family": "Esterification",
+      "numeric_records": 6105,
+      "mean_yield_fraction": 0.1123993640105725,
+      "floor_source": false,
+      "oof_predictions": {
+        "path": "sources/Esterification/oof_predictions.csv.gz",
+        "sha256": "ce9fdb1a6e479eb879a886521cdf31e6917c59bd4b36fcfb9262f4d1a5382989",
+        "rows": 61050
+      }
+    },
+    {
+      "source_name": "Grignard",
+      "source_slug": "Grignard",
+      "status": "completed",
+      "reaction_family": "Grignard",
+      "numeric_records": 5301,
+      "mean_yield_fraction": 0.30315010771350925,
+      "floor_source": false,
+      "oof_predictions": {
+        "path": "sources/Grignard/oof_predictions.csv.gz",
+        "sha256": "2404ccab3d785c90d38f728848ca54a868aa3a0ef4ea9dae2e7519903631ea6a",
+        "rows": 53010
+      }
+    },
+    {
+      "source_name": "Heck",
+      "source_slug": "Heck",
+      "status": "completed",
+      "reaction_family": "Heck",
+      "numeric_records": 22988,
+      "mean_yield_fraction": 0.14567046785361928,
+      "floor_source": false,
+      "oof_predictions": {
+        "path": "sources/Heck/oof_predictions.csv.gz",
+        "sha256": "c028dee4cfd07cca158120a10c796667cd17e2083eb8c61f6bda9900cc5570bf",
+        "rows": 229880
+      }
+    },
+    {
+      "source_name": "Hiyama",
+      "source_slug": "Hiyama",
+      "status": "completed",
+      "reaction_family": "Hiyama",
+      "numeric_records": 11208,
+      "mean_yield_fraction": 0.011971664953604565,
+      "floor_source": true,
+      "oof_predictions": {
+        "path": "sources/Hiyama/oof_predictions.csv.gz",
+        "sha256": "8a169f6e8720ff6b4ab20e5c9556a19d83e76d85e198220de4948383255a7096",
+        "rows": 112080
+      }
+    },
+    {
+      "source_name": "Kumada",
+      "source_slug": "Kumada",
+      "status": "completed",
+      "reaction_family": "Kumada",
+      "numeric_records": 18069,
+      "mean_yield_fraction": 0.16442263060030995,
+      "floor_source": false,
+      "oof_predictions": {
+        "path": "sources/Kumada/oof_predictions.csv.gz",
+        "sha256": "8fe41b9678f091632e356fc48e7257c8fb3639996cf5295a68517e28634ace32",
+        "rows": 180690
+      }
+    },
+    {
+      "source_name": "Minisci",
+      "source_slug": "Minisci",
+      "status": "completed",
+      "reaction_family": "Minisci",
+      "numeric_records": 1152,
+      "mean_yield_fraction": 0.042048156510416664,
+      "floor_source": true,
+      "oof_predictions": {
+        "path": "sources/Minisci/oof_predictions.csv.gz",
+        "sha256": "fd6ae7efae342ce62a1f6d5b50879e19196dd9641917773811ef9e50e67a46e9",
+        "rows": 11520
+      }
+    },
+    {
+      "source_name": "Pd-carbonylation",
+      "source_slug": "Pd-carbonylation",
+      "status": "completed",
+      "reaction_family": "Pd-carbonylation",
+      "numeric_records": 3480,
+      "mean_yield_fraction": 0.022841155775862067,
+      "floor_source": true,
+      "oof_predictions": {
+        "path": "sources/Pd-carbonylation/oof_predictions.csv.gz",
+        "sha256": "f7587a99c7ed8f8e8f99b059cebf4555efd1692320b37c3a99780df085d81248",
+        "rows": 34800
+      }
+    },
+    {
+      "source_name": "Reductive-amination",
+      "source_slug": "Reductive-amination",
+      "status": "completed",
+      "reaction_family": "Reductive-amination",
+      "numeric_records": 8858,
+      "mean_yield_fraction": 0.07946320439866857,
+      "floor_source": false,
+      "oof_predictions": {
+        "path": "sources/Reductive-amination/oof_predictions.csv.gz",
+        "sha256": "7f95b4cbcdf71a9841d75174d6a22f71276a9420c963ce8b367a58174e8ad0fa",
+        "rows": 88580
+      }
+    },
+    {
+      "source_name": "SNAr",
+      "source_slug": "SNAr",
+      "status": "completed",
+      "reaction_family": "SNAr",
+      "numeric_records": 17260,
+      "mean_yield_fraction": 0.04712936412242178,
+      "floor_source": true,
+      "oof_predictions": {
+        "path": "sources/SNAr/oof_predictions.csv.gz",
+        "sha256": "24b9014860c66e50da25a4abe4bd06c4a13d45aef544989c8c438d568e458473",
+        "rows": 172600
+      }
+    },
+    {
+      "source_name": "Sonogashira",
+      "source_slug": "Sonogashira",
+      "status": "completed",
+      "reaction_family": "Sonogashira",
+      "numeric_records": 14114,
+      "mean_yield_fraction": 0.19259299987199613,
+      "floor_source": false,
+      "oof_predictions": {
+        "path": "sources/Sonogashira/oof_predictions.csv.gz",
+        "sha256": "ab13fba8021859e1aee2c9eef7fa721dc7e448b51ee7cd329f7e2133e7da550e",
+        "rows": 141140
+      }
+    },
+    {
+      "source_name": "Suzuki Bpin",
+      "source_slug": "Suzuki_Bpin",
+      "status": "completed",
+      "reaction_family": "Suzuki",
+      "numeric_records": 6606,
+      "mean_yield_fraction": 0.37328812971569264,
+      "floor_source": false,
+      "oof_predictions": {
+        "path": "sources/Suzuki_Bpin/oof_predictions.csv.gz",
+        "sha256": "98147bbbc11edab5bc18189f8c120855e3742463aa4f466c54ad1ee0911aa6b6",
+        "rows": 66060
+      }
+    },
+    {
+      "source_name": "Ullmann",
+      "source_slug": "Ullmann",
+      "status": "completed",
+      "reaction_family": "Ullmann",
+      "numeric_records": 20495,
+      "mean_yield_fraction": 0.11399450526654184,
+      "floor_source": false,
+      "oof_predictions": {
+        "path": "sources/Ullmann/oof_predictions.csv.gz",
+        "sha256": "1b6dc7091949803714964c5d0ae2a487f72b914f08f8daebf5c6f9f20542d717",
+        "rows": 204950
+      }
+    }
+  ],
+  "output_file_sha256": {
+    "sources/Acylation/oof_predictions.csv.gz": "2420f0df441d57002ceff34f5740165083a7e4cfdc15fc1b4abc6ebe30800145",
+    "sources/Suzuki/oof_predictions.csv.gz": "8b3a4f2d2167419b97047278b59a5c85a6b85574e7466c2ff98b4e009e6e9110",
+    "sources/Buchwald-Hartwig/oof_predictions.csv.gz": "39b8d2da4bde3d88aa8298a22ee9c6b2f83e7feb416fe878ab19376fa1fe179b",
+    "sources/Allylic-substitution/oof_predictions.csv.gz": "40b2b5fb5e4a2c926239aa68a478ea410b5706f8105a73fe14b201995f9d4db7",
+    "sources/C-O_competitive_reactions/oof_predictions.csv.gz": "2bf38eb4cca5b81db293dbbeae4eb65adc18bbe7f2b6e9a835e144ff8349ac02",
+    "sources/Chan-Lam/oof_predictions.csv.gz": "90a35e538eda0833b91db9f4bff1ed01b406823377f02f0c79e21c20d3d92f2f",
+    "sources/Esterification/oof_predictions.csv.gz": "ce9fdb1a6e479eb879a886521cdf31e6917c59bd4b36fcfb9262f4d1a5382989",
+    "sources/Grignard/oof_predictions.csv.gz": "2404ccab3d785c90d38f728848ca54a868aa3a0ef4ea9dae2e7519903631ea6a",
+    "sources/Heck/oof_predictions.csv.gz": "c028dee4cfd07cca158120a10c796667cd17e2083eb8c61f6bda9900cc5570bf",
+    "sources/Hiyama/oof_predictions.csv.gz": "8a169f6e8720ff6b4ab20e5c9556a19d83e76d85e198220de4948383255a7096",
+    "sources/Kumada/oof_predictions.csv.gz": "8fe41b9678f091632e356fc48e7257c8fb3639996cf5295a68517e28634ace32",
+    "sources/Minisci/oof_predictions.csv.gz": "fd6ae7efae342ce62a1f6d5b50879e19196dd9641917773811ef9e50e67a46e9",
+    "sources/Pd-carbonylation/oof_predictions.csv.gz": "f7587a99c7ed8f8e8f99b059cebf4555efd1692320b37c3a99780df085d81248",
+    "sources/Reductive-amination/oof_predictions.csv.gz": "7f95b4cbcdf71a9841d75174d6a22f71276a9420c963ce8b367a58174e8ad0fa",
+    "sources/SNAr/oof_predictions.csv.gz": "24b9014860c66e50da25a4abe4bd06c4a13d45aef544989c8c438d568e458473",
+    "sources/Sonogashira/oof_predictions.csv.gz": "ab13fba8021859e1aee2c9eef7fa721dc7e448b51ee7cd329f7e2133e7da550e",
+    "sources/Suzuki_Bpin/oof_predictions.csv.gz": "98147bbbc11edab5bc18189f8c120855e3742463aa4f466c54ad1ee0911aa6b6",
+    "sources/Ullmann/oof_predictions.csv.gz": "1b6dc7091949803714964c5d0ae2a487f72b914f08f8daebf5c6f9f20542d717"
+  },
+  "note": "The per-well predictions listed here are not included in this package; p4_rf_oof.py regenerates them from the released data."
+}
