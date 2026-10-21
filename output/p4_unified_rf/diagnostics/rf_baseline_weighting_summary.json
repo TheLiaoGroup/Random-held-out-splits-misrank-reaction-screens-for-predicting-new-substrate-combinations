@@ -1,51 +1,51 @@
 {
   "subsets": {
     "all_18": {
-      "baseline_model_mae_percentage_points_rho": 0.9669762641898865,
-      "baseline_training_median_mae_percentage_points_rho": 0.9979360165118679,
-      "baseline_model_mae_improvement_over_training_median_rho": 0.7069143446852425,
-      "weighting_well_weighted_r2_rho": 0.5067079463364293,
-      "weighting_well_weighted_mae_percentage_points_rho": 0.9669762641898865,
-      "weighting_pair_equal_r2_rho": 0.2198142414860681,
-      "weighting_pair_equal_mae_percentage_points_rho": 0.9380804953560371,
-      "weighting_both_seen_well_r2_rho": 0.4943240454076367,
-      "weighting_both_seen_well_mae_percentage_points_rho": 0.9442724458204333
+      "baseline_model_mae_percentage_points_rho": 0.9701754385964911,
+      "baseline_training_median_mae_percentage_points_rho": 1.0,
+      "baseline_model_mae_improvement_over_training_median_rho": 0.7298245614035088,
+      "weighting_well_weighted_r2_rho": 0.5228070175438596,
+      "weighting_well_weighted_mae_percentage_points_rho": 0.9701754385964911,
+      "weighting_pair_equal_r2_rho": 0.2771929824561403,
+      "weighting_pair_equal_mae_percentage_points_rho": 0.9596491228070174,
+      "weighting_both_seen_well_r2_rho": 0.5298245614035089,
+      "weighting_both_seen_well_mae_percentage_points_rho": 0.9614035087719298
     },
     "mean_yield_at_least_5pct": {
-      "baseline_model_mae_percentage_points_rho": 0.8636363636363636,
-      "baseline_training_median_mae_percentage_points_rho": 0.990909090909091,
+      "baseline_model_mae_percentage_points_rho": 0.8909090909090911,
+      "baseline_training_median_mae_percentage_points_rho": 1.0,
       "baseline_model_mae_improvement_over_training_median_rho": 0.41818181818181827,
       "weighting_well_weighted_r2_rho": 0.018181818181818184,
-      "weighting_well_weighted_mae_percentage_points_rho": 0.8636363636363636,
-      "weighting_pair_equal_r2_rho": 0.07272727272727274,
-      "weighting_pair_equal_mae_percentage_points_rho": 0.8454545454545455,
-      "weighting_both_seen_well_r2_rho": 0.20000000000000004,
-      "weighting_both_seen_well_mae_percentage_points_rho": 0.8909090909090911
+      "weighting_well_weighted_mae_percentage_points_rho": 0.8909090909090911,
+      "weighting_pair_equal_r2_rho": 0.05454545454545456,
+      "weighting_pair_equal_mae_percentage_points_rho": 0.881818181818182,
+      "weighting_both_seen_well_r2_rho": 0.24545454545454545,
+      "weighting_both_seen_well_mae_percentage_points_rho": 0.9272727272727275
     }
   },
   "grignard_acylation": {
     "Grignard": {
       "group": {
-        "model_mae_percentage_points": 19.161155331587615,
-        "training_median_mae_percentage_points": 19.970181724308055,
-        "model_mae_improvement_over_training_median": 0.040482428774297086
+        "model_mae_percentage_points": 19.121409486810276,
+        "training_median_mae_percentage_points": 20.04039375646304,
+        "model_mae_improvement_over_training_median": 0.04582644620253511
       },
       "row": {
-        "model_mae_percentage_points": 8.909320879813219,
-        "training_median_mae_percentage_points": 19.856161289720838,
-        "model_mae_improvement_over_training_median": 0.5513069930024115
+        "model_mae_percentage_points": 8.853338703487575,
+        "training_median_mae_percentage_points": 19.945044349087354,
+        "model_mae_improvement_over_training_median": 0.5561141032194682
       }
     },
     "Acylation": {
       "group": {
-        "model_mae_percentage_points": 11.018040014140604,
-        "training_median_mae_percentage_points": 23.945604918425058,
-        "model_mae_improvement_over_training_median": 0.5398721574945868
+        "model_mae_percentage_points": 10.3727210008932,
+        "training_median_mae_percentage_points": 22.018566919863968,
+        "model_mae_improvement_over_training_median": 0.5289096179302394
       },
       "row": {
-        "model_mae_percentage_points": 8.796471647599942,
-        "training_median_mae_percentage_points": 23.93408445123266,
-        "model_mae_improvement_over_training_median": 0.6324709336065177
+        "model_mae_percentage_points": 8.257602683131598,
+        "training_median_mae_percentage_points": 22.005110716690155,
+        "model_mae_improvement_over_training_median": 0.6247415946687505
       }
     }
   }

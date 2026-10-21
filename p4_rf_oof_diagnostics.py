@@ -252,6 +252,9 @@ def main():
     parser.add_argument("--package-dir", type=Path, required=True)
     parser.add_argument("--results-dir", type=Path, required=True)
     parser.add_argument("--output-dir", type=Path, required=True)
+    parser.add_argument("--original-results", type=Path,
+                        help="Scored predictions of the original screen-specific models; default "
+                             "<package>/output/p4_original_models/original_pooled_model_results.json")
     args = parser.parse_args()
     package, results, output = [path.resolve() for path in (args.package_dir, args.results_dir, args.output_dir)]
     validate_output_dir(package, results, output)
@@ -260,6 +263,11 @@ def main():
     from p4_saved_score_diagnostics_20261008 import build_diagnostics
     population = load_population(package)
     frames = _truth_frames(package, population)
+    original_path = (args.original_results or package / "output/p4_original_models/original_pooled_model_results.json").resolve()
+    original_payload = json.loads(original_path.read_text("utf-8"))
+    originals = {source["source_name"]: source for source in original_payload["sources"]}
+    if original_payload.get("status") != "completed" or set(originals) != {task.name for task in population.tasks}:
+        raise ValueError("Original-model scores do not cover the released screens")
     run_manifest = json.loads((results / "run_manifest.json").read_text("utf-8"))
     if run_manifest["status"] != "completed":
         raise ValueError("All RF fits must be complete before final diagnostics")
@@ -271,6 +279,7 @@ def main():
     if configuration is not None and signature(configuration) != configuration_signature:
         raise ValueError("RF manifest configuration signature changed")
     input_hashes = {**population.input_hashes, "rf_run_manifest": sha256(results / "run_manifest.json"),
+                    "original_model_scores": sha256(original_path),
                     "rf_configuration_signature": configuration_signature}
     configuration_path = results / "frozen_rf_configuration.json"
     if configuration_path.exists():
@@ -284,7 +293,7 @@ def main():
     sources, conditional, paired_cohorts, comparison, hashes = [], [], [], [], {}
     entries = {entry["source_name"]: entry for entry in run_manifest["sources"]}
     if set(entries) != {task.name for task in population.tasks}:
-        raise ValueError("RF results do not cover the frozen 18 screens")
+        raise ValueError("RF results do not cover the released screens")
     for task in population.tasks:
         artifact = entries[task.name]["oof_predictions"]
         path = (results / artifact["path"]).resolve()
@@ -305,11 +314,11 @@ def main():
                "mean_yield_percent": task.metadata["mean_yield_fraction"] * 100}
         for kind in ("row", "group"):
             for metric in METRICS:
-                for name, item in (("original", task.metadata), ("rf", source)):
+                for name, item in (("original", originals[task.name]), ("rf", source)):
                     value = item["summary"][kind][metric]["mean"]
                     row[f"{name}_{kind}_{metric}"] = value * (1 if metric == "r2" else 100)
             row[f"rf_{kind}_skill_vs_training_mean"] = source["summary"][kind]["skill_vs_training_mean"]["mean"]
-        row["original_delta_r2"] = task.metadata["summary"]["delta_r2"]["mean"]
+        row["original_delta_r2"] = originals[task.name]["summary"]["delta_r2"]["mean"]
         row["rf_delta_r2"] = source["summary"]["delta_r2"]["mean"]
         comparison.append(row)
     check_inputs(population)
@@ -318,7 +327,7 @@ def main():
                "substrate_exposure_identity": "original recorded SMILES; same role; numerical training rows only"},
                "input_sha256": input_hashes,
                "sources": sources, "prediction_sha256": hashes}
-    ranks = {"original": rank_summary(list(population.reference["sources"])), "unified_rf": rank_summary(sources)}
+    ranks = {"original": rank_summary([originals[task.name] for task in population.tasks]), "unified_rf": rank_summary(sources)}
     output.mkdir(parents=True, exist_ok=True)
     pooled_path = output / "rf_pooled_model_results.json"
     pooled_path.write_text(json.dumps(payload, indent=2, allow_nan=False) + "\n", encoding="utf-8")

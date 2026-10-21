@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CDXML Name="phenyl_methyl_pyrazolone" CreationProgram="P4 manually positioned chemical master" BoundingBox="0 0 240 75" BondLength="14.4" LineWidth="0.6" BoldWidth="2" BondSpacing="18" HashSpacing="2.5" MarginWidth="1.6" LabelFont="3" CaptionFont="3" LabelSize="8" CaptionSize="8" LabelFace="96" CaptionFace="0" InterpretChemically="yes" HideImplicitHydrogens="no" ShowTerminalCarbonLabels="no" FractionalWidths="yes" color="0" bgcolor="1">
+  <colortable>
+    <color r="1" g="1" b="1" />
+    <color r="0" g="0" b="0" />
+  </colortable>
+  <fonttable>
+    <font id="3" charset="iso-8859-1" name="Arial" />
+  </fonttable>
+  <page id="101" BoundingBox="0 0 240 75" WidthPages="1" HeightPages="1">
+    <fragment id="102">
+      <n id="103" p="12.00000 12.82092" Element="6" NumHydrogens="3" />
+      <n id="104" p="25.69521 17.27077" Element="6" NumHydrogens="0" />
+      <n id="105" p="25.69521 31.67077" Element="6" NumHydrogens="1" />
+      <n id="106" p="39.39043 36.12061" Element="6" NumHydrogens="0" />
+      <n id="107" p="34.94058 49.81582" Element="8" NumHydrogens="0">
+        <t p="32.24058 52.71582" LabelJustification="Left" LabelAlignment="Left">
+          <s font="3" size="8" face="96">O</s>
+        </t>
+      </n>
+      <n id="108" p="47.85454 24.47077" Element="7" NumHydrogens="0">
+        <t p="45.15454 27.37077" LabelJustification="Left" LabelAlignment="Left">
+          <s font="3" size="8" face="96">N</s>
+        </t>
+      </n>
+      <n id="109" p="62.25454 24.47077" Element="6" NumHydrogens="0" />
+      <n id="110" p="69.45454 12.00000" Element="6" NumHydrogens="1" />
+      <n id="111" p="83.85454 12.00000" Element="6" NumHydrogens="1" />
+      <n id="112" p="91.05454 24.47077" Element="6" NumHydrogens="1" />
+      <n id="113" p="83.85454 36.94153" Element="6" NumHydrogens="1" />
+      <n id="114" p="69.45454 36.94153" Element="6" NumHydrogens="1" />
+      <n id="115" p="39.39043 12.82092" Element="7" NumHydrogens="1">
+        <t p="36.69043 15.72092" LabelJustification="Left" LabelAlignment="Left">
+          <s font="3" size="8" face="96">NH</s>
+        </t>
+      </n>
+      <b id="116" B="103" E="104" Order="1" />
+      <b id="117" B="104" E="105" Order="2" />
+      <b id="118" B="105" E="106" Order="1" />
+      <b id="119" B="106" E="107" Order="2" />
+      <b id="120" B="106" E="108" Order="1" />
+      <b id="121" B="108" E="109" Order="1" />
+      <b id="122" B="109" E="110" Order="2" />
+      <b id="123" B="110" E="111" Order="1" />
+      <b id="124" B="111" E="112" Order="2" />
+      <b id="125" B="112" E="113" Order="1" />
+      <b id="126" B="113" E="114" Order="2" />
+      <b id="127" B="108" E="115" Order="1" />
+      <b id="128" B="115" E="104" Order="1" />
+      <b id="129" B="114" E="109" Order="1" />
+    </fragment>
+  </page>
+</CDXML>

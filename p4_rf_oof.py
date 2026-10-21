@@ -649,7 +649,7 @@ def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--package-dir", type=Path, required=True)
     parser.add_argument("--output-dir", type=Path, required=True)
-    parser.add_argument("--screen", action="append", help="Repeat to select a frozen screen; default all 18")
+    parser.add_argument("--screen", action="append", help="Repeat to select a screen; default all")
     parser.add_argument("--seed", action="append", type=int, help="Repeat to select frozen seeds; default all five")
     parser.add_argument("--threads", type=int, default=4)
     parser.add_argument("--fold-workers", type=int, default=2)

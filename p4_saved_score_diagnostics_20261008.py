@@ -36,8 +36,8 @@ def validate_saved_scores(payload: dict) -> tuple[list[dict], list[int]]:
     sources = payload["sources"]
     seeds = payload["protocol"]["seeds"]
     names = [source["source_name"] for source in sources]
-    if len(sources) != 18 or len(set(names)) != len(names):
-        raise ValueError("expected 18 distinct saved screens")
+    if len(sources) < 2 or len(set(names)) != len(names):
+        raise ValueError("expected distinct saved screens")
     if len(seeds) != 5 or len(set(seeds)) != len(seeds):
         raise ValueError("expected five distinct saved seeds")
     for source in sources:
@@ -197,8 +197,8 @@ def leave_one_screen_out_r2(sources: list[dict], seeds: list[int]) -> dict:
 def build_diagnostics(payload: dict, input_path: Path, input_sha256: str) -> dict:
     sources, seeds = validate_saved_scores(payload)
     retained = [source for source in sources if source["mean_yield_fraction"] >= MEAN_YIELD_THRESHOLD]
-    if len(retained) != 11:
-        raise ValueError("expected 11 saved screens with mean yield >= 0.05")
+    if len(retained) < 3:
+        raise ValueError("too few saved screens with mean yield >= 0.05")
     return {
         "schema_version": 1,
         "provenance": {

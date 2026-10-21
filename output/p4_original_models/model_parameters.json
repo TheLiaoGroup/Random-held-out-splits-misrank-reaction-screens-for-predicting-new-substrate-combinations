@@ -1,5 +1,5 @@
 {
-  "description": "Estimators and parameters of the original screen-specific models (sensitivity analysis); their pooled scores are in data/p4_screens.json.",
+  "description": "Estimators and parameters of the original screen-specific models (sensitivity analysis). The Buchwald-Hartwig CMC array uses the Buchwald-Hartwig specification. Pooled scores: output/p4_original_models/original_pooled_model_results.json.",
   "models": [
     {
       "screen": "Acylation",

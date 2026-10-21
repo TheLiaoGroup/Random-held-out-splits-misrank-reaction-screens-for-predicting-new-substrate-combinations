@@ -7,7 +7,7 @@ unified-RF diagnostics. Outputs, written to a separate directory:
   between substrate-pair means and between condition means, the RF scores, the
   share of wells predicted within 10 yield percentage points and the both-seen
   same-well MAE.
-- rf_pairwise_reversals.csv: for the 11 screens with mean yield >= 5%, every screen
+- rf_pairwise_reversals.csv: for the screens with mean yield >= 5%, every screen
   pair, whether its mean R2 order reverses between protocols, and in how many of
   the five split seeds it reverses.
 - rf_ranking_structure_summary.json: Spearman correlations and per-seed ranks.
@@ -191,8 +191,8 @@ def variance_structure(package: Path, results: Path) -> pd.DataFrame:
             **pairing_design(frame),
         })
     table = pd.DataFrame(records)
-    if len(table) != 18 or table.numeric_records.sum() != 340178:
-        raise ValueError("Unexpected frozen 18-screen population")
+    if len(table) != len(population.tasks) or table.numeric_records.sum() != sum(len(t.y) for t in population.tasks):
+        raise ValueError("Variance-structure table does not cover the released population")
     return table
 
 
@@ -229,8 +229,8 @@ def pairwise_reversals(screens: list[str], scores) -> pd.DataFrame:
 def run(package: Path, results: Path):
     table = variance_structure(package, results)
     higher = table.loc[table.mean_yield_percent >= 5, "screen"].tolist()
-    if len(higher) != 11:
-        raise ValueError("The non-low-yield stratum must contain 11 screens")
+    if len(higher) < 3:
+        raise ValueError("Too few screens with mean yield >= 5% to rank")
     summary = {"variance_structure_rho": {}, "raw_mae_vs_median_mae_rho": {}}
     for name, selected in zip(SUBSETS, (table.screen.tolist(), higher)):
         part = table.set_index("screen").loc[selected]
@@ -294,8 +294,8 @@ def run(package: Path, results: Path):
             table.at[index, f"{protocol}_within_10pp_share"] = float(share[protocol])
     scores = seed_scores(results)
     reversals = pairwise_reversals(higher, scores)
-    if len(reversals) != 55:
-        raise ValueError("Expected 55 screen pairs")
+    if len(reversals) != len(higher) * (len(higher) - 1) // 2:
+        raise ValueError("Pairwise reversals do not cover every pair of retained screens")
     mean_reversed = reversals.loc[reversals.reversed_in_mean]
     summary["pairwise_reversals_mean_yield_at_least_5pct"] = {
         "pairs": len(reversals),

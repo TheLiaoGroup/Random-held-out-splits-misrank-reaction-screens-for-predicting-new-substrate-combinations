@@ -1,7 +1,7 @@
 """Score external predictions on the complete, frozen P4 evaluation tasks.
 
 The tasks are read from the released data: data/p4_screens.json (per-screen metadata and
-condition vocabularies), data/p4_records.csv.gz (the 340,178 numerical records) and
+condition vocabularies), data/p4_records.csv.gz (every record with its measurement status; the records with a numerical yield form the tasks) and
 data/p4_grouped_folds.csv.gz (the frozen new-combination fold of every record and seed).
 Held-out-well folds are shuffled five-fold KFold splits of each screen's records in file order.
 
@@ -45,8 +45,7 @@ SEEDS = (42, 20261007, 20261008, 20261009, 20261010)
 PROTOCOLS = ("row", "group")
 N_SPLITS = 5
 FIELDS = ("screen", "row_uid", "protocol", "seed", "fold", "y_pred")
-EXPECTED_NUMERIC_ROWS = 340178
-EXPECTED_PREDICTIONS = EXPECTED_NUMERIC_ROWS * len(SEEDS) * len(PROTOCOLS)
+ANALYSED_STATUSES = ("quantified", "zero_by_rule")  # records with a numerical yield; the others are missing
 SCREENS = "data/p4_screens.json"
 RECORDS = "data/p4_records.csv.gz"
 FOLDS = "data/p4_grouped_folds.csv.gz"
@@ -180,6 +179,10 @@ class FrozenPopulation:
     input_hashes: dict[str, str]
     reference: dict
 
+    @property
+    def expected_predictions(self) -> int:
+        return sum(len(task.y) for task in self.tasks) * len(SEEDS) * len(PROTOCOLS)
+
 
 def _screen_task(metadata: dict, frame: pd.DataFrame) -> ScreenTask:
     uids = tuple(frame.row_uid.astype(str))
@@ -253,11 +256,22 @@ def _fold_truth(task: ScreenTask, plates: np.ndarray, pairs: np.ndarray) -> None
                 )
 
 
-def read_records(root: Path, columns: list[str] | None = None) -> pd.DataFrame:
-    """Read the released numerical records with exact floating-point yields."""
-    return pd.read_csv(local_path(root, RECORDS), usecols=columns, low_memory=False, float_precision="round_trip",
-                       dtype={"screen": str, "row_uid": str, "plate_group": str, "component_group": str,
-                              "pair_key": str, "condition_id": str})
+def read_records(root: Path, columns: list[str] | None = None, analysed_only: bool = True) -> pd.DataFrame:
+    """Read the released records with exact floating-point yields, by default only those with a numerical yield."""
+    header = pd.read_csv(root / "data/p4_records.csv.gz", nrows=0).columns
+    eligibility = ["analysis_eligible"] if "analysis_eligible" in header else []
+    wanted = None if columns is None else list(dict.fromkeys([*columns, "measurement_status", *eligibility]))
+    frame = pd.read_csv(local_path(root, RECORDS), usecols=wanted, low_memory=False, float_precision="round_trip",
+                        dtype={"screen": str, "row_uid": str, "plate_group": str, "component_group": str,
+                               "pair_key": str, "condition_id": str, "measurement_status": str})
+    if analysed_only:
+        mask = frame.measurement_status.isin(ANALYSED_STATUSES)
+        if eligibility:
+            if not frame.analysis_eligible.isin([True, False]).all():
+                raise ValueError("Invalid analysis_eligible flags")
+            mask &= frame.analysis_eligible
+        frame = frame.loc[mask].reset_index(drop=True)
+    return frame if columns is None else frame[columns]
 
 
 def load_population(root: Path = ROOT) -> FrozenPopulation:
@@ -266,13 +280,12 @@ def load_population(root: Path = ROOT) -> FrozenPopulation:
     hashes: dict[str, str] = {}
     reference = checked_json(root, SCREENS, hashes)
     if (tuple(reference["protocol"]["seeds"]) != SEEDS
-            or len(reference["sources"]) != 18 or len({s["source_name"] for s in reference["sources"]}) != 18
-            or sum(s["numeric_records"] for s in reference["sources"]) != EXPECTED_NUMERIC_ROWS
-            or len({s["reaction_family"] for s in reference["sources"]}) != 17):
+            or len({s["source_name"] for s in reference["sources"]}) != len(reference["sources"])):
         raise ValueError("Unexpected frozen P4 population")
+    expected_rows = sum(s["numeric_records"] for s in reference["sources"])
     hashes[RECORDS] = sha256(local_path(root, RECORDS))
     records = read_records(root, ["screen", "row_uid", "plate_group", "pair_key", "yield_fraction"])
-    if len(records) != EXPECTED_NUMERIC_ROWS or records.row_uid.duplicated().any():
+    if len(records) != expected_rows or records.row_uid.duplicated().any():
         raise ValueError("Released record count or row identity changed")
     tasks, groups = [], {}
     for metadata in reference["sources"]:
@@ -289,7 +302,7 @@ def load_population(root: Path = ROOT) -> FrozenPopulation:
     for relative in (SCREENS, RECORDS, FOLDS):
         if expected.get(relative) != hashes[relative]:
             raise ValueError(f"{relative} does not match its SHA-256 in RELEASE_MANIFEST.json")
-    _load_registry(local_path(root, FOLDS), tasks, EXPECTED_NUMERIC_ROWS * len(SEEDS))
+    _load_registry(local_path(root, FOLDS), tasks, expected_rows * len(SEEDS))
     for task in tasks:
         _fold_truth(task, *groups[task.name])
     population = FrozenPopulation(root, tuple(tasks), hashes, reference)
@@ -381,7 +394,7 @@ def evaluate_csv(handle: TextIO, population: FrozenPopulation, model_name: str) 
         sae.add(abs(residual))
         accepted += 1
     full_mask = (1 << (len(PROTOCOLS) * len(SEEDS))) - 1
-    if accepted != EXPECTED_PREDICTIONS or any(any(mask != full_mask for mask in masks) for masks in seen):
+    if accepted != population.expected_predictions or any(any(mask != full_mask for mask in masks) for masks in seen):
         examples = []
         for task, masks in zip(population.tasks, seen):
             for index, mask in enumerate(masks):
@@ -391,7 +404,7 @@ def evaluate_csv(handle: TextIO, population: FrozenPopulation, model_name: str) 
                         break
             if len(examples) == 5:
                 break
-        raise ValueError(f"Incomplete coverage: {accepted:,}/{EXPECTED_PREDICTIONS:,} predictions; missing tasks include "
+        raise ValueError(f"Incomplete coverage: {accepted:,}/{population.expected_predictions:,} predictions; missing tasks include "
                          + ", ".join(examples))
     sources = []
     for task_index, task in enumerate(population.tasks):
@@ -442,7 +455,7 @@ def evaluate_csv(handle: TextIO, population: FrozenPopulation, model_name: str) 
             "seeds": list(SEEDS), "n_splits": N_SPLITS, "script_sha256": sha256(Path(__file__)),
             "primary": "per-seed pooled out-of-fold R2, MAE and RMSE; five seed means and ranges",
             "prediction_schema": list(FIELDS), "prediction_units": "yield fraction; no clipping",
-            "coverage": "all 18 screens, both protocols, five seeds; each numerical row exactly once",
+            "coverage": "every array, both protocols, five seeds; each numerical row exactly once",
             "sst": "sum((yield - whole numerical screen mean)**2)",
             "yield_sd": "population SD: 100 * sqrt(SST / numerical row count), in percentage points",
             "training_validation": TRAINING_LIMIT,
@@ -571,7 +584,7 @@ def main() -> None:
     template.add_argument("--screen", action="append", help="Select a screen by exact name; repeat to select several")
     template.add_argument("--protocol", choices=PROTOCOLS, action="append", help="Select row or group; repeat as needed")
     template.add_argument("--seed", type=int, choices=SEEDS, action="append", help="Select a frozen seed; repeat as needed")
-    score = commands.add_parser("score", help="Score complete coverage of all 18 screens, protocols and seeds")
+    score = commands.add_parser("score", help="Score complete coverage of every array, protocol and seed")
     score.add_argument("--predictions", type=Path, required=True, help="Complete six-column CSV or CSV.gz")
     score.add_argument("--model-name", required=True, help="Label the external model in new result files")
     score.add_argument("--output-dir", type=Path, required=True, help="New/empty separate directory outside frozen data")
@@ -592,7 +605,7 @@ def main() -> None:
             count = write_template(population, args.output, args.screen, args.protocol, args.seed)
             result = {"template": str(args.output.resolve()), "rows": count,
                       "prediction_units": "yield fraction; leave no blanks in a completed submission",
-                      "complete_score_rows_required": EXPECTED_PREDICTIONS}
+                      "complete_score_rows_required": population.expected_predictions}
         else:
             payload = score_file(args.predictions, population, args.model_name)
             result = write_scores(payload, population, args.output_dir)

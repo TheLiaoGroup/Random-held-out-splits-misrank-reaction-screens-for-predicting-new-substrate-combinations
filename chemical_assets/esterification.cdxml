@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CDXML Name="Esterification" CreationProgram="P4 manually positioned chemical master" BoundingBox="0 0 230 62" BondLength="14.4" LineWidth="0.6" BoldWidth="2" BondSpacing="18" HashSpacing="2.5" MarginWidth="1.6" LabelFont="3" CaptionFont="3" LabelSize="8" CaptionSize="8" LabelFace="96" CaptionFace="0" InterpretChemically="yes" HideImplicitHydrogens="no" ShowTerminalCarbonLabels="no" FractionalWidths="yes" color="0" bgcolor="1">
+  <colortable>
+    <color r="1" g="1" b="1" />
+    <color r="0" g="0" b="0" />
+  </colortable>
+  <fonttable>
+    <font id="3" charset="iso-8859-1" name="Arial" />
+  </fonttable>
+  <page id="101" BoundingBox="0 0 230 62" WidthPages="1" HeightPages="1">
+    <fragment id="102">
+      <n id="103" p="30.00000 31.00000" Element="6" NumHydrogens="0" />
+      <n id="104" p="30.00000 16.60000" Element="8" NumHydrogens="0">
+        <t p="27.30000 19.50000" LabelJustification="Left" LabelAlignment="Left">
+          <s font="3" size="8" face="96">O</s>
+        </t>
+      </n>
+      <n id="105" p="17.52923 38.20000" NodeType="GenericNickname">
+        <t p="14.82923 41.10000" LabelJustification="Left" LabelAlignment="Left">
+          <s font="3" size="8" face="96">R</s>
+        </t>
+      </n>
+      <n id="106" p="42.47077 38.20000" Element="8" NumHydrogens="1">
+        <t p="39.77077 41.10000" LabelJustification="Left" LabelAlignment="Left">
+          <s font="3" size="8" face="96">OH</s>
+        </t>
+      </n>
+      <b id="107" B="103" E="104" Order="2" />
+      <b id="108" B="103" E="105" Order="1" />
+      <b id="109" B="103" E="106" Order="1" />
+    </fragment>
+    <t p="62.00000 34.00000" LabelJustification="Left" LabelAlignment="Left">
+      <s font="3" size="8" face="0">+</s>
+    </t>
+    <fragment id="110">
+      <n id="111" p="86.00000 31.00000" Element="8" NumHydrogens="1">
+        <t p="83.30000 33.90000" LabelJustification="Left" LabelAlignment="Left">
+          <s font="3" size="8" face="96">HO</s>
+        </t>
+      </n>
+      <n id="112" p="100.40000 31.00000" NodeType="GenericNickname">
+        <t p="97.70000 33.90000" LabelJustification="Left" LabelAlignment="Left">
+          <s font="3" size="8" face="96">R′</s>
+        </t>
+      </n>
+      <b id="113" B="111" E="112" Order="1" />
+    </fragment>
+    <arrow id="114" BoundingBox="119 29 150 33" ArrowheadHead="Full" ArrowheadType="Solid" HeadSize="1000" ArrowheadCenterSize="875" ArrowheadWidth="250" LineWidth="0.6" FillType="None" Head3D="150 31 0" Tail3D="119 31 0" />
+    <fragment id="115">
+      <n id="116" p="181.00000 31.00000" Element="6" NumHydrogens="0" />
+      <n id="117" p="181.00000 16.60000" Element="8" NumHydrogens="0">
+        <t p="178.30000 19.50000" LabelJustification="Left" LabelAlignment="Left">
+          <s font="3" size="8" face="96">O</s>
+        </t>
+      </n>
+      <n id="118" p="168.52923 38.20000" NodeType="GenericNickname">
+        <t p="165.82923 41.10000" LabelJustification="Left" LabelAlignment="Left">
+          <s font="3" size="8" face="96">R</s>
+        </t>
+      </n>
+      <n id="119" p="193.47077 38.20000" Element="8" NumHydrogens="0">
+        <t p="190.77077 41.10000" LabelJustification="Left" LabelAlignment="Left">
+          <s font="3" size="8" face="96">O</s>
+        </t>
+      </n>
+      <n id="120" p="205.94153 31.00000" NodeType="GenericNickname">
+        <t p="203.24153 33.90000" LabelJustification="Left" LabelAlignment="Left">
+          <s font="3" size="8" face="96">R′</s>
+        </t>
+      </n>
+      <b id="121" B="116" E="117" Order="2" />
+      <b id="122" B="116" E="118" Order="1" />
+      <b id="123" B="116" E="119" Order="1" />
+      <b id="124" B="119" E="120" Order="1" />
+    </fragment>
+  </page>
+</CDXML>

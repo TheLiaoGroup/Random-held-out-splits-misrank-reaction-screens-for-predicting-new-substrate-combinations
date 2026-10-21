@@ -1,6 +1,6 @@
-"""Shared figure style following the Nature research figure guide.
+"""Shared figure style for the approved Chem figures.
 
-Arial throughout; 8-pt bold lowercase panel letters; 7-pt panel titles and axis titles; 6-pt tick labels,
+Arial throughout; 9-pt bold lowercase panel letters and titles; 8-pt axis titles, tick labels,
 legends and annotations; neutral text (colour is carried by the marks only); no background gridlines.
 Panel letters and titles are placed after layout from the rendered extent of each panel, so that letters
 in one grid row share a baseline, letters in one grid column share a left edge, and each letter sits at or
@@ -14,7 +14,7 @@ from matplotlib.colors import to_hex
 
 INK = "#242b30"
 GRAY = "#7a8389"
-LETTER_SIZE, TITLE_SIZE, LABEL_SIZE, TEXT_SIZE = 8, 7, 7, 6
+LETTER_SIZE, TITLE_SIZE, LABEL_SIZE, TEXT_SIZE = 9, 9, 8, 8
 TITLE_GAP = 6  # points between the top of a panel row and the baseline of its letters and titles
 TITLE_INDENT = 10  # points from a panel letter to the start of its title
 LETTER_MARGIN = 1.5  # points the letter column stands left of the leftmost drawn element
@@ -29,6 +29,18 @@ RC = {
 
 
 def use_style():
+    from pathlib import Path
+
+    from matplotlib.font_manager import FontProperties, findfont, fontManager
+
+    # Where a system-wide Arial is installed, ignore per-user copies of the same family, which can be older
+    # releases carrying a different PostScript name; the PDFs then embed the system ArialMT faces.
+    system = Path("C:/Windows/Fonts")
+    if (system / "arial.ttf").exists():
+        fontManager.ttflist = [f for f in fontManager.ttflist
+                               if f.name != "Arial" or Path(f.fname).parent.resolve() == system.resolve()]
+        fontManager._findfont_cached.cache_clear()
+    findfont(FontProperties(family="Arial"), fallback_to_default=False)
     matplotlib.rcParams.update(RC)
 
 
@@ -99,6 +111,39 @@ def finalize(fig):
                                ha="left", va="baseline"))
     fig.canvas.draw()
     check_labels(fig, placed, boxes)
+    check_text_bounds(fig)
+
+
+def check_text_bounds(fig):
+    """Reject text that a PDF renderer could clip silently at the page edge."""
+    fig.canvas.draw()
+    renderer = fig.canvas.get_renderer()
+    width, height = fig.bbox.width, fig.bbox.height
+    texts = list(fig.texts)
+    legends = list(fig.legends)
+    for ax in fig.axes:
+        if not ax.get_visible():
+            continue
+        texts += list(ax.texts) + [ax.title, ax._left_title, ax._right_title]
+        if ax.get_legend() is not None:
+            legends.append(ax.get_legend())
+        if ax.axison:
+            for axis in (ax.xaxis, ax.yaxis):
+                if not axis.get_visible():
+                    continue
+                texts += [axis.label, axis.get_offset_text()]
+                low, high = sorted(axis.get_view_interval())
+                for tick in axis.get_major_ticks() + axis.get_minor_ticks():
+                    if low - 1e-10 <= tick.get_loc() <= high + 1e-10:
+                        texts += [tick.label1, tick.label2]
+    for legend in legends:
+        texts += legend.get_texts()
+    for text in texts:
+        if not text.get_visible() or not text.get_text().strip():
+            continue
+        box = text.get_window_extent(renderer)
+        if box.x0 < -0.5 or box.y0 < -0.5 or box.x1 > width + 0.5 or box.y1 > height + 0.5:
+            raise ValueError(f"Text outside figure: {text.get_text()!r}; bbox={box.bounds}, canvas={(width, height)}")
 
 
 def check_labels(fig, placed, boxes):

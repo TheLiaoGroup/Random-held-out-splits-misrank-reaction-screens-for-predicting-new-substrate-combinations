@@ -17,6 +17,7 @@ Acylation,CC(=O)c1ccc(N)cc1.O=C(O)C1c2ccccc2Oc2ccccc21>>CC(=O)c1ccc(NC(=O)C2c3cc
 Acylation,CC(=O)c1ccc(N)cc1.O=C(O)Cc1ccc2c(c1)C(=O)c1ccccc1CO2>>CC(=O)c1ccc(NC(=O)Cc2ccc3c(c2)C(=O)c2ccccc2CO3)cc1
 Acylation,CC(=O)c1ccc(N)cc1.Cc1ccc2cc(C(=O)O)ccc2n1>>CC(=O)c1ccc(NC(=O)c2ccc3nc(C)ccc3c2)cc1
 Acylation,CC(=O)c1ccc(N)cc1.N#Cc1ccc(C(=O)O)cc1>>CC(=O)c1ccc(NC(=O)c2ccc(C#N)cc2)cc1
+Acylation,CC(=O)c1ccc(N)cc1.O=C(O)c1ccc([N+](=O)[O-])cc1>>CC(=O)c1ccc(NC(=O)c2ccc([N+](=O)[O-])cc2)cc1
 Acylation,CC(=O)c1ccc(N)cc1.O=C(O)c1ccco1>>CC(=O)c1ccc(NC(=O)c2ccco2)cc1
 Acylation,CC(=O)c1ccc(N)cc1.O=C(O)/C=C/c1ccccc1>>CC(=O)c1ccc(NC(=O)/C=C/c2ccccc2)cc1
 Acylation,CC(=O)c1ccc(N)cc1.Cn1ccnc1C(=O)O>>CC(=O)c1ccc(NC(=O)c2nccn2C)cc1
@@ -33,11 +34,17 @@ Acylation,COc1ccc(N)cn1.O=C(O)C1(c2ccccc2)CC1>>COc1ccc(NC(=O)C2(c3ccccc3)CC2)cn1
 Acylation,COc1ccc(N)cn1.CC(C)(C(=O)O)c1ccccc1>>COc1ccc(NC(=O)C(C)(C)c2ccccc2)cn1
 Acylation,COc1ccc(N)cn1.O=C(O)C(c1ccccc1)c1ccccc1>>COc1ccc(NC(=O)C(c2ccccc2)c2ccccc2)cn1
 Acylation,COc1ccc(N)cn1.O=C(O)Cc1ccc(C(F)(F)F)cc1>>COc1ccc(NC(=O)Cc2ccc(C(F)(F)F)cc2)cn1
+Acylation,Cc1ccc(Nc2ccccc2)cc1.Cc1ccc(CC(=O)O)cc1>>Cc1ccc(CC(=O)N(c2ccccc2)c2ccc(C)cc2)cc1
 Acylation,Cc1ccc(Nc2ccccc2)cc1.O=C(O)COc1ccccc1>>Cc1ccc(N(C(=O)COc2ccccc2)c2ccccc2)cc1
+Acylation,Cc1ccc(Nc2ccccc2)cc1.COc1ccc(CC(=O)O)cc1>>COc1ccc(CC(=O)N(c2ccccc2)c2ccc(C)cc2)cc1
+Acylation,Cc1ccc(Nc2ccccc2)cc1.O=C(O)Cc1cc(F)cc(F)c1>>Cc1ccc(N(C(=O)Cc2cc(F)cc(F)c2)c2ccccc2)cc1
 Acylation,Cc1ccc(Nc2ccccc2)cc1.Cc1cc(C)cc(C(=O)O)c1>>Cc1ccc(N(C(=O)c2cc(C)cc(C)c2)c2ccccc2)cc1
 Acylation,Cc1ccc(Nc2ccccc2)cc1.CC(C)Cc1ccc([C@H](C)C(=O)O)cc1>>Cc1ccc(N(C(=O)[C@@H](C)c2ccc(CC(C)C)cc2)c2ccccc2)cc1
 Acylation,Cc1ccc(Nc2ccccc2)cc1.CC(C(=O)O)c1ccc(CC2CCCC2=O)cc1>>Cc1ccc(N(C(=O)C(C)c2ccc(CC3CCCC3=O)cc2)c2ccccc2)cc1
+Acylation,NCc1ccccc1.O=C(O)COc1ccccc1>>O=C(COc1ccccc1)NCc1ccccc1
+Acylation,NCc1ccccc1.COc1ccc(CC(=O)O)cc1>>COc1ccc(CC(=O)NCc2ccccc2)cc1
 Acylation,NCc1ccccc1.O=C(O)Cc1cc(F)cc(F)c1>>O=C(Cc1cc(F)cc(F)c1)NCc1ccccc1
+Acylation,NCc1ccccc1.Cc1cccc(C)c1C(=O)O>>Cc1cccc(C)c1C(=O)NCc1ccccc1
 Acylation,NCc1ccccc1.Cc1cc(C)c(C(=O)O)c(C)c1>>Cc1cc(C)c(C(=O)NCc2ccccc2)c(C)c1
 Acylation,NCc1ccccc1.COc1cc(C(=O)O)cc(OC)c1OC>>COc1cc(C(=O)NCc2ccccc2)cc(OC)c1OC
 Acylation,NCc1ccccc1.CC(C(=O)O)c1ccc(CBr)cc1>>CC(C(=O)NCc1ccccc1)c1ccc(CBr)cc1
@@ -58,7 +65,9 @@ Acylation,NCc1ccc(F)cc1F.O=C(O)COc1ccccc1>>O=C(COc1ccccc1)NCc1ccc(F)cc1F
 Acylation,NCc1ccc(F)cc1F.COc1ccc(CC(=O)O)cc1>>COc1ccc(CC(=O)NCc2ccc(F)cc2F)cc1
 Acylation,NCc1ccc(F)cc1F.O=C(O)Cc1cc(F)cc(F)c1>>O=C(Cc1cc(F)cc(F)c1)NCc1ccc(F)cc1F
 Acylation,NCc1ccc(F)cc1F.Cc1cccc(C)c1C(=O)O>>Cc1cccc(C)c1C(=O)NCc1ccc(F)cc1F
+Acylation,NCc1ccc(F)cc1F.Cc1cc(C)c(C(=O)O)c(C)c1>>Cc1cc(C)c(C(=O)NCc2ccc(F)cc2F)c(C)c1
 Acylation,NCc1ccc(F)cc1F.COc1cc(C(=O)O)cc(OC)c1OC>>COc1cc(C(=O)NCc2ccc(F)cc2F)cc(OC)c1OC
+Acylation,NCc1ccc(F)cc1F.CC(C)Cc1ccc([C@H](C)C(=O)O)cc1>>CC(C)Cc1ccc(C(C)C(=O)NCc2ccc(F)cc2F)cc1
 Acylation,NCc1ccc(F)cc1F.O=C(O)c1ccc(C(F)(F)F)cn1>>O=C(NCc1ccc(F)cc1F)c1ccc(C(F)(F)F)cn1
 Acylation,NCc1ccc(F)cc1F.Cc1cc(C)cc(C(=O)O)c1>>Cc1cc(C)cc(C(=O)NCc2ccc(F)cc2F)c1
 Acylation,NCc1ccc(F)cc1F.COc1ccc2cc([C@H](C)C(=O)O)ccc2c1>>COc1ccc2cc(C(C)C(=O)NCc3ccc(F)cc3F)ccc2c1
@@ -74,6 +83,7 @@ Acylation,NCc1ccc(F)cc1F.O=C(O)c1ccc([N+](=O)[O-])cc1>>O=C(NCc1ccc(F)cc1F)c1ccc(
 Acylation,NCc1ccc(F)cc1F.O=C(O)c1ccco1>>O=C(NCc1ccc(F)cc1F)c1ccco1
 Acylation,NCc1ccc(F)cc1F.O=C(O)Cc1c[nH]c2ccccc12>>O=C(Cc1c[nH]c2ccccc12)NCc1ccc(F)cc1F
 Acylation,NCc1ccc(F)cc1F.O=C(O)/C=C/c1ccccc1>>O=C(/C=C/c1ccccc1)NCc1ccc(F)cc1F
+Acylation,Cc1ccc(CN)cc1.Cc1ccc(CC(=O)O)cc1>>Cc1ccc(CNC(=O)Cc2ccc(C)cc2)cc1
 Acylation,Cc1ccc(CN)cc1.O=C(O)COc1ccccc1>>Cc1ccc(CNC(=O)COc2ccccc2)cc1
 Acylation,Cc1ccc(CN)cc1.COc1ccc(CC(=O)O)cc1>>COc1ccc(CC(=O)NCc2ccc(C)cc2)cc1
 Acylation,Cc1ccc(CN)cc1.O=C(O)Cc1cc(F)cc(F)c1>>Cc1ccc(CNC(=O)Cc2cc(F)cc(F)c2)cc1
@@ -96,12 +106,15 @@ Acylation,Cc1ccc(CN)cc1.N#Cc1ccc(C(=O)O)cc1>>Cc1ccc(CNC(=O)c2ccc(C#N)cc2)cc1
 Acylation,Cc1ccc(CN)cc1.O=C(O)c1ccc([N+](=O)[O-])cc1>>Cc1ccc(CNC(=O)c2ccc([N+](=O)[O-])cc2)cc1
 Acylation,Cc1ccc(CN)cc1.O=C(O)c1ccco1>>Cc1ccc(CNC(=O)c2ccco2)cc1
 Acylation,Cc1ccc(CN)cc1.O=C(O)/C=C/c1ccccc1>>Cc1ccc(CNC(=O)/C=C/c2ccccc2)cc1
+Acylation,Cc1cc(C)nc(N)n1.CC(C(=O)O)c1ccc(CC2CCCC2=O)cc1>>Cc1cc(C)nc(NC(=O)C(C)c2ccc(CC3CCCC3=O)cc2)n1
+Acylation,COc1ccc(CN)cc1.O=C(O)COc1ccccc1>>COc1ccc(CNC(=O)COc2ccccc2)cc1
 Acylation,COc1ccc(CN)cc1.COc1ccc(CC(=O)O)cc1>>COc1ccc(CNC(=O)Cc2ccc(OC)cc2)cc1
 Acylation,COc1ccc(CN)cc1.O=C(O)Cc1cc(F)cc(F)c1>>COc1ccc(CNC(=O)Cc2cc(F)cc(F)c2)cc1
 Acylation,COc1ccc(CN)cc1.Cc1cccc(C)c1C(=O)O>>COc1ccc(CNC(=O)c2c(C)cccc2C)cc1
 Acylation,COc1ccc(CN)cc1.Cc1cc(C)c(C(=O)O)c(C)c1>>COc1ccc(CNC(=O)c2c(C)cc(C)cc2C)cc1
 Acylation,COc1ccc(CN)cc1.COc1cc(C(=O)O)cc(OC)c1OC>>COc1ccc(CNC(=O)c2cc(OC)c(OC)c(OC)c2)cc1
 Acylation,COc1ccc(CN)cc1.CC(C)Cc1ccc([C@H](C)C(=O)O)cc1>>COc1ccc(CNC(=O)[C@@H](C)c2ccc(CC(C)C)cc2)cc1
+Acylation,COc1ccc(CN)cc1.CC(C(=O)O)c1ccc(CBr)cc1>>COc1ccc(CNC(=O)C(C)c2ccc(CBr)cc2)cc1
 Acylation,COc1ccc(CN)cc1.Cc1cc(C)cc(C(=O)O)c1>>COc1ccc(CNC(=O)c2cc(C)cc(C)c2)cc1
 Acylation,COc1ccc(CN)cc1.O=C(O)C1(c2ccccc2)CC1>>COc1ccc(CNC(=O)C2(c3ccccc3)CC2)cc1
 Acylation,COc1ccc(CN)cc1.COc1ccc2cc([C@H](C)C(=O)O)ccc2c1>>COc1ccc(CNC(=O)C(C)c2ccc3cc(OC)ccc3c2)cc1
@@ -120,7 +133,6 @@ Acylation,NCc1ccc2c(c1)OCO2.O=C(O)COc1ccccc1>>O=C(COc1ccccc1)NCc1ccc2c(c1)OCO2
 Acylation,NCc1ccc2c(c1)OCO2.O=C(O)Cc1cc(F)cc(F)c1>>O=C(Cc1cc(F)cc(F)c1)NCc1ccc2c(c1)OCO2
 Acylation,NCc1ccc2c(c1)OCO2.CC(C(=O)O)c1ccc(CBr)cc1>>CC(C(=O)NCc1ccc2c(c1)OCO2)c1ccc(CBr)cc1
 Acylation,NCc1ccc2c(c1)OCO2.O=C(O)c1ccc(C(F)(F)F)cn1>>O=C(NCc1ccc2c(c1)OCO2)c1ccc(C(F)(F)F)cn1
-Acylation,NCc1ccc2c(c1)OCO2.Cc1cc(C)cc(C(=O)O)c1>>Cc1cc(C)cc(C(=O)NCc2ccc3c(c2)OCO3)c1
 Acylation,NCc1ccc2c(c1)OCO2.CC(C)(C(=O)O)c1ccccc1>>CC(C)(C(=O)NCc1ccc2c(c1)OCO2)c1ccccc1
 Acylation,NCc1ccc2c(c1)OCO2.CC(C(=O)O)c1ccc(CC2CCCC2=O)cc1>>CC(C(=O)NCc1ccc2c(c1)OCO2)c1ccc(CC2CCCC2=O)cc1
 Acylation,NCc1ccc2c(c1)OCO2.O=C(O)Cc1ccc(C(F)(F)F)cc1>>O=C(Cc1ccc(C(F)(F)F)cc1)NCc1ccc2c(c1)OCO2
@@ -142,6 +154,7 @@ Acylation,NCc1cccc2ccccc12.O=C(O)Cc1ccc2c(c1)C(=O)c1ccccc1CO2>>O=C(Cc1ccc2c(c1)C
 Acylation,NCc1cccc2ccccc12.Cc1ccc2cc(C(=O)O)ccc2n1>>Cc1ccc2cc(C(=O)NCc3cccc4ccccc34)ccc2n1
 Acylation,NCc1cccc2ccccc12.O=C(O)c1ccco1>>O=C(NCc1cccc2ccccc12)c1ccco1
 Acylation,NCc1cccc2ccccc12.O=C(O)/C=C/c1ccccc1>>O=C(/C=C/c1ccccc1)NCc1cccc2ccccc12
+Acylation,NCc1cccc2ccccc12.Cn1ccnc1C(=O)O>>Cn1ccnc1C(=O)NCc1cccc2ccccc12
 Acylation,NCc1cccc2ccccc12.O=C(O)c1ncccn1>>O=C(NCc1cccc2ccccc12)c1ncccn1
 Acylation,Cc1ccc2cccc(N)c2n1.Cc1ccc(CC(=O)O)cc1>>Cc1ccc(CC(=O)Nc2cccc3ccc(C)nc23)cc1
 Acylation,Cc1ccc2cccc(N)c2n1.O=C(O)COc1ccccc1>>Cc1ccc2cccc(NC(=O)COc3ccccc3)c2n1
@@ -151,6 +164,7 @@ Acylation,Cc1ccc2cccc(N)c2n1.Cc1cccc(C)c1C(=O)O>>Cc1ccc2cccc(NC(=O)c3c(C)cccc3C)
 Acylation,Cc1ccc2cccc(N)c2n1.Cc1cc(C)c(C(=O)O)c(C)c1>>Cc1cc(C)c(C(=O)Nc2cccc3ccc(C)nc23)c(C)c1
 Acylation,Cc1ccc2cccc(N)c2n1.COc1cc(C(=O)O)cc(OC)c1OC>>COc1cc(C(=O)Nc2cccc3ccc(C)nc23)cc(OC)c1OC
 Acylation,Cc1ccc2cccc(N)c2n1.CC(C)Cc1ccc([C@H](C)C(=O)O)cc1>>Cc1ccc2cccc(NC(=O)C(C)c3ccc(CC(C)C)cc3)c2n1
+Acylation,Cc1ccc2cccc(N)c2n1.CC(C(=O)O)c1ccc(CBr)cc1>>Cc1ccc2cccc(NC(=O)C(C)c3ccc(CBr)cc3)c2n1
 Acylation,Cc1ccc2cccc(N)c2n1.O=C(O)c1ccc(C(F)(F)F)cn1>>Cc1ccc2cccc(NC(=O)c3ccc(C(F)(F)F)cn3)c2n1
 Acylation,Cc1ccc2cccc(N)c2n1.Cc1cc(C)cc(C(=O)O)c1>>Cc1cc(C)cc(C(=O)Nc2cccc3ccc(C)nc23)c1
 Acylation,Cc1ccc2cccc(N)c2n1.O=C(O)C1(c2ccccc2)CC1>>Cc1ccc2cccc(NC(=O)C3(c4ccccc4)CC3)c2n1
@@ -166,31 +180,45 @@ Acylation,Cc1ccc2cccc(N)c2n1.O=C(O)C1c2ccccc2Oc2ccccc21>>Cc1ccc2cccc(NC(=O)C3c4c
 Acylation,Cc1ccc2cccc(N)c2n1.O=C(O)Cc1ccc2c(c1)C(=O)c1ccccc1CO2>>Cc1ccc2cccc(NC(=O)Cc3ccc4c(c3)C(=O)c3ccccc3CO4)c2n1
 Acylation,Cc1ccc2cccc(N)c2n1.Cc1ccc2cc(C(=O)O)ccc2n1>>Cc1ccc2cc(C(=O)Nc3cccc4ccc(C)nc34)ccc2n1
 Acylation,Cc1ccc2cccc(N)c2n1.N#Cc1ccc(C(=O)O)cc1>>Cc1ccc2cccc(NC(=O)c3ccc(C#N)cc3)c2n1
+Acylation,Cc1cc(C)nc(N)n1.Cc1ccc(CC(=O)O)cc1>>Cc1ccc(CC(=O)Nc2nc(C)cc(C)n2)cc1
+Acylation,Cc1cc(C)nc(N)n1.O=C(O)COc1ccccc1>>Cc1cc(C)nc(NC(=O)COc2ccccc2)n1
+Acylation,Cc1cc(C)nc(N)n1.COc1ccc(CC(=O)O)cc1>>COc1ccc(CC(=O)Nc2nc(C)cc(C)n2)cc1
+Acylation,Cc1cc(C)nc(N)n1.O=C(O)Cc1cc(F)cc(F)c1>>Cc1cc(C)nc(NC(=O)Cc2cc(F)cc(F)c2)n1
 Acylation,Cc1cc(C)nc(N)n1.Cc1cccc(C)c1C(=O)O>>Cc1cc(C)nc(NC(=O)c2c(C)cccc2C)n1
 Acylation,Cc1cc(C)nc(N)n1.Cc1cc(C)c(C(=O)O)c(C)c1>>Cc1cc(C)c(C(=O)Nc2nc(C)cc(C)n2)c(C)c1
 Acylation,Cc1cc(C)nc(N)n1.COc1cc(C(=O)O)cc(OC)c1OC>>COc1cc(C(=O)Nc2nc(C)cc(C)n2)cc(OC)c1OC
 Acylation,NC(c1ccccc1)(c1ccccc1)c1ccccc1.Cc1ccc(CC(=O)O)cc1>>Cc1ccc(CC(=O)NC(c2ccccc2)(c2ccccc2)c2ccccc2)cc1
+Acylation,Nc1ccc2scnc2c1.Cc1ccc(CC(=O)O)cc1>>Cc1ccc(CC(=O)Nc2ccc3scnc3c2)cc1
+Acylation,Nc1ccc2scnc2c1.O=C(O)COc1ccccc1>>O=C(COc1ccccc1)Nc1ccc2scnc2c1
 Acylation,Nc1ccc2scnc2c1.O=C(O)C(c1ccccc1)c1ccccc1>>O=C(Nc1ccc2scnc2c1)C(c1ccccc1)c1ccccc1
 Acylation,Nc1ccc2scnc2c1.O=C(O)Cc1cc(F)cc(F)c1>>O=C(Cc1cc(F)cc(F)c1)Nc1ccc2scnc2c1
 Acylation,Nc1ccc2scnc2c1.O=C(O)Cc1ccc2c(c1)OCO2>>O=C(Cc1ccc2c(c1)OCO2)Nc1ccc2scnc2c1
+Acylation,Nc1ccc2scnc2c1.O=C(O)C1c2ccccc2Oc2ccccc21>>O=C(Nc1ccc2scnc2c1)C1c2ccccc2Oc2ccccc21
 Acylation,Nc1ccc2scnc2c1.O=C(O)Cc1ccc2c(c1)C(=O)c1ccccc1CO2>>O=C(Cc1ccc2c(c1)C(=O)c1ccccc1CO2)Nc1ccc2scnc2c1
+Acylation,Nc1ccc2scnc2c1.Cc1ccc2cc(C(=O)O)ccc2n1>>Cc1ccc2cc(C(=O)Nc3ccc4scnc4c3)ccc2n1
 Acylation,Cc1ccc(S(N)(=O)=O)cc1.Cc1ccc(CC(=O)O)cc1>>Cc1ccc(CC(=O)NS(=O)(=O)c2ccc(C)cc2)cc1
+Acylation,Cc1ccc(S(N)(=O)=O)cc1.O=C(O)COc1ccccc1>>Cc1ccc(S(=O)(=O)NC(=O)COc2ccccc2)cc1
 Acylation,Cc1ccc(S(N)(=O)=O)cc1.O=C(O)C(c1ccccc1)c1ccccc1>>Cc1ccc(S(=O)(=O)NC(=O)C(c2ccccc2)c2ccccc2)cc1
 Acylation,Cc1ccc(S(N)(=O)=O)cc1.O=C(O)Cc1cc(F)cc(F)c1>>Cc1ccc(S(=O)(=O)NC(=O)Cc2cc(F)cc(F)c2)cc1
 Acylation,Cc1ccc(S(N)(=O)=O)cc1.O=C(O)Cc1ccc2c(c1)OCO2>>Cc1ccc(S(=O)(=O)NC(=O)Cc2ccc3c(c2)OCO3)cc1
 Acylation,Cc1ccc(S(N)(=O)=O)cc1.O=C(O)C1c2ccccc2Oc2ccccc21>>Cc1ccc(S(=O)(=O)NC(=O)C2c3ccccc3Oc3ccccc32)cc1
+Acylation,Cc1ccc(S(N)(=O)=O)cc1.O=C(O)Cc1ccc2c(c1)C(=O)c1ccccc1CO2>>Cc1ccc(S(=O)(=O)NC(=O)Cc2ccc3c(c2)C(=O)c2ccccc2CO3)cc1
 Acylation,Cc1ccc(S(N)(=O)=O)cc1.Cc1ccc2cc(C(=O)O)ccc2n1>>Cc1ccc(S(=O)(=O)NC(=O)c2ccc3nc(C)ccc3c2)cc1
+Acylation,Nc1ccc(F)nc1.Cc1ccc(CC(=O)O)cc1>>Cc1ccc(CC(=O)Nc2ccc(F)nc2)cc1
 Acylation,Nc1ccc(F)nc1.O=C(O)COc1ccccc1>>O=C(COc1ccccc1)Nc1ccc(F)nc1
 Acylation,Nc1ccc(F)nc1.O=C(O)C(c1ccccc1)c1ccccc1>>O=C(Nc1ccc(F)nc1)C(c1ccccc1)c1ccccc1
 Acylation,Nc1ccc(F)nc1.O=C(O)Cc1cc(F)cc(F)c1>>O=C(Cc1cc(F)cc(F)c1)Nc1ccc(F)nc1
 Acylation,Nc1ccc(F)nc1.O=C(O)Cc1ccc2c(c1)OCO2>>O=C(Cc1ccc2c(c1)OCO2)Nc1ccc(F)nc1
+Acylation,Nc1ccc(F)nc1.O=C(O)C1c2ccccc2Oc2ccccc21>>O=C(Nc1ccc(F)nc1)C1c2ccccc2Oc2ccccc21
 Acylation,Nc1ccc(F)nc1.O=C(O)Cc1ccc2c(c1)C(=O)c1ccccc1CO2>>O=C(Cc1ccc2c(c1)C(=O)c1ccccc1CO2)Nc1ccc(F)nc1
 Acylation,Nc1ccc(F)nc1.Cc1ccc2cc(C(=O)O)ccc2n1>>Cc1ccc2cc(C(=O)Nc3ccc(F)nc3)ccc2n1
 Acylation,Nc1nccc(Cl)n1.Cc1ccc(CC(=O)O)cc1>>Cc1ccc(CC(=O)Nc2nccc(Cl)n2)cc1
 Acylation,Nc1nccc(Cl)n1.O=C(O)COc1ccccc1>>O=C(COc1ccccc1)Nc1nccc(Cl)n1
 Acylation,Nc1nccc(Cl)n1.O=C(O)C(c1ccccc1)c1ccccc1>>O=C(Nc1nccc(Cl)n1)C(c1ccccc1)c1ccccc1
 Acylation,Nc1nccc(Cl)n1.O=C(O)Cc1cc(F)cc(F)c1>>O=C(Cc1cc(F)cc(F)c1)Nc1nccc(Cl)n1
+Acylation,Nc1nccc(Cl)n1.O=C(O)Cc1ccc2c(c1)OCO2>>O=C(Cc1ccc2c(c1)OCO2)Nc1nccc(Cl)n1
 Acylation,Nc1nccc(Cl)n1.O=C(O)C1c2ccccc2Oc2ccccc21>>O=C(Nc1nccc(Cl)n1)C1c2ccccc2Oc2ccccc21
+Acylation,Nc1nccc(Cl)n1.O=C(O)Cc1ccc2c(c1)C(=O)c1ccccc1CO2>>O=C(Cc1ccc2c(c1)C(=O)c1ccccc1CO2)Nc1nccc(Cl)n1
 Acylation,Nc1nccc(Cl)n1.Cc1ccc2cc(C(=O)O)ccc2n1>>Cc1ccc2cc(C(=O)Nc3nccc(Cl)n3)ccc2n1
 Acylation,Cc1cc(C)c(N)c([N+](=O)[O-])c1.O=C(O)COc1ccccc1>>Cc1cc(C)c(NC(=O)COc2ccccc2)c([N+](=O)[O-])c1
 Acylation,Cc1cc(C)c(N)c([N+](=O)[O-])c1.O=C(O)C(c1ccccc1)c1ccccc1>>Cc1cc(C)c(NC(=O)C(c2ccccc2)c2ccccc2)c([N+](=O)[O-])c1
@@ -201,17 +229,22 @@ Acylation,Cc1cc(C)c(N)c([N+](=O)[O-])c1.O=C(O)Cc1ccc2c(c1)C(=O)c1ccccc1CO2>>Cc1c
 Acylation,Cc1cc(C)c(N)c([N+](=O)[O-])c1.Cc1ccc2cc(C(=O)O)ccc2n1>>Cc1cc(C)c(NC(=O)c2ccc3nc(C)ccc3c2)c([N+](=O)[O-])c1
 Acylation,Nc1ccncc1[N+](=O)[O-].Cc1ccc(CC(=O)O)cc1>>Cc1ccc(CC(=O)Nc2ccncc2[N+](=O)[O-])cc1
 Acylation,Nc1ccncc1[N+](=O)[O-].O=C(O)COc1ccccc1>>O=C(COc1ccccc1)Nc1ccncc1[N+](=O)[O-]
+Acylation,Nc1ccncc1[N+](=O)[O-].O=C(O)C(c1ccccc1)c1ccccc1>>O=C(Nc1ccncc1[N+](=O)[O-])C(c1ccccc1)c1ccccc1
 Acylation,Nc1ccncc1[N+](=O)[O-].O=C(O)Cc1cc(F)cc(F)c1>>O=C(Cc1cc(F)cc(F)c1)Nc1ccncc1[N+](=O)[O-]
 Acylation,Nc1ccncc1[N+](=O)[O-].O=C(O)Cc1ccc2c(c1)OCO2>>O=C(Cc1ccc2c(c1)OCO2)Nc1ccncc1[N+](=O)[O-]
 Acylation,Nc1ccncc1[N+](=O)[O-].O=C(O)C1c2ccccc2Oc2ccccc21>>O=C(Nc1ccncc1[N+](=O)[O-])C1c2ccccc2Oc2ccccc21
 Acylation,Nc1ccncc1[N+](=O)[O-].O=C(O)Cc1ccc2c(c1)C(=O)c1ccccc1CO2>>O=C(Cc1ccc2c(c1)C(=O)c1ccccc1CO2)Nc1ccncc1[N+](=O)[O-]
+Acylation,Nc1ccncc1[N+](=O)[O-].Cc1ccc2cc(C(=O)O)ccc2n1>>Cc1ccc2cc(C(=O)Nc3ccncc3[N+](=O)[O-])ccc2n1
 Acylation,CCOc1cc(N)ccn1.Cc1ccc(CC(=O)O)cc1>>CCOc1cc(NC(=O)Cc2ccc(C)cc2)ccn1
 Acylation,CCOc1cc(N)ccn1.O=C(O)COc1ccccc1>>CCOc1cc(NC(=O)COc2ccccc2)ccn1
+Acylation,CCOc1cc(N)ccn1.O=C(O)C(c1ccccc1)c1ccccc1>>CCOc1cc(NC(=O)C(c2ccccc2)c2ccccc2)ccn1
 Acylation,CCOc1cc(N)ccn1.O=C(O)Cc1cc(F)cc(F)c1>>CCOc1cc(NC(=O)Cc2cc(F)cc(F)c2)ccn1
 Acylation,CCOc1cc(N)ccn1.O=C(O)Cc1ccc2c(c1)OCO2>>CCOc1cc(NC(=O)Cc2ccc3c(c2)OCO3)ccn1
+Acylation,CCc1cccc(N)c1.O=C(O)C(c1ccccc1)c1ccccc1>>CCc1cccc(NC(=O)C(c2ccccc2)c2ccccc2)c1
 Acylation,CCc1cccc(N)c1.O=C(O)Cc1cc(F)cc(F)c1>>CCc1cccc(NC(=O)Cc2cc(F)cc(F)c2)c1
 Acylation,CCc1cccc(N)c1.O=C(O)Cc1ccc2c(c1)OCO2>>CCc1cccc(NC(=O)Cc2ccc3c(c2)OCO3)c1
 Acylation,CCc1cccc(N)c1.O=C(O)C1c2ccccc2Oc2ccccc21>>CCc1cccc(NC(=O)C2c3ccccc3Oc3ccccc32)c1
+Acylation,CCc1cccc(N)c1.O=C(O)Cc1ccc2c(c1)C(=O)c1ccccc1CO2>>CCc1cccc(NC(=O)Cc2ccc3c(c2)C(=O)c2ccccc2CO3)c1
 Acylation,CCc1cccc(N)c1.Cc1ccc2cc(C(=O)O)ccc2n1>>CCc1cccc(NC(=O)c2ccc3nc(C)ccc3c2)c1
 Acylation,Nc1ccc2c(c1)OCCO2.Cc1ccc(CC(=O)O)cc1>>Cc1ccc(CC(=O)Nc2ccc3c(c2)OCCO3)cc1
 Acylation,Nc1ccc2c(c1)OCCO2.O=C(O)COc1ccccc1>>O=C(COc1ccccc1)Nc1ccc2c(c1)OCCO2
@@ -224,16 +257,32 @@ Acylation,Nc1ccc2c(c1)OCCO2.Cc1ccc2cc(C(=O)O)ccc2n1>>Cc1ccc2cc(C(=O)Nc3ccc4c(c3)
 Acylation,NCc1ccc(Br)cc1.O=C(O)COc1ccccc1>>O=C(COc1ccccc1)NCc1ccc(Br)cc1
 Acylation,NCc1ccc(Br)cc1.O=C(O)C(c1ccccc1)c1ccccc1>>O=C(NCc1ccc(Br)cc1)C(c1ccccc1)c1ccccc1
 Acylation,NCc1ccc(Br)cc1.O=C(O)Cc1cc(F)cc(F)c1>>O=C(Cc1cc(F)cc(F)c1)NCc1ccc(Br)cc1
+Acylation,NCc1ccc(Br)cc1.O=C(O)Cc1ccc2c(c1)OCO2>>O=C(Cc1ccc2c(c1)OCO2)NCc1ccc(Br)cc1
 Acylation,NCc1ccc(Br)cc1.O=C(O)C1c2ccccc2Oc2ccccc21>>O=C(NCc1ccc(Br)cc1)C1c2ccccc2Oc2ccccc21
+Acylation,NCc1ccc(Br)cc1.O=C(O)Cc1ccc2c(c1)C(=O)c1ccccc1CO2>>O=C(Cc1ccc2c(c1)C(=O)c1ccccc1CO2)NCc1ccc(Br)cc1
 Acylation,NCc1ccc(Br)cc1.Cc1ccc2cc(C(=O)O)ccc2n1>>Cc1ccc2cc(C(=O)NCc3ccc(Br)cc3)ccc2n1
+Acylation,C[C@H](N)c1cccc2ccccc12.O=C(O)Cc1ccc([N+](=O)[O-])cc1>>CC(NC(=O)Cc1ccc([N+](=O)[O-])cc1)c1cccc2ccccc12
+Acylation,C[C@H](N)c1cccc2ccccc12.O=C(O)c1cnccn1>>CC(NC(=O)c1cnccn1)c1cccc2ccccc12
 Acylation,C[C@H](N)c1cccc2ccccc12.COc1ncc(Br)cc1C(=O)O>>COc1ncc(Br)cc1C(=O)NC(C)c1cccc2ccccc12
 Acylation,C[C@H](N)c1cccc2ccccc12.O=C(O)c1ncccn1>>CC(NC(=O)c1ncccn1)c1cccc2ccccc12
+Acylation,C[C@H](N)c1cccc2ccccc12.Cc1ccc(F)cc1C(=O)O>>Cc1ccc(F)cc1C(=O)NC(C)c1cccc2ccccc12
+Acylation,C[C@H](N)c1cccc2ccccc12.O=C(O)c1ccc(Br)s1>>CC(NC(=O)c1ccc(Br)s1)c1cccc2ccccc12
 Acylation,C[C@H](N)c1cccc2ccccc12.O=C(O)C1Cc2ccccc2C1>>CC(NC(=O)C1Cc2ccccc2C1)c1cccc2ccccc12
+Acylation,C[C@H](N)c1cccc2ccccc12.O=C(O)c1cccc(-c2ccccc2)c1>>CC(NC(=O)c1cccc(-c2ccccc2)c1)c1cccc2ccccc12
 Acylation,C[C@H](N)c1cccc2ccccc12.O=C(O)c1ccc2nccnc2c1>>CC(NC(=O)c1ccc2nccnc2c1)c1cccc2ccccc12
 Acylation,C[C@H](N)c1cccc2ccccc12.O=C(O)c1ccc2c(c1)OCCO2>>CC(NC(=O)c1ccc2c(c1)OCCO2)c1cccc2ccccc12
 Acylation,C[C@H](N)c1cccc2ccccc12.O=C(O)c1cc2ccccc2s1>>CC(NC(=O)c1cc2ccccc2s1)c1cccc2ccccc12
 Acylation,C[C@H](N)c1cccc2ccccc12.O=C(O)c1cc2ccccc2o1>>CC(NC(=O)c1cc2ccccc2o1)c1cccc2ccccc12
 Acylation,C[C@H](N)c1cccc2ccccc12.O=C(O)Cc1ccc2c(c1)OCO2>>CC(NC(=O)Cc1ccc2c(c1)OCO2)c1cccc2ccccc12
+Acylation,Cc1ccc(N)nc1.O=C(O)Cc1ccc([N+](=O)[O-])cc1>>Cc1ccc(NC(=O)Cc2ccc([N+](=O)[O-])cc2)nc1
+Acylation,Cc1ccc(N)nc1.Cc1cc(C(=O)O)cc(Cl)n1>>Cc1ccc(NC(=O)c2cc(C)nc(Cl)c2)nc1
+Acylation,Cc1ccc(N)nc1.O=C(O)c1cnccn1>>Cc1ccc(NC(=O)c2cnccn2)nc1
+Acylation,Cc1ccc(N)nc1.COc1ncc(Br)cc1C(=O)O>>COc1ncc(Br)cc1C(=O)Nc1ccc(C)cn1
+Acylation,Cc1ccc(N)nc1.O=C(O)c1ncccn1>>Cc1ccc(NC(=O)c2ncccn2)nc1
+Acylation,Cc1ccc(N)nc1.Cc1ccc(F)cc1C(=O)O>>Cc1ccc(NC(=O)c2cc(F)ccc2C)nc1
+Acylation,Cc1ccc(N)nc1.O=C(O)c1ccc(Br)s1>>Cc1ccc(NC(=O)c2ccc(Br)s2)nc1
+Acylation,Cc1ccc(N)nc1.O=C(O)C1Cc2ccccc2C1>>Cc1ccc(NC(=O)C2Cc3ccccc3C2)nc1
+Acylation,Cc1ccc(N)nc1.O=C(O)c1cccc(-c2ccccc2)c1>>Cc1ccc(NC(=O)c2cccc(-c3ccccc3)c2)nc1
 Acylation,Cc1ccc(N)nc1.O=C(O)c1ccc2nccnc2c1>>Cc1ccc(NC(=O)c2ccc3nccnc3c2)nc1
 Acylation,Cc1ccc(N)nc1.O=C(O)c1ccc2c(c1)OCCO2>>Cc1ccc(NC(=O)c2ccc3c(c2)OCCO3)nc1
 Acylation,Cc1ccc(N)nc1.O=C(O)c1cc2ccccc2s1>>Cc1ccc(NC(=O)c2cc3ccccc3s2)nc1
@@ -241,6 +290,7 @@ Acylation,Cc1ccc(N)nc1.O=C(O)c1cc2ccccc2o1>>Cc1ccc(NC(=O)c2cc3ccccc3o2)nc1
 Acylation,Cc1ccc(N)nc1.O=C(O)Cc1ccc2c(c1)OCO2>>Cc1ccc(NC(=O)Cc2ccc3c(c2)OCO3)nc1
 Acylation,Cc1ccc(N)cc1.O=C(O)Cc1ccc([N+](=O)[O-])cc1>>Cc1ccc(NC(=O)Cc2ccc([N+](=O)[O-])cc2)cc1
 Acylation,Cc1ccc(N)cc1.Cc1cc(C(=O)O)cc(Cl)n1>>Cc1ccc(NC(=O)c2cc(C)nc(Cl)c2)cc1
+Acylation,Cc1ccc(N)cc1.O=C(O)c1cnccn1>>Cc1ccc(NC(=O)c2cnccn2)cc1
 Acylation,Cc1ccc(N)cc1.COc1ncc(Br)cc1C(=O)O>>COc1ncc(Br)cc1C(=O)Nc1ccc(C)cc1
 Acylation,Cc1ccc(N)cc1.O=C(O)c1ncccn1>>Cc1ccc(NC(=O)c2ncccn2)cc1
 Acylation,Cc1ccc(N)cc1.Cc1ccc(F)cc1C(=O)O>>Cc1ccc(NC(=O)c2cc(F)ccc2C)cc1
@@ -251,7 +301,6 @@ Acylation,Cc1ccc(N)cc1.O=C(O)c1ccc2nccnc2c1>>Cc1ccc(NC(=O)c2ccc3nccnc3c2)cc1
 Acylation,Cc1ccc(N)cc1.O=C(O)c1ccc2c(c1)OCCO2>>Cc1ccc(NC(=O)c2ccc3c(c2)OCCO3)cc1
 Acylation,Cc1ccc(N)cc1.O=C(O)c1cc2ccccc2s1>>Cc1ccc(NC(=O)c2cc3ccccc3s2)cc1
 Acylation,Cc1ccc(N)cc1.O=C(O)c1cc2ccccc2o1>>Cc1ccc(NC(=O)c2cc3ccccc3o2)cc1
-Acylation,Cc1ccc(N)cc1.O=C(O)Cc1ccc2c(c1)OCO2>>Cc1ccc(NC(=O)Cc2ccc3c(c2)OCO3)cc1
 Acylation,COc1ccc(N)cn1.O=C(O)Cc1ccc([N+](=O)[O-])cc1>>COc1ccc(NC(=O)Cc2ccc([N+](=O)[O-])cc2)cn1
 Acylation,COc1ccc(N)cn1.Cc1cc(C(=O)O)cc(Cl)n1>>COc1ccc(NC(=O)c2cc(C)nc(Cl)c2)cn1
 Acylation,COc1ccc(N)cn1.O=C(O)c1cnccn1>>COc1ccc(NC(=O)c2cnccn2)cn1
@@ -262,6 +311,7 @@ Acylation,COc1ccc(N)cn1.O=C(O)c1ccc(Br)s1>>COc1ccc(NC(=O)c2ccc(Br)s2)cn1
 Acylation,COc1ccc(N)cn1.O=C(O)C1Cc2ccccc2C1>>COc1ccc(NC(=O)C2Cc3ccccc3C2)cn1
 Acylation,COc1ccc(N)cn1.O=C(O)c1cccc(-c2ccccc2)c1>>COc1ccc(NC(=O)c2cccc(-c3ccccc3)c2)cn1
 Acylation,COc1ccc(N)cn1.O=C(O)c1ccc2nccnc2c1>>COc1ccc(NC(=O)c2ccc3nccnc3c2)cn1
+Acylation,COc1ccc(N)cn1.O=C(O)c1ccc2c(c1)OCCO2>>COc1ccc(NC(=O)c2ccc3c(c2)OCCO3)cn1
 Acylation,COc1ccc(N)cn1.O=C(O)c1cc2ccccc2s1>>COc1ccc(NC(=O)c2cc3ccccc3s2)cn1
 Acylation,COc1ccc(N)cn1.O=C(O)c1cc2ccccc2o1>>COc1ccc(NC(=O)c2cc3ccccc3o2)cn1
 Acylation,COc1ccc(N)cn1.O=C(O)Cc1ccc2c(c1)OCO2>>COc1ccc(NC(=O)Cc2ccc3c(c2)OCO3)cn1
@@ -272,16 +322,20 @@ Acylation,Cc1ccc2cccc(N)c2n1.O=C(O)c1ncccn1>>Cc1ccc2cccc(NC(=O)c3ncccn3)c2n1
 Acylation,Cc1ccc2cccc(N)c2n1.Cc1ccc(F)cc1C(=O)O>>Cc1ccc2cccc(NC(=O)c3cc(F)ccc3C)c2n1
 Acylation,Cc1ccc2cccc(N)c2n1.O=C(O)c1ccc(Br)s1>>Cc1ccc2cccc(NC(=O)c3ccc(Br)s3)c2n1
 Acylation,Cc1ccc2cccc(N)c2n1.O=C(O)C1Cc2ccccc2C1>>Cc1ccc2cccc(NC(=O)C3Cc4ccccc4C3)c2n1
+Acylation,Cc1ccc2cccc(N)c2n1.O=C(O)c1cccc(-c2ccccc2)c1>>Cc1ccc2cccc(NC(=O)c3cccc(-c4ccccc4)c3)c2n1
 Acylation,Cc1ccc2cccc(N)c2n1.O=C(O)c1ccc2nccnc2c1>>Cc1ccc2cccc(NC(=O)c3ccc4nccnc4c3)c2n1
 Acylation,Cc1ccc2cccc(N)c2n1.O=C(O)c1ccc2c(c1)OCCO2>>Cc1ccc2cccc(NC(=O)c3ccc4c(c3)OCCO4)c2n1
 Acylation,Cc1ccc2cccc(N)c2n1.O=C(O)c1cc2ccccc2s1>>Cc1ccc2cccc(NC(=O)c3cc4ccccc4s3)c2n1
+Acylation,Cc1ccc2cccc(N)c2n1.O=C(O)c1cc2ccccc2o1>>Cc1ccc2cccc(NC(=O)c3cc4ccccc4o3)c2n1
 Acylation,Cc1ccc(CN)cc1.O=C(O)Cc1ccc([N+](=O)[O-])cc1>>Cc1ccc(CNC(=O)Cc2ccc([N+](=O)[O-])cc2)cc1
 Acylation,Cc1ccc(CN)cc1.Cc1cc(C(=O)O)cc(Cl)n1>>Cc1ccc(CNC(=O)c2cc(C)nc(Cl)c2)cc1
+Acylation,Cc1ccc(CN)cc1.O=C(O)c1cnccn1>>Cc1ccc(CNC(=O)c2cnccn2)cc1
 Acylation,Cc1ccc(CN)cc1.COc1ncc(Br)cc1C(=O)O>>COc1ncc(Br)cc1C(=O)NCc1ccc(C)cc1
 Acylation,Cc1ccc(CN)cc1.O=C(O)c1ncccn1>>Cc1ccc(CNC(=O)c2ncccn2)cc1
 Acylation,Cc1ccc(CN)cc1.Cc1ccc(F)cc1C(=O)O>>Cc1ccc(CNC(=O)c2cc(F)ccc2C)cc1
 Acylation,Cc1ccc(CN)cc1.O=C(O)c1ccc(Br)s1>>Cc1ccc(CNC(=O)c2ccc(Br)s2)cc1
 Acylation,Cc1ccc(CN)cc1.O=C(O)C1Cc2ccccc2C1>>Cc1ccc(CNC(=O)C2Cc3ccccc3C2)cc1
+Acylation,Cc1ccc(CN)cc1.O=C(O)c1cccc(-c2ccccc2)c1>>Cc1ccc(CNC(=O)c2cccc(-c3ccccc3)c2)cc1
 Acylation,Cc1ccc(CN)cc1.O=C(O)c1ccc2nccnc2c1>>Cc1ccc(CNC(=O)c2ccc3nccnc3c2)cc1
 Acylation,Cc1ccc(CN)cc1.O=C(O)c1ccc2c(c1)OCCO2>>Cc1ccc(CNC(=O)c2ccc3c(c2)OCCO3)cc1
 Acylation,Cc1ccc(CN)cc1.O=C(O)c1cc2ccccc2s1>>Cc1ccc(CNC(=O)c2cc3ccccc3s2)cc1
@@ -291,9 +345,13 @@ Acylation,NCc1ccc(F)cc1F.Cc1cc(C(=O)O)cc(Cl)n1>>Cc1cc(C(=O)NCc2ccc(F)cc2F)cc(Cl)
 Acylation,NCc1ccc(F)cc1F.O=C(O)c1cnccn1>>O=C(NCc1ccc(F)cc1F)c1cnccn1
 Acylation,NCc1ccc(F)cc1F.COc1ncc(Br)cc1C(=O)O>>COc1ncc(Br)cc1C(=O)NCc1ccc(F)cc1F
 Acylation,NCc1ccc(F)cc1F.O=C(O)c1ncccn1>>O=C(NCc1ccc(F)cc1F)c1ncccn1
+Acylation,NCc1ccc(F)cc1F.Cc1ccc(F)cc1C(=O)O>>Cc1ccc(F)cc1C(=O)NCc1ccc(F)cc1F
 Acylation,NCc1ccc(F)cc1F.O=C(O)c1ccc(Br)s1>>O=C(NCc1ccc(F)cc1F)c1ccc(Br)s1
+Acylation,NCc1ccc(F)cc1F.O=C(O)C1Cc2ccccc2C1>>O=C(NCc1ccc(F)cc1F)C1Cc2ccccc2C1
 Acylation,NCc1ccc(F)cc1F.O=C(O)c1cccc(-c2ccccc2)c1>>O=C(NCc1ccc(F)cc1F)c1cccc(-c2ccccc2)c1
 Acylation,NCc1ccc(F)cc1F.O=C(O)c1ccc2nccnc2c1>>O=C(NCc1ccc(F)cc1F)c1ccc2nccnc2c1
+Acylation,NCc1ccc(F)cc1F.O=C(O)c1ccc2c(c1)OCCO2>>O=C(NCc1ccc(F)cc1F)c1ccc2c(c1)OCCO2
+Acylation,NCc1ccc(F)cc1F.O=C(O)c1cc2ccccc2s1>>O=C(NCc1ccc(F)cc1F)c1cc2ccccc2s1
 Acylation,NCc1ccc(F)cc1F.O=C(O)c1cc2ccccc2o1>>O=C(NCc1ccc(F)cc1F)c1cc2ccccc2o1
 Acylation,NCc1cccc2ccccc12.Cc1cc(C(=O)O)cc(Cl)n1>>Cc1cc(C(=O)NCc2cccc3ccccc23)cc(Cl)n1
 Acylation,NCc1cccc2ccccc12.O=C(O)c1cnccn1>>O=C(NCc1cccc2ccccc12)c1cnccn1
@@ -314,6 +372,7 @@ Acylation,CC(=O)c1ccc(N)cc1.O=C(O)Cc1ccc2c(c1)OCO2>>CC(=O)c1ccc(NC(=O)Cc2ccc3c(c
 Acylation,NCc1ccco1.O=C(O)Cc1ccc([N+](=O)[O-])cc1>>O=C(Cc1ccc([N+](=O)[O-])cc1)NCc1ccco1
 Acylation,NCc1ccco1.O=C(O)C1Cc2ccccc2C1>>O=C(NCc1ccco1)C1Cc2ccccc2C1
 Acylation,NCc1ccco1.Cc1ccc(F)cc1C(=O)O>>Cc1ccc(F)cc1C(=O)NCc1ccco1
+Acylation,NCc1ccco1.O=C(O)Cc1ccc2c(c1)OCO2>>O=C(Cc1ccc2c(c1)OCO2)NCc1ccco1
 Acylation,NCc1ccc(Cl)cc1.Cc1ccc(CC(=O)O)cc1>>Cc1ccc(CC(=O)NCc2ccc(Cl)cc2)cc1
 Acylation,NCc1ccc(Cl)cc1.O=C(O)Cc1cc(F)cc(F)c1>>O=C(Cc1cc(F)cc(F)c1)NCc1ccc(Cl)cc1
 Acylation,NCc1ccc(Cl)cc1.Cc1cc(C)c(C(=O)O)c(C)c1>>Cc1cc(C)c(C(=O)NCc2ccc(Cl)cc2)c(C)c1
@@ -324,18 +383,31 @@ Acylation,NCc1ccc(Cl)cc1.O=C(O)C(c1ccccc1)c1ccccc1>>O=C(NCc1ccc(Cl)cc1)C(c1ccccc
 Acylation,NCc1ccc(Cl)cc1.O=C(O)Cc1ccc(C(F)(F)F)cc1>>O=C(Cc1ccc(C(F)(F)F)cc1)NCc1ccc(Cl)cc1
 Acylation,NCc1ccc(Cl)cc1.O=C(O)Cc1ccc2c(c1)OCO2>>O=C(Cc1ccc2c(c1)OCO2)NCc1ccc(Cl)cc1
 Acylation,NCc1ccc(Cl)cc1.O=C(O)C1c2ccccc2Oc2ccccc21>>O=C(NCc1ccc(Cl)cc1)C1c2ccccc2Oc2ccccc21
+Acylation,NCc1ccc(Cl)cc1.Cc1ccc2cc(C(=O)O)ccc2n1>>Cc1ccc2cc(C(=O)NCc3ccc(Cl)cc3)ccc2n1
 Acylation,NCc1ccc(Cl)cc1.O=C(O)c1ccco1>>O=C(NCc1ccc(Cl)cc1)c1ccco1
 Acylation,NCc1ccc(Cl)cc1.O=C(O)/C=C/c1ccccc1>>O=C(/C=C/c1ccccc1)NCc1ccc(Cl)cc1
+Acylation,NCc1ccc(Cl)cc1.O=C(O)c1ncccn1>>O=C(NCc1ccc(Cl)cc1)c1ncccn1
+Acylation,NCc1ccc(Cl)cc1.O=C(O)Cc1ccc([N+](=O)[O-])cc1>>O=C(Cc1ccc([N+](=O)[O-])cc1)NCc1ccc(Cl)cc1
+Acylation,NCc1ccc(Cl)cc1.COc1ncc(Br)cc1C(=O)O>>COc1ncc(Br)cc1C(=O)NCc1ccc(Cl)cc1
+Acylation,NCc1ccc(Cl)cc1.Cc1ccc(F)cc1C(=O)O>>Cc1ccc(F)cc1C(=O)NCc1ccc(Cl)cc1
 Acylation,NCc1ccc(Cl)cc1.O=C(O)C1Cc2ccccc2C1>>O=C(NCc1ccc(Cl)cc1)C1Cc2ccccc2C1
 Acylation,NCc1ccc(Cl)cc1.O=C(O)c1cccc(-c2ccccc2)c1>>O=C(NCc1ccc(Cl)cc1)c1cccc(-c2ccccc2)c1
 Acylation,NCc1ccc(Cl)cc1.O=C(O)c1ccc2nccnc2c1>>O=C(NCc1ccc(Cl)cc1)c1ccc2nccnc2c1
 Acylation,NCc1ccc(Cl)cc1.O=C(O)c1ccc2c(c1)OCCO2>>O=C(NCc1ccc(Cl)cc1)c1ccc2c(c1)OCCO2
 Acylation,NCc1ccc(Cl)cc1.O=C(O)c1cc2ccccc2s1>>O=C(NCc1ccc(Cl)cc1)c1cc2ccccc2s1
 Acylation,Cc1ccc(Oc2ccc(N)cc2)cc1.Cc1cc(C)c(C(=O)O)c(C)c1>>Cc1ccc(Oc2ccc(NC(=O)c3c(C)cc(C)cc3C)cc2)cc1
+Acylation,Cc1ccc(Oc2ccc(N)cc2)cc1.CC(C(=O)O)c1ccc(CBr)cc1>>Cc1ccc(Oc2ccc(NC(=O)C(C)c3ccc(CBr)cc3)cc2)cc1
 Acylation,Cc1ccc(Oc2ccc(N)cc2)cc1.O=C(O)c1ccc(C(F)(F)F)cn1>>Cc1ccc(Oc2ccc(NC(=O)c3ccc(C(F)(F)F)cn3)cc2)cc1
+Acylation,Cc1ccc(Oc2ccc(N)cc2)cc1.O=C(O)C(c1ccccc1)c1ccccc1>>Cc1ccc(Oc2ccc(NC(=O)C(c3ccccc3)c3ccccc3)cc2)cc1
 Acylation,Cc1ccc(Oc2ccc(N)cc2)cc1.O=C(O)Cc1ccc(C(F)(F)F)cc1>>Cc1ccc(Oc2ccc(NC(=O)Cc3ccc(C(F)(F)F)cc3)cc2)cc1
 Acylation,Cc1ccc(Oc2ccc(N)cc2)cc1.O=C(O)Cc1ccc2c(c1)OCO2>>Cc1ccc(Oc2ccc(NC(=O)Cc3ccc4c(c3)OCO4)cc2)cc1
+Acylation,Cc1ccc(Oc2ccc(N)cc2)cc1.O=C(O)C1c2ccccc2Oc2ccccc21>>Cc1ccc(Oc2ccc(NC(=O)C3c4ccccc4Oc4ccccc43)cc2)cc1
+Acylation,Cc1ccc(Oc2ccc(N)cc2)cc1.O=C(O)Cc1ccc2c(c1)C(=O)c1ccccc1CO2>>Cc1ccc(Oc2ccc(NC(=O)Cc3ccc4c(c3)C(=O)c3ccccc3CO4)cc2)cc1
+Acylation,Cc1ccc(Oc2ccc(N)cc2)cc1.Cc1ccc2cc(C(=O)O)ccc2n1>>Cc1ccc(Oc2ccc(NC(=O)c3ccc4nc(C)ccc4c3)cc2)cc1
+Acylation,Cc1ccc(Oc2ccc(N)cc2)cc1.O=C(O)c1ccco1>>Cc1ccc(Oc2ccc(NC(=O)c3ccco3)cc2)cc1
+Acylation,Cc1ccc(Oc2ccc(N)cc2)cc1.O=C(O)c1ncccn1>>Cc1ccc(Oc2ccc(NC(=O)c3ncccn3)cc2)cc1
 Acylation,Cc1ccc(Cl)c(N)c1.O=C(O)Cc1cc(F)cc(F)c1>>Cc1ccc(Cl)c(NC(=O)Cc2cc(F)cc(F)c2)c1
+Acylation,Cc1ccc(Cl)c(N)c1.O=C(O)c1ccc(C(F)(F)F)cn1>>Cc1ccc(Cl)c(NC(=O)c2ccc(C(F)(F)F)cn2)c1
 Acylation,Cc1ccc(Cl)c(N)c1.O=C(O)C(c1ccccc1)c1ccccc1>>Cc1ccc(Cl)c(NC(=O)C(c2ccccc2)c2ccccc2)c1
 Acylation,Cc1ccc(Cl)c(N)c1.O=C(O)Cc1ccc2c(c1)OCO2>>Cc1ccc(Cl)c(NC(=O)Cc2ccc3c(c2)OCO3)c1
 Acylation,Cc1ccc(Cl)c(N)c1.O=C(O)C1c2ccccc2Oc2ccccc21>>Cc1ccc(Cl)c(NC(=O)C2c3ccccc3Oc3ccccc32)c1
@@ -344,11 +416,13 @@ Acylation,Cc1ccc(Cl)c(N)c1.O=C(O)Cc1ccc2c(c1)C(=O)c1ccccc1CO2>>Cc1ccc(Cl)c(NC(=O
 Acylation,Cc1ccc(Cl)c(N)c1.O=C(O)Cc1ccc([N+](=O)[O-])cc1>>Cc1ccc(Cl)c(NC(=O)Cc2ccc([N+](=O)[O-])cc2)c1
 Acylation,Cc1ccc(Cl)c(N)c1.Cc1ccc(F)cc1C(=O)O>>Cc1ccc(Cl)c(NC(=O)c2cc(F)ccc2C)c1
 Acylation,Cc1ccc(Cl)c(N)c1.O=C(O)c1ccc(Br)s1>>Cc1ccc(Cl)c(NC(=O)c2ccc(Br)s2)c1
+Acylation,Cc1ccc(Cl)c(N)c1.Cn1ccnc1C(=O)O>>Cc1ccc(Cl)c(NC(=O)c2nccn2C)c1
 Acylation,Cc1ccc(Cl)c(N)c1.O=C(O)c1cccc(-c2ccccc2)c1>>Cc1ccc(Cl)c(NC(=O)c2cccc(-c3ccccc3)c2)c1
 Acylation,Cc1ccc(Cl)c(N)c1.O=C(O)c1ccc2nccnc2c1>>Cc1ccc(Cl)c(NC(=O)c2ccc3nccnc3c2)c1
 Acylation,Cc1ccc(Cl)c(N)c1.Cc1cc(C(=O)O)cc(Cl)n1>>Cc1ccc(Cl)c(NC(=O)c2cc(C)nc(Cl)c2)c1
 Acylation,NCc1ccccc1C(F)(F)F.Cc1ccc(CC(=O)O)cc1>>Cc1ccc(CC(=O)NCc2ccccc2C(F)(F)F)cc1
 Acylation,NCc1ccccc1C(F)(F)F.O=C(O)Cc1cc(F)cc(F)c1>>O=C(Cc1cc(F)cc(F)c1)NCc1ccccc1C(F)(F)F
+Acylation,NCc1ccccc1C(F)(F)F.O=C(O)c1ccc(C(F)(F)F)cn1>>O=C(NCc1ccccc1C(F)(F)F)c1ccc(C(F)(F)F)cn1
 Acylation,NCc1ccccc1C(F)(F)F.O=C(O)C(c1ccccc1)c1ccccc1>>O=C(NCc1ccccc1C(F)(F)F)C(c1ccccc1)c1ccccc1
 Acylation,NCc1ccccc1C(F)(F)F.O=C(O)Cc1ccc2c(c1)OCO2>>O=C(Cc1ccc2c(c1)OCO2)NCc1ccccc1C(F)(F)F
 Acylation,NCc1ccccc1C(F)(F)F.Cc1ccc2cc(C(=O)O)ccc2n1>>Cc1ccc2cc(C(=O)NCc3ccccc3C(F)(F)F)ccc2n1
@@ -357,29 +431,59 @@ Acylation,NCc1ccccc1C(F)(F)F.COc1ncc(Br)cc1C(=O)O>>COc1ncc(Br)cc1C(=O)NCc1ccccc1
 Acylation,NCc1ccccc1C(F)(F)F.O=C(O)Cc1ccc([N+](=O)[O-])cc1>>O=C(Cc1ccc([N+](=O)[O-])cc1)NCc1ccccc1C(F)(F)F
 Acylation,NCc1ccccc1C(F)(F)F.Cc1ccc(F)cc1C(=O)O>>Cc1ccc(F)cc1C(=O)NCc1ccccc1C(F)(F)F
 Acylation,NCc1ccccc1C(F)(F)F.O=C(O)c1ccc(Br)s1>>O=C(NCc1ccccc1C(F)(F)F)c1ccc(Br)s1
+Acylation,NCc1ccccc1C(F)(F)F.Cn1ccnc1C(=O)O>>Cn1ccnc1C(=O)NCc1ccccc1C(F)(F)F
 Acylation,NCc1ccccc1C(F)(F)F.O=C(O)c1cccc(-c2ccccc2)c1>>O=C(NCc1ccccc1C(F)(F)F)c1cccc(-c2ccccc2)c1
 Acylation,NCc1ccccc1C(F)(F)F.O=C(O)c1ccc2nccnc2c1>>O=C(NCc1ccccc1C(F)(F)F)c1ccc2nccnc2c1
+Acylation,NCc1ccccc1C(F)(F)F.O=C(O)c1cc2ccccc2s1>>O=C(NCc1ccccc1C(F)(F)F)c1cc2ccccc2s1
+Acylation,NC1CCCCC1.Cc1ccc(CC(=O)O)cc1>>Cc1ccc(CC(=O)NC2CCCCC2)cc1
+Acylation,NC1CCCCC1.O=C(O)COc1ccccc1>>O=C(COc1ccccc1)NC1CCCCC1
+Acylation,NC1CCCCC1.O=C(O)Cc1cc(F)cc(F)c1>>O=C(Cc1cc(F)cc(F)c1)NC1CCCCC1
+Acylation,NC1CCCCC1.O=C(O)c1ccccc1Cc1ccccc1>>O=C(NC1CCCCC1)c1ccccc1Cc1ccccc1
 Acylation,NC1CCCCC1.O=C(O)Cc1ccc([N+](=O)[O-])cc1>>O=C(Cc1ccc([N+](=O)[O-])cc1)NC1CCCCC1
 Acylation,NC1CCCCC1.O=C(O)c1ccc(C(F)(F)F)cn1>>O=C(NC1CCCCC1)c1ccc(C(F)(F)F)cn1
 Acylation,NC1CCCCC1.Cc1ccc(F)cc1C(=O)O>>Cc1ccc(F)cc1C(=O)NC1CCCCC1
+Acylation,NC1CCCCC1.O=C(O)C(c1ccccc1)c1ccccc1>>O=C(NC1CCCCC1)C(c1ccccc1)c1ccccc1
+Acylation,NC1CCCCC1.O=C(O)Cc1ccc(C(F)(F)F)cc1>>O=C(Cc1ccc(C(F)(F)F)cc1)NC1CCCCC1
+Acylation,NC1CCCCC1.O=C(O)Cc1ccc2c(c1)OCO2>>O=C(Cc1ccc2c(c1)OCO2)NC1CCCCC1
+Acylation,NC1CCCCC1.O=C(O)C1c2ccccc2Oc2ccccc21>>O=C(NC1CCCCC1)C1c2ccccc2Oc2ccccc21
 Acylation,NC1CCCCC1.O=C(O)Cc1ccc2c(c1)C(=O)c1ccccc1CO2>>O=C(Cc1ccc2c(c1)C(=O)c1ccccc1CO2)NC1CCCCC1
+Acylation,NC1CCCCC1.COc1ncc(Br)cc1C(=O)O>>COc1ncc(Br)cc1C(=O)NC1CCCCC1
 Acylation,NC1CCCCC1.O=C(O)c1ccc2nccnc2c1>>O=C(NC1CCCCC1)c1ccc2nccnc2c1
+Acylation,NC1CCCCC1.CCCCOc1ccc(C(=O)O)cc1>>CCCCOc1ccc(C(=O)NC2CCCCC2)cc1
+Acylation,NC1CCCCC1.O=C(O)c1cc2ccccc2s1>>O=C(NC1CCCCC1)c1cc2ccccc2s1
 Acylation,C#CC(C)(C)N.O=C(O)Cc1cc(F)cc(F)c1>>C#CC(C)(C)NC(=O)Cc1cc(F)cc(F)c1
 Acylation,C#CC(C)(C)N.O=C(O)Cc1ccc([N+](=O)[O-])cc1>>C#CC(C)(C)NC(=O)Cc1ccc([N+](=O)[O-])cc1
+Acylation,C#CC(C)(C)N.O=C(O)c1ccc(C(F)(F)F)cn1>>C#CC(C)(C)NC(=O)c1ccc(C(F)(F)F)cn1
+Acylation,C#CC(C)(C)N.CC(C)(C(=O)O)c1ccccc1>>C#CC(C)(C)NC(=O)C(C)(C)c1ccccc1
 Acylation,C#CC(C)(C)N.Cc1ccc(F)cc1C(=O)O>>C#CC(C)(C)NC(=O)c1cc(F)ccc1C
 Acylation,C#CC(C)(C)N.O=C(O)C(c1ccccc1)c1ccccc1>>C#CC(C)(C)NC(=O)C(c1ccccc1)c1ccccc1
 Acylation,C#CC(C)(C)N.O=C(O)Cc1ccc(C(F)(F)F)cc1>>C#CC(C)(C)NC(=O)Cc1ccc(C(F)(F)F)cc1
+Acylation,C#CC(C)(C)N.O=C(O)Cc1ccc2c(c1)OCO2>>C#CC(C)(C)NC(=O)Cc1ccc2c(c1)OCO2
 Acylation,C#CC(C)(C)N.O=C(O)C1c2ccccc2Oc2ccccc21>>C#CC(C)(C)NC(=O)C1c2ccccc2Oc2ccccc21
 Acylation,C#CC(C)(C)N.O=C(O)Cc1ccc2c(c1)C(=O)c1ccccc1CO2>>C#CC(C)(C)NC(=O)Cc1ccc2c(c1)C(=O)c1ccccc1CO2
+Acylation,C#CC(C)(C)N.Cc1ccc2cc(C(=O)O)ccc2n1>>C#CC(C)(C)NC(=O)c1ccc2nc(C)ccc2c1
+Acylation,C#CC(C)(C)N.COc1ncc(Br)cc1C(=O)O>>C#CC(C)(C)NC(=O)c1cc(Br)cnc1OC
 Acylation,C#CC(C)(C)N.O=C(O)c1ccc2nccnc2c1>>C#CC(C)(C)NC(=O)c1ccc2nccnc2c1
+Acylation,C#CC(C)(C)N.CCCCOc1ccc(C(=O)O)cc1>>C#CC(C)(C)NC(=O)c1ccc(OCCCC)cc1
+Acylation,C#CC(C)(C)N.O=C(O)c1cc2ccccc2s1>>C#CC(C)(C)NC(=O)c1cc2ccccc2s1
 Acylation,COC(=O)c1cc(F)ccc1N.Cc1ccc(CC(=O)O)cc1>>COC(=O)c1cc(F)ccc1NC(=O)Cc1ccc(C)cc1
+Acylation,COC(=O)c1cc(F)ccc1N.O=C(O)COc1ccccc1>>COC(=O)c1cc(F)ccc1NC(=O)COc1ccccc1
 Acylation,COC(=O)c1cc(F)ccc1N.O=C(O)Cc1cc(F)cc(F)c1>>COC(=O)c1cc(F)ccc1NC(=O)Cc1cc(F)cc(F)c1
 Acylation,COC(=O)c1cc(F)ccc1N.O=C(O)C(c1ccccc1)c1ccccc1>>COC(=O)c1cc(F)ccc1NC(=O)C(c1ccccc1)c1ccccc1
 Acylation,COC(=O)c1cc(F)ccc1N.O=C(O)Cc1ccc(C(F)(F)F)cc1>>COC(=O)c1cc(F)ccc1NC(=O)Cc1ccc(C(F)(F)F)cc1
 Acylation,COC(=O)c1cc(F)ccc1N.O=C(O)Cc1ccc2c(c1)OCO2>>COC(=O)c1cc(F)ccc1NC(=O)Cc1ccc2c(c1)OCO2
+Acylation,COC(=O)c1cc(F)ccc1N.O=C(O)C1c2ccccc2Oc2ccccc21>>COC(=O)c1cc(F)ccc1NC(=O)C1c2ccccc2Oc2ccccc21
+Acylation,COC(=O)c1cc(F)ccc1N.Cc1ccc2cc(C(=O)O)ccc2n1>>COC(=O)c1cc(F)ccc1NC(=O)c1ccc2nc(C)ccc2c1
+Acylation,COC(=O)c1cc(F)ccc1N.O=C(O)Cc1ccc([N+](=O)[O-])cc1>>COC(=O)c1cc(F)ccc1NC(=O)Cc1ccc([N+](=O)[O-])cc1
+Acylation,NCC1CC1.O=C(O)COc1ccccc1>>O=C(COc1ccccc1)NCC1CC1
 Acylation,NCC1CC1.O=C(O)C(c1ccccc1)c1ccccc1>>O=C(NCC1CC1)C(c1ccccc1)c1ccccc1
 Acylation,NCC1CC1.O=C(O)Cc1ccc(C(F)(F)F)cc1>>O=C(Cc1ccc(C(F)(F)F)cc1)NCC1CC1
+Acylation,NCC1CC1.O=C(O)Cc1ccc2c(c1)OCO2>>O=C(Cc1ccc2c(c1)OCO2)NCC1CC1
+Acylation,NCC1CC1.O=C(O)C1c2ccccc2Oc2ccccc21>>O=C(NCC1CC1)C1c2ccccc2Oc2ccccc21
+Acylation,NCC1CC1.Cc1ccc2cc(C(=O)O)ccc2n1>>Cc1ccc2cc(C(=O)NCC3CC3)ccc2n1
 Acylation,NCC1CC1.O=C(O)Cc1ccc([N+](=O)[O-])cc1>>O=C(Cc1ccc([N+](=O)[O-])cc1)NCC1CC1
+Acylation,NCC1CC1.Cn1ccnc1C(=O)O>>Cn1ccnc1C(=O)NCC1CC1
+Acylation,COc1ccc(N)cc1OC.Cc1ccc(CC(=O)O)cc1>>COc1ccc(NC(=O)Cc2ccc(C)cc2)cc1OC
 Acylation,COc1ccc(N)cc1OC.O=C(O)COc1ccccc1>>COc1ccc(NC(=O)COc2ccccc2)cc1OC
 Acylation,COc1ccc(N)cc1OC.O=C(O)Cc1cc(F)cc(F)c1>>COc1ccc(NC(=O)Cc2cc(F)cc(F)c2)cc1OC
 Acylation,COc1ccc(N)cc1OC.O=C(O)C(c1ccccc1)c1ccccc1>>COc1ccc(NC(=O)C(c2ccccc2)c2ccccc2)cc1OC
@@ -388,39 +492,60 @@ Acylation,COc1ccc(N)cc1OC.O=C(O)Cc1ccc2c(c1)OCO2>>COc1ccc(NC(=O)Cc2ccc3c(c2)OCO3
 Acylation,COc1ccc(N)cc1OC.O=C(O)C1c2ccccc2Oc2ccccc21>>COc1ccc(NC(=O)C2c3ccccc3Oc3ccccc32)cc1OC
 Acylation,COc1ccc(N)cc1OC.Cc1ccc2cc(C(=O)O)ccc2n1>>COc1ccc(NC(=O)c2ccc3nc(C)ccc3c2)cc1OC
 Acylation,COc1ccc(N)cc1OC.O=C(O)Cc1ccc([N+](=O)[O-])cc1>>COc1ccc(NC(=O)Cc2ccc([N+](=O)[O-])cc2)cc1OC
+Acylation,COc1ccc(N)cc1OC.Cn1ccnc1C(=O)O>>COc1ccc(NC(=O)c2nccn2C)cc1OC
 Acylation,Nc1ccc([N+](=O)[O-])cn1.Cc1ccc(CC(=O)O)cc1>>Cc1ccc(CC(=O)Nc2ccc([N+](=O)[O-])cn2)cc1
+Acylation,Nc1ccc([N+](=O)[O-])cn1.O=C(O)COc1ccccc1>>O=C(COc1ccccc1)Nc1ccc([N+](=O)[O-])cn1
 Acylation,Nc1ccc([N+](=O)[O-])cn1.O=C(O)Cc1cc(F)cc(F)c1>>O=C(Cc1cc(F)cc(F)c1)Nc1ccc([N+](=O)[O-])cn1
 Acylation,Nc1ccc([N+](=O)[O-])cn1.O=C(O)C(c1ccccc1)c1ccccc1>>O=C(Nc1ccc([N+](=O)[O-])cn1)C(c1ccccc1)c1ccccc1
 Acylation,Nc1ccc([N+](=O)[O-])cn1.O=C(O)Cc1ccc(C(F)(F)F)cc1>>O=C(Cc1ccc(C(F)(F)F)cc1)Nc1ccc([N+](=O)[O-])cn1
 Acylation,Nc1ccc([N+](=O)[O-])cn1.O=C(O)Cc1ccc2c(c1)OCO2>>O=C(Cc1ccc2c(c1)OCO2)Nc1ccc([N+](=O)[O-])cn1
 Acylation,Nc1ccc([N+](=O)[O-])cn1.O=C(O)C1c2ccccc2Oc2ccccc21>>O=C(Nc1ccc([N+](=O)[O-])cn1)C1c2ccccc2Oc2ccccc21
+Acylation,Nc1ccc([N+](=O)[O-])cn1.Cc1ccc2cc(C(=O)O)ccc2n1>>Cc1ccc2cc(C(=O)Nc3ccc([N+](=O)[O-])cn3)ccc2n1
 Acylation,Nc1ccc([N+](=O)[O-])cn1.O=C(O)Cc1ccc([N+](=O)[O-])cc1>>O=C(Cc1ccc([N+](=O)[O-])cc1)Nc1ccc([N+](=O)[O-])cn1
 Acylation,Nc1ccc([N+](=O)[O-])cn1.Cn1ccnc1C(=O)O>>Cn1ccnc1C(=O)Nc1ccc([N+](=O)[O-])cn1
+Acylation,Cc1ccc(N)cc1.O=C(O)c1c[nH]c2ncccc12>>Cc1ccc(NC(=O)c2c[nH]c3ncccc23)cc1
+Acylation,Cc1ccc(N)cc1.Cc1c(C(=O)O)oc2ccccc12>>Cc1ccc(NC(=O)c2oc3ccccc3c2C)cc1
+Acylation,Cc1ccc(N)cc1.O=C(O)C1CCCN1C(=O)OCc1ccccc1>>Cc1ccc(NC(=O)C2CCCN2C(=O)OCc2ccccc2)cc1
 Acylation,Cc1ccc(N)cc1.O=C(O)C1CCN(C(=O)OCc2ccccc2)CC1>>Cc1ccc(NC(=O)C2CCN(C(=O)OCc3ccccc3)CC2)cc1
+Acylation,Cc1ccc2cccc(N)c2n1.O=C(O)c1c[nH]c2ncccc12>>Cc1ccc2cccc(NC(=O)c3c[nH]c4ncccc34)c2n1
+Acylation,Cc1ccc2cccc(N)c2n1.CC(C)(C)OC(=O)N1CC2(CC2)C[C@H]1C(=O)O>>Cc1ccc2cccc(NC(=O)[C@@H]3CC4(CC4)CN3C(=O)OC(C)(C)C)c2n1
 Acylation,Cc1ccc2cccc(N)c2n1.Cc1c(C(=O)O)oc2ccccc12>>Cc1ccc2cccc(NC(=O)c3oc4ccccc4c3C)c2n1
 Acylation,Cc1ccc2cccc(N)c2n1.O=C(O)[C@@H]1C[C@H]1c1ccccc1>>Cc1ccc2cccc(NC(=O)[C@@H]3C[C@H]3c3ccccc3)c2n1
 Acylation,Cc1ccc2cccc(N)c2n1.O=C(O)c1ccc(F)cn1>>Cc1ccc2cccc(NC(=O)c3ccc(F)cn3)c2n1
 Acylation,Cc1ccc2cccc(N)c2n1.O=C(O)c1cc(Cl)cc(Cl)n1>>Cc1ccc2cccc(NC(=O)c3cc(Cl)cc(Cl)n3)c2n1
+Acylation,Cc1ccc2cccc(N)c2n1.O=C(O)C1CCC(F)(F)CC1>>Cc1ccc2cccc(NC(=O)C3CCC(F)(F)CC3)c2n1
+Acylation,Cc1ccc2cccc(N)c2n1.O=C(O)C1CCCN1C(=O)OCc1ccccc1>>Cc1ccc2cccc(NC(=O)C3CCCN3C(=O)OCc3ccccc3)c2n1
 Acylation,COc1ccc(N)cc1OC.O=C(O)c1c[nH]c2ncccc12>>COc1ccc(NC(=O)c2c[nH]c3ncccc23)cc1OC
+Acylation,COc1ccc(N)cc1OC.CC(C)(C)OC(=O)N1CC2(CC2)C[C@H]1C(=O)O>>COc1ccc(NC(=O)[C@@H]2CC3(CC3)CN2C(=O)OC(C)(C)C)cc1OC
+Acylation,COc1ccc(N)cc1OC.Cc1c(C(=O)O)oc2ccccc12>>COc1ccc(NC(=O)c2oc3ccccc3c2C)cc1OC
 Acylation,COc1ccc(N)cc1OC.O=C(O)[C@@H]1C[C@H]1c1ccccc1>>COc1ccc(NC(=O)[C@@H]2C[C@H]2c2ccccc2)cc1OC
 Acylation,COc1ccc(N)cc1OC.O=C(O)c1ccc(F)cn1>>COc1ccc(NC(=O)c2ccc(F)cn2)cc1OC
 Acylation,COc1ccc(N)cc1OC.O=C(O)c1cc(Cl)cc(Cl)n1>>COc1ccc(NC(=O)c2cc(Cl)cc(Cl)n2)cc1OC
 Acylation,COc1ccc(N)cc1OC.O=C(O)C1CCC(F)(F)CC1>>COc1ccc(NC(=O)C2CCC(F)(F)CC2)cc1OC
+Acylation,COc1ccc(N)cc1OC.O=C(O)C1CCCN1C(=O)OCc1ccccc1>>COc1ccc(NC(=O)C2CCCN2C(=O)OCc2ccccc2)cc1OC
+Acylation,Cc1ccc(Oc2ccc(N)cc2)cc1.O=C(O)c1c[nH]c2ncccc12>>Cc1ccc(Oc2ccc(NC(=O)c3c[nH]c4ncccc34)cc2)cc1
+Acylation,Cc1ccc(Oc2ccc(N)cc2)cc1.Cc1c(C(=O)O)oc2ccccc12>>Cc1ccc(Oc2ccc(NC(=O)c3oc4ccccc4c3C)cc2)cc1
 Acylation,Cc1ccc(Oc2ccc(N)cc2)cc1.O=C(O)[C@@H]1C[C@H]1c1ccccc1>>Cc1ccc(Oc2ccc(NC(=O)[C@@H]3C[C@H]3c3ccccc3)cc2)cc1
 Acylation,Cc1ccc(Oc2ccc(N)cc2)cc1.O=C(O)c1ccc(F)cn1>>Cc1ccc(Oc2ccc(NC(=O)c3ccc(F)cn3)cc2)cc1
 Acylation,Cc1ccc(Oc2ccc(N)cc2)cc1.O=C(O)C1CCC(F)(F)CC1>>Cc1ccc(Oc2ccc(NC(=O)C3CCC(F)(F)CC3)cc2)cc1
 Acylation,Cc1ccc(Oc2ccc(N)cc2)cc1.O=C(O)C1CCCN1C(=O)OCc1ccccc1>>Cc1ccc(Oc2ccc(NC(=O)C3CCCN3C(=O)OCc3ccccc3)cc2)cc1
+Acylation,Cc1ccc(Oc2ccc(N)cc2)cc1.O=C(O)C1CCN(C(=O)OCc2ccccc2)CC1>>Cc1ccc(Oc2ccc(NC(=O)C3CCN(C(=O)OCc4ccccc4)CC3)cc2)cc1
+Acylation,NCc1ccc(Br)cc1.O=C(O)c1c[nH]c2ncccc12>>O=C(NCc1ccc(Br)cc1)c1c[nH]c2ncccc12
+Acylation,NCc1ccc(Br)cc1.CC(C)(C)OC(=O)N1CC2(CC2)C[C@H]1C(=O)O>>CC(C)(C)OC(=O)N1CC2(CC2)C[C@H]1C(=O)NCc1ccc(Br)cc1
 Acylation,NCc1ccc(Br)cc1.Cc1c(C(=O)O)oc2ccccc12>>Cc1c(C(=O)NCc2ccc(Br)cc2)oc2ccccc12
 Acylation,NCc1ccc(Br)cc1.O=C(O)[C@@H]1C[C@H]1c1ccccc1>>O=C(NCc1ccc(Br)cc1)[C@@H]1C[C@H]1c1ccccc1
 Acylation,NCc1ccc(Br)cc1.O=C(O)c1cc(Cl)cc(Cl)n1>>O=C(NCc1ccc(Br)cc1)c1cc(Cl)cc(Cl)n1
 Acylation,NCc1ccc(Br)cc1.O=C(O)C1CCC(F)(F)CC1>>O=C(NCc1ccc(Br)cc1)C1CCC(F)(F)CC1
+Acylation,NCc1ccc(Br)cc1.O=C(O)C1CCCN1C(=O)OCc1ccccc1>>O=C(NCc1ccc(Br)cc1)C1CCCN1C(=O)OCc1ccccc1
 Acylation,NCc1ccc(Br)cc1.O=C(O)C1CCN(C(=O)OCc2ccccc2)CC1>>O=C(NCc1ccc(Br)cc1)C1CCN(C(=O)OCc2ccccc2)CC1
+Acylation,NCc1ccc2c(c1)OCO2.CC(C)(C)OC(=O)N1CC2(CC2)C[C@H]1C(=O)O>>CC(C)(C)OC(=O)N1CC2(CC2)C[C@H]1C(=O)NCc1ccc2c(c1)OCO2
 Acylation,NCc1ccc2c(c1)OCO2.O=C(O)[C@@H]1C[C@H]1c1ccccc1>>O=C(NCc1ccc2c(c1)OCO2)[C@@H]1C[C@H]1c1ccccc1
 Acylation,NCc1ccc2c(c1)OCO2.O=C(O)c1cc(Cl)cc(Cl)n1>>O=C(NCc1ccc2c(c1)OCO2)c1cc(Cl)cc(Cl)n1
 Acylation,NCc1ccc2c(c1)OCO2.O=C(O)C1CCC(F)(F)CC1>>O=C(NCc1ccc2c(c1)OCO2)C1CCC(F)(F)CC1
 Acylation,NCc1ccc2c(c1)OCO2.O=C(O)C1CCCN1C(=O)OCc1ccccc1>>O=C(NCc1ccc2c(c1)OCO2)C1CCCN1C(=O)OCc1ccccc1
 Acylation,NCc1ccc2c(c1)OCO2.O=C(O)C1CCN(C(=O)OCc2ccccc2)CC1>>O=C(NCc1ccc2c(c1)OCO2)C1CCN(C(=O)OCc2ccccc2)CC1
 Acylation,NCc1ccc2c(c1)OCO2.O=C(O)C1CN(C(=O)OCc2ccccc2)C1>>O=C(NCc1ccc2c(c1)OCO2)C1CN(C(=O)OCc2ccccc2)C1
+Acylation,COc1ccc(N)cn1.O=C(O)c1c[nH]c2ncccc12>>COc1ccc(NC(=O)c2c[nH]c3ncccc23)cn1
 Acylation,COc1ccc(N)cn1.CC(C)(C)OC(=O)N1CC2(CC2)C[C@H]1C(=O)O>>COc1ccc(NC(=O)[C@@H]2CC3(CC3)CN2C(=O)OC(C)(C)C)cn1
 Acylation,COc1ccc(N)cn1.Cc1c(C(=O)O)oc2ccccc12>>COc1ccc(NC(=O)c2oc3ccccc3c2C)cn1
 Acylation,COc1ccc(N)cn1.O=C(O)[C@@H]1C[C@H]1c1ccccc1>>COc1ccc(NC(=O)[C@@H]2C[C@H]2c2ccccc2)cn1
@@ -437,17 +562,34 @@ Acylation,Nc1ccc([N+](=O)[O-])cn1.O=C(O)c1ccc(F)cn1>>O=C(Nc1ccc([N+](=O)[O-])cn1
 Acylation,Nc1ccc([N+](=O)[O-])cn1.O=C(O)c1cc(Cl)cc(Cl)n1>>O=C(Nc1ccc([N+](=O)[O-])cn1)c1cc(Cl)cc(Cl)n1
 Acylation,Nc1ccc([N+](=O)[O-])cn1.O=C(O)C1CCC(F)(F)CC1>>O=C(Nc1ccc([N+](=O)[O-])cn1)C1CCC(F)(F)CC1
 Acylation,Nc1ccc([N+](=O)[O-])cn1.O=C(O)C1CCCN1C(=O)OCc1ccccc1>>O=C(Nc1ccc([N+](=O)[O-])cn1)C1CCCN1C(=O)OCc1ccccc1
+Acylation,Nc1ccc([N+](=O)[O-])cn1.O=C(O)C1CCN(C(=O)OCc2ccccc2)CC1>>O=C(Nc1ccc([N+](=O)[O-])cn1)C1CCN(C(=O)OCc2ccccc2)CC1
+Acylation,Nc1ccc([N+](=O)[O-])cn1.O=C(O)C1CN(C(=O)OCc2ccccc2)C1>>O=C(Nc1ccc([N+](=O)[O-])cn1)C1CN(C(=O)OCc2ccccc2)C1
+Acylation,CC(C)(C)c1ccc(S(N)(=O)=O)cc1.O=C(O)COc1ccccc1>>CC(C)(C)c1ccc(S(=O)(=O)NC(=O)COc2ccccc2)cc1
+Acylation,CC(C)(C)c1ccc(S(N)(=O)=O)cc1.O=C(O)Cc1ccc2c(c1)OCO2>>CC(C)(C)c1ccc(S(=O)(=O)NC(=O)Cc2ccc3c(c2)OCO3)cc1
+Acylation,CC(C)(C)c1ccc(S(N)(=O)=O)cc1.COc1ncc(Br)cc1C(=O)O>>COc1ncc(Br)cc1C(=O)NS(=O)(=O)c1ccc(C(C)(C)C)cc1
+Acylation,CC(C)(C)c1ccc(S(N)(=O)=O)cc1.COc1ccc(CC(=O)O)cc1>>COc1ccc(CC(=O)NS(=O)(=O)c2ccc(C(C)(C)C)cc2)cc1
+Acylation,CC(C)(C)c1ccc(S(N)(=O)=O)cc1.O=C(O)c1cc(Cl)cc(Cl)n1>>CC(C)(C)c1ccc(S(=O)(=O)NC(=O)c2cc(Cl)cc(Cl)n2)cc1
 Acylation,COc1ccc(CC(C)=O)cc1S(N)(=O)=O.O=C(O)COc1ccccc1>>COc1ccc(CC(C)=O)cc1S(=O)(=O)NC(=O)COc1ccccc1
+Acylation,COc1ccc(CC(C)=O)cc1S(N)(=O)=O.Cc1cc(C)c(C(=O)O)c(C)c1>>COc1ccc(CC(C)=O)cc1S(=O)(=O)NC(=O)c1c(C)cc(C)cc1C
+Acylation,COc1ccc(CC(C)=O)cc1S(N)(=O)=O.O=C(O)Cc1ccc2c(c1)OCO2>>COc1ccc(CC(C)=O)cc1S(=O)(=O)NC(=O)Cc1ccc2c(c1)OCO2
 Acylation,COc1ccc(CC(C)=O)cc1S(N)(=O)=O.Cc1ccc2cc(C(=O)O)ccc2n1>>COc1ccc(CC(C)=O)cc1S(=O)(=O)NC(=O)c1ccc2nc(C)ccc2c1
 Acylation,COc1ccc(CC(C)=O)cc1S(N)(=O)=O.COc1ccc(CC(=O)O)cc1>>COc1ccc(CC(=O)NS(=O)(=O)c2cc(CC(C)=O)ccc2OC)cc1
 Acylation,COc1ccc(CC(C)=O)cc1S(N)(=O)=O.Cc1ccc(F)cc1C(=O)O>>COc1ccc(CC(C)=O)cc1S(=O)(=O)NC(=O)c1cc(F)ccc1C
+Acylation,CC(C)(C)c1ccc(S(N)(=O)=O)cc1.Cc1ccc(CC(=O)O)cc1>>Cc1ccc(CC(=O)NS(=O)(=O)c2ccc(C(C)(C)C)cc2)cc1
 Acylation,CC(C)(C)c1ccc(S(N)(=O)=O)cc1.Cc1cc(C)c(C(=O)O)c(C)c1>>Cc1cc(C)c(C(=O)NS(=O)(=O)c2ccc(C(C)(C)C)cc2)c(C)c1
 Acylation,COc1ccc(CC(C)=O)cc1S(N)(=O)=O.COc1ncc(Br)cc1C(=O)O>>COc1ccc(CC(C)=O)cc1S(=O)(=O)NC(=O)c1cc(Br)cnc1OC
+Acylation,COc1ccc(CC(C)=O)cc1S(N)(=O)=O.O=C(O)c1cc(Cl)cc(Cl)n1>>COc1ccc(CC(C)=O)cc1S(=O)(=O)NC(=O)c1cc(Cl)cc(Cl)n1
+Acylation,COc1ccc(CC(C)=O)cc1S(N)(=O)=O.Cc1ccc(C(=O)O)c2ccccc12>>COc1ccc(CC(C)=O)cc1S(=O)(=O)NC(=O)c1ccc(C)c2ccccc12
+Acylation,COc1ccc(CC(C)=O)cc1S(N)(=O)=O.O=C(O)c1ccnc(C(F)(F)F)c1>>COc1ccc(CC(C)=O)cc1S(=O)(=O)NC(=O)c1ccnc(C(F)(F)F)c1
+Acylation,COc1ccc(CC(C)=O)cc1S(N)(=O)=O.Cn1cc(C(=O)O)c(C(F)F)n1>>COc1ccc(CC(C)=O)cc1S(=O)(=O)NC(=O)c1cn(C)nc1C(F)F
 Acylation,Cc1ccccc1S(N)(=O)=O.Cc1ccc(CC(=O)O)cc1>>Cc1ccc(CC(=O)NS(=O)(=O)c2ccccc2C)cc1
 Acylation,Cc1ccccc1S(N)(=O)=O.O=C(O)COc1ccccc1>>Cc1ccccc1S(=O)(=O)NC(=O)COc1ccccc1
 Acylation,Cc1ccccc1S(N)(=O)=O.O=C(O)Cc1ccc2c(c1)OCO2>>Cc1ccccc1S(=O)(=O)NC(=O)Cc1ccc2c(c1)OCO2
 Acylation,Cc1ccccc1S(N)(=O)=O.O=C(O)C1c2ccccc2Oc2ccccc21>>Cc1ccccc1S(=O)(=O)NC(=O)C1c2ccccc2Oc2ccccc21
+Acylation,Cc1ccccc1S(N)(=O)=O.COc1ncc(Br)cc1C(=O)O>>COc1ncc(Br)cc1C(=O)NS(=O)(=O)c1ccccc1C
+Acylation,Cc1ccccc1S(N)(=O)=O.O=C(O)c1cc(Cl)cc(Cl)n1>>Cc1ccccc1S(=O)(=O)NC(=O)c1cc(Cl)cc(Cl)n1
 Acylation,Cc1ccccc1S(N)(=O)=O.O=C(O)c1ccnc(C(F)(F)F)c1>>Cc1ccccc1S(=O)(=O)NC(=O)c1ccnc(C(F)(F)F)c1
+Acylation,Cc1ccccc1S(N)(=O)=O.Cc1ccc(F)cc1C(=O)O>>Cc1ccc(F)cc1C(=O)NS(=O)(=O)c1ccccc1C
 Acylation,Cc1ccc([N+](=O)[O-])cc1N.CC(C(=O)O)c1ccc(-c2ccccc2)c(F)c1>>Cc1ccc([N+](=O)[O-])cc1NC(=O)C(C)c1ccc(-c2ccccc2)c(F)c1
 Acylation,Cc1ccc([N+](=O)[O-])cc1N.Cc1cccc(C)c1C(=O)O>>Cc1ccc([N+](=O)[O-])cc1NC(=O)c1c(C)cccc1C
 Acylation,Cc1ccc([N+](=O)[O-])cc1N.CC(C)(C)c1cc(C(=O)O)cc(C(C)(C)C)c1>>Cc1ccc([N+](=O)[O-])cc1NC(=O)c1cc(C(C)(C)C)cc(C(C)(C)C)c1
@@ -556,21 +698,78 @@ Acylation,CC(=O)c1ccc(N)cc1.O=C(O)c1ccc2c(c1)OCCO2>>CC(=O)c1ccc(NC(=O)c2ccc3c(c2
 Acylation,COC(=O)c1cc(F)ccc1N.Cc1cc(C(=O)O)cc(Cl)n1>>COC(=O)c1cc(F)ccc1NC(=O)c1cc(C)nc(Cl)c1
 Acylation,COC(=O)c1cc(F)ccc1N.O=C(O)c1ccc2nccnc2c1>>COC(=O)c1cc(F)ccc1NC(=O)c1ccc2nccnc2c1
 Acylation,COC(=O)c1cc(F)ccc1N.O=C(O)c1ccc(F)cn1>>COC(=O)c1cc(F)ccc1NC(=O)c1ccc(F)cn1
+Acylation,COC(=O)c1cc(F)ccc1N.O=C(O)c1cc(Cl)cc(Cl)n1>>COC(=O)c1cc(F)ccc1NC(=O)c1cc(Cl)cc(Cl)n1
 Acylation,COC(=O)c1cc(F)ccc1N.O=C(O)c1cnc(Cl)nc1>>COC(=O)c1cc(F)ccc1NC(=O)c1cnc(Cl)nc1
+Acylation,COC(=O)c1cc(F)ccc1N.O=C(O)c1c[nH]c2ncccc12>>COC(=O)c1cc(F)ccc1NC(=O)c1c[nH]c2ncccc12
 Acylation,COC(=O)c1cc(F)ccc1N.CC(C)(C)OC(=O)N1CC2(CC2)C[C@H]1C(=O)O>>COC(=O)c1cc(F)ccc1NC(=O)[C@@H]1CC2(CC2)CN1C(=O)OC(C)(C)C
+Acylation,COC(=O)c1cc(F)ccc1N.O=C(O)C1CCCN1C(=O)OCc1ccccc1>>COC(=O)c1cc(F)ccc1NC(=O)C1CCCN1C(=O)OCc1ccccc1
 Acylation,COC(=O)c1cc(F)ccc1N.CC(C)(C)OC(=O)N1CCC[C@H]1C(=O)O>>COC(=O)c1cc(F)ccc1NC(=O)[C@@H]1CCCN1C(=O)OC(C)(C)C
 Acylation,COC(=O)c1cc(F)ccc1N.O=C(O)C1CN(C(=O)OCc2ccccc2)C1>>COC(=O)c1cc(F)ccc1NC(=O)C1CN(C(=O)OCc2ccccc2)C1
 Acylation,COC(=O)c1cc(F)ccc1N.O=C(O)c1ccc2c(c1)OCCO2>>COC(=O)c1cc(F)ccc1NC(=O)c1ccc2c(c1)OCCO2
 Acylation,COC(=O)c1cc(F)ccc1N.O=C(O)c1ccc(Br)s1>>COC(=O)c1cc(F)ccc1NC(=O)c1ccc(Br)s1
 Acylation,Cc1cc(N)ccn1.Cc1ccc(CC(=O)O)cc1>>Cc1ccc(CC(=O)Nc2ccnc(C)c2)cc1
+Acylation,Cc1cc(N)ccn1.O=C(O)COc1ccccc1>>Cc1cc(NC(=O)COc2ccccc2)ccn1
+Acylation,Cc1cc(N)ccn1.COc1ccc(CC(=O)O)cc1>>COc1ccc(CC(=O)Nc2ccnc(C)c2)cc1
+Acylation,Cc1cc(N)ccn1.O=C(O)Cc1cc(F)cc(F)c1>>Cc1cc(NC(=O)Cc2cc(F)cc(F)c2)ccn1
+Acylation,Cc1cc(N)ccn1.Cc1cccc(C)c1C(=O)O>>Cc1cc(NC(=O)c2c(C)cccc2C)ccn1
+Acylation,Cc1cc(N)ccn1.Cc1cc(C)c(C(=O)O)c(C)c1>>Cc1cc(C)c(C(=O)Nc2ccnc(C)c2)c(C)c1
+Acylation,Cc1cc(N)ccn1.COc1cc(C(=O)O)cc(OC)c1OC>>COc1cc(C(=O)Nc2ccnc(C)c2)cc(OC)c1OC
+Acylation,Cc1cc(N)ccn1.CC(C)Cc1ccc([C@H](C)C(=O)O)cc1>>Cc1cc(NC(=O)[C@@H](C)c2ccc(CC(C)C)cc2)ccn1
+Acylation,Cc1cc(N)ccn1.O=C(O)c1ccc(C(F)(F)F)cn1>>Cc1cc(NC(=O)c2ccc(C(F)(F)F)cn2)ccn1
+Acylation,Cc1cc(N)ccn1.Cc1cc(C)cc(C(=O)O)c1>>Cc1cc(C)cc(C(=O)Nc2ccnc(C)c2)c1
+Acylation,Cc1cc(N)ccn1.O=C(O)C1(c2ccccc2)CC1>>Cc1cc(NC(=O)C2(c3ccccc3)CC2)ccn1
+Acylation,Cc1cc(N)ccn1.COc1ccc2cc([C@H](C)C(=O)O)ccc2c1>>COc1ccc2cc([C@H](C)C(=O)Nc3ccnc(C)c3)ccc2c1
+Acylation,Cc1cc(N)ccn1.CC(C)(C(=O)O)c1ccccc1>>Cc1cc(NC(=O)C(C)(C)c2ccccc2)ccn1
+Acylation,Cc1cc(N)ccn1.O=C(O)c1ccccc1Cc1ccccc1>>Cc1cc(NC(=O)c2ccccc2Cc2ccccc2)ccn1
+Acylation,Cc1cc(N)ccn1.CC(C)(C)c1cc(C(=O)O)cc(C(C)(C)C)c1>>Cc1cc(NC(=O)c2cc(C(C)(C)C)cc(C(C)(C)C)c2)ccn1
+Acylation,Cc1cc(N)ccn1.O=C(O)Cc1ccc(C(F)(F)F)cc1>>Cc1cc(NC(=O)Cc2ccc(C(F)(F)F)cc2)ccn1
+Acylation,Cc1cc(N)ccn1.O=C(O)Cc1ccc2c(c1)OCO2>>Cc1cc(NC(=O)Cc2ccc3c(c2)OCO3)ccn1
 Acylation,Cc1cc(N)ccn1.CC(C(=O)O)c1ccc(-c2ccccc2)c(F)c1>>Cc1cc(NC(=O)C(C)c2ccc(-c3ccccc3)c(F)c2)ccn1
+Acylation,Cc1cc(N)ccn1.Cc1ccc2cc(C(=O)O)ccc2n1>>Cc1cc(NC(=O)c2ccc3nc(C)ccc3c2)ccn1
+Acylation,Cc1cc(N)ccn1.N#Cc1ccc(C(=O)O)cc1>>Cc1cc(NC(=O)c2ccc(C#N)cc2)ccn1
+Acylation,Cc1cc(N)ccn1.O=C(O)c1ccc([N+](=O)[O-])cc1>>Cc1cc(NC(=O)c2ccc([N+](=O)[O-])cc2)ccn1
+Acylation,Cc1cc(N)ccn1.O=C(O)c1ccco1>>Cc1cc(NC(=O)c2ccco2)ccn1
+Acylation,Cc1cc(N)ccn1.O=C(O)/C=C/c1ccccc1>>Cc1cc(NC(=O)/C=C/c2ccccc2)ccn1
+Acylation,Cc1cc(N)ccn1.O=C(O)Cc1ccc([N+](=O)[O-])cc1>>Cc1cc(NC(=O)Cc2ccc([N+](=O)[O-])cc2)ccn1
+Acylation,Cc1cc(N)ccn1.Cc1cc(C(=O)O)cc(Cl)n1>>Cc1cc(NC(=O)c2cc(C)nc(Cl)c2)ccn1
+Acylation,Cc1cc(N)ccn1.O=C(O)c1cnccn1>>Cc1cc(NC(=O)c2cnccn2)ccn1
+Acylation,Cc1cc(N)ccn1.COc1ncc(Br)cc1C(=O)O>>COc1ncc(Br)cc1C(=O)Nc1ccnc(C)c1
+Acylation,Cc1cc(N)ccn1.O=C(O)c1ncccn1>>Cc1cc(NC(=O)c2ncccn2)ccn1
+Acylation,Cc1cc(N)ccn1.Cc1ccc(F)cc1C(=O)O>>Cc1cc(NC(=O)c2cc(F)ccc2C)ccn1
+Acylation,Cc1cc(N)ccn1.O=C(O)c1ccc(Br)s1>>Cc1cc(NC(=O)c2ccc(Br)s2)ccn1
+Acylation,Cc1cc(N)ccn1.O=C(O)C1Cc2ccccc2C1>>Cc1cc(NC(=O)C2Cc3ccccc3C2)ccn1
+Acylation,Cc1cc(N)ccn1.O=C(O)c1cccc(-c2ccccc2)c1>>Cc1cc(NC(=O)c2cccc(-c3ccccc3)c2)ccn1
+Acylation,Cc1cc(N)ccn1.O=C(O)c1ccc2nccnc2c1>>Cc1cc(NC(=O)c2ccc3nccnc3c2)ccn1
+Acylation,Cc1cc(N)ccn1.O=C(O)c1ccc2c(c1)OCCO2>>Cc1cc(NC(=O)c2ccc3c(c2)OCCO3)ccn1
+Acylation,Cc1cc(N)ccn1.O=C(O)c1cc2ccccc2s1>>Cc1cc(NC(=O)c2cc3ccccc3s2)ccn1
+Acylation,Cc1cc(N)ccn1.O=C(O)c1cc2ccccc2o1>>Cc1cc(NC(=O)c2cc3ccccc3o2)ccn1
+Acylation,Cc1cc(N)ccn1.O=C(O)c1ccc([N+](=O)[O-])s1>>Cc1cc(NC(=O)c2ccc([N+](=O)[O-])s2)ccn1
+Acylation,Cc1cc(N)ccn1.Cc1c(C(=O)O)oc2ccccc12>>Cc1cc(NC(=O)c2oc3ccccc3c2C)ccn1
+Acylation,Cc1cc(N)ccn1.CC1(C)C(C(=O)O)C1(C)C>>Cc1cc(NC(=O)C2C(C)(C)C2(C)C)ccn1
 Acylation,Cc1cc(N)ccn1.O=C(O)[C@@H]1C[C@H]1c1ccccc1>>Cc1cc(NC(=O)[C@@H]2C[C@H]2c2ccccc2)ccn1
+Acylation,Cc1cc(N)ccn1.O=C(O)c1ccc(F)cn1>>Cc1cc(NC(=O)c2ccc(F)cn2)ccn1
+Acylation,Cc1cc(N)ccn1.O=C(O)C1CCC(F)(F)CC1>>Cc1cc(NC(=O)C2CCC(F)(F)CC2)ccn1
+Acylation,Cc1cc(N)ccn1.O=C(O)c1cnc(Cl)nc1>>Cc1cc(NC(=O)c2cnc(Cl)nc2)ccn1
+Acylation,Cc1cc(N)ccn1.O=C(O)c1c[nH]c2ncccc12>>Cc1cc(NC(=O)c2c[nH]c3ncccc23)ccn1
+Acylation,Cc1cc(N)ccn1.CC(C)(C)OC(=O)N1CC2(CC2)C[C@H]1C(=O)O>>Cc1cc(NC(=O)[C@@H]2CC3(CC3)CN2C(=O)OC(C)(C)C)ccn1
+Acylation,Cc1cc(N)ccn1.O=C(O)C1CCCN1C(=O)OCc1ccccc1>>Cc1cc(NC(=O)C2CCCN2C(=O)OCc2ccccc2)ccn1
+Acylation,Cc1cc(N)ccn1.CC(C)(C)OC(=O)N1CCC[C@H]1C(=O)O>>Cc1cc(NC(=O)[C@@H]2CCCN2C(=O)OC(C)(C)C)ccn1
 Acylation,Cc1cc(N)ccn1.O=C(O)C1CCN(C(=O)OCc2ccccc2)CC1>>Cc1cc(NC(=O)C2CCN(C(=O)OCc3ccccc3)CC2)ccn1
+Acylation,Cc1cc(N)ccn1.O=C(O)C1CN(C(=O)OCc2ccccc2)C1>>Cc1cc(NC(=O)C2CN(C(=O)OCc3ccccc3)C2)ccn1
+Acylation,Cc1cc(N)ccn1.Cc1ccc(C(=O)O)cc1F>>Cc1cc(NC(=O)c2ccc(C)c(F)c2)ccn1
+Acylation,Cc1cc(N)ccn1.O=C(O)c1c(F)c(F)c(F)c(F)c1F>>Cc1cc(NC(=O)c2c(F)c(F)c(F)c(F)c2F)ccn1
+Acylation,C[C@@H](N)c1ccccc1.Cc1ccc(CC(=O)O)cc1>>Cc1ccc(CC(=O)N[C@H](C)c2ccccc2)cc1
+Acylation,C[C@@H](N)c1ccccc1.O=C(O)COc1ccccc1>>C[C@@H](NC(=O)COc1ccccc1)c1ccccc1
 Acylation,C[C@@H](N)c1ccccc1.COc1ccc(CC(=O)O)cc1>>COc1ccc(CC(=O)N[C@H](C)c2ccccc2)cc1
 Acylation,C[C@@H](N)c1ccccc1.O=C(O)Cc1cc(F)cc(F)c1>>C[C@@H](NC(=O)Cc1cc(F)cc(F)c1)c1ccccc1
+Acylation,C[C@@H](N)c1ccccc1.Cc1cccc(C)c1C(=O)O>>Cc1cccc(C)c1C(=O)N[C@H](C)c1ccccc1
+Acylation,C[C@@H](N)c1ccccc1.Cc1cc(C)c(C(=O)O)c(C)c1>>Cc1cc(C)c(C(=O)N[C@H](C)c2ccccc2)c(C)c1
 Acylation,C[C@@H](N)c1ccccc1.CC(C)(C)c1cc(C(=O)O)cc(C(C)(C)C)c1>>C[C@@H](NC(=O)c1cc(C(C)(C)C)cc(C(C)(C)C)c1)c1ccccc1
 Acylation,C[C@@H](N)c1ccccc1.O=C(O)Cc1ccc2c(c1)OCO2>>C[C@@H](NC(=O)Cc1ccc2c(c1)OCO2)c1ccccc1
+Acylation,C[C@@H](N)c1ccccc1.O=C(O)C(c1ccccc1)c1ccccc1>>C[C@@H](NC(=O)C(c1ccccc1)c1ccccc1)c1ccccc1
 Acylation,C[C@@H](N)c1ccccc1.O=C(O)C1c2ccccc2Oc2ccccc21>>C[C@@H](NC(=O)C1c2ccccc2Oc2ccccc21)c1ccccc1
+Acylation,C[C@@H](N)c1ccccc1.O=C(O)Cc1ccc2c(c1)C(=O)c1ccccc1CO2>>C[C@@H](NC(=O)Cc1ccc2c(c1)C(=O)c1ccccc1CO2)c1ccccc1
+Acylation,C[C@@H](N)c1ccccc1.Cc1ccc2cc(C(=O)O)ccc2n1>>Cc1ccc2cc(C(=O)N[C@H](C)c3ccccc3)ccc2n1
 Acylation,C[C@@H](N)c1ccccc1.O=C(O)c1ccco1>>C[C@@H](NC(=O)c1ccco1)c1ccccc1
 Acylation,C[C@@H](N)c1ccccc1.O=C(O)/C=C/c1ccccc1>>C[C@@H](NC(=O)/C=C/c1ccccc1)c1ccccc1
 Acylation,C[C@@H](N)c1ccccc1.Cc1cc(C(=O)O)cc(Cl)n1>>Cc1cc(C(=O)N[C@H](C)c2ccccc2)cc(Cl)n1
@@ -578,9 +777,12 @@ Acylation,C[C@@H](N)c1ccccc1.O=C(O)c1cnccn1>>C[C@@H](NC(=O)c1cnccn1)c1ccccc1
 Acylation,C[C@@H](N)c1ccccc1.COc1ncc(Br)cc1C(=O)O>>COc1ncc(Br)cc1C(=O)N[C@H](C)c1ccccc1
 Acylation,C[C@@H](N)c1ccccc1.O=C(O)c1ncccn1>>C[C@@H](NC(=O)c1ncccn1)c1ccccc1
 Acylation,C[C@@H](N)c1ccccc1.O=C(O)c1ccc(Br)s1>>C[C@@H](NC(=O)c1ccc(Br)s1)c1ccccc1
+Acylation,C[C@@H](N)c1ccccc1.O=C(O)C1Cc2ccccc2C1>>C[C@@H](NC(=O)C1Cc2ccccc2C1)c1ccccc1
 Acylation,C[C@@H](N)c1ccccc1.O=C(O)c1ccc2nccnc2c1>>C[C@@H](NC(=O)c1ccc2nccnc2c1)c1ccccc1
 Acylation,C[C@@H](N)c1ccccc1.O=C(O)c1cc2ccccc2s1>>C[C@@H](NC(=O)c1cc2ccccc2s1)c1ccccc1
 Acylation,C[C@@H](N)c1ccccc1.O=C(O)c1cc2ccccc2o1>>C[C@@H](NC(=O)c1cc2ccccc2o1)c1ccccc1
+Acylation,C[C@@H](N)c1ccccc1.CC1(C)C(C(=O)O)C1(C)C>>C[C@@H](NC(=O)C1C(C)(C)C1(C)C)c1ccccc1
+Acylation,C[C@@H](N)c1ccccc1.O=C(O)[C@@H]1C[C@H]1c1ccccc1>>C[C@@H](NC(=O)[C@@H]1C[C@H]1c1ccccc1)c1ccccc1
 Acylation,C[C@@H](N)c1ccccc1.O=C(O)c1ccc(F)cn1>>C[C@@H](NC(=O)c1ccc(F)cn1)c1ccccc1
 Acylation,C[C@@H](N)c1ccccc1.O=C(O)c1cc(Cl)cc(Cl)n1>>C[C@@H](NC(=O)c1cc(Cl)cc(Cl)n1)c1ccccc1
 Acylation,C[C@@H](N)c1ccccc1.CC(C)(C)OC(=O)N1CC2(CC2)C[C@H]1C(=O)O>>C[C@@H](NC(=O)[C@@H]1CC2(CC2)CN1C(=O)OC(C)(C)C)c1ccccc1
@@ -597,6 +799,8 @@ Acylation,NC1CCc2ccccc21.Cc1ccc(F)cc1C(=O)O>>Cc1ccc(F)cc1C(=O)NC1CCc2ccccc21
 Acylation,NC1CCc2ccccc21.O=C(O)c1ccc2nccnc2c1>>O=C(NC1CCc2ccccc21)c1ccc2nccnc2c1
 Acylation,NC1CCc2ccccc21.O=C(O)c1ccc(F)cn1>>O=C(NC1CCc2ccccc21)c1ccc(F)cn1
 Acylation,CC(C)Nc1ccccc1.Cc1ccc(CC(=O)O)cc1>>Cc1ccc(CC(=O)N(c2ccccc2)C(C)C)cc1
+Acylation,CC(C)Nc1ccccc1.COc1ccc(CC(=O)O)cc1>>COc1ccc(CC(=O)N(c2ccccc2)C(C)C)cc1
+Acylation,CC(C)Nc1ccccc1.O=C(O)Cc1cc(F)cc(F)c1>>CC(C)N(C(=O)Cc1cc(F)cc(F)c1)c1ccccc1
 Acylation,CC(C)Nc1ccccc1.Cc1cccc(C)c1C(=O)O>>Cc1cccc(C)c1C(=O)N(c1ccccc1)C(C)C
 Acylation,CC(C)Nc1ccccc1.Cc1cc(C)c(C(=O)O)c(C)c1>>Cc1cc(C)c(C(=O)N(c2ccccc2)C(C)C)c(C)c1
 Acylation,CC(C)Nc1ccccc1.COc1cc(C(=O)O)cc(OC)c1OC>>COc1cc(C(=O)N(c2ccccc2)C(C)C)cc(OC)c1OC
@@ -606,15 +810,23 @@ Acylation,CC(C)Nc1ccccc1.CC(C)(C)c1cc(C(=O)O)cc(C(C)(C)C)c1>>CC(C)N(C(=O)c1cc(C(
 Acylation,CC(C)Nc1ccccc1.O=C(O)Cc1ccc2c(c1)OCO2>>CC(C)N(C(=O)Cc1ccc2c(c1)OCO2)c1ccccc1
 Acylation,CC(C)Nc1ccccc1.O=C(O)C1c2ccccc2Oc2ccccc21>>CC(C)N(C(=O)C1c2ccccc2Oc2ccccc21)c1ccccc1
 Acylation,CC(C)Nc1ccccc1.O=C(O)Cc1ccc2c(c1)C(=O)c1ccccc1CO2>>CC(C)N(C(=O)Cc1ccc2c(c1)C(=O)c1ccccc1CO2)c1ccccc1
+Acylation,CC(C)Nc1ccccc1.Cc1ccc2cc(C(=O)O)ccc2n1>>Cc1ccc2cc(C(=O)N(c3ccccc3)C(C)C)ccc2n1
 Acylation,CC(C)Nc1ccccc1.O=C(O)c1ccco1>>CC(C)N(C(=O)c1ccco1)c1ccccc1
+Acylation,CC(C)Nc1ccccc1.O=C(O)/C=C/c1ccccc1>>CC(C)N(C(=O)/C=C/c1ccccc1)c1ccccc1
 Acylation,CC(C)Nc1ccccc1.Cc1cc(C(=O)O)cc(Cl)n1>>Cc1cc(C(=O)N(c2ccccc2)C(C)C)cc(Cl)n1
 Acylation,CC(C)Nc1ccccc1.O=C(O)c1cnccn1>>CC(C)N(C(=O)c1cnccn1)c1ccccc1
 Acylation,CC(C)Nc1ccccc1.COc1ncc(Br)cc1C(=O)O>>COc1ncc(Br)cc1C(=O)N(c1ccccc1)C(C)C
+Acylation,CC(C)Nc1ccccc1.O=C(O)c1ncccn1>>CC(C)N(C(=O)c1ncccn1)c1ccccc1
 Acylation,CC(C)Nc1ccccc1.O=C(O)c1ccc(Br)s1>>CC(C)N(C(=O)c1ccc(Br)s1)c1ccccc1
 Acylation,CC(C)Nc1ccccc1.O=C(O)C1Cc2ccccc2C1>>CC(C)N(C(=O)C1Cc2ccccc2C1)c1ccccc1
+Acylation,CC(C)Nc1ccccc1.O=C(O)c1ccc2nccnc2c1>>CC(C)N(C(=O)c1ccc2nccnc2c1)c1ccccc1
+Acylation,CC(C)Nc1ccccc1.O=C(O)c1cc2ccccc2s1>>CC(C)N(C(=O)c1cc2ccccc2s1)c1ccccc1
+Acylation,CC(C)Nc1ccccc1.O=C(O)c1cc2ccccc2o1>>CC(C)N(C(=O)c1cc2ccccc2o1)c1ccccc1
+Acylation,CC(C)Nc1ccccc1.Cc1c(C(=O)O)oc2ccccc12>>Cc1c(C(=O)N(c2ccccc2)C(C)C)oc2ccccc12
 Acylation,CC(C)Nc1ccccc1.CC1(C)C(C(=O)O)C1(C)C>>CC(C)N(C(=O)C1C(C)(C)C1(C)C)c1ccccc1
 Acylation,CC(C)Nc1ccccc1.O=C(O)c1ccc(F)cn1>>CC(C)N(C(=O)c1ccc(F)cn1)c1ccccc1
 Acylation,CC(C)Nc1ccccc1.O=C(O)[C@@H]1C[C@H]1c1ccccc1>>CC(C)N(C(=O)[C@@H]1C[C@H]1c1ccccc1)c1ccccc1
+Acylation,CC(C)Nc1ccccc1.O=C(O)c1cc(Cl)cc(Cl)n1>>CC(C)N(C(=O)c1cc(Cl)cc(Cl)n1)c1ccccc1
 Acylation,CC(C)Nc1ccccc1.O=C(O)c1cnc(Cl)nc1>>CC(C)N(C(=O)c1cnc(Cl)nc1)c1ccccc1
 Acylation,CC(C)Nc1ccccc1.CC(C)(C)OC(=O)N1CC2(CC2)C[C@H]1C(=O)O>>CC(C)N(C(=O)[C@@H]1CC2(CC2)CN1C(=O)OC(C)(C)C)c1ccccc1
 Acylation,CC(C)Nc1ccccc1.O=C(O)C1CCCN1C(=O)OCc1ccccc1>>CC(C)N(C(=O)C1CCCN1C(=O)OCc1ccccc1)c1ccccc1
@@ -626,23 +838,31 @@ Acylation,CNc1ccc(F)cc1.O=C(O)COc1ccccc1>>CN(C(=O)COc1ccccc1)c1ccc(F)cc1
 Acylation,CNc1ccc(F)cc1.COc1ccc(CC(=O)O)cc1>>COc1ccc(CC(=O)N(C)c2ccc(F)cc2)cc1
 Acylation,CNc1ccc(F)cc1.O=C(O)Cc1cc(F)cc(F)c1>>CN(C(=O)Cc1cc(F)cc(F)c1)c1ccc(F)cc1
 Acylation,CNc1ccc(F)cc1.Cc1cc(C)c(C(=O)O)c(C)c1>>Cc1cc(C)c(C(=O)N(C)c2ccc(F)cc2)c(C)c1
+Acylation,CNc1ccc(F)cc1.COc1cc(C(=O)O)cc(OC)c1OC>>COc1cc(C(=O)N(C)c2ccc(F)cc2)cc(OC)c1OC
 Acylation,CNc1ccc(F)cc1.O=C(O)c1ccc(C(F)(F)F)cn1>>CN(C(=O)c1ccc(C(F)(F)F)cn1)c1ccc(F)cc1
 Acylation,CNc1ccc(F)cc1.O=C(O)c1ccccc1Cc1ccccc1>>CN(C(=O)c1ccccc1Cc1ccccc1)c1ccc(F)cc1
 Acylation,CNc1ccc(F)cc1.CC(C)(C)c1cc(C(=O)O)cc(C(C)(C)C)c1>>CN(C(=O)c1cc(C(C)(C)C)cc(C(C)(C)C)c1)c1ccc(F)cc1
 Acylation,CNc1ccc(F)cc1.O=C(O)Cc1ccc2c(c1)OCO2>>CN(C(=O)Cc1ccc2c(c1)OCO2)c1ccc(F)cc1
 Acylation,CNc1ccc(F)cc1.O=C(O)C(c1ccccc1)c1ccccc1>>CN(C(=O)C(c1ccccc1)c1ccccc1)c1ccc(F)cc1
 Acylation,CNc1ccc(F)cc1.O=C(O)C1c2ccccc2Oc2ccccc21>>CN(C(=O)C1c2ccccc2Oc2ccccc21)c1ccc(F)cc1
+Acylation,CNc1ccc(F)cc1.O=C(O)Cc1ccc2c(c1)C(=O)c1ccccc1CO2>>CN(C(=O)Cc1ccc2c(c1)C(=O)c1ccccc1CO2)c1ccc(F)cc1
+Acylation,CNc1ccc(F)cc1.Cc1ccc2cc(C(=O)O)ccc2n1>>Cc1ccc2cc(C(=O)N(C)c3ccc(F)cc3)ccc2n1
 Acylation,CNc1ccc(F)cc1.O=C(O)c1ccco1>>CN(C(=O)c1ccco1)c1ccc(F)cc1
 Acylation,CNc1ccc(F)cc1.Cc1cc(C(=O)O)cc(Cl)n1>>Cc1cc(C(=O)N(C)c2ccc(F)cc2)cc(Cl)n1
+Acylation,CNc1ccc(F)cc1.COc1ncc(Br)cc1C(=O)O>>COc1ncc(Br)cc1C(=O)N(C)c1ccc(F)cc1
 Acylation,CNc1ccc(F)cc1.O=C(O)c1ncccn1>>CN(C(=O)c1ncccn1)c1ccc(F)cc1
 Acylation,CNc1ccc(F)cc1.O=C(O)c1ccc(Br)s1>>CN(C(=O)c1ccc(Br)s1)c1ccc(F)cc1
+Acylation,CNc1ccc(F)cc1.O=C(O)C1Cc2ccccc2C1>>CN(C(=O)C1Cc2ccccc2C1)c1ccc(F)cc1
 Acylation,CNc1ccc(F)cc1.O=C(O)c1ccc2nccnc2c1>>CN(C(=O)c1ccc2nccnc2c1)c1ccc(F)cc1
 Acylation,CNc1ccc(F)cc1.O=C(O)c1cc2ccccc2s1>>CN(C(=O)c1cc2ccccc2s1)c1ccc(F)cc1
+Acylation,CNc1ccc(F)cc1.O=C(O)c1cc2ccccc2o1>>CN(C(=O)c1cc2ccccc2o1)c1ccc(F)cc1
 Acylation,CNc1ccc(F)cc1.Cc1c(C(=O)O)oc2ccccc12>>Cc1c(C(=O)N(C)c2ccc(F)cc2)oc2ccccc12
 Acylation,CNc1ccc(F)cc1.O=C(O)c1cc(Cl)cc(Cl)n1>>CN(C(=O)c1cc(Cl)cc(Cl)n1)c1ccc(F)cc1
 Acylation,CNc1ccc(F)cc1.O=C(O)c1cnc(Cl)nc1>>CN(C(=O)c1cnc(Cl)nc1)c1ccc(F)cc1
 Acylation,CNc1ccc(F)cc1.CC(C)(C)OC(=O)N1CC2(CC2)C[C@H]1C(=O)O>>CN(C(=O)[C@@H]1CC2(CC2)CN1C(=O)OC(C)(C)C)c1ccc(F)cc1
+Acylation,CNc1ccc(F)cc1.O=C(O)C1CCN(C(=O)OCc2ccccc2)CC1>>CN(C(=O)C1CCN(C(=O)OCc2ccccc2)CC1)c1ccc(F)cc1
 Acylation,CNc1ccc(F)cc1.Cc1ccc(C(=O)O)cc1F>>Cc1ccc(C(=O)N(C)c2ccc(F)cc2)cc1F
+Acylation,CNc1ccc(OC)cc1.Cc1ccc(CC(=O)O)cc1>>COc1ccc(N(C)C(=O)Cc2ccc(C)cc2)cc1
 Acylation,CNc1ccc(OC)cc1.O=C(O)COc1ccccc1>>COc1ccc(N(C)C(=O)COc2ccccc2)cc1
 Acylation,CNc1ccc(OC)cc1.COc1ccc(CC(=O)O)cc1>>COc1ccc(CC(=O)N(C)c2ccc(OC)cc2)cc1
 Acylation,CNc1ccc(OC)cc1.O=C(O)Cc1cc(F)cc(F)c1>>COc1ccc(N(C)C(=O)Cc2cc(F)cc(F)c2)cc1
@@ -653,6 +873,7 @@ Acylation,CNc1ccc(OC)cc1.O=C(O)Cc1ccc2c(c1)OCO2>>COc1ccc(N(C)C(=O)Cc2ccc3c(c2)OC
 Acylation,CNc1ccc(OC)cc1.O=C(O)C(c1ccccc1)c1ccccc1>>COc1ccc(N(C)C(=O)C(c2ccccc2)c2ccccc2)cc1
 Acylation,CNc1ccc(OC)cc1.O=C(O)C1c2ccccc2Oc2ccccc21>>COc1ccc(N(C)C(=O)C2c3ccccc3Oc3ccccc32)cc1
 Acylation,CNc1ccc(OC)cc1.Cc1ccc2cc(C(=O)O)ccc2n1>>COc1ccc(N(C)C(=O)c2ccc3nc(C)ccc3c2)cc1
+Acylation,CNc1ccc(OC)cc1.Cc1cc(C(=O)O)cc(Cl)n1>>COc1ccc(N(C)C(=O)c2cc(C)nc(Cl)c2)cc1
 Acylation,CNc1ccc(OC)cc1.O=C(O)c1cnccn1>>COc1ccc(N(C)C(=O)c2cnccn2)cc1
 Acylation,CNc1ccc(OC)cc1.COc1ncc(Br)cc1C(=O)O>>COc1ccc(N(C)C(=O)c2cc(Br)cnc2OC)cc1
 Acylation,CNc1ccc(OC)cc1.O=C(O)c1ncccn1>>COc1ccc(N(C)C(=O)c2ncccn2)cc1
@@ -661,65 +882,124 @@ Acylation,CNc1ccc(OC)cc1.Cc1c(C(=O)O)oc2ccccc12>>COc1ccc(N(C)C(=O)c2oc3ccccc3c2C
 Acylation,CNc1ccc(OC)cc1.O=C(O)c1cc(Cl)cc(Cl)n1>>COc1ccc(N(C)C(=O)c2cc(Cl)cc(Cl)n2)cc1
 Acylation,CCNc1cccc(C)c1.Cc1ccc(CC(=O)O)cc1>>CCN(C(=O)Cc1ccc(C)cc1)c1cccc(C)c1
 Acylation,CCNc1cccc(C)c1.O=C(O)COc1ccccc1>>CCN(C(=O)COc1ccccc1)c1cccc(C)c1
+Acylation,CCNc1cccc(C)c1.O=C(O)Cc1cc(F)cc(F)c1>>CCN(C(=O)Cc1cc(F)cc(F)c1)c1cccc(C)c1
+Acylation,CCNc1cccc(C)c1.Cc1cccc(C)c1C(=O)O>>CCN(C(=O)c1c(C)cccc1C)c1cccc(C)c1
+Acylation,CCNc1cccc(C)c1.O=C(O)c1ccccc1Cc1ccccc1>>CCN(C(=O)c1ccccc1Cc1ccccc1)c1cccc(C)c1
 Acylation,CCNc1cccc(C)c1.O=C(O)Cc1ccc2c(c1)OCO2>>CCN(C(=O)Cc1ccc2c(c1)OCO2)c1cccc(C)c1
+Acylation,CCNc1cccc(C)c1.O=C(O)C(c1ccccc1)c1ccccc1>>CCN(C(=O)C(c1ccccc1)c1ccccc1)c1cccc(C)c1
 Acylation,CCNc1cccc(C)c1.Cc1ccc2cc(C(=O)O)ccc2n1>>CCN(C(=O)c1ccc2nc(C)ccc2c1)c1cccc(C)c1
+Acylation,CCNc1cccc(C)c1.Cc1cc(C(=O)O)cc(Cl)n1>>CCN(C(=O)c1cc(C)nc(Cl)c1)c1cccc(C)c1
 Acylation,CCNc1cccc(C)c1.O=C(O)c1cnccn1>>CCN(C(=O)c1cnccn1)c1cccc(C)c1
+Acylation,CCNc1cccc(C)c1.COc1ncc(Br)cc1C(=O)O>>CCN(C(=O)c1cc(Br)cnc1OC)c1cccc(C)c1
 Acylation,CCNc1cccc(C)c1.O=C(O)c1ncccn1>>CCN(C(=O)c1ncccn1)c1cccc(C)c1
 Acylation,CCNc1cccc(C)c1.O=C(O)c1ccc([N+](=O)[O-])s1>>CCN(C(=O)c1ccc([N+](=O)[O-])s1)c1cccc(C)c1
 Acylation,CCNc1cccc(C)c1.Cc1c(C(=O)O)oc2ccccc12>>CCN(C(=O)c1oc2ccccc2c1C)c1cccc(C)c1
 Acylation,CCNc1cccc(C)c1.O=C(O)c1cc(Cl)cc(Cl)n1>>CCN(C(=O)c1cc(Cl)cc(Cl)n1)c1cccc(C)c1
+Acylation,CCNc1cccc(C)c1.O=C(O)c1cnc(Cl)nc1>>CCN(C(=O)c1cnc(Cl)nc1)c1cccc(C)c1
+Acylation,N#CCCNc1ccccc1.Cc1ccc(CC(=O)O)cc1>>Cc1ccc(CC(=O)N(CCC#N)c2ccccc2)cc1
 Acylation,N#CCCNc1ccccc1.O=C(O)COc1ccccc1>>N#CCCN(C(=O)COc1ccccc1)c1ccccc1
 Acylation,N#CCCNc1ccccc1.COc1ccc(CC(=O)O)cc1>>COc1ccc(CC(=O)N(CCC#N)c2ccccc2)cc1
+Acylation,N#CCCNc1ccccc1.O=C(O)Cc1cc(F)cc(F)c1>>N#CCCN(C(=O)Cc1cc(F)cc(F)c1)c1ccccc1
+Acylation,N#CCCNc1ccccc1.Cc1ccc2cc(C(=O)O)ccc2n1>>Cc1ccc2cc(C(=O)N(CCC#N)c3ccccc3)ccc2n1
+Acylation,N#CCCNc1ccccc1.Cc1cc(C(=O)O)cc(Cl)n1>>Cc1cc(C(=O)N(CCC#N)c2ccccc2)cc(Cl)n1
+Acylation,N#CCCNc1ccccc1.O=C(O)c1cnccn1>>N#CCCN(C(=O)c1cnccn1)c1ccccc1
+Acylation,N#CCCNc1ccccc1.O=C(O)c1ncccn1>>N#CCCN(C(=O)c1ncccn1)c1ccccc1
+Acylation,N#CCCNc1ccccc1.O=C(O)c1ccc([N+](=O)[O-])s1>>N#CCCN(C(=O)c1ccc([N+](=O)[O-])s1)c1ccccc1
+Acylation,N#CCCNc1ccccc1.O=C(O)c1cc(Cl)cc(Cl)n1>>N#CCCN(C(=O)c1cc(Cl)cc(Cl)n1)c1ccccc1
 Acylation,C1COCCN1.Cc1ccc(CC(=O)O)cc1>>Cc1ccc(CC(=O)N2CCOCC2)cc1
 Acylation,C1COCCN1.Cc1cc(C)c(C(=O)O)c(C)c1>>Cc1cc(C)c(C(=O)N2CCOCC2)c(C)c1
 Acylation,C1COCCN1.O=C(O)Cc1ccc2c(c1)OCO2>>O=C(Cc1ccc2c(c1)OCO2)N1CCOCC1
 Acylation,C1COCCN1.O=C(O)C(c1ccccc1)c1ccccc1>>O=C(C(c1ccccc1)c1ccccc1)N1CCOCC1
+Acylation,C1COCCN1.Cc1ccc2cc(C(=O)O)ccc2n1>>Cc1ccc2cc(C(=O)N3CCOCC3)ccc2n1
+Acylation,C1COCCN1.O=C(O)c1ncccn1>>O=C(c1ncccn1)N1CCOCC1
 Acylation,C1COCCN1.Cc1c(C(=O)O)oc2ccccc12>>Cc1c(C(=O)N2CCOCC2)oc2ccccc12
 Acylation,CCNc1ccccc1.Cc1ccc(CC(=O)O)cc1>>CCN(C(=O)Cc1ccc(C)cc1)c1ccccc1
 Acylation,CCNc1ccccc1.O=C(O)Cc1ccc2c(c1)OCO2>>CCN(C(=O)Cc1ccc2c(c1)OCO2)c1ccccc1
+Acylation,CCNc1ccccc1.O=C(O)C(c1ccccc1)c1ccccc1>>CCN(C(=O)C(c1ccccc1)c1ccccc1)c1ccccc1
 Acylation,CCNc1ccccc1.Cc1ccc2cc(C(=O)O)ccc2n1>>CCN(C(=O)c1ccc2nc(C)ccc2c1)c1ccccc1
+Acylation,CCNc1ccccc1.Cc1cc(C(=O)O)cc(Cl)n1>>CCN(C(=O)c1cc(C)nc(Cl)c1)c1ccccc1
+Acylation,CCNc1ccccc1.O=C(O)c1ncccn1>>CCN(C(=O)c1ncccn1)c1ccccc1
 Acylation,CCNc1ccccc1.Cc1c(C(=O)O)oc2ccccc12>>CCN(C(=O)c1oc2ccccc2c1C)c1ccccc1
 Acylation,CCNc1ccccc1.O=C(O)c1cc(Cl)cc(Cl)n1>>CCN(C(=O)c1cc(Cl)cc(Cl)n1)c1ccccc1
+Acylation,CC1CCCNC1.Cc1cc(C)c(C(=O)O)c(C)c1>>Cc1cc(C)c(C(=O)N2CCCC(C)C2)c(C)c1
 Acylation,CC1CCCNC1.O=C(O)Cc1ccc2c(c1)OCO2>>CC1CCCN(C(=O)Cc2ccc3c(c2)OCO3)C1
 Acylation,CC1CCCNC1.O=C(O)C(c1ccccc1)c1ccccc1>>CC1CCCN(C(=O)C(c2ccccc2)c2ccccc2)C1
+Acylation,CC1CCCNC1.Cc1ccc2cc(C(=O)O)ccc2n1>>Cc1ccc2cc(C(=O)N3CCCC(C)C3)ccc2n1
+Acylation,CC1CCCNC1.Cc1cc(C(=O)O)cc(Cl)n1>>Cc1cc(C(=O)N2CCCC(C)C2)cc(Cl)n1
+Acylation,CC1CCCNC1.O=C(O)c1ncccn1>>CC1CCCN(C(=O)c2ncccn2)C1
 Acylation,CC1CCCNC1.O=C(O)c1cc(Cl)cc(Cl)n1>>CC1CCCN(C(=O)c2cc(Cl)cc(Cl)n2)C1
 Acylation,C1CCNC1.Cc1ccc(CC(=O)O)cc1>>Cc1ccc(CC(=O)N2CCCC2)cc1
+Acylation,C1CCNC1.Cc1cc(C)c(C(=O)O)c(C)c1>>Cc1cc(C)c(C(=O)N2CCCC2)c(C)c1
 Acylation,C1CCNC1.O=C(O)Cc1ccc2c(c1)OCO2>>O=C(Cc1ccc2c(c1)OCO2)N1CCCC1
 Acylation,C1CCNC1.O=C(O)C(c1ccccc1)c1ccccc1>>O=C(C(c1ccccc1)c1ccccc1)N1CCCC1
 Acylation,C1CCNC1.Cc1ccc2cc(C(=O)O)ccc2n1>>Cc1ccc2cc(C(=O)N3CCCC3)ccc2n1
+Acylation,C1CCNC1.Cc1cc(C(=O)O)cc(Cl)n1>>Cc1cc(C(=O)N2CCCC2)cc(Cl)n1
+Acylation,C1CCNC1.O=C(O)c1ncccn1>>O=C(c1ncccn1)N1CCCC1
 Acylation,C1CCNC1.Cc1c(C(=O)O)oc2ccccc12>>Cc1c(C(=O)N2CCCC2)oc2ccccc12
 Acylation,C1CCN(C2CCNCC2)CC1.Cc1ccc(CC(=O)O)cc1>>Cc1ccc(CC(=O)N2CCC(N3CCCCC3)CC2)cc1
+Acylation,C1CCN(C2CCNCC2)CC1.Cc1cc(C)c(C(=O)O)c(C)c1>>Cc1cc(C)c(C(=O)N2CCC(N3CCCCC3)CC2)c(C)c1
 Acylation,C1CCN(C2CCNCC2)CC1.O=C(O)C(c1ccccc1)c1ccccc1>>O=C(C(c1ccccc1)c1ccccc1)N1CCC(N2CCCCC2)CC1
+Acylation,C1CCN(C2CCNCC2)CC1.Cc1ccc2cc(C(=O)O)ccc2n1>>Cc1ccc2cc(C(=O)N3CCC(N4CCCCC4)CC3)ccc2n1
+Acylation,C1CCN(C2CCNCC2)CC1.Cc1cc(C(=O)O)cc(Cl)n1>>Cc1cc(C(=O)N2CCC(N3CCCCC3)CC2)cc(Cl)n1
+Acylation,C1CCN(C2CCNCC2)CC1.O=C(O)c1ncccn1>>O=C(c1ncccn1)N1CCC(N2CCCCC2)CC1
+Acylation,C1CCN(C2CCNCC2)CC1.Cc1c(C(=O)O)oc2ccccc12>>Cc1c(C(=O)N2CCC(N3CCCCC3)CC2)oc2ccccc12
+Acylation,C1CCN(C2CCNCC2)CC1.O=C(O)c1cc(Cl)cc(Cl)n1>>O=C(c1cc(Cl)cc(Cl)n1)N1CCC(N2CCCCC2)CC1
+Acylation,C1CCC2NCCCC2C1.Cc1ccc(CC(=O)O)cc1>>Cc1ccc(CC(=O)N2CCCC3CCCCC32)cc1
 Acylation,C1CCC2NCCCC2C1.Cc1cc(C)c(C(=O)O)c(C)c1>>Cc1cc(C)c(C(=O)N2CCCC3CCCCC32)c(C)c1
+Acylation,C1CCC2NCCCC2C1.O=C(O)C(c1ccccc1)c1ccccc1>>O=C(C(c1ccccc1)c1ccccc1)N1CCCC2CCCCC21
 Acylation,C1CCC2NCCCC2C1.O=C(O)c1ncccn1>>O=C(c1ncccn1)N1CCCC2CCCCC21
 Acylation,C1CCC2NCCCC2C1.COc1ccc(C(=O)O)cc1>>COc1ccc(C(=O)N2CCCC3CCCCC32)cc1
+Acylation,CCCCN1CCNCC1.Cc1ccc(CC(=O)O)cc1>>CCCCN1CCN(C(=O)Cc2ccc(C)cc2)CC1
+Acylation,CCCCN1CCNCC1.Cc1cc(C)c(C(=O)O)c(C)c1>>CCCCN1CCN(C(=O)c2c(C)cc(C)cc2C)CC1
 Acylation,CCCCN1CCNCC1.O=C(O)Cc1ccc2c(c1)OCO2>>CCCCN1CCN(C(=O)Cc2ccc3c(c2)OCO3)CC1
 Acylation,CCCCN1CCNCC1.O=C(O)C(c1ccccc1)c1ccccc1>>CCCCN1CCN(C(=O)C(c2ccccc2)c2ccccc2)CC1
+Acylation,CCCCN1CCNCC1.Cc1ccc2cc(C(=O)O)ccc2n1>>CCCCN1CCN(C(=O)c2ccc3nc(C)ccc3c2)CC1
 Acylation,CCCCN1CCNCC1.Cc1cc(C(=O)O)cc(Cl)n1>>CCCCN1CCN(C(=O)c2cc(C)nc(Cl)c2)CC1
 Acylation,CCCCN1CCNCC1.COc1ccc(C(=O)O)cc1>>CCCCN1CCN(C(=O)c2ccc(OC)cc2)CC1
 Acylation,CCCCN1CCNCC1.Cc1c(C(=O)O)oc2ccccc12>>CCCCN1CCN(C(=O)c2oc3ccccc3c2C)CC1
 Acylation,CCNC(C)C.Cc1ccc(CC(=O)O)cc1>>CCN(C(=O)Cc1ccc(C)cc1)C(C)C
+Acylation,CCNC(C)C.Cc1cc(C)c(C(=O)O)c(C)c1>>CCN(C(=O)c1c(C)cc(C)cc1C)C(C)C
 Acylation,CCNC(C)C.O=C(O)Cc1ccc2c(c1)OCO2>>CCN(C(=O)Cc1ccc2c(c1)OCO2)C(C)C
 Acylation,CCNC(C)C.O=C(O)C(c1ccccc1)c1ccccc1>>CCN(C(=O)C(c1ccccc1)c1ccccc1)C(C)C
+Acylation,CCNC(C)C.Cc1ccc2cc(C(=O)O)ccc2n1>>CCN(C(=O)c1ccc2nc(C)ccc2c1)C(C)C
 Acylation,CCNC(C)C.Cc1cc(C(=O)O)cc(Cl)n1>>CCN(C(=O)c1cc(C)nc(Cl)c1)C(C)C
 Acylation,CCNC(C)C.O=C(O)c1ncccn1>>CCN(C(=O)c1ncccn1)C(C)C
+Acylation,CCNC(C)C.COc1ccc(C(=O)O)cc1>>CCN(C(=O)c1ccc(OC)cc1)C(C)C
+Acylation,CCNC(C)C.Cc1c(C(=O)O)oc2ccccc12>>CCN(C(=O)c1oc2ccccc2c1C)C(C)C
 Acylation,CCCNC.Cc1ccc(CC(=O)O)cc1>>CCCN(C)C(=O)Cc1ccc(C)cc1
 Acylation,CCCNC.Cc1cc(C)c(C(=O)O)c(C)c1>>CCCN(C)C(=O)c1c(C)cc(C)cc1C
 Acylation,CCCNC.O=C(O)Cc1ccc2c(c1)OCO2>>CCCN(C)C(=O)Cc1ccc2c(c1)OCO2
 Acylation,CCCNC.O=C(O)C(c1ccccc1)c1ccccc1>>CCCN(C)C(=O)C(c1ccccc1)c1ccccc1
 Acylation,CCCNC.Cc1cc(C(=O)O)cc(Cl)n1>>CCCN(C)C(=O)c1cc(C)nc(Cl)c1
+Acylation,CCCNC.O=C(O)c1ncccn1>>CCCN(C)C(=O)c1ncccn1
+Acylation,CCCNC.COc1ccc(C(=O)O)cc1>>CCCN(C)C(=O)c1ccc(OC)cc1
 Acylation,CCCNC.Cc1c(C(=O)O)oc2ccccc12>>CCCN(C)C(=O)c1oc2ccccc2c1C
 Acylation,CCCNC.O=C(O)c1cc(Cl)cc(Cl)n1>>CCCN(C)C(=O)c1cc(Cl)cc(Cl)n1
 Acylation,COCCN1CCNCC1.Cc1ccc(CC(=O)O)cc1>>COCCN1CCN(C(=O)Cc2ccc(C)cc2)CC1
+Acylation,COCCN1CCNCC1.Cc1cc(C)c(C(=O)O)c(C)c1>>COCCN1CCN(C(=O)c2c(C)cc(C)cc2C)CC1
+Acylation,COCCN1CCNCC1.O=C(O)Cc1ccc2c(c1)OCO2>>COCCN1CCN(C(=O)Cc2ccc3c(c2)OCO3)CC1
 Acylation,COCCN1CCNCC1.O=C(O)C(c1ccccc1)c1ccccc1>>COCCN1CCN(C(=O)C(c2ccccc2)c2ccccc2)CC1
+Acylation,COCCN1CCNCC1.Cc1ccc2cc(C(=O)O)ccc2n1>>COCCN1CCN(C(=O)c2ccc3nc(C)ccc3c2)CC1
+Acylation,COCCN1CCNCC1.Cc1cc(C(=O)O)cc(Cl)n1>>COCCN1CCN(C(=O)c2cc(C)nc(Cl)c2)CC1
+Acylation,COCCN1CCNCC1.O=C(O)c1ncccn1>>COCCN1CCN(C(=O)c2ncccn2)CC1
+Acylation,COCCN1CCNCC1.O=C(O)c1cc(Cl)cc(Cl)n1>>COCCN1CCN(C(=O)c2cc(Cl)cc(Cl)n2)CC1
+Acylation,CC1COCCN1.Cc1ccc(CC(=O)O)cc1>>Cc1ccc(CC(=O)N2CCOCC2C)cc1
+Acylation,CC1COCCN1.Cc1cc(C)c(C(=O)O)c(C)c1>>Cc1cc(C)c(C(=O)N2CCOCC2C)c(C)c1
+Acylation,CC1COCCN1.O=C(O)Cc1ccc2c(c1)OCO2>>CC1COCCN1C(=O)Cc1ccc2c(c1)OCO2
 Acylation,CC1COCCN1.O=C(O)C(c1ccccc1)c1ccccc1>>CC1COCCN1C(=O)C(c1ccccc1)c1ccccc1
+Acylation,CC1COCCN1.Cc1ccc2cc(C(=O)O)ccc2n1>>Cc1ccc2cc(C(=O)N3CCOCC3C)ccc2n1
+Acylation,CC1COCCN1.Cc1cc(C(=O)O)cc(Cl)n1>>Cc1cc(C(=O)N2CCOCC2C)cc(Cl)n1
 Acylation,CC1COCCN1.COc1ccc(C(=O)O)cc1>>COc1ccc(C(=O)N2CCOCC2C)cc1
 Acylation,CC1COCCN1.Cc1c(C(=O)O)oc2ccccc12>>Cc1c(C(=O)N2CCOCC2C)oc2ccccc12
 Acylation,CC1COCCN1.O=C(O)c1cc(Cl)cc(Cl)n1>>CC1COCCN1C(=O)c1cc(Cl)cc(Cl)n1
 Acylation,CC(C)NC(C)C.Cc1ccc(CC(=O)O)cc1>>Cc1ccc(CC(=O)N(C(C)C)C(C)C)cc1
 Acylation,CC(C)NC(C)C.O=C(O)Cc1ccc2c(c1)OCO2>>CC(C)N(C(=O)Cc1ccc2c(c1)OCO2)C(C)C
+Acylation,CC(C)NC(C)C.O=C(O)C(c1ccccc1)c1ccccc1>>CC(C)N(C(=O)C(c1ccccc1)c1ccccc1)C(C)C
 Acylation,CC(C)NC(C)C.Cc1ccc2cc(C(=O)O)ccc2n1>>Cc1ccc2cc(C(=O)N(C(C)C)C(C)C)ccc2n1
 Acylation,CC(C)NC(C)C.Cc1cc(C(=O)O)cc(Cl)n1>>Cc1cc(C(=O)N(C(C)C)C(C)C)cc(Cl)n1
+Acylation,CC(C)NC(C)C.O=C(O)c1ncccn1>>CC(C)N(C(=O)c1ncccn1)C(C)C
+Acylation,CC(C)NC(C)C.COc1ccc(C(=O)O)cc1>>COc1ccc(C(=O)N(C(C)C)C(C)C)cc1
+Acylation,CC(C)NC(C)C.Cc1c(C(=O)O)oc2ccccc12>>Cc1c(C(=O)N(C(C)C)C(C)C)oc2ccccc12
 Acylation,CSc1cccc(N)c1.Cc1ccc(CC(=O)O)cc1>>CSc1cccc(NC(=O)Cc2ccc(C)cc2)c1
 Acylation,CSc1cccc(N)c1.O=C(O)COc1ccccc1>>CSc1cccc(NC(=O)COc2ccccc2)c1
 Acylation,CSc1cccc(N)c1.COc1ccc(CC(=O)O)cc1>>COc1ccc(CC(=O)Nc2cccc(SC)c2)cc1
@@ -849,6 +1129,7 @@ Acylation,Cc1ccc([N+](=O)[O-])cc1N.O=C(O)c1ccco1>>Cc1ccc([N+](=O)[O-])cc1NC(=O)c
 Acylation,Cc1ccc([N+](=O)[O-])cc1N.O=C(O)c1cc2ccccc2s1>>Cc1ccc([N+](=O)[O-])cc1NC(=O)c1cc2ccccc2s1
 Acylation,Cc1ccc([N+](=O)[O-])cc1N.O=C(O)c1cc2ccccc2o1>>Cc1ccc([N+](=O)[O-])cc1NC(=O)c1cc2ccccc2o1
 Acylation,Cc1ccc([N+](=O)[O-])cc1N.O=C(O)c1ccc2c(c1)OC(F)(F)O2>>Cc1ccc([N+](=O)[O-])cc1NC(=O)c1ccc2c(c1)OC(F)(F)O2
+Acylation,CNOC.Cc1ccc(CC(=O)O)cc1>>CON(C)C(=O)Cc1ccc(C)cc1
 Acylation,CNOC.O=C(O)COc1ccccc1>>CON(C)C(=O)COc1ccccc1
 Acylation,CNOC.COc1ccc(CC(=O)O)cc1>>COc1ccc(CC(=O)N(C)OC)cc1
 Acylation,CNOC.O=C(O)Cc1cc(F)cc(F)c1>>CON(C)C(=O)Cc1cc(F)cc(F)c1
@@ -887,6 +1168,9 @@ Acylation,CNOC.O=C(O)c1cc(Cl)cc(Cl)n1>>CON(C)C(=O)c1cc(Cl)cc(Cl)n1
 Acylation,CNOC.O=C(O)C1CCC(F)(F)CC1>>CON(C)C(=O)C1CCC(F)(F)CC1
 Acylation,CNOC.O=C(O)c1cnc(Cl)nc1>>CON(C)C(=O)c1cnc(Cl)nc1
 Acylation,CNOC.O=C(O)c1c[nH]c2ncccc12>>CON(C)C(=O)c1c[nH]c2ncccc12
+Acylation,CNOC.CC(C)(C)OC(=O)N1CC2(CC2)C[C@H]1C(=O)O>>CON(C)C(=O)[C@@H]1CC2(CC2)CN1C(=O)OC(C)(C)C
+Acylation,CNOC.O=C(O)C1CCCN1C(=O)OCc1ccccc1>>CON(C)C(=O)C1CCCN1C(=O)OCc1ccccc1
+Acylation,CNOC.CC(C)(C)OC(=O)N1CCC[C@H]1C(=O)O>>CON(C)C(=O)[C@@H]1CCCN1C(=O)OC(C)(C)C
 Acylation,CNOC.O=C(O)C1CCN(C(=O)OCc2ccccc2)CC1>>CON(C)C(=O)C1CCN(C(=O)OCc2ccccc2)CC1
 Acylation,CNOC.O=C(O)C1CN(C(=O)OCc2ccccc2)C1>>CON(C)C(=O)C1CN(C(=O)OCc2ccccc2)C1
 Acylation,CNOC.O=C(O)c1ccncc1Cl>>CON(C)C(=O)c1ccncc1Cl
@@ -901,26 +1185,51 @@ Acylation,CNOC.O=C(O)C1CCc2cc(F)ccc2O1>>CON(C)C(=O)C1CCc2cc(F)ccc2O1
 Acylation,CNOC.O=C(O)Cc1ccc(Cl)c(Cl)c1>>CON(C)C(=O)Cc1ccc(Cl)c(Cl)c1
 Acylation,CNOC.O=C(O)c1ccc(Br)cn1>>CON(C)C(=O)c1ccc(Br)cn1
 Acylation,CNOC.O=C(O)c1ccc2c(c1)OC(F)(F)O2>>CON(C)C(=O)c1ccc2c(c1)OC(F)(F)O2
+Acylation,CNOC.CC(C)(C)OC(=O)N1CCC(C(=O)O)CC1>>CON(C)C(=O)C1CCN(C(=O)OC(C)(C)C)CC1
+Acylation,CNOC.CC(=O)c1ccc(C(=O)O)s1>>CON(C)C(=O)c1ccc(C(C)=O)s1
 Acylation,CNOC.O=C(O)c1c(F)c(F)c(F)c(F)c1F>>CON(C)C(=O)c1c(F)c(F)c(F)c(F)c1F
+Acylation,Cc1ccc(-c2cc(C(F)(F)F)nn2-c2ccc(S(N)(=O)=O)cc2)cc1.Cc1ccc(CC(=O)O)cc1>>Cc1ccc(CC(=O)NS(=O)(=O)c2ccc(-n3nc(C(F)(F)F)cc3-c3ccc(C)cc3)cc2)cc1
+Acylation,Cc1ccc(-c2cc(C(F)(F)F)nn2-c2ccc(S(N)(=O)=O)cc2)cc1.O=C(O)COc1ccccc1>>Cc1ccc(-c2cc(C(F)(F)F)nn2-c2ccc(S(=O)(=O)NC(=O)COc3ccccc3)cc2)cc1
+Acylation,Cc1ccc(-c2cc(C(F)(F)F)nn2-c2ccc(S(N)(=O)=O)cc2)cc1.Cc1cc(C)c(C(=O)O)c(C)c1>>Cc1ccc(-c2cc(C(F)(F)F)nn2-c2ccc(S(=O)(=O)NC(=O)c3c(C)cc(C)cc3C)cc2)cc1
+Acylation,Cc1ccc(-c2cc(C(F)(F)F)nn2-c2ccc(S(N)(=O)=O)cc2)cc1.Cc1ccc2cc(C(=O)O)ccc2n1>>Cc1ccc(-c2cc(C(F)(F)F)nn2-c2ccc(S(=O)(=O)NC(=O)c3ccc4nc(C)ccc4c3)cc2)cc1
 Acylation,Cc1ccc(-c2cc(C(F)(F)F)nn2-c2ccc(S(N)(=O)=O)cc2)cc1.Cc1ccc(F)cc1C(=O)O>>Cc1ccc(-c2cc(C(F)(F)F)nn2-c2ccc(S(=O)(=O)NC(=O)c3cc(F)ccc3C)cc2)cc1
 Acylation,Cc1ccc(-c2cc(C(F)(F)F)nn2-c2ccc(S(N)(=O)=O)cc2)cc1.O=C(O)c1cc(Cl)cc(Cl)n1>>Cc1ccc(-c2cc(C(F)(F)F)nn2-c2ccc(S(=O)(=O)NC(=O)c3cc(Cl)cc(Cl)n3)cc2)cc1
+Acylation,Cc1ccc(-c2cc(C(F)(F)F)nn2-c2ccc(S(N)(=O)=O)cc2)cc1.Cc1ccc(C(=O)O)cc1>>Cc1ccc(C(=O)NS(=O)(=O)c2ccc(-n3nc(C(F)(F)F)cc3-c3ccc(C)cc3)cc2)cc1
+Acylation,Cc1ccc(-c2cc(C(F)(F)F)nn2-c2ccc(S(N)(=O)=O)cc2)cc1.Cc1ccc(C(=O)O)c2ccccc12>>Cc1ccc(-c2cc(C(F)(F)F)nn2-c2ccc(S(=O)(=O)NC(=O)c3ccc(C)c4ccccc34)cc2)cc1
+Acylation,CC(=O)c1cc(Cl)sc1S(N)(=O)=O.Cc1cc(C)c(C(=O)O)c(C)c1>>CC(=O)c1cc(Cl)sc1S(=O)(=O)NC(=O)c1c(C)cc(C)cc1C
 Acylation,CC(=O)c1cc(Cl)sc1S(N)(=O)=O.Cc1ccc2cc(C(=O)O)ccc2n1>>CC(=O)c1cc(Cl)sc1S(=O)(=O)NC(=O)c1ccc2nc(C)ccc2c1
 Acylation,CC(=O)c1cc(Cl)sc1S(N)(=O)=O.COc1ccc(CC(=O)O)cc1>>COc1ccc(CC(=O)NS(=O)(=O)c2sc(Cl)cc2C(C)=O)cc1
+Acylation,CC(=O)c1cc(Cl)sc1S(N)(=O)=O.Cc1ccc(F)cc1C(=O)O>>CC(=O)c1cc(Cl)sc1S(=O)(=O)NC(=O)c1cc(F)ccc1C
 Acylation,CC(=O)c1cc(Cl)sc1S(N)(=O)=O.Cc1ccc(C(=O)O)cc1>>CC(=O)c1cc(Cl)sc1S(=O)(=O)NC(=O)c1ccc(C)cc1
 Acylation,CC(=O)c1cc(Cl)sc1S(N)(=O)=O.O=C(O)c1ccnc(C(F)(F)F)c1>>CC(=O)c1cc(Cl)sc1S(=O)(=O)NC(=O)c1ccnc(C(F)(F)F)c1
 Acylation,CC(=O)c1cc(Cl)sc1S(N)(=O)=O.Cn1cc(C(=O)O)c(C(F)F)n1>>CC(=O)c1cc(Cl)sc1S(=O)(=O)NC(=O)c1cn(C)nc1C(F)F
+Acylation,NS(=O)(=O)Cc1ccccc1.Cc1cc(C)c(C(=O)O)c(C)c1>>Cc1cc(C)c(C(=O)NS(=O)(=O)Cc2ccccc2)c(C)c1
+Acylation,NS(=O)(=O)Cc1ccccc1.O=C(O)Cc1ccc2c(c1)OCO2>>O=C(Cc1ccc2c(c1)OCO2)NS(=O)(=O)Cc1ccccc1
+Acylation,NS(=O)(=O)Cc1ccccc1.COc1ccc(CC(=O)O)cc1>>COc1ccc(CC(=O)NS(=O)(=O)Cc2ccccc2)cc1
 Acylation,NS(=O)(=O)Cc1ccccc1.O=C(O)c1ccnc(C(F)(F)F)c1>>O=C(NS(=O)(=O)Cc1ccccc1)c1ccnc(C(F)(F)F)c1
-Acylation,Cc1ccc([N+](=O)[O-])cc1S(N)(=O)=O.Cc1ccc(CC(=O)O)cc1>>Cc1ccc(CC(=O)NS(=O)(=O)c2cc([N+](=O)[O-])ccc2C)cc1
-Acylation,Cc1ccc([N+](=O)[O-])cc1S(N)(=O)=O.O=C(O)COc1ccccc1>>Cc1ccc([N+](=O)[O-])cc1S(=O)(=O)NC(=O)COc1ccccc1
+Acylation,NC(c1ccccc1)(c1ccccc1)c1ccccc1.Cc1ccc(N)cc1C(=O)O>>Cc1ccc(N)cc1C(=O)NC(c1ccccc1)(c1ccccc1)c1ccccc1
+Acylation,Cc1ccc(Nc2ccccc2)cc1.Cc1ccc(N)cc1C(=O)O>>Cc1ccc(N(C(=O)c2cc(N)ccc2C)c2ccccc2)cc1
+Acylation,CN(C)C(=O)c1cccnc1S(N)(=O)=O.Cc1cc(C)c(C(=O)O)c(C)c1>>Cc1cc(C)c(C(=O)NS(=O)(=O)c2ncccc2C(=O)N(C)C)c(C)c1
+Acylation,CN(C)C(=O)c1cccnc1S(N)(=O)=O.O=C(O)C1c2ccccc2Oc2ccccc21>>CN(C)C(=O)c1cccnc1S(=O)(=O)NC(=O)C1c2ccccc2Oc2ccccc21
+Acylation,CN(C)C(=O)c1cccnc1S(N)(=O)=O.COc1ccc(CC(=O)O)cc1>>COc1ccc(CC(=O)NS(=O)(=O)c2ncccc2C(=O)N(C)C)cc1
+Acylation,Cc1cc(C)nc(N)n1.O=C(O)c1ccnc(C(F)(F)F)c1>>Cc1cc(C)nc(NC(=O)c2ccnc(C(F)(F)F)c2)n1
+Acylation,NC(c1ccccc1)(c1ccccc1)c1ccccc1.O=C(O)c1ccnc(C(F)(F)F)c1>>O=C(NC(c1ccccc1)(c1ccccc1)c1ccccc1)c1ccnc(C(F)(F)F)c1
 Acylation,Cc1ccc([N+](=O)[O-])cc1S(N)(=O)=O.Cc1cc(C)c(C(=O)O)c(C)c1>>Cc1cc(C)c(C(=O)NS(=O)(=O)c2cc([N+](=O)[O-])ccc2C)c(C)c1
 Acylation,Cc1ccc([N+](=O)[O-])cc1S(N)(=O)=O.O=C(O)Cc1ccc2c(c1)OCO2>>Cc1ccc([N+](=O)[O-])cc1S(=O)(=O)NC(=O)Cc1ccc2c(c1)OCO2
+Acylation,Cc1ccc([N+](=O)[O-])cc1S(N)(=O)=O.O=C(O)C1c2ccccc2Oc2ccccc21>>Cc1ccc([N+](=O)[O-])cc1S(=O)(=O)NC(=O)C1c2ccccc2Oc2ccccc21
 Acylation,Cc1ccc([N+](=O)[O-])cc1S(N)(=O)=O.Cc1ccc2cc(C(=O)O)ccc2n1>>Cc1ccc2cc(C(=O)NS(=O)(=O)c3cc([N+](=O)[O-])ccc3C)ccc2n1
 Acylation,Cc1ccc([N+](=O)[O-])cc1S(N)(=O)=O.COc1ccc(CC(=O)O)cc1>>COc1ccc(CC(=O)NS(=O)(=O)c2cc([N+](=O)[O-])ccc2C)cc1
 Acylation,Cc1ccc([N+](=O)[O-])cc1S(N)(=O)=O.Cc1ccc(F)cc1C(=O)O>>Cc1ccc(F)cc1C(=O)NS(=O)(=O)c1cc([N+](=O)[O-])ccc1C
+Acylation,Cc1ccc([N+](=O)[O-])cc1S(N)(=O)=O.CC(C)(C(=O)O)c1ccccc1>>Cc1ccc([N+](=O)[O-])cc1S(=O)(=O)NC(=O)C(C)(C)c1ccccc1
 Acylation,Cc1ccc([N+](=O)[O-])cc1S(N)(=O)=O.Cc1ccc(C(=O)O)cc1>>Cc1ccc(C(=O)NS(=O)(=O)c2cc([N+](=O)[O-])ccc2C)cc1
-Acylation,Cc1ccc([N+](=O)[O-])cc1S(N)(=O)=O.O=C(O)c1ccnc(C(F)(F)F)c1>>Cc1ccc([N+](=O)[O-])cc1S(=O)(=O)NC(=O)c1ccnc(C(F)(F)F)c1
+Acylation,Cc1ccc([N+](=O)[O-])cc1S(N)(=O)=O.Cc1ccc(C(=O)O)c2ccccc12>>Cc1ccc([N+](=O)[O-])cc1S(=O)(=O)NC(=O)c1ccc(C)c2ccccc12
 Acylation,Cc1ccc([N+](=O)[O-])cc1S(N)(=O)=O.Cn1cc(C(=O)O)c(C(F)F)n1>>Cc1ccc([N+](=O)[O-])cc1S(=O)(=O)NC(=O)c1cn(C)nc1C(F)F
 Acylation,Cc1ccc([N+](=O)[O-])cc1S(N)(=O)=O.O=C(O)c1cccc(-c2ccccc2)c1>>Cc1ccc([N+](=O)[O-])cc1S(=O)(=O)NC(=O)c1cccc(-c2ccccc2)c1
+Acylation,Cc1ccc([N+](=O)[O-])cc1S(N)(=O)=O.COc1ccc(C(=O)O)cc1>>COc1ccc(C(=O)NS(=O)(=O)c2cc([N+](=O)[O-])ccc2C)cc1
+Acylation,Cc1ccc([N+](=O)[O-])cc1S(N)(=O)=O.CC(C(=O)O)c1ccc(CBr)cc1>>Cc1ccc([N+](=O)[O-])cc1S(=O)(=O)NC(=O)C(C)c1ccc(CBr)cc1
+Acylation,Cc1ccc([N+](=O)[O-])cc1S(N)(=O)=O.CC(C)Cc1ccc([C@H](C)C(=O)O)cc1>>Cc1ccc([N+](=O)[O-])cc1S(=O)(=O)NC(=O)[C@@H](C)c1ccc(CC(C)C)cc1
+Acylation,Cc1ccc([N+](=O)[O-])cc1S(N)(=O)=O.O=C(O)Cc1ccc2c(c1)C(=O)c1ccccc1CO2>>Cc1ccc([N+](=O)[O-])cc1S(=O)(=O)NC(=O)Cc1ccc2c(c1)C(=O)c1ccccc1CO2
+Acylation,Cc1ccc([N+](=O)[O-])cc1S(N)(=O)=O.CC(C(=O)O)c1ccc(-c2ccccc2)c(F)c1>>Cc1ccc([N+](=O)[O-])cc1S(=O)(=O)NC(=O)C(C)c1ccc(-c2ccccc2)c(F)c1
 Acylation,COC(=O)c1cc(S(N)(=O)=O)ccc1OC.Cc1ccc(CC(=O)O)cc1>>COC(=O)c1cc(S(=O)(=O)NC(=O)Cc2ccc(C)cc2)ccc1OC
 Acylation,COC(=O)c1cc(S(N)(=O)=O)ccc1OC.O=C(O)COc1ccccc1>>COC(=O)c1cc(S(=O)(=O)NC(=O)COc2ccccc2)ccc1OC
 Acylation,COC(=O)c1cc(S(N)(=O)=O)ccc1OC.Cc1cc(C)c(C(=O)O)c(C)c1>>COC(=O)c1cc(S(=O)(=O)NC(=O)c2c(C)cc(C)cc2C)ccc1OC
@@ -933,6 +1242,7 @@ Acylation,COC(=O)c1cc(S(N)(=O)=O)ccc1OC.Cc1ccc(C(=O)O)cc1>>COC(=O)c1cc(S(=O)(=O)
 Acylation,COC(=O)c1cc(S(N)(=O)=O)ccc1OC.Cc1ccc(C(=O)O)c2ccccc12>>COC(=O)c1cc(S(=O)(=O)NC(=O)c2ccc(C)c3ccccc23)ccc1OC
 Acylation,COC(=O)c1cc(S(N)(=O)=O)ccc1OC.O=C(O)c1ccnc(C(F)(F)F)c1>>COC(=O)c1cc(S(=O)(=O)NC(=O)c2ccnc(C(F)(F)F)c2)ccc1OC
 Acylation,COC(=O)c1cc(S(N)(=O)=O)ccc1OC.Cn1cc(C(=O)O)c(C(F)F)n1>>COC(=O)c1cc(S(=O)(=O)NC(=O)c2cn(C)nc2C(F)F)ccc1OC
+Acylation,COC(=O)c1cc(S(N)(=O)=O)ccc1OC.O=C(O)c1cccc(-c2ccccc2)c1>>COC(=O)c1cc(S(=O)(=O)NC(=O)c2cccc(-c3ccccc3)c2)ccc1OC
 Acylation,COC(=O)c1cc(S(N)(=O)=O)ccc1OC.COc1ccc(C(=O)O)cc1>>COC(=O)c1cc(S(=O)(=O)NC(=O)c2ccc(OC)cc2)ccc1OC
 Acylation,COC(=O)c1cc(S(N)(=O)=O)ccc1OC.CC(C(=O)O)c1ccc(CBr)cc1>>COC(=O)c1cc(S(=O)(=O)NC(=O)C(C)c2ccc(CBr)cc2)ccc1OC
 Acylation,COC(=O)c1cc(S(N)(=O)=O)ccc1OC.CC(C)Cc1ccc([C@H](C)C(=O)O)cc1>>COC(=O)c1cc(S(=O)(=O)NC(=O)[C@@H](C)c2ccc(CC(C)C)cc2)ccc1OC
@@ -949,9 +1259,12 @@ Acylation,COc1ccc(S(N)(=O)=O)cc1.COc1ccc(CC(=O)O)cc1>>COc1ccc(CC(=O)NS(=O)(=O)c2
 Acylation,COc1ccc(S(N)(=O)=O)cc1.Cc1ccc(F)cc1C(=O)O>>COc1ccc(S(=O)(=O)NC(=O)c2cc(F)ccc2C)cc1
 Acylation,COc1ccc(S(N)(=O)=O)cc1.O=C(O)c1ccnc(C(F)(F)F)c1>>COc1ccc(S(=O)(=O)NC(=O)c2ccnc(C(F)(F)F)c2)cc1
 Acylation,COc1ccc(S(N)(=O)=O)cc1.Cn1cc(C(=O)O)c(C(F)F)n1>>COc1ccc(S(=O)(=O)NC(=O)c2cn(C)nc2C(F)F)cc1
+Acylation,COc1ccc(S(N)(=O)=O)cc1.O=C(O)c1cccc(-c2ccccc2)c1>>COc1ccc(S(=O)(=O)NC(=O)c2cccc(-c3ccccc3)c2)cc1
 Acylation,COc1ccc(S(N)(=O)=O)cc1.CC(C(=O)O)c1ccc(CBr)cc1>>COc1ccc(S(=O)(=O)NC(=O)C(C)c2ccc(CBr)cc2)cc1
 Acylation,COc1ccc(S(N)(=O)=O)cc1.CC(C)Cc1ccc([C@H](C)C(=O)O)cc1>>COc1ccc(S(=O)(=O)NC(=O)[C@@H](C)c2ccc(CC(C)C)cc2)cc1
 Acylation,COc1ccc(S(N)(=O)=O)cc1.O=C(O)Cc1ccc2c(c1)C(=O)c1ccccc1CO2>>COc1ccc(S(=O)(=O)NC(=O)Cc2ccc3c(c2)C(=O)c2ccccc2CO3)cc1
+Acylation,COc1ccc(S(N)(=O)=O)cc1.CC(C(=O)O)c1ccc(-c2ccccc2)c(F)c1>>COc1ccc(S(=O)(=O)NC(=O)C(C)c2ccc(-c3ccccc3)c(F)c2)cc1
+Acylation,COc1ccc(S(N)(=O)=O)cc1.O=C(O)c1ccco1>>COc1ccc(S(=O)(=O)NC(=O)c2ccco2)cc1
 Acylation,Cc1ccccc1N.Cc1ccc(CC(=O)O)cc1>>Cc1ccc(CC(=O)Nc2ccccc2C)cc1
 Acylation,Cc1ccccc1N.O=C(O)COc1ccccc1>>Cc1ccccc1NC(=O)COc1ccccc1
 Acylation,Cc1ccccc1N.COc1ccc(CC(=O)O)cc1>>COc1ccc(CC(=O)Nc2ccccc2C)cc1
@@ -963,7 +1276,9 @@ Acylation,Cc1ccccc1N.O=C(O)C1c2ccccc2Oc2ccccc21>>Cc1ccccc1NC(=O)C1c2ccccc2Oc2ccc
 Acylation,Cc1ccccc1N.Cc1cc(C(=O)O)cc(Cl)n1>>Cc1cc(C(=O)Nc2ccccc2C)cc(Cl)n1
 Acylation,Cc1ccccc1N.COc1ncc(Br)cc1C(=O)O>>COc1ncc(Br)cc1C(=O)Nc1ccccc1C
 Acylation,Cc1ccccc1N.O=C(O)c1ccc2nccnc2c1>>Cc1ccccc1NC(=O)c1ccc2nccnc2c1
+Acylation,Cc1ccccc1N.CC(C)(C(=O)O)c1ccccc1>>Cc1ccccc1NC(=O)C(C)(C)c1ccccc1
 Acylation,Cc1ccccc1N.O=C(O)c1ccco1>>Cc1ccccc1NC(=O)c1ccco1
+Acylation,Cc1ccccc1N.Cc1c(C(=O)O)oc2ccccc12>>Cc1ccccc1NC(=O)c1oc2ccccc2c1C
 Acylation,Cc1ccccc1N.Cc1ccc(C(=O)O)cc1>>Cc1ccc(C(=O)Nc2ccccc2C)cc1
 Acylation,Cc1ccccc1N.Cc1ccc(C(=O)O)c2ccccc12>>Cc1ccccc1NC(=O)c1ccc(C)c2ccccc12
 Acylation,Cc1ccccc1N.O=C(O)c1ccc2c(c1)OC(F)(F)O2>>Cc1ccccc1NC(=O)c1ccc2c(c1)OC(F)(F)O2
@@ -973,11 +1288,13 @@ Acylation,Cc1ccc(N)c(C)c1.COc1ccc(CC(=O)O)cc1>>COc1ccc(CC(=O)Nc2ccc(C)cc2C)cc1
 Acylation,Cc1ccc(N)c(C)c1.Cc1ccc2cc(C(=O)O)ccc2n1>>Cc1ccc(NC(=O)c2ccc3nc(C)ccc3c2)c(C)c1
 Acylation,Cc1ccc(N)c(C)c1.COc1cc(C(=O)O)cc(OC)c1OC>>COc1cc(C(=O)Nc2ccc(C)cc2C)cc(OC)c1OC
 Acylation,Cc1ccc(N)c(C)c1.Cc1ccc(C(=O)O)cc1F>>Cc1ccc(NC(=O)c2ccc(C)c(F)c2)c(C)c1
+Acylation,Cc1ccc(N)c(C)c1.O=C(O)c1ccc(C(F)(F)F)cn1>>Cc1ccc(NC(=O)c2ccc(C(F)(F)F)cn2)c(C)c1
 Acylation,Cc1ccc(N)c(C)c1.O=C(O)Cc1ccc2c(c1)OCO2>>Cc1ccc(NC(=O)Cc2ccc3c(c2)OCO3)c(C)c1
 Acylation,Cc1ccc(N)c(C)c1.O=C(O)C1c2ccccc2Oc2ccccc21>>Cc1ccc(NC(=O)C2c3ccccc3Oc3ccccc32)c(C)c1
 Acylation,Cc1ccc(N)c(C)c1.Cc1cc(C(=O)O)cc(Cl)n1>>Cc1ccc(NC(=O)c2cc(C)nc(Cl)c2)c(C)c1
 Acylation,Cc1ccc(N)c(C)c1.COc1ncc(Br)cc1C(=O)O>>COc1ncc(Br)cc1C(=O)Nc1ccc(C)cc1C
 Acylation,Cc1ccc(N)c(C)c1.O=C(O)c1ccc2nccnc2c1>>Cc1ccc(NC(=O)c2ccc3nccnc3c2)c(C)c1
+Acylation,Cc1ccc(N)c(C)c1.CC(C)(C(=O)O)c1ccccc1>>Cc1ccc(NC(=O)C(C)(C)c2ccccc2)c(C)c1
 Acylation,Cc1ccc(N)c(C)c1.O=C(O)c1ccco1>>Cc1ccc(NC(=O)c2ccco2)c(C)c1
 Acylation,Cc1ccc(N)c(C)c1.Cc1ccc(C(=O)O)cc1>>Cc1ccc(C(=O)Nc2ccc(C)cc2C)cc1
 Acylation,Cc1ccc(N)c(C)c1.Cc1ccc(C(=O)O)c2ccccc12>>Cc1ccc(NC(=O)c2ccc(C)c3ccccc23)c(C)c1
@@ -993,6 +1310,7 @@ Acylation,Cc1cccc(N)c1C.O=C(O)Cc1ccc2c(c1)OCO2>>Cc1cccc(NC(=O)Cc2ccc3c(c2)OCO3)c
 Acylation,Cc1cccc(N)c1C.O=C(O)C1c2ccccc2Oc2ccccc21>>Cc1cccc(NC(=O)C2c3ccccc3Oc3ccccc32)c1C
 Acylation,Cc1cccc(N)c1C.Cc1cc(C(=O)O)cc(Cl)n1>>Cc1cc(C(=O)Nc2cccc(C)c2C)cc(Cl)n1
 Acylation,Cc1cccc(N)c1C.O=C(O)c1ccc2nccnc2c1>>Cc1cccc(NC(=O)c2ccc3nccnc3c2)c1C
+Acylation,Cc1cccc(N)c1C.CC(C)(C(=O)O)c1ccccc1>>Cc1cccc(NC(=O)C(C)(C)c2ccccc2)c1C
 Acylation,Cc1cccc(N)c1C.O=C(O)c1ccco1>>Cc1cccc(NC(=O)c2ccco2)c1C
 Acylation,Cc1cccc(N)c1C.Cc1c(C(=O)O)oc2ccccc12>>Cc1cccc(NC(=O)c2oc3ccccc3c2C)c1C
 Acylation,Cc1cccc(N)c1C.Cc1ccc(C(=O)O)cc1>>Cc1ccc(C(=O)Nc2cccc(C)c2C)cc1
@@ -1016,13 +1334,24 @@ Acylation,CSc1ccc(N)cc1.O=C(O)Cc1ccc2c(c1)C(=O)c1ccccc1CO2>>CSc1ccc(NC(=O)Cc2ccc
 Acylation,CSc1ccc(N)cc1.COc1ncc(Br)cc1C(=O)O>>COc1ncc(Br)cc1C(=O)Nc1ccc(SC)cc1
 Acylation,CSc1ccc(N)cc1.O=C(O)Cc1ccc([N+](=O)[O-])cc1>>CSc1ccc(NC(=O)Cc2ccc([N+](=O)[O-])cc2)cc1
 Acylation,CSc1ccc(N)cc1.Cc1ccc(F)cc1C(=O)O>>CSc1ccc(NC(=O)c2cc(F)ccc2C)cc1
+Acylation,CSc1ccc(N)cc1.O=C(O)c1ccc(Br)s1>>CSc1ccc(NC(=O)c2ccc(Br)s2)cc1
 Acylation,CSc1ccc(N)cc1.O=C(O)c1cccc(-c2ccccc2)c1>>CSc1ccc(NC(=O)c2cccc(-c3ccccc3)c2)cc1
 Acylation,CSc1ccc(N)cc1.Cc1cc(C(=O)O)cc(Cl)n1>>CSc1ccc(NC(=O)c2cc(C)nc(Cl)c2)cc1
+Acylation,CSc1ccc(N)cc1.O=C(O)/C=C/c1ccccc1>>CSc1ccc(NC(=O)/C=C/c2ccccc2)cc1
 Acylation,Nc1ccc(Cl)cn1.O=C(O)COc1ccccc1>>O=C(COc1ccccc1)Nc1ccc(Cl)cn1
+Acylation,Nc1ccc(Cl)cn1.O=C(O)Cc1cc(F)cc(F)c1>>O=C(Cc1cc(F)cc(F)c1)Nc1ccc(Cl)cn1
+Acylation,Nc1ccc(Cl)cn1.O=C(O)C(c1ccccc1)c1ccccc1>>O=C(Nc1ccc(Cl)cn1)C(c1ccccc1)c1ccccc1
 Acylation,Nc1ccc(Cl)cn1.O=C(O)Cc1ccc2c(c1)OCO2>>O=C(Cc1ccc2c(c1)OCO2)Nc1ccc(Cl)cn1
 Acylation,Nc1ccc(Cl)cn1.Cc1ccc2cc(C(=O)O)ccc2n1>>Cc1ccc2cc(C(=O)Nc3ccc(Cl)cn3)ccc2n1
+Acylation,Nc1ccc(Cl)cn1.O=C(O)Cc1ccc2c(c1)C(=O)c1ccccc1CO2>>O=C(Cc1ccc2c(c1)C(=O)c1ccccc1CO2)Nc1ccc(Cl)cn1
 Acylation,Nc1ccc(Cl)cn1.COc1ncc(Br)cc1C(=O)O>>COc1ncc(Br)cc1C(=O)Nc1ccc(Cl)cn1
 Acylation,Nc1ccc(Cl)cn1.O=C(O)Cc1ccc([N+](=O)[O-])cc1>>O=C(Cc1ccc([N+](=O)[O-])cc1)Nc1ccc(Cl)cn1
+Acylation,Nc1ccc(Cl)cn1.O=C(O)c1ccc(Br)s1>>O=C(Nc1ccc(Cl)cn1)c1ccc(Br)s1
+Acylation,Nc1ccc(Cl)cn1.Cn1ccnc1C(=O)O>>Cn1ccnc1C(=O)Nc1ccc(Cl)cn1
+Acylation,Nc1ccc(Cl)cn1.O=C(O)c1cccc(-c2ccccc2)c1>>O=C(Nc1ccc(Cl)cn1)c1cccc(-c2ccccc2)c1
+Acylation,Nc1ccc(Cl)cn1.O=C(O)c1ccc2nccnc2c1>>O=C(Nc1ccc(Cl)cn1)c1ccc2nccnc2c1
+Acylation,Nc1ccc(Cl)cn1.Cc1cc(C(=O)O)cc(Cl)n1>>Cc1cc(C(=O)Nc2ccc(Cl)cn2)cc(Cl)n1
+Acylation,Nc1ccc(Cl)cn1.O=C(O)/C=C/c1ccccc1>>O=C(/C=C/c1ccccc1)Nc1ccc(Cl)cn1
 Acylation,NCc1ccc(F)cc1F.O=C(O)Cc1ccc2c(c1)OCO2>>O=C(Cc1ccc2c(c1)OCO2)NCc1ccc(F)cc1F
 Suzuki,Brc1cccc2[nH]ncc12.CC(C)Oc1cccc(B(O)O)c1>>CC(C)Oc1cccc(-c2cccc3[nH]ncc23)c1
 Suzuki,Brc1ccc2cnccc2c1.CC(C)Oc1cccc(B(O)O)c1>>CC(C)Oc1cccc(-c2ccc3cnccc3c2)c1
@@ -1557,14 +1886,18 @@ Suzuki,Cc1ccnc(OS(=O)(=O)C(F)(F)F)c1.Cn1nccc1B(O)O>>Cc1ccnc(-c2ccnn2C)c1
 Buchwald-Hartwig,Nc1ccc2nccnc2c1.CC1(C)c2ccccc2-c2ccc(Br)cc21>>CC1(C)c2ccccc2-c2ccc(Nc3ccc4nccnc4c3)cc21
 Buchwald-Hartwig,Nc1ccc2nccnc2c1.OCc1ccc(Br)cc1>>OCc1ccc(Nc2ccc3nccnc3c2)cc1
 Buchwald-Hartwig,Nc1ccc2nccnc2c1.Cc1cc(F)ccc1Br>>Cc1cc(F)ccc1Nc1ccc2nccnc2c1
+Buchwald-Hartwig,Nc1ccc2nccnc2c1.Cc1noc(C)c1Br>>Cc1noc(C)c1Nc1ccc2nccnc2c1
 Buchwald-Hartwig,Nc1ccc2nccnc2c1.OCc1cccc(Br)c1>>OCc1cccc(Nc2ccc3nccnc3c2)c1
 Buchwald-Hartwig,Nc1ccc2nccnc2c1.N#Cc1cc(Br)ccc1F>>N#Cc1cc(Nc2ccc3nccnc3c2)ccc1F
 Buchwald-Hartwig,Nc1ccc2nccnc2c1.Cc1ccccc1Br>>Cc1ccccc1Nc1ccc2nccnc2c1
 Buchwald-Hartwig,Nc1ccc2nccnc2c1.O=C1CCc2ccc(Br)cc21>>O=C1CCc2ccc(Nc3ccc4nccnc4c3)cc21
 Buchwald-Hartwig,Nc1ccc2nccnc2c1.Brc1ccc2c(c1)OCCO2>>c1cnc2cc(Nc3ccc4c(c3)OCCO4)ccc2n1
+Buchwald-Hartwig,Nc1ccccc1C=O.N#Cc1ccc(Br)cc1>>N#Cc1ccc(Nc2ccccc2C=O)cc1
+Buchwald-Hartwig,Nc1ccccc1C=O.Fc1ccnc(Br)c1>>O=Cc1ccccc1Nc1cc(F)ccn1
 Buchwald-Hartwig,Nc1ccccc1C=O.O=C1CCc2ccc(Br)cc21>>O=Cc1ccccc1Nc1ccc2c(c1)C(=O)CC2
 Buchwald-Hartwig,Nc1ccccc1C=O.COC(=O)c1ccccc1Br>>COC(=O)c1ccccc1Nc1ccccc1C=O
 Buchwald-Hartwig,Nc1ccccc1C=O.O=C(c1ccccc1)c1ccccc1Br>>O=Cc1ccccc1Nc1ccccc1C(=O)c1ccccc1
+Buchwald-Hartwig,Cc1cc(C)nc(N)n1.Cc1cc(Br)ccn1>>Cc1cc(Nc2nc(C)cc(C)n2)ccn1
 Buchwald-Hartwig,Cc1cc(C)nc(N)n1.Fc1ccnc(Br)c1>>Cc1cc(C)nc(Nc2cc(F)ccn2)n1
 Buchwald-Hartwig,Cc1cc(C)nc(N)n1.Brc1cnc2ccnn2c1>>Cc1cc(C)nc(Nc2cnc3ccnn3c2)n1
 Buchwald-Hartwig,Cc1ccc(N)cc1I.Cc1cc(F)ccc1Br>>Cc1ccc(Nc2ccc(F)cc2C)cc1I
@@ -1572,11 +1905,13 @@ Buchwald-Hartwig,Cc1ccc(N)cc1I.O=C(c1ccccc1)c1ccccc1Br>>Cc1ccc(Nc2ccccc2C(=O)c2c
 Buchwald-Hartwig,Cc1ccc(N)cc1I.Brc1ccccn1>>Cc1ccc(Nc2ccccn2)cc1I
 Buchwald-Hartwig,Cc1ccc(N)cc1I.OCc1cccc(Br)c1>>Cc1ccc(Nc2cccc(CO)c2)cc1I
 Buchwald-Hartwig,Nc1cccn2ccnc12.Cc1ccccc1Br>>Cc1ccccc1Nc1cccn2ccnc12
+Buchwald-Hartwig,Nc1cccn2ccnc12.Cc1cccc(C)c1Br>>Cc1cccc(C)c1Nc1cccn2ccnc12
 Buchwald-Hartwig,Nc1cccn2ccnc12.CN(C)c1cccc(Br)c1>>CN(C)c1cccc(Nc2cccn3ccnc23)c1
 Buchwald-Hartwig,Cc1ccc(N)cc1I.CC1(C)c2ccccc2-c2ccc(Br)cc21>>Cc1ccc(Nc2ccc3c(c2)C(C)(C)c2ccccc2-3)cc1I
 Buchwald-Hartwig,Cc1ccc(N)nc1.N#Cc1cc(Br)ccc1F>>Cc1ccc(Nc2ccc(F)c(C#N)c2)nc1
 Buchwald-Hartwig,Cc1ccc(N)nc1.COC(=O)c1ccccc1Br>>COC(=O)c1ccccc1Nc1ccc(C)cn1
 Buchwald-Hartwig,Cc1ccc(N)nc1.Cc1cc(F)ccc1Br>>Cc1ccc(Nc2ccc(F)cc2C)nc1
+Buchwald-Hartwig,Cc1ccc(N)nc1.Brc1cncc2ccccc12>>Cc1ccc(Nc2cncc3ccccc23)nc1
 Buchwald-Hartwig,CCOC(=O)c1cccc(N)c1.Brc1ccc2c(c1)OCCO2>>CCOC(=O)c1cccc(Nc2ccc3c(c2)OCCO3)c1
 Buchwald-Hartwig,CCOC(=O)c1cccc(N)c1.Brc1ccccn1>>CCOC(=O)c1cccc(Nc2ccccn2)c1
 Buchwald-Hartwig,CCOC(=O)c1cccc(N)c1.OCc1cccc(Br)c1>>CCOC(=O)c1cccc(Nc2cccc(CO)c2)c1
@@ -1589,10 +1924,12 @@ Buchwald-Hartwig,NCc1ccccc1F.Brc1ccc2cnccc2c1>>Fc1ccccc1CNc1ccc2cnccc2c1
 Buchwald-Hartwig,COc1ccc(N)cc1.Cc1ccccc1Br>>COc1ccc(Nc2ccccc2C)cc1
 Buchwald-Hartwig,Cc1ccc([N+](=O)[O-])cc1N.Brc1cnn2cccnc12>>Cc1ccc([N+](=O)[O-])cc1Nc1cnn2cccnc12
 Buchwald-Hartwig,Cc1ccc([N+](=O)[O-])cc1N.Brc1cnc2ccnn2c1>>Cc1ccc([N+](=O)[O-])cc1Nc1cnc2ccnn2c1
+Buchwald-Hartwig,Nc1ccccc1CO.N#Cc1ccc(Br)cc1>>N#Cc1ccc(Nc2ccccc2CO)cc1
 Buchwald-Hartwig,Nc1ccccc1CO.Brc1cnn2cccnc12>>OCc1ccccc1Nc1cnn2cccnc12
 Buchwald-Hartwig,COC(=O)c1cc(F)ccc1N.Cc1ccccc1Br>>COC(=O)c1cc(F)ccc1Nc1ccccc1C
 Buchwald-Hartwig,COC(=O)c1cc(F)ccc1N.CC(=O)c1ccc(Br)s1>>COC(=O)c1cc(F)ccc1Nc1ccc(C(C)=O)s1
 Buchwald-Hartwig,COC(=O)c1cc(F)ccc1N.Cc1cc(F)ccc1Br>>COC(=O)c1cc(F)ccc1Nc1ccc(F)cc1C
+Buchwald-Hartwig,COC(=O)c1cc(F)ccc1N.O=C(c1ccccc1)c1ccccc1Br>>COC(=O)c1cc(F)ccc1Nc1ccccc1C(=O)c1ccccc1
 Buchwald-Hartwig,COC(=O)c1cc(F)ccc1N.CC(=O)c1cncc(Br)c1>>COC(=O)c1cc(F)ccc1Nc1cncc(C(C)=O)c1
 Buchwald-Hartwig,Nc1ccc([N+](=O)[O-])cn1.Cc1ccccc1Br>>Cc1ccccc1Nc1ccc([N+](=O)[O-])cn1
 Buchwald-Hartwig,Nc1ccc([N+](=O)[O-])cn1.Cc1cc(Br)ccn1>>Cc1cc(Nc2ccc([N+](=O)[O-])cn2)ccn1
@@ -1602,13 +1939,16 @@ Buchwald-Hartwig,Nc1ccc([N+](=O)[O-])cn1.CC(=O)c1ccc(Br)s1>>CC(=O)c1ccc(Nc2ccc([
 Buchwald-Hartwig,Nc1ccc([N+](=O)[O-])cn1.COC(=O)c1ccc(Br)nc1>>COC(=O)c1ccc(Nc2ccc([N+](=O)[O-])cn2)nc1
 Buchwald-Hartwig,Nc1ccc([N+](=O)[O-])cn1.CN(C)c1cccc(Br)c1>>CN(C)c1cccc(Nc2ccc([N+](=O)[O-])cn2)c1
 Buchwald-Hartwig,Nc1ccc([N+](=O)[O-])cn1.CC(C)c1ccc(Br)cc1>>CC(C)c1ccc(Nc2ccc([N+](=O)[O-])cn2)cc1
+Buchwald-Hartwig,Nc1ccc([N+](=O)[O-])cn1.Brc1ccnc2ccccc12>>O=[N+]([O-])c1ccc(Nc2ccnc3ccccc23)nc1
 Buchwald-Hartwig,COc1ccc(N)cn1.CC1(C)c2ccccc2-c2ccc(Br)cc21>>COc1ccc(Nc2ccc3c(c2)C(C)(C)c2ccccc2-3)cn1
 Buchwald-Hartwig,COc1ccc(N)cn1.OCc1ccc(Br)cc1>>COc1ccc(Nc2ccc(CO)cc2)cn1
+Buchwald-Hartwig,COc1ccc(N)cn1.Brc1ccccn1>>COc1ccc(Nc2ccccn2)cn1
 Buchwald-Hartwig,COc1ccc(N)cn1.OCc1cccc(Br)c1>>COc1ccc(Nc2cccc(CO)c2)cn1
 Buchwald-Hartwig,Cc1cc(C(F)(F)F)ccc1N.OCc1cccc(Br)c1>>Cc1cc(C(F)(F)F)ccc1Nc1cccc(CO)c1
 Buchwald-Hartwig,Cc1cc(C(F)(F)F)ccc1N.CC(=O)c1ccc(Br)s1>>CC(=O)c1ccc(Nc2ccc(C(F)(F)F)cc2C)s1
 Buchwald-Hartwig,Cc1nccn1-c1ccc(N)cc1.COC(=O)c1ccc(Br)nc1>>COC(=O)c1ccc(Nc2ccc(-n3ccnc3C)cc2)nc1
 Buchwald-Hartwig,Cc1nccn1-c1ccc(N)cc1.CC(=O)c1ccc(Br)s1>>CC(=O)c1ccc(Nc2ccc(-n3ccnc3C)cc2)s1
+Buchwald-Hartwig,C#Cc1cccc(N)c1.Cc1ccccc1Br>>C#Cc1cccc(Nc2ccccc2C)c1
 Buchwald-Hartwig,C#Cc1cccc(N)c1.Cc1cc(Br)cc([N+](=O)[O-])c1>>C#Cc1cccc(Nc2cc(C)cc([N+](=O)[O-])c2)c1
 Buchwald-Hartwig,C#Cc1cccc(N)c1.Brc1cccc2cnccc12>>C#Cc1cccc(Nc2cccc3cnccc23)c1
 Buchwald-Hartwig,C#Cc1cccc(N)c1.Brc1ccnc2ccccc12>>C#Cc1cccc(Nc2ccnc3ccccc23)c1
@@ -1636,8 +1976,13 @@ Buchwald-Hartwig,CCc1ccc(N)cc1.Cc1ncccc1Br>>CCc1ccc(Nc2cccnc2C)cc1
 Buchwald-Hartwig,Cc1ccccc1N.CC(=O)c1cncc(Br)c1>>CC(=O)c1cncc(Nc2ccccc2C)c1
 Buchwald-Hartwig,NCc1ccccc1F.Brc1ccsc1>>Fc1ccccc1CNc1ccsc1
 Buchwald-Hartwig,COc1ccc(N)cc1C.Brc1ccsc1>>COc1ccc(Nc2ccsc2)cc1C
+Buchwald-Hartwig,COC(=O)c1cc(F)ccc1N.Brc1ccsc1>>COC(=O)c1cc(F)ccc1Nc1ccsc1
+Buchwald-Hartwig,Cc1cc(C(F)(F)F)ccc1N.Brc1ccsc1>>Cc1cc(C(F)(F)F)ccc1Nc1ccsc1
 Buchwald-Hartwig,Cc1ccc(N)cc1.Fc1ccccc1Br>>Cc1ccc(Nc2ccccc2F)cc1
+Buchwald-Hartwig,Cc1ccc(N)cc1.Brc1cnn2cccnc12>>Cc1ccc(Nc2cnn3cccnc23)cc1
+Buchwald-Hartwig,Cc1ccc(N)cc1.Brc1cnc2ccnn2c1>>Cc1ccc(Nc2cnc3ccnn3c2)cc1
 Buchwald-Hartwig,Cc1ccc(N)cc1.CC(C)c1ccc(Br)cc1>>Cc1ccc(Nc2ccc(C(C)C)cc2)cc1
+Buchwald-Hartwig,Cc1ccc(N)cc1.COC(=O)c1ccc(Br)nc1>>COC(=O)c1ccc(Nc2ccc(C)cc2)nc1
 Buchwald-Hartwig,Cc1ccc(N)cc1.Brc1cccc2cnccc12>>Cc1ccc(Nc2cccc3cnccc23)cc1
 Buchwald-Hartwig,Cc1ccc(N)cc1.Brc1ccc2scnc2c1>>Cc1ccc(Nc2ccc3scnc3c2)cc1
 Buchwald-Hartwig,C1CCNC1.Cc1cccc(Cl)n1>>Cc1cccc(N2CCCC2)n1
@@ -1652,6 +1997,7 @@ Buchwald-Hartwig,Cc1cc[nH]c1.COc1ccnc(Cl)c1>>COc1ccnc(-n2ccc(C)c2)c1
 Buchwald-Hartwig,Cc1ccc[nH]1.COc1ccnc(Cl)c1>>COc1ccnc(-n2cccc2C)c1
 Buchwald-Hartwig,CCNc1ccccc1.COc1ccnc(Cl)c1>>CCN(c1ccccc1)c1cc(OC)ccn1
 Buchwald-Hartwig,CNc1ccc(OC)cc1.COc1ccnc(Cl)c1>>COc1ccc(N(C)c2cc(OC)ccn2)cc1
+Buchwald-Hartwig,COCCN1CCNCC1.COc1ccnc(Cl)c1>>COCCN1CCN(c2cc(OC)ccn2)CC1
 Buchwald-Hartwig,COCCNC(C)C.COc1ccnc(Cl)c1>>COCCN(c1cc(OC)ccn1)C(C)C
 Buchwald-Hartwig,CC1COCCN1.Cc1ccc(Cl)nc1>>Cc1ccc(N2CCOCC2C)nc1
 Buchwald-Hartwig,Cc1ccc(Nc2ccc(C)cc2)cc1.Cc1ccc(Cl)nc1>>Cc1ccc(N(c2ccc(C)cc2)c2ccc(C)cn2)cc1
@@ -1735,6 +2081,8 @@ Buchwald-Hartwig,COC(=O)c1ccnc(N)c1.O=C(O)c1ccncc1Cl>>COC(=O)c1ccnc(Nc2cnccc2C(=
 Buchwald-Hartwig,CC(C)S(=O)(=O)c1ccccc1N.O=C(O)c1ccncc1Cl>>CC(C)S(=O)(=O)c1ccccc1Nc1cnccc1C(=O)O
 Buchwald-Hartwig,NCC12CC3CC(CC(C3)C1)C2.O=C(O)c1ccncc1Cl>>O=C(O)c1ccncc1NCC12CC3CC(CC(C3)C1)C2
 Buchwald-Hartwig,CC(C)N.O=C(O)c1ccncc1Cl>>CC(C)Nc1cnccc1C(=O)O
+Buchwald-Hartwig,Nc1ccccc1CO.FC(F)(F)c1cnc(Cl)nc1>>OCc1ccccc1Nc1ncc(C(F)(F)F)cn1
+Buchwald-Hartwig,COC(=O)c1cc(F)ccc1N.FC(F)(F)c1cnc(Cl)nc1>>COC(=O)c1cc(F)ccc1Nc1ncc(C(F)(F)F)cn1
 Buchwald-Hartwig,Cc1cc(C)nc(N)c1.FC(F)(F)c1cnc(Cl)nc1>>Cc1cc(C)nc(Nc2ncc(C(F)(F)F)cn2)c1
 Buchwald-Hartwig,COc1ccc(N)cc1C.FC(F)(F)c1cnc(Cl)nc1>>COc1ccc(Nc2ncc(C(F)(F)F)cn2)cc1C
 Buchwald-Hartwig,Cc1nccn1-c1ccc(N)cc1.FC(F)(F)c1cnc(Cl)nc1>>Cc1nccn1-c1ccc(Nc2ncc(C(F)(F)F)cn2)cc1
@@ -1745,6 +2093,8 @@ Buchwald-Hartwig,Nc1ccc2nccnc2c1.O=[N+]([O-])c1cccc([N+](=O)[O-])c1Cl>>O=[N+]([O
 Buchwald-Hartwig,Cc1nccn1-c1ccc(N)cc1.O=[N+]([O-])c1cccc([N+](=O)[O-])c1Cl>>Cc1nccn1-c1ccc(Nc2c([N+](=O)[O-])cccc2[N+](=O)[O-])cc1
 Buchwald-Hartwig,CCOc1cc(N)ccn1.O=[N+]([O-])c1cccc([N+](=O)[O-])c1Cl>>CCOc1cc(Nc2c([N+](=O)[O-])cccc2[N+](=O)[O-])ccn1
 Buchwald-Hartwig,Nc1ccc2ncccc2c1.O=[N+]([O-])c1cccc([N+](=O)[O-])c1Cl>>O=[N+]([O-])c1cccc([N+](=O)[O-])c1Nc1ccc2ncccc2c1
+Buchwald-Hartwig,CC(C)S(=O)(=O)c1ccccc1N.O=[N+]([O-])c1cccc([N+](=O)[O-])c1Cl>>CC(C)S(=O)(=O)c1ccccc1Nc1c([N+](=O)[O-])cccc1[N+](=O)[O-]
+Buchwald-Hartwig,Cc1ccc(N)c(C(=O)O)c1.CC(=O)c1ccc(Cl)c(C)c1>>CC(=O)c1ccc(Nc2ccc(C)cc2C(=O)O)c(C)c1
 Buchwald-Hartwig,COc1ccc(N)cn1.CC(=O)c1ccc(Cl)c(C)c1>>COc1ccc(Nc2ccc(C(C)=O)cc2C)cn1
 Buchwald-Hartwig,Nc1ccc2nccnc2c1.CC(=O)c1ccc(Cl)c(C)c1>>CC(=O)c1ccc(Nc2ccc3nccnc3c2)c(C)c1
 Buchwald-Hartwig,Cc1cc(C)nc(N)n1.CC(=O)c1ccc(Cl)c(C)c1>>CC(=O)c1ccc(Nc2nc(C)cc(C)n2)c(C)c1
@@ -1760,7 +2110,9 @@ Buchwald-Hartwig,CC(C)CN.CC(=O)c1ccc(Cl)c(C)c1>>CC(=O)c1ccc(NCC(C)C)c(C)c1
 Buchwald-Hartwig,NCC12CC3CC(CC(C3)C1)C2.CC(=O)c1ccc(Cl)c(C)c1>>CC(=O)c1ccc(NCC23CC4CC(CC(C4)C2)C3)c(C)c1
 Buchwald-Hartwig,NCC1CC1.CC(=O)c1ccc(Cl)c(C)c1>>CC(=O)c1ccc(NCC2CC2)c(C)c1
 Buchwald-Hartwig,CC(C)N.CC(=O)c1ccc(Cl)c(C)c1>>CC(=O)c1ccc(NC(C)C)c(C)c1
+Buchwald-Hartwig,Nc1cc(C(F)(F)F)ccc1C(F)(F)F.FC(F)(F)c1ccnc(Cl)c1>>FC(F)(F)c1ccnc(Nc2cc(C(F)(F)F)ccc2C(F)(F)F)c1
 Buchwald-Hartwig,Cc1cc(C)nc(N)n1.FC(F)(F)c1ccnc(Cl)c1>>Cc1cc(C)nc(Nc2cc(C(F)(F)F)ccn2)n1
+Buchwald-Hartwig,Cc1ccc(N)cc1I.FC(F)(F)c1ccnc(Cl)c1>>Cc1ccc(Nc2cc(C(F)(F)F)ccn2)cc1I
 Buchwald-Hartwig,Cc1ccc(N)nc1.FC(F)(F)c1ccnc(Cl)c1>>Cc1ccc(Nc2cc(C(F)(F)F)ccn2)nc1
 Buchwald-Hartwig,NCc1ccccc1F.FC(F)(F)c1ccnc(Cl)c1>>Fc1ccccc1CNc1cc(C(F)(F)F)ccn1
 Buchwald-Hartwig,Nc1cncc2ccccc12.FC(F)(F)c1ccnc(Cl)c1>>FC(F)(F)c1ccnc(Nc2cncc3ccccc23)c1
@@ -1768,20 +2120,25 @@ Buchwald-Hartwig,Nc1ccc2ncccc2c1.FC(F)(F)c1ccnc(Cl)c1>>FC(F)(F)c1ccnc(Nc2ccc3ncc
 Buchwald-Hartwig,Nc1ccncc1.FC(F)(F)c1ccnc(Cl)c1>>FC(F)(F)c1ccnc(Nc2ccncc2)c1
 Buchwald-Hartwig,COc1cc(F)c([N+](=O)[O-])cc1N.FC(F)(F)c1ccnc(Cl)c1>>COc1cc(F)c([N+](=O)[O-])cc1Nc1cc(C(F)(F)F)ccn1
 Buchwald-Hartwig,COC(=O)c1ccc(N)cc1.Clc1ccc2ccccc2n1>>COC(=O)c1ccc(Nc2ccc3ccccc3n2)cc1
+Buchwald-Hartwig,Nc1ccc([N+](=O)[O-])cn1.Clc1ccc2ccccc2n1>>O=[N+]([O-])c1ccc(Nc2ccc3ccccc3n2)nc1
 Buchwald-Hartwig,Cc1ccc(I)cc1N.Clc1ccc2ccccc2n1>>Cc1ccc(I)cc1Nc1ccc2ccccc2n1
 Buchwald-Hartwig,Cc1cc(C)nc(N)n1.Clc1ccc2ccccc2n1>>Cc1cc(C)nc(Nc2ccc3ccccc3n2)n1
+Buchwald-Hartwig,Cc1ccc(N)cc1I.Clc1ccc2ccccc2n1>>Cc1ccc(Nc2ccc3ccccc3n2)cc1I
 Buchwald-Hartwig,COc1ccc(OC)c(N)c1.Clc1ccc2ccccc2n1>>COc1ccc(OC)c(Nc2ccc3ccccc3n2)c1
 Buchwald-Hartwig,Cc1cc(C(F)(F)F)ccc1N.Clc1ccc2ccccc2n1>>Cc1cc(C(F)(F)F)ccc1Nc1ccc2ccccc2n1
 Buchwald-Hartwig,Cc1cc(C)c(N)c([N+](=O)[O-])c1.Clc1ccc2ccccc2n1>>Cc1cc(C)c(Nc2ccc3ccccc3n2)c([N+](=O)[O-])c1
 Buchwald-Hartwig,COC(=O)Cc1ccc(N)cc1.Clc1ccc2ccccc2n1>>COC(=O)Cc1ccc(Nc2ccc3ccccc3n2)cc1
 Buchwald-Hartwig,CCc1cccc(N)c1.Clc1ccc2ccccc2n1>>CCc1cccc(Nc2ccc3ccccc3n2)c1
+Buchwald-Hartwig,Cc1ncccc1N.Clc1ccc2ccccc2n1>>Cc1ncccc1Nc1ccc2ccccc2n1
 Buchwald-Hartwig,Nc1ccnc(C(F)(F)F)c1.Clc1ccc2ccccc2n1>>FC(F)(F)c1cc(Nc2ccc3ccccc3n2)ccn1
 Buchwald-Hartwig,CC(C)S(=O)(=O)c1ccccc1N.Clc1ccc2ccccc2n1>>CC(C)S(=O)(=O)c1ccccc1Nc1ccc2ccccc2n1
 Buchwald-Hartwig,NCC12CC3CC(CC(C3)C1)C2.Clc1ccc2ccccc2n1>>c1ccc2nc(NCC34CC5CC(CC(C5)C3)C4)ccc2c1
 Buchwald-Hartwig,CC(=O)c1cccc(N)c1.Clc1ccc2ccccc2n1>>CC(=O)c1cccc(Nc2ccc3ccccc3n2)c1
 Buchwald-Hartwig,CSc1cccc(N)c1.N#Cc1ccc(Cl)nc1>>CSc1cccc(Nc2ccc(C#N)cn2)c1
+Buchwald-Hartwig,Nc1cc(C(F)(F)F)ccc1C(F)(F)F.N#Cc1ccc(Cl)nc1>>N#Cc1ccc(Nc2cc(C(F)(F)F)ccc2C(F)(F)F)nc1
 Buchwald-Hartwig,COC(=O)c1cc(F)ccc1N.N#Cc1ccc(Cl)nc1>>COC(=O)c1cc(F)ccc1Nc1ccc(C#N)cn1
 Buchwald-Hartwig,COC(=O)c1ccncc1N.N#Cc1ccc(Cl)nc1>>COC(=O)c1ccncc1Nc1ccc(C#N)cn1
+Buchwald-Hartwig,COC(=O)c1cc(N)ccn1.N#Cc1ccc(Cl)nc1>>COC(=O)c1cc(Nc2ccc(C#N)cn2)ccn1
 Buchwald-Hartwig,Cc1ccccc1N.Cc1cccc(Cl)n1>>Cc1cccc(Nc2ccccc2C)n1
 Buchwald-Hartwig,C#Cc1cccc(N)c1.Cc1cccc(Cl)n1>>C#Cc1cccc(Nc2cccc(C)n2)c1
 Buchwald-Hartwig,Cc1ccc(N)c(C)c1.Cc1cccc(Cl)n1>>Cc1ccc(Nc2cccc(C)n2)c(C)c1
@@ -1829,6 +2186,7 @@ Buchwald-Hartwig,Cc1ccc(N)c(C)c1.N#Cc1ccnc(Cl)c1>>Cc1ccc(Nc2cc(C#N)ccn2)c(C)c1
 Buchwald-Hartwig,COc1ccc(N)cc1OC.N#Cc1ccnc(Cl)c1>>COc1ccc(Nc2cc(C#N)ccn2)cc1OC
 Buchwald-Hartwig,COc1ccc(N)cn1.N#Cc1ccnc(Cl)c1>>COc1ccc(Nc2cc(C#N)ccn2)cn1
 Buchwald-Hartwig,COc1ccc(N)cc1.N#Cc1ccnc(Cl)c1>>COc1ccc(Nc2cc(C#N)ccn2)cc1
+Buchwald-Hartwig,Nc1ccc(CO)cc1.N#Cc1ccnc(Cl)c1>>N#Cc1ccnc(Nc2ccc(CO)cc2)c1
 Buchwald-Hartwig,Cc1cc(C)nc(N)c1.N#Cc1ccnc(Cl)c1>>Cc1cc(C)nc(Nc2cc(C#N)ccn2)c1
 Buchwald-Hartwig,COc1ccc(OC)c(N)c1.N#Cc1ccnc(Cl)c1>>COc1ccc(OC)c(Nc2cc(C#N)ccn2)c1
 Buchwald-Hartwig,COc1ccc(N)cc1C.N#Cc1ccnc(Cl)c1>>COc1ccc(Nc2cc(C#N)ccn2)cc1C
@@ -1840,6 +2198,7 @@ Buchwald-Hartwig,NCc1ccccc1F.Cc1ccnc(Cl)n1>>Cc1ccnc(NCc2ccccc2F)n1
 Buchwald-Hartwig,Cc1cc(C(F)(F)F)ccc1N.Cc1ccnc(Cl)n1>>Cc1ccnc(Nc2ccc(C(F)(F)F)cc2C)n1
 Buchwald-Hartwig,COc1ccc(Nc2ccc(C)cc2)cc1.Cc1ccnc(Cl)n1>>COc1ccc(N(c2ccc(C)cc2)c2nccc(C)n2)cc1
 Buchwald-Hartwig,Nc1cncc2ccccc12.Cc1ccnc(Cl)n1>>Cc1ccnc(Nc2cncc3ccccc23)n1
+Buchwald-Hartwig,COC(=O)c1ccc(N)cc1F.Cc1ccnc(Cl)n1>>COC(=O)c1ccc(Nc2nccc(C)n2)cc1F
 Buchwald-Hartwig,Cc1ccc(N)cc1.Cc1ccnc(Cl)n1>>Cc1ccc(Nc2nccc(C)n2)cc1
 Buchwald-Hartwig,Nc1ccncc1.Cc1ccnc(Cl)n1>>Cc1ccnc(Nc2ccncc2)n1
 Buchwald-Hartwig,Nc1ccnc(C(F)(F)F)c1.Cc1ccnc(Cl)n1>>Cc1ccnc(Nc2ccnc(C(F)(F)F)c2)n1
@@ -1850,6 +2209,7 @@ Buchwald-Hartwig,Cc1ccccc1N.Cc1cnc(Cl)nc1>>Cc1cnc(Nc2ccccc2C)nc1
 Buchwald-Hartwig,CSc1ccc(N)cc1.Cc1cnc(Cl)nc1>>CSc1ccc(Nc2ncc(C)cn2)cc1
 Buchwald-Hartwig,Nc1ccc(CO)cc1.Cc1cnc(Cl)nc1>>Cc1cnc(Nc2ccc(CO)cc2)nc1
 Buchwald-Hartwig,CCOc1cc(N)ccn1.Cc1cnc(Cl)nc1>>CCOc1cc(Nc2ncc(C)cn2)ccn1
+Buchwald-Hartwig,Nc1ccc2ncccc2c1.Cc1cnc(Cl)nc1>>Cc1cnc(Nc2ccc3ncccc3c2)nc1
 Buchwald-Hartwig,COC(=O)c1ccncc1N.Cc1cnc(Cl)nc1>>COC(=O)c1ccncc1Nc1ncc(C)cn1
 Buchwald-Hartwig,NCC12CC3CC(CC(C3)C1)C2.Cc1cnc(Cl)nc1>>Cc1cnc(NCC23CC4CC(CC(C4)C2)C3)nc1
 Buchwald-Hartwig,CSc1cccc(N)c1.COc1cnc(Cl)nc1>>COc1cnc(Nc2cccc(SC)c2)nc1
@@ -1898,7 +2258,6 @@ Buchwald-Hartwig,CCCCN.Brc1ccc(N2CCOCC2)nc1>>CCCCNc1ccc(N2CCOCC2)nc1
 Buchwald-Hartwig,CC(C)CN.Brc1ccc(N2CCOCC2)nc1>>CC(C)CNc1ccc(N2CCOCC2)nc1
 Buchwald-Hartwig,COc1cc(F)c([N+](=O)[O-])cc1N.Brc1ccc(N2CCOCC2)nc1>>COc1cc(F)c([N+](=O)[O-])cc1Nc1ccc(N2CCOCC2)nc1
 Buchwald-Hartwig,Cc1cccc(N)c1C.Brc1ccnc2ccccc12>>Cc1cccc(Nc2ccnc3ccccc23)c1C
-Buchwald-Hartwig,Nc1ccc([N+](=O)[O-])cn1.Brc1ccnc2ccccc12>>O=[N+]([O-])c1ccc(Nc2ccnc3ccccc23)nc1
 Buchwald-Hartwig,Nc1ccccc1C=O.Brc1ccnc2ccccc12>>O=Cc1ccccc1Nc1ccnc2ccccc12
 Buchwald-Hartwig,Cc1cc(C)c(N)c([N+](=O)[O-])c1.Brc1ccnc2ccccc12>>Cc1cc(C)c(Nc2ccnc3ccccc23)c([N+](=O)[O-])c1
 Buchwald-Hartwig,COc1ccc(Nc2ccc(C)cc2)cc1.Brc1ccnc2ccccc12>>COc1ccc(N(c2ccc(C)cc2)c2ccnc3ccccc23)cc1
@@ -1906,13 +2265,13 @@ Buchwald-Hartwig,NC1CCCCC1.Brc1ccnc2ccccc12>>c1ccc2c(NC3CCCCC3)ccnc2c1
 Buchwald-Hartwig,Cc1cccc(N)c1C.Cc1cc(Br)ccn1>>Cc1cc(Nc2cccc(C)c2C)ccn1
 Buchwald-Hartwig,CSc1ccc(N)cc1.Cc1cc(Br)ccn1>>CSc1ccc(Nc2ccnc(C)c2)cc1
 Buchwald-Hartwig,COC(=O)c1cc(F)ccc1N.Cc1cc(Br)ccn1>>COC(=O)c1cc(F)ccc1Nc1ccnc(C)c1
-Buchwald-Hartwig,Cc1cc(C)nc(N)n1.Cc1cc(Br)ccn1>>Cc1cc(Nc2nc(C)cc(C)n2)ccn1
 Buchwald-Hartwig,Cc1cc(C)c(N)c([N+](=O)[O-])c1.Cc1cc(Br)ccn1>>Cc1cc(C)c(Nc2ccnc(C)c2)c([N+](=O)[O-])c1
 Buchwald-Hartwig,CC(C)S(=O)(=O)c1ccccc1N.Cc1cc(Br)ccn1>>Cc1cc(Nc2ccccc2S(=O)(=O)C(C)C)ccn1
 Buchwald-Hartwig,NCC12CC3CC(CC(C3)C1)C2.Cc1cc(Br)ccn1>>Cc1cc(NCC23C[C@H]4C[C@@H](C2)C[C@@H](C3)C4)ccn1
 Buchwald-Hartwig,Cc1ccc(N)cc1.Brc1cncc2ccccc12>>Cc1ccc(Nc2cncc3ccccc23)cc1
 Buchwald-Hartwig,CC(C)S(=O)(=O)c1ccccc1N.Brc1cncc2ccccc12>>CC(C)S(=O)(=O)c1ccccc1Nc1cncc2ccccc12
 Buchwald-Hartwig,CC(C)N.Brc1cncc2ccccc12>>CC(C)Nc1cncc2ccccc12
+Buchwald-Hartwig,NC1CCCCC1.Brc1cncc2ccccc12>>c1ccc2c(NC3CCCCC3)cncc2c1
 Buchwald-Hartwig,COc1cc(F)c([N+](=O)[O-])cc1N.Brc1cncc2ccccc12>>COc1cc(F)c([N+](=O)[O-])cc1Nc1cncc2ccccc12
 Buchwald-Hartwig,Nc1ccc(CO)cc1.CN(C)c1cccc(Br)c1>>CN(C)c1cccc(Nc2ccc(CO)cc2)c1
 Buchwald-Hartwig,Nc1ccncc1.CN(C)c1cccc(Br)c1>>CN(C)c1cccc(Nc2ccncc2)c1
@@ -2037,13 +2396,17 @@ Buchwald-Hartwig,Nc1cc(C(F)(F)F)ccc1C(F)(F)F.Brc1nccc2ccccc12>>FC(F)(F)c1ccc(C(F
 Buchwald-Hartwig,Nc1ccccn1.CC(C)c1ccc(Br)cc1>>CC(C)c1ccc(Nc2ccccn2)cc1
 Buchwald-Hartwig,Cc1ccc(N)nc1.COc1cnc(Cl)nc1>>COc1cnc(Nc2ccc(C)cn2)nc1
 Buchwald-Hartwig,Cc1cc(C)nc(N)c1.COc1cnc(Cl)nc1>>COc1cnc(Nc2cc(C)cc(C)n2)nc1
+Buchwald-Hartwig,COC(=O)c1ccc(N)cc1F.Cc1ccccc1Br>>COC(=O)c1ccc(Nc2ccccc2C)cc1F
+Buchwald-Hartwig,NCc1ccccc1F.Cc1ccccc1Br>>Cc1ccccc1NCc1ccccc1F
+Buchwald-Hartwig,Nc1ccnc(C(F)(F)F)c1.Cc1ccccc1Br>>Cc1ccccc1Nc1ccnc(C(F)(F)F)c1
+Buchwald-Hartwig,COC(=O)c1cc(F)ccc1N.Brc1ccc2c(c1)OCCO2>>COC(=O)c1cc(F)ccc1Nc1ccc2c(c1)OCCO2
+Buchwald-Hartwig,Cc1ccc(N)c(C)c1.Brc1ccc2c(c1)OCCO2>>Cc1ccc(Nc2ccc3c(c2)OCCO3)c(C)c1
 Buchwald-Hartwig,NCC1CC1.CC1(C)c2ccccc2-c2ccc(Br)cc21>>CC1(C)c2ccccc2-c2ccc(NCC3CC3)cc21
 Buchwald-Hartwig,CC(=O)c1cccc(N)c1.CC1(C)c2ccccc2-c2ccc(Br)cc21>>CC(=O)c1cccc(Nc2ccc3c(c2)C(C)(C)c2ccccc2-3)c1
 Buchwald-Hartwig,COc1cc(F)c([N+](=O)[O-])cc1N.O=C(c1ccccc1)c1ccccc1Br>>COc1cc(F)c([N+](=O)[O-])cc1Nc1ccccc1C(=O)c1ccccc1
 Buchwald-Hartwig,C#Cc1cccc(N)c1.Brc1ccc2scnc2c1>>C#Cc1cccc(Nc2ccc3scnc3c2)c1
 Buchwald-Hartwig,COc1cc(F)c([N+](=O)[O-])cc1N.Brc1ccc2scnc2c1>>COc1cc(F)c([N+](=O)[O-])cc1Nc1ccc2scnc2c1
 Buchwald-Hartwig,COC(=O)c1ccc(N)cc1F.CC(=O)c1cncc(Br)c1>>COC(=O)c1ccc(Nc2cncc(C(C)=O)c2)cc1F
-Buchwald-Hartwig,Cc1ccc(N)cc1.COC(=O)c1ccc(Br)nc1>>COC(=O)c1ccc(Nc2ccc(C)cc2)nc1
 Buchwald-Hartwig,COC(=O)c1ccc(N)cc1F.COC(=O)c1ccc(Br)nc1>>COC(=O)c1ccc(Nc2ccc(C(=O)OC)c(F)c2)nc1
 Buchwald-Hartwig,Nc1ccnc(C(F)(F)F)c1.COC(=O)c1ccc(Br)nc1>>COC(=O)c1ccc(Nc2ccnc(C(F)(F)F)c2)nc1
 Buchwald-Hartwig,NCC12CC3CC(CC(C3)C1)C2.COC(=O)c1ccc(Br)nc1>>COC(=O)c1ccc(NCC23C[C@H]4C[C@@H](C2)C[C@@H](C3)C4)nc1
@@ -2065,13 +2428,16 @@ Buchwald-Hartwig,CSc1cccc(N)c1.Brc1cccc2cnccc12>>CSc1cccc(Nc2cccc3cnccc23)c1
 Buchwald-Hartwig,Cc1nccn1-c1ccc(N)cc1.Brc1ccsc1>>Cc1nccn1-c1ccc(Nc2ccsc2)cc1
 Buchwald-Hartwig,Cc1nccn1-c1ccc(N)cc1.CC(C)c1ccc(Br)cc1>>Cc1nccn1-c1ccc(Nc2ccc(C(C)C)cc2)cc1
 Buchwald-Hartwig,COc1ccc(N)cn1.CC(=O)c1ccc(Br)s1>>COc1ccc(Nc2ccc(C(C)=O)s2)cn1
+Buchwald-Hartwig,Cc1cc(C)nc(N)c1.CC(=O)c1ccc(Br)s1>>CC(=O)c1ccc(Nc2cc(C)cc(C)n2)s1
 Buchwald-Hartwig,Nc1ccnc(C(F)(F)F)c1.CC(=O)c1ccc(Br)s1>>CC(=O)c1ccc(Nc2ccnc(C(F)(F)F)c2)s1
 Buchwald-Hartwig,CC(N)=O.Cc1ccccc1Br>>CC(=O)Nc1ccccc1C
 Buchwald-Hartwig,CC(N)=O.Cc1ccc(Br)c(C)c1>>CC(=O)Nc1ccc(C)cc1C
+Buchwald-Hartwig,CC(N)=O.Brc1ccc2c(c1)OCCO2>>CC(=O)Nc1ccc2c(c1)OCCO2
 Buchwald-Hartwig,CC(N)=O.Brc1cnc2ccnn2c1>>CC(=O)Nc1cnc2ccnn2c1
 Buchwald-Hartwig,CC(N)=O.CC(=O)c1cncc(Br)c1>>CC(=O)Nc1cncc(C(C)=O)c1
 Buchwald-Hartwig,CC(N)=O.Cc1cccnc1Cl>>CC(=O)Nc1ncccc1C
 Buchwald-Hartwig,CC(N)=O.Cc1ncccc1Br>>CC(=O)Nc1cccnc1C
+Buchwald-Hartwig,CC(N)=O.Brc1cccc2ccoc12>>CC(=O)Nc1cccc2ccoc12
 Buchwald-Hartwig,CC(N)=O.Brc1cccc2[nH]ncc12>>CC(=O)Nc1cccc2[nH]ncc12
 Buchwald-Hartwig,Nc1ccnc(C(F)(F)F)c1.OCc1cccc(Br)c1>>OCc1cccc(Nc2ccnc(C(F)(F)F)c2)c1
 Buchwald-Hartwig,Cc1ncncc1N.Cc1cccc(C)c1Br>>Cc1cccc(C)c1Nc1cncnc1C
@@ -2081,15 +2447,17 @@ Buchwald-Hartwig,Cc1cccc(N)c1C.Brc1cncc2ccccc12>>Cc1cccc(Nc2cncc3ccccc23)c1C
 Buchwald-Hartwig,CSc1ccc(N)cc1.Brc1cncc2ccccc12>>CSc1ccc(Nc2cncc3ccccc23)cc1
 Buchwald-Hartwig,CC(N)=O.Brc1ccc2scnc2c1>>CC(=O)Nc1ccc2scnc2c1
 Buchwald-Hartwig,CC(N)=O.O=C1CCc2ccc(Br)cc21>>CC(=O)Nc1ccc2c(c1)C(=O)CC2
-Buchwald-Hartwig,CC(N)=O.Brc1ccc2c(c1)OCCO2>>CC(=O)Nc1ccc2c(c1)OCCO2
 Buchwald-Hartwig,CC(N)=O.COC(=O)c1ccc(Br)nc1>>COC(=O)c1ccc(NC(C)=O)nc1
 Buchwald-Hartwig,CC(N)=O.Brc1ccnc2ccccc12>>CC(=O)Nc1ccnc2ccccc12
 Buchwald-Hartwig,CC(N)=O.Brc1ccncc1>>CC(=O)Nc1ccncc1
+Buchwald-Hartwig,Cc1cc(C)nc(N)n1.N#Cc1ccc(Br)cc1>>Cc1cc(C)nc(Nc2ccc(C#N)cc2)n1
 Buchwald-Hartwig,Cc1cc(C)nc(N)c1.O=C1CCc2ccc(Br)cc21>>Cc1cc(C)nc(Nc2ccc3c(c2)C(=O)CC3)c1
 Buchwald-Hartwig,COc1ccc(OC)c(N)c1.O=C1CCc2ccc(Br)cc21>>COc1ccc(OC)c(Nc2ccc3c(c2)C(=O)CC3)c1
 Buchwald-Hartwig,COc1ccc(N)cc1OC.O=C1CCc2ccc(Br)cc21>>COc1ccc(Nc2ccc3c(c2)C(=O)CC3)cc1OC
+Buchwald-Hartwig,COC(=O)c1cc(F)ccc1N.O=C1CCc2ccc(Br)cc21>>COC(=O)c1cc(F)ccc1Nc1ccc2c(c1)C(=O)CC2
 Buchwald-Hartwig,CCc1ccc(N)cc1.Brc1ccc2cnccc2c1>>CCc1ccc(Nc2ccc3cnccc3c2)cc1
 Buchwald-Hartwig,CC(=O)c1cccc(N)c1.Brc1ccc2cnccc2c1>>CC(=O)c1cccc(Nc2ccc3cnccc3c2)c1
+Buchwald-Hartwig,Cc1ncncc1N.Brc1ccc2cnccc2c1>>Cc1ncncc1Nc1ccc2cnccc2c1
 Buchwald-Hartwig,CC(C)S(=O)(=O)c1ccccc1N.Brc1ccc2cnccc2c1>>CC(C)S(=O)(=O)c1ccccc1Nc1ccc2cnccc2c1
 Buchwald-Hartwig,COc1ccc(N)cc1OC.Cc1ccccc1Br>>COc1ccc(Nc2ccccc2C)cc1OC
 Buchwald-Hartwig,COc1ccc(OC)c(N)c1.Cc1ccccc1Br>>COc1ccc(OC)c(Nc2ccccc2C)c1
@@ -2107,6 +2475,7 @@ Buchwald-Hartwig,Cc1ccc(N)nc1.Brc1ccc2c(c1)OCCO2>>Cc1ccc(Nc2ccc3c(c2)OCCO3)nc1
 Buchwald-Hartwig,COc1ccc(OC)c(N)c1.Brc1ccc2c(c1)OCCO2>>COc1ccc(OC)c(Nc2ccc3c(c2)OCCO3)c1
 Buchwald-Hartwig,COc1ccc(N)cc1C.Brc1ccc2c(c1)OCCO2>>COc1ccc(Nc2ccc3c(c2)OCCO3)cc1C
 Buchwald-Hartwig,CCOc1cc(N)ccn1.Brc1cnc2ccnn2c1>>CCOc1cc(Nc2cnc3ccnn3c2)ccn1
+Buchwald-Hartwig,NCC1CCCCC1.Brc1cnc2ccnn2c1>>c1cc2ncc(NCC3CCCCC3)cn2n1
 Buchwald-Hartwig,COC(=O)c1ccc(N)cc1.CC1(C)c2ccccc2-c2ccc(Br)cc21>>COC(=O)c1ccc(Nc2ccc3c(c2)C(C)(C)c2ccccc2-3)cc1
 Buchwald-Hartwig,Cc1ccc(N)cc1I.Brc1ccc2c(c1)OCCO2>>Cc1ccc(Nc2ccc3c(c2)OCCO3)cc1I
 Buchwald-Hartwig,Cc1ccc(N)nc1.CC1(C)c2ccccc2-c2ccc(Br)cc21>>Cc1ccc(Nc2ccc3c(c2)C(C)(C)c2ccccc2-3)nc1
@@ -2144,9 +2513,11 @@ Allylic-substitution,C=CCBr.CNc1cccc(C)c1>>C=CCN(C)c1cccc(C)c1
 Allylic-substitution,C=CCBr.CC(=O)Nc1cccc(B(O)O)c1>>C=CCN(C(C)=O)c1cccc(B(O)O)c1
 Allylic-substitution,C=CCBr.CCNc1cccc(C)c1>>C=CCN(CC)c1cccc(C)c1
 Allylic-substitution,C=CCBr.O=C1CCc2ccccc2N1>>C=CCN1C(=O)CCc2ccccc21
+Allylic-substitution,C=CCBr.CC(=O)Nc1ccc(C)cc1>>C=CCN(C(C)=O)c1ccc(C)cc1
 Allylic-substitution,C=CCBr.CC(=O)Nc1ccccc1>>C=CCN(C(C)=O)c1ccccc1
 Allylic-substitution,C=CCBr.c1ccc(CNCc2ccccc2)cc1>>C=CCN(Cc1ccccc1)Cc1ccccc1
 Allylic-substitution,C=CCBr.OCCNc1ccccc1>>C=CCN(CCO)c1ccccc1
+Allylic-substitution,C=CCBr.C#Cc1cccc(Nc2ncnc3cc(OCCOC)c(OCCOC)cc23)c1>>C#Cc1cccc(N(CC=C)c2ncnc3cc(OCCOC)c(OCCOC)cc23)c1
 Allylic-substitution,C=CCBr.Cc1ccc(Nc2ccccc2)cc1C>>C=CCN(c1ccccc1)c1ccc(C)c(C)c1
 Allylic-substitution,C=CCBr.c1ccc(Nc2ccccc2)cc1>>C=CCN(c1ccccc1)c1ccccc1
 Allylic-substitution,COC(=O)C=CCBr.Nc1ccc2[nH]ccc2c1>>COC(=O)C=CCn1ccc2cc(N)ccc21
@@ -2155,6 +2526,7 @@ Allylic-substitution,COC(=O)C=CCBr.Cc1ccc(Nc2ccc(C)cc2)cc1>>COC(=O)C=CCN(c1ccc(C
 Allylic-substitution,COC(=O)C=CCBr.COc1ccc(Nc2ccc(C)cc2)cc1>>COC(=O)C=CCN(c1ccc(C)cc1)c1ccc(OC)cc1
 Allylic-substitution,COC(=O)C=CCBr.CC1(C)c2ccccc2-c2ccc(Nc3ccccc3)cc21>>COC(=O)C=CCN(c1ccccc1)c1ccc2c(c1)C(C)(C)c1ccccc1-2
 Allylic-substitution,COC(=O)C=CCBr.CC(=O)Nc1ccc(Br)cc1>>COC(=O)C=CCN(C(C)=O)c1ccc(Br)cc1
+Allylic-substitution,COC(=O)C=CCBr.C#Cc1cccc(Nc2ncnc3cc(OCCOC)c(OCCOC)cc23)c1>>C#Cc1cccc(N(CC=CC(=O)OC)c2ncnc3cc(OCCOC)c(OCCOC)cc23)c1
 Allylic-substitution,COC(=O)C=CCBr.C=CCNCc1ccccc1>>C=CCN(CC=CC(=O)OC)Cc1ccccc1
 Allylic-substitution,COC(=O)C=CCBr.CNc1ccccc1>>COC(=O)C=CCN(C)c1ccccc1
 Allylic-substitution,COC(=O)C=CCBr.CC(=O)Nc1ccccc1>>COC(=O)C=CCN(C(C)=O)c1ccccc1
@@ -2193,6 +2565,11 @@ C-O competitive reactions,Cc1cc(C)cc(O)c1.COC(=O)c1cncc(Br)c1>>COC(=O)c1cncc(Oc2
 C-O competitive reactions,N#Cc1ccc(O)cc1C#N.COC(=O)c1cncc(Br)c1>>COC(=O)c1cncc(Oc2ccc(C#N)c(C#N)c2)c1
 C-O competitive reactions,CCOC(=O)c1cc(C)ccc1O.COC(=O)c1cncc(Br)c1>>CCOC(=O)c1cc(C)ccc1Oc1cncc(C(=O)OC)c1
 C-O competitive reactions,CC(C)(C)OC(=O)Nc1ccccc1O.COC(=O)c1cncc(Br)c1>>COC(=O)c1cncc(Oc2ccccc2NC(=O)OC(C)(C)C)c1
+C-O competitive reactions,Oc1ccc2ncccc2c1.COC(=O)c1cncc(Br)c1>>COC(=O)c1cncc(Oc2ccc3ncccc3c2)c1
+C-O competitive reactions,Oc1ccc2[nH]ccc2c1.COC(=O)c1cncc(Br)c1>>COC(=O)c1cncc(Oc2ccc3[nH]ccc3c2)c1
+C-O competitive reactions,OC1CCCCC1.COC(=O)c1cncc(Br)c1>>COC(=O)c1cncc(OC2CCCCC2)c1
+C-O competitive reactions,Cc1c(O)cccc1Cl.COC(=O)c1cncc(Br)c1>>COC(=O)c1cncc(Oc2cccc(Cl)c2C)c1
+C-O competitive reactions,O=Cc1ccc(F)cc1O.COC(=O)c1cncc(Br)c1>>COC(=O)c1cncc(Oc2cc(F)ccc2C=O)c1
 C-O competitive reactions,O=C1OC(=O)c2c(O)cccc21.COC(=O)c1cncc(Br)c1>>COC(=O)c1cncc(Oc2cccc3c2C(=O)OC3=O)c1
 C-O competitive reactions,CC(=O)c1ccc(F)cc1O.COC(=O)c1cncc(Br)c1>>COC(=O)c1cncc(Oc2cc(F)ccc2C(C)=O)c1
 C-O competitive reactions,Cc1cc(C=O)cc(C)c1O.COC(=O)c1cncc(Br)c1>>COC(=O)c1cncc(Oc2c(C)cc(C=O)cc2C)c1
@@ -2218,9 +2595,11 @@ C-O competitive reactions,Cc1cc(O)cc(C)c1Cl.Cn1cncc1Br>>Cc1cc(Oc2cncn2C)cc(C)c1C
 C-O competitive reactions,Oc1ccccc1-c1ccccc1.Cc1ccc(Br)nn1>>Cc1ccc(Oc2ccccc2-c2ccccc2)nn1
 C-O competitive reactions,Oc1cccc(F)c1.Cc1ccc(Br)nn1>>Cc1ccc(Oc2cccc(F)c2)nn1
 C-O competitive reactions,Cc1cc(C)cc(O)c1.Cc1ccc(Br)nn1>>Cc1cc(C)cc(Oc2ccc(C)nn2)c1
+C-O competitive reactions,CO.Brc1cncc2ccccc12>>COc1cncc2ccccc12
 C-O competitive reactions,N#Cc1ccc(O)cc1C#N.Cc1ccc(Br)nn1>>Cc1ccc(Oc2ccc(C#N)c(C#N)c2)nn1
 C-O competitive reactions,CCOC(=O)c1ccccc1O.Cc1ccc(Br)nn1>>CCOC(=O)c1ccccc1Oc1ccc(C)nn1
 C-O competitive reactions,COC(=O)c1cccc(O)c1C.Cc1ccc(Br)nn1>>COC(=O)c1cccc(Oc2ccc(C)nn2)c1C
+C-O competitive reactions,CCOC(=O)c1cc(C)ccc1O.Cc1ccc(Br)nn1>>CCOC(=O)c1cc(C)ccc1Oc1ccc(C)nn1
 C-O competitive reactions,CC(C)(C)OC(=O)Nc1cccc(O)c1.COc1ncc(Br)c(OC)n1>>COc1ncc(Oc2cccc(NC(=O)OC(C)(C)C)c2)c(OC)n1
 C-O competitive reactions,CCOC(=O)c1ccccc1O.COc1ncc(Br)c(OC)n1>>CCOC(=O)c1ccccc1Oc1cnc(OC)nc1OC
 C-O competitive reactions,O=C1OC(=O)c2c(O)cccc21.COc1ncc(Br)c(OC)n1>>COc1ncc(Oc2cccc3c2C(=O)OC3=O)c(OC)n1
@@ -2231,6 +2610,8 @@ C-O competitive reactions,Oc1cccc(C(F)(F)F)c1.COC(=O)c1cc(Br)ccn1>>COC(=O)c1cc(O
 C-O competitive reactions,O=C1OC(=O)c2c(O)cccc21.COC(=O)c1cc(Br)ccn1>>COC(=O)c1cc(Oc2cccc3c2C(=O)OC3=O)ccn1
 C-O competitive reactions,CC(C)(C)OC(=O)Nc1cccc(O)c1.COC(=O)c1ccnc(Br)c1>>COC(=O)c1ccnc(Oc2cccc(NC(=O)OC(C)(C)C)c2)c1
 C-O competitive reactions,CO.N#Cc1cncc(Br)c1>>COc1cncc(C#N)c1
+C-O competitive reactions,Cc1cc(C)cc(O)c1.COC(=O)c1ccnc(Br)c1>>COC(=O)c1ccnc(Oc2cc(C)cc(C)c2)c1
+C-O competitive reactions,N#Cc1ccc(O)cc1C#N.COC(=O)c1ccnc(Br)c1>>COC(=O)c1ccnc(Oc2ccc(C#N)c(C#N)c2)c1
 C-O competitive reactions,CC(C)(C)OC(=O)Nc1ccccc1O.COC(=O)c1ccnc(Br)c1>>COC(=O)c1ccnc(Oc2ccccc2NC(=O)OC(C)(C)C)c1
 C-O competitive reactions,Oc1ccc2ncccc2c1.COC(=O)c1ccnc(Br)c1>>COC(=O)c1ccnc(Oc2ccc3ncccc3c2)c1
 C-O competitive reactions,OC1CCCCC1.COC(=O)c1ccnc(Br)c1>>COC(=O)c1ccnc(OC2CCCCC2)c1
@@ -2241,14 +2622,19 @@ C-O competitive reactions,O=C1OC(=O)c2c(O)cccc21.COC(=O)c1ccnc(Br)c1>>COC(=O)c1c
 C-O competitive reactions,Oc1c(F)c(F)c(F)c(F)c1F.Cc1nc(Br)ccc1F>>Cc1nc(Oc2c(F)c(F)c(F)c(F)c2F)ccc1F
 C-O competitive reactions,O=C(OCc1ccccc1)c1ccccc1O.COC(=O)c1ccnc(Br)c1>>COC(=O)c1ccnc(Oc2ccccc2C(=O)OCc2ccccc2)c1
 C-O competitive reactions,Cc1cc(O)cc(C)c1Cl.COC(=O)c1ccnc(Br)c1>>COC(=O)c1ccnc(Oc2cc(C)c(Cl)c(C)c2)c1
+C-O competitive reactions,Cc1cc(C)cc(O)c1.Cc1ccc(Br)c(C)n1>>Cc1cc(C)cc(Oc2ccc(C)nc2C)c1
+C-O competitive reactions,Oc1ccc(C(F)(F)F)cc1.Cc1ccc(Br)c(C)n1>>Cc1ccc(Oc2ccc(C(F)(F)F)cc2)c(C)n1
 C-O competitive reactions,Oc1cccc(C(F)(F)F)c1.Cc1ccc(Br)c(C)n1>>Cc1ccc(Oc2cccc(C(F)(F)F)c2)c(C)n1
 C-O competitive reactions,N#Cc1ccc(O)cc1C#N.Cc1ccc(Br)c(C)n1>>Cc1ccc(Oc2ccc(C#N)c(C#N)c2)c(C)n1
 C-O competitive reactions,CCOC(=O)c1ccccc1O.Cc1ccc(Br)c(C)n1>>CCOC(=O)c1ccccc1Oc1ccc(C)nc1C
 C-O competitive reactions,CCOC(=O)c1cc(C)ccc1O.Cc1ccc(Br)c(C)n1>>CCOC(=O)c1cc(C)ccc1Oc1ccc(C)nc1C
+C-O competitive reactions,Oc1ccc2ncccc2c1.Cc1ccc(Br)c(C)n1>>Cc1ccc(Oc2ccc3ncccc3c2)c(C)n1
+C-O competitive reactions,OC1CCCCC1.Cc1ccc(Br)c(C)n1>>Cc1ccc(OC2CCCCC2)c(C)n1
 C-O competitive reactions,CC(=O)c1cc(F)ccc1O.Cc1ccc(Br)c(C)n1>>CC(=O)c1cc(F)ccc1Oc1ccc(C)nc1C
 C-O competitive reactions,CO.COc1ncc(C(F)(F)F)cc1Cl>>COc1cc(C(F)(F)F)cnc1OC
 C-O competitive reactions,Cc1c(O)cccc1Cl.Cc1ccc(Br)c(C)n1>>Cc1ccc(Oc2cccc(Cl)c2C)c(C)n1
 C-O competitive reactions,CCc1ccc(O)c(Br)c1.Cc1ccc(Br)c(C)n1>>CCc1ccc(Oc2ccc(C)nc2C)c(Br)c1
+C-O competitive reactions,O=Cc1ccc(F)cc1O.Cc1ccc(Br)c(C)n1>>Cc1ccc(Oc2cc(F)ccc2C=O)c(C)n1
 C-O competitive reactions,COc1cc(O)ccc1C=O.Cc1ccc(Br)c(C)n1>>COc1cc(Oc2ccc(C)nc2C)ccc1C=O
 C-O competitive reactions,O=C1OC(=O)c2c(O)cccc21.Cc1ccc(Br)c(C)n1>>Cc1ccc(Oc2cccc3c2C(=O)OC3=O)c(C)n1
 C-O competitive reactions,CC(=O)c1ccc(F)cc1O.Cc1ccc(Br)c(C)n1>>CC(=O)c1ccc(F)cc1Oc1ccc(C)nc1C
@@ -2275,11 +2661,14 @@ C-O competitive reactions,CCOC(=O)c1cc(C)ccc1O.Cc1cc(Br)ccn1>>CCOC(=O)c1cc(C)ccc
 C-O competitive reactions,CC(C)(C)OC(=O)Nc1ccccc1O.Cc1cc(Br)ccn1>>Cc1cc(Oc2ccccc2NC(=O)OC(C)(C)C)ccn1
 C-O competitive reactions,Oc1ccc2ncccc2c1.Cc1cc(Br)ccn1>>Cc1cc(Oc2ccc3ncccc3c2)ccn1
 C-O competitive reactions,OC1CCCCC1.Cc1cc(Br)ccn1>>Cc1cc(OC2CCCCC2)ccn1
+C-O competitive reactions,CC(=O)c1cc(F)ccc1O.Cc1cc(Br)ccn1>>CC(=O)c1cc(F)ccc1Oc1ccnc(C)c1
 C-O competitive reactions,Oc1ccc(F)c(F)c1.Cc1cc(Br)ccn1>>Cc1cc(Oc2ccc(F)c(F)c2)ccn1
 C-O competitive reactions,Cc1c(O)cccc1Cl.Cc1cc(Br)ccn1>>Cc1cc(Oc2cccc(Cl)c2C)ccn1
+C-O competitive reactions,CCc1ccc(O)c(Br)c1.Cc1cc(Br)ccn1>>CCc1ccc(Oc2ccnc(C)c2)c(Br)c1
 C-O competitive reactions,CCOC(=O)c1cc(C)ccc1O.Cc1n[nH]c2ccc(Br)cc12>>CCOC(=O)c1cc(C)ccc1Oc1ccc2[nH]nc(C)c2c1
 C-O competitive reactions,Cc1cc(O)cc(C)c1Cl.Cc1cc(Br)ccn1>>Cc1cc(Oc2cc(C)c(Cl)c(C)c2)ccn1
 C-O competitive reactions,Oc1ccccc1-c1ccccc1.Cc1ncccc1Br>>Cc1ncccc1Oc1ccccc1-c1ccccc1
+C-O competitive reactions,COCCCO.Cc1ccnc(Cl)c1>>COCCCOc1cc(C)ccn1
 C-O competitive reactions,Oc1ccc2ncccc2c1.Cc1ncccc1Br>>Cc1ncccc1Oc1ccc2ncccc2c1
 C-O competitive reactions,Cc1c(O)cccc1Cl.Cc1ncccc1Br>>Cc1ncccc1Oc1cccc(Cl)c1C
 C-O competitive reactions,OCCc1ccccc1.Cc1ncccc1Br>>Cc1ncccc1OCCc1ccccc1
@@ -2322,7 +2711,11 @@ Chan-Lam,Cc1cccc(N)c1C.CC(C)COc1cc(Br)cc(B(O)O)c1>>Cc1cccc(Nc2cc(Br)cc(OCC(C)C)c
 Chan-Lam,Cc1cccc(N)c1C.CC(C)Oc1cccc(B(O)O)c1>>Cc1cccc(Nc2cccc(OC(C)C)c2)c1C
 Chan-Lam,Cc1ccc(N)c(C)c1.OB(O)c1ccc(F)nc1>>Cc1ccc(Nc2ccc(F)nc2)c(C)c1
 Chan-Lam,CCOC(=O)c1cccc(N)c1.O=Cc1ccc(B(O)O)o1>>CCOC(=O)c1cccc(Nc2ccc(C=O)o2)c1
+Chan-Lam,CCOC(=O)c1cccc(N)c1.Cc1noc(C)c1B(O)O>>CCOC(=O)c1cccc(Nc2c(C)noc2C)c1
+Chan-Lam,CCOC(=O)c1cccc(N)c1.CC(C)(C)OC(=O)n1cccc1B(O)O>>CCOC(=O)c1cccc(Nc2cccn2C(=O)OC(C)(C)C)c1
+Chan-Lam,CCOC(=O)c1cccc(N)c1.Cc1ccc(B(O)O)cc1[N+](=O)[O-]>>CCOC(=O)c1cccc(Nc2ccc(C)c([N+](=O)[O-])c2)c1
 Chan-Lam,COc1ccc(N)cc1C.COC(=O)c1ccc(B(O)O)cc1>>COC(=O)c1ccc(Nc2ccc(OC)c(C)c2)cc1
+Chan-Lam,COc1ccc(N)cc1C.OB(O)c1ccoc1>>COc1ccc(Nc2ccoc2)cc1C
 Chan-Lam,COc1ccc(N)cc1C.OB(O)c1ccco1>>COc1ccc(Nc2ccco2)cc1C
 Chan-Lam,CCOC(=O)c1cccc(N)c1.COC(=O)c1ccc(B(O)O)cc1>>CCOC(=O)c1cccc(Nc2ccc(C(=O)OC)cc2)c1
 Chan-Lam,Cc1cc(N)ccc1O.OB(O)c1ccoc1>>Cc1cc(Nc2ccoc2)ccc1O
@@ -2430,7 +2823,6 @@ Chan-Lam,COc1ccc(N)cc1.Cn1nccc1B(O)O>>COc1ccc(Nc2ccnn2C)cc1
 Chan-Lam,Nc1ccccc1C=O.CC(=O)c1cccc(B(O)O)c1>>CC(=O)c1cccc(Nc2ccccc2C=O)c1
 Chan-Lam,Cc1ccc(N)cc1I.OB(O)c1ccsc1>>Cc1ccc(Nc2ccsc2)cc1I
 Chan-Lam,Cc1ccc(N)cc1I.CC(C)(C)OC(=O)n1cccc1B(O)O>>Cc1ccc(Nc2cccn2C(=O)OC(C)(C)C)cc1I
-Chan-Lam,CCOC(=O)c1cccc(N)c1.CC(C)(C)OC(=O)n1cccc1B(O)O>>CCOC(=O)c1cccc(Nc2cccn2C(=O)OC(C)(C)C)c1
 Chan-Lam,COc1ccc(N)cc1C.Cc1noc(C)c1B(O)O>>COc1ccc(Nc2c(C)noc2C)cc1C
 Chan-Lam,CC(=O)c1cccc(N)c1.Cc1noc(C)c1B(O)O>>CC(=O)c1cccc(Nc2c(C)noc2C)c1
 Chan-Lam,COc1cc(F)c([N+](=O)[O-])cc1N.CC(=O)c1ccc(B(O)O)s1>>COc1cc(F)c([N+](=O)[O-])cc1Nc1ccc(C(C)=O)s1
@@ -2458,6 +2850,7 @@ Chan-Lam,Cc1ccc(I)cc1N.COc1ncc(B(O)O)c(OC)n1>>COc1ncc(Nc2cc(I)ccc2C)c(OC)n1
 Chan-Lam,COc1ccc(N)cc1.O=Cc1ccc(B(O)O)s1>>COc1ccc(Nc2ccc(C=O)s2)cc1
 Chan-Lam,COc1ccc(N)cc1.COc1ncccc1B(O)O>>COc1ccc(Nc2cccnc2OC)cc1
 Chan-Lam,COc1ccc(N)cc1.Cc1noc(C)c1B(O)O>>COc1ccc(Nc2c(C)noc2C)cc1
+Chan-Lam,COc1ccc(N)cc1.CC(=O)c1cccc(B(O)O)c1>>COc1ccc(Nc2cccc(C(C)=O)c2)cc1
 Chan-Lam,COc1ccc(N)cc1.Cc1cccc(B(O)O)c1C>>COc1ccc(Nc2cccc(C)c2C)cc1
 Chan-Lam,Nc1ccc2nccnc2c1.OB(O)c1ccc(F)nc1>>Fc1ccc(Nc2ccc3nccnc3c2)cn1
 Chan-Lam,Nc1ccc2nccnc2c1.COc1ccc(B(O)O)cn1>>COc1ccc(Nc2ccc3nccnc3c2)cn1
@@ -2544,6 +2937,8 @@ Chan-Lam,CC(C)S(=O)(=O)c1ccccc1N.CC(C)Oc1cccc(B(O)O)c1>>CC(C)Oc1cccc(Nc2ccccc2S(
 Chan-Lam,CC1(C)c2ccccc2-c2ccc(Nc3ccccc3)cc21.OB(O)c1ccc(F)nc1>>CC1(C)c2ccccc2-c2ccc(N(c3ccccc3)c3ccc(F)nc3)cc21
 Chan-Lam,CC1(C)c2ccccc2-c2ccc(Nc3ccccc3)cc21.CSc1ccc(B(O)O)cc1>>CSc1ccc(N(c2ccccc2)c2ccc3c(c2)C(C)(C)c2ccccc2-3)cc1
 Chan-Lam,CC1(C)c2ccccc2-c2ccc(Nc3ccccc3)cc21.CC(C)(C)OC(=O)n1cccc1B(O)O>>CC(C)(C)OC(=O)n1cccc1N(c1ccccc1)c1ccc2c(c1)C(C)(C)c1ccccc1-2
+Chan-Lam,NC1CCCCC1.O=Cc1ccc(B(O)O)s1>>O=Cc1ccc(NC2CCCCC2)s1
+Chan-Lam,NC1CCCCC1.OB(O)c1ccoc1>>c1cc(NC2CCCCC2)co1
 Chan-Lam,NC1CCCCC1.COc1ccc(B(O)O)cn1>>COc1ccc(NC2CCCCC2)cn1
 Chan-Lam,NC1CCCCC1.OB(O)c1ccc(-n2c3ccccc3c3ccccc32)cc1>>c1ccc2c(c1)c1ccccc1n2-c1ccc(NC2CCCCC2)cc1
 Chan-Lam,CC(C)S(=O)(=O)c1ccccc1N.O=Cc1ccc(B(O)O)s1>>CC(C)S(=O)(=O)c1ccccc1Nc1ccc(C=O)s1
@@ -2643,7 +3038,6 @@ Chan-Lam,Cc1ccc([N+](=O)[O-])cc1N.O=Cc1ccc(B(O)O)o1>>Cc1ccc([N+](=O)[O-])cc1Nc1c
 Chan-Lam,COC(=O)c1cc(F)ccc1N.CC(=O)c1cccc(B(O)O)c1>>COC(=O)c1cc(F)ccc1Nc1cccc(C(C)=O)c1
 Chan-Lam,COC(=O)c1cc(F)ccc1N.CC(=O)Nc1cccc(B(O)O)c1>>COC(=O)c1cc(F)ccc1Nc1cccc(NC(C)=O)c1
 Chan-Lam,Nc1ccc([N+](=O)[O-])cn1.OB(O)c1ccc(F)nc1F>>O=[N+]([O-])c1ccc(Nc2ccc(F)nc2F)nc1
-Chan-Lam,COc1ccc(N)cc1.CC(=O)c1cccc(B(O)O)c1>>COc1ccc(Nc2cccc(C(C)=O)c2)cc1
 Chan-Lam,COc1ccc(N)cc1.COc1ccc(OC)c(B(O)O)c1>>COc1ccc(Nc2cc(OC)ccc2OC)cc1
 Chan-Lam,Nc1ccc2nccnc2c1.OB(O)c1ccoc1>>c1cnc2cc(Nc3ccoc3)ccc2n1
 Chan-Lam,Nc1ccccc1C=O.OB(O)c1ccsc1>>O=Cc1ccccc1Nc1ccsc1
@@ -2764,6 +3158,7 @@ Grignard,CCCC[Mg]Cl.COc1ccc(C=O)cn1>>CCCCC(O)c1ccc(OC)nc1
 Grignard,CCCC[Mg]Cl.O=Cc1ccnc2ccccc12>>CCCCC(O)c1ccnc2ccccc12
 Grignard,CCCC[Mg]Cl.O=Cc1cccnc1>>CCCCC(O)c1cccnc1
 Grignard,Clc1ccc([Mg]Br)cc1.CC(=O)c1cnccn1>>CC(O)(c1ccc(Cl)cc1)c1cnccn1
+Grignard,C=C(C)[Mg]Br.Cc1ccnc(C=O)c1>>C=C(C)C(O)c1cc(C)ccn1
 Grignard,Fc1ccc([Mg]Br)cc1.COc1ccc(C=O)cn1>>COc1ccc(C(O)c2ccc(F)cc2)cn1
 Grignard,Fc1ccc([Mg]Br)cc1.O=Cc1ccnc2ccccc12>>OC(c1ccc(F)cc1)c1ccnc2ccccc12
 Grignard,Fc1ccc([Mg]Br)cc1.O=Cc1cccnc1Cl>>OC(c1ccc(F)cc1)c1cccnc1Cl
@@ -2864,10 +3259,16 @@ Grignard,CN(C)c1ccc([Mg]Br)cc1.O=Cc1cc2c(cc1Br)OCO2>>CN(C)c1ccc(C(O)c2cc3c(cc2Br
 Grignard,CN(C)c1ccc([Mg]Br)cc1.CC(=O)c1nccs1>>CN(C)c1ccc(C(C)(O)c2nccs2)cc1
 Grignard,CN(C)c1ccc([Mg]Br)cc1.Cc1cccc(C(=O)c2ccccc2)c1>>Cc1cccc(C(O)(c2ccccc2)c2ccc(N(C)C)cc2)c1
 Grignard,CN(C)c1ccc([Mg]Br)cc1.CCC(C(=O)c1ccccc1)c1ccccc1>>CCC(c1ccccc1)C(O)(c1ccccc1)c1ccc(N(C)C)cc1
+Grignard,CN(C)c1ccc([Mg]Br)cc1.CNc1ccc(C(C)=O)cc1>>CNc1ccc(C(C)(O)c2ccc(N(C)C)cc2)cc1
 Grignard,CC(C)[Mg]Br.O=C(c1ccccn1)c1ccccn1>>CC(C)C(O)(c1ccccn1)c1ccccn1
+Heck,C=Cc1ccccc1.Cc1ccnc(Br)c1>>Cc1ccnc(/C=C/c2ccccc2)c1
+Heck,C=Cc1ccccc1.Brc1ccccn1>>C(=C/c1ccccn1)\c1ccccc1
 Heck,C=Cc1ccccc1.COc1cccnc1Br>>COc1cccnc1/C=C/c1ccccc1
+Heck,C=Cc1ccccc1.Brc1ccc2ccccc2n1>>C(=C/c1ccc2ccccc2n1)\c1ccccc1
 Heck,C=Cc1ccccc1.Cc1cccnc1Br>>Cc1cccnc1/C=C/c1ccccc1
 Heck,C=Cc1ccccc1.COc1ccc(Br)nc1>>COc1ccc(/C=C/c2ccccc2)nc1
+Heck,C=Cc1ccccc1.Brc1cnc2ccnn2c1>>C(=C/c1cnc2ccnn2c1)\c1ccccc1
+Heck,C=Cc1ccccc1.Brc1cn2ccnc2cn1>>C(=C/c1cn2ccnc2cn1)\c1ccccc1
 Heck,C=Cc1ccccc1.Cc1ccc(Br)cn1>>Cc1ccc(/C=C/c2ccccc2)cn1
 Heck,C=Cc1ccccc1.Brc1cnc2[nH]ccc2c1>>C(=C/c1cnc2[nH]ccc2c1)\c1ccccc1
 Heck,C=Cc1ccccc1.Brc1cccc2[nH]ncc12>>C(=C/c1cccc2[nH]ncc12)\c1ccccc1
@@ -2875,23 +3276,41 @@ Heck,C=Cc1ccccc1.COC(=O)c1ccnc(Br)c1>>COC(=O)c1ccnc(/C=C/c2ccccc2)c1
 Heck,C=Cc1ccccc1.COC(=O)c1cc(Br)ccn1>>COC(=O)c1cc(/C=C/c2ccccc2)ccn1
 Heck,C=Cc1ccccc1.COC(=O)c1cncc(Br)c1>>COC(=O)c1cncc(/C=C/c2ccccc2)c1
 Heck,C=C(C)c1ccccc1.Brc1ccc2occc2c1>>C/C(=C\c1ccc2occc2c1)c1ccccc1
+Heck,C=C(C)c1ccccc1.Brc1ccc2[nH]ncc2c1>>C/C(=C\c1ccc2[nH]ncc2c1)c1ccccc1
+Heck,C=C(C)c1ccccc1.Cn1cncc1Br>>C/C(=C\c1cncn1C)c1ccccc1
+Heck,C=C(C)c1ccccc1.Brc1cccc2[nH]ncc12>>C/C(=C\c1cccc2[nH]ncc12)c1ccccc1
 Heck,C=C(C)c1ccccc1.Brc1ccc(N2CCOCC2)nc1>>C/C(=C\c1ccc(N2CCOCC2)nc1)c1ccccc1
 Heck,C=C(C)c1ccccc1.Cc1cc(Br)ccn1>>C/C(=C\c1ccnc(C)c1)c1ccccc1
+Heck,C=C(C)c1ccccc1.COC(=O)c1cc(Br)ccn1>>COC(=O)c1cc(/C=C(\C)c2ccccc2)ccn1
+Heck,C=C(C)c1ccccc1.COC(=O)c1cncc(Br)c1>>COC(=O)c1cncc(/C=C(\C)c2ccccc2)c1
 Heck,C=C(C)c1ccccc1.Cc1ccc(Br)c(C)n1>>C/C(=C\c1ccc(C)nc1C)c1ccccc1
 Heck,C=C(C)c1ccccc1.Brc1cccc2cnccc12>>C/C(=C\c1cccc2cnccc12)c1ccccc1
 Heck,C=C(C)c1ccccc1.Brc1ccc2ncccc2c1>>C/C(=C\c1ccc2ncccc2c1)c1ccccc1
+Heck,C=C(C)c1ccccc1.CC(=O)c1ccc(Br)cc1C>>CC(=O)c1ccc(/C=C(\C)c2ccccc2)cc1C
+Heck,C=C(C)c1ccccc1.CC(=O)c1ccc(Br)cc1F>>CC(=O)c1ccc(/C=C(\C)c2ccccc2)cc1F
+Heck,C=C(C)c1ccccc1.Cc1cc(Br)ccc1C=O>>C/C(=C\c1ccc(C=O)c(C)c1)c1ccccc1
+Heck,C=C(C)c1ccccc1.COc1cc(C=O)cc(OC)c1Br>>COc1cc(C=O)cc(OC)c1/C=C(\C)c1ccccc1
 Heck,C=CC(=O)OCCCC.Cc1cccnc1Br>>CCCCOC(=O)/C=C/c1ncccc1C
 Heck,C=CC(=O)OCCCC.Brc1ccc(N2CCOCC2)nc1>>CCCCOC(=O)/C=C/c1ccc(N2CCOCC2)nc1
 Heck,C=CCC1CCCCC1=O.COc1cccnc1Br>>COc1cccnc1/C=C/CC1CCCCC1=O
 Heck,C=CCC1CCCCC1=O.Cc1ccc(Br)cn1>>Cc1ccc(/C=C/CC2CCCCC2=O)cn1
 Heck,C=CCC1CCCCC1=O.CN(C)c1cccc(Br)c1>>CN(C)c1cccc(/C=C/CC2CCCCC2=O)c1
 Heck,C=CCC1CCCCC1=O.Cc1cccc(Br)n1>>Cc1cccc(/C=C/CC2CCCCC2=O)n1
+Heck,C=CCC1CCCCC1=O.COC(=O)c1ccnc(Br)c1>>COC(=O)c1ccnc(/C=C/CC2CCCCC2=O)c1
+Heck,C=Cc1ccc(OC(C)(C)C)cc1.COc1ccc(Br)nc1>>COc1ccc(/C=C/c2ccc(OC(C)(C)C)cc2)nc1
 Heck,C=Cc1ccc(OC(C)(C)C)cc1.Cc1ccc(Br)cn1>>Cc1ccc(/C=C/c2ccc(OC(C)(C)C)cc2)cn1
+Heck,C=Cc1ccc(OC(C)(C)C)cc1.Cc1n[nH]c(C)c1Br>>Cc1n[nH]c(C)c1/C=C/c1ccc(OC(C)(C)C)cc1
+Heck,C=Cc1ccc(OC(C)(C)C)cc1.Cc1cccc(Br)n1>>Cc1cccc(/C=C/c2ccc(OC(C)(C)C)cc2)n1
 Heck,C=Cc1ccc(OC(C)(C)C)cc1.Cn1cncc1Br>>Cn1cncc1/C=C/c1ccc(OC(C)(C)C)cc1
 Heck,C=Cc1ccc(O)c(OC)c1.Cc1ccnc(Br)c1>>COc1cc(/C=C/c2cc(C)ccn2)ccc1O
+Heck,C=Cc1ccc(O)c(OC)c1.Brc1ccc2ccccc2n1>>COc1cc(/C=C/c2ccc3ccccc3n2)ccc1O
 Heck,C=Cc1ccc(O)c(OC)c1.Brc1cccc2cnccc12>>COc1cc(/C=C/c2cccc3cnccc23)ccc1O
+Heck,C=Cc1ccc(F)cc1.Brc1ccccn1>>Fc1ccc(/C=C/c2ccccn2)cc1
+Heck,C=Cc1ccc(F)cc1.COC(=O)c1ccnc(Br)c1>>COC(=O)c1ccnc(/C=C/c2ccc(F)cc2)c1
 Heck,C=Cc1ccc(F)cc1.COC(=O)c1cc(Br)ccn1>>COC(=O)c1cc(/C=C/c2ccc(F)cc2)ccn1
 Heck,C=Cc1ccc(F)cc1.Brc1ccc2ncccc2c1>>Fc1ccc(/C=C/c2ccc3ncccc3c2)cc1
+Heck,C=Cc1ccc(-c2ccccc2)cc1.Cc1ccnc(Br)c1>>Cc1ccnc(/C=C/c2ccc(-c3ccccc3)cc2)c1
+Heck,C=Cc1ccc(-c2ccccc2)cc1.Brc1ccc2ccccc2n1>>C(=C/c1ccc2ccccc2n1)\c1ccc(-c2ccccc2)cc1
 Heck,C=Cc1ccc(-c2ccccc2)cc1.Brc1ccc(N2CCOCC2)nc1>>C(=C/c1ccc(N2CCOCC2)nc1)\c1ccc(-c2ccccc2)cc1
 Heck,C=Cc1ccc(-c2ccccc2)cc1.Brc1ccc2ncccc2c1>>C(=C/c1ccc2ncccc2c1)\c1ccc(-c2ccccc2)cc1
 Heck,C=Cc1ccccc1.Cn1ccc(Br)n1>>Cn1ccc(/C=C/c2ccccc2)n1
@@ -3009,6 +3428,7 @@ Heck,C=CC(=O)Nc1ccccc1.Cc1cc(C=O)ccc1Br>>Cc1cc(C=O)ccc1/C=C/C(=O)Nc1ccccc1
 Heck,C=CC(=O)N(C)C.Brc1cnc2[nH]ccc2c1>>CN(C)C(=O)/C=C/c1cnc2[nH]ccc2c1
 Heck,C=CC(=O)N(C)C.CC(C)Oc1ncccc1Br>>CC(C)Oc1ncccc1/C=C/C(=O)N(C)C
 Heck,C=Cc1ccccc1.Cc1ccc(Br)c(C)n1>>Cc1ccc(/C=C/c2ccccc2)c(C)n1
+Heck,C=Cc1ccc(C)cc1.COc1cccnc1Br>>COc1cccnc1/C=C/c1ccc(C)cc1
 Heck,C=Cc1ccc(C)cc1.Cc1cc(Br)ccn1>>Cc1ccc(/C=C/c2ccnc(C)c2)cc1
 Heck,C=Cc1ccc(C)cc1.COC(=O)c1cc(Br)ccn1>>COC(=O)c1cc(/C=C/c2ccc(C)cc2)ccn1
 Heck,C=Cc1ccc(C)cc1.COC(=O)c1cncc(Br)c1>>COC(=O)c1cncc(/C=C/c2ccc(C)cc2)c1
@@ -3020,18 +3440,26 @@ Heck,C=Cc1ccc(C)cc1.COc1cc(Br)ccc1C=O>>COc1cc(/C=C/c2ccc(C)cc2)ccc1C=O
 Heck,C=COC(C)=O.Brc1ccccn1>>CC(=O)O/C=C/c1ccccn1
 Heck,C=COC(C)=O.COc1cccnc1Br>>COc1cccnc1/C=C/OC(C)=O
 Heck,C=COC(C)=O.Brc1ccc2ccccc2n1>>CC(=O)O/C=C/c1ccc2ccccc2n1
+Heck,C=COC(C)=O.Cc1cccnc1Br>>CC(=O)O/C=C/c1ncccc1C
 Heck,C=COC(C)=O.COc1ccc(Br)nc1>>COc1ccc(/C=C/OC(C)=O)nc1
 Heck,C=COC(C)=O.Brc1cnc2ccnn2c1>>CC(=O)O/C=C/c1cnc2ccnn2c1
 Heck,C=COC(C)=O.Brc1cn2ccnc2cn1>>CC(=O)O/C=C/c1cn2ccnc2cn1
 Heck,C=COC(C)=O.Cc1ccc(Br)cn1>>CC(=O)O/C=C/c1ccc(C)nc1
 Heck,C=COC(C)=O.Brc1cnc2[nH]ccc2c1>>CC(=O)O/C=C/c1cnc2[nH]ccc2c1
 Heck,C=COC(C)=O.Brc1ccc2cn[nH]c2c1>>CC(=O)O/C=C/c1ccc2cn[nH]c2c1
+Heck,C=COC(C)=O.Cn1cc(Br)cn1>>CC(=O)O/C=C/c1cnn(C)c1
+Heck,C=COC(C)=O.Cn1ccc(Br)n1>>CC(=O)O/C=C/c1ccn(C)n1
+Heck,C=COC(C)=O.Cc1n[nH]c(C)c1Br>>CC(=O)O/C=C/c1c(C)n[nH]c1C
 Heck,C=COC(C)=O.Brc1ccc2nccn2c1>>CC(=O)O/C=C/c1ccc2nccn2c1
 Heck,C=COC(C)=O.Brc1ccc2ncnn2c1>>CC(=O)O/C=C/c1ccc2ncnn2c1
 Heck,C=COC(C)=O.CN(C)c1cccc(Br)c1>>CC(=O)O/C=C/c1cccc(N(C)C)c1
 Heck,C=COC(C)=O.CN(C)c1ccc(Br)cc1>>CC(=O)O/C=C/c1ccc(N(C)C)cc1
 Heck,C=COC(C)=O.Cc1ccc(Br)nc1>>CC(=O)O/C=C/c1ccc(C)cn1
+Heck,C=COC(C)=O.Cc1cccc(Br)n1>>CC(=O)O/C=C/c1cccc(C)n1
+Heck,C=COC(C)=O.Brc1ccc2occc2c1>>CC(=O)O/C=C/c1ccc2occc2c1
+Heck,C=COC(C)=O.Brc1ccc2[nH]ncc2c1>>CC(=O)O/C=C/c1ccc2[nH]ncc2c1
 Heck,C=COC(C)=O.Cn1cncc1Br>>CC(=O)O/C=C/c1cncn1C
+Heck,C=COC(C)=O.Brc1cccc2[nH]ncc12>>CC(=O)O/C=C/c1cccc2[nH]ncc12
 Heck,C=COC(C)=O.Brc1ccc(N2CCOCC2)nc1>>CC(=O)O/C=C/c1ccc(N2CCOCC2)nc1
 Heck,C=COC(C)=O.Cc1cc(Br)ccn1>>CC(=O)O/C=C/c1ccnc(C)c1
 Heck,C=COC(C)=O.COC(=O)c1ccnc(Br)c1>>COC(=O)c1ccnc(/C=C/OC(C)=O)c1
@@ -3041,10 +3469,17 @@ Heck,C=COC(C)=O.Brc1cccc2cnccc12>>CC(=O)O/C=C/c1cccc2cnccc12
 Heck,C=COC(C)=O.COc1cncc(Br)c1>>COc1cncc(/C=C/OC(C)=O)c1
 Heck,C=COC(C)=O.Brc1ccc2ncccc2c1>>CC(=O)O/C=C/c1ccc2ncccc2c1
 Heck,C=Cc1ccncc1.COc1cccnc1Br>>COc1cccnc1/C=C/c1ccncc1
+Heck,C=Cc1ccncc1.Brc1ccc2ccccc2n1>>C(=C/c1ccc2ccccc2n1)\c1ccncc1
 Heck,C=Cc1ccncc1.COc1ccc(Br)nc1>>COc1ccc(/C=C/c2ccncc2)nc1
+Heck,C=Cc1ccncc1.Brc1cnc2ccnn2c1>>C(=C/c1cnc2ccnn2c1)\c1ccncc1
+Heck,C=Cc1ccncc1.Brc1ccc2cn[nH]c2c1>>C(=C/c1ccc2cn[nH]c2c1)\c1ccncc1
+Heck,C=Cc1ccncc1.Cn1cc(Br)cn1>>Cn1cc(/C=C/c2ccncc2)cn1
+Heck,C=Cc1ccncc1.Cn1ccc(Br)n1>>Cn1ccc(/C=C/c2ccncc2)n1
 Heck,C=Cc1ccncc1.Cc1n[nH]c(C)c1Br>>Cc1n[nH]c(C)c1/C=C/c1ccncc1
 Heck,C=Cc1ccncc1.Brc1ccc2nccn2c1>>C(=C/c1ccc2nccn2c1)\c1ccncc1
 Heck,C=Cc1ccncc1.Brc1ccc2ncnn2c1>>C(=C/c1ccc2ncnn2c1)\c1ccncc1
+Heck,C=Cc1ccncc1.Cn1cncc1Br>>Cn1cncc1/C=C/c1ccncc1
+Heck,C=Cc1ccncc1.Brc1cccc2[nH]ncc12>>C(=C/c1cccc2[nH]ncc12)\c1ccncc1
 Heck,C=Cc1ccncc1.Brc1ccc(N2CCOCC2)nc1>>C(=C/c1ccc(N2CCOCC2)nc1)\c1ccncc1
 Heck,C=Cc1ccncc1.Cc1cc(Br)ccn1>>Cc1cc(/C=C/c2ccncc2)ccn1
 Heck,C=Cc1ccncc1.COc1cncc(Br)c1>>COc1cncc(/C=C/c2ccncc2)c1
@@ -3054,6 +3489,7 @@ Heck,C=Cc1ccncc1.O=Cc1ccc(Br)cc1F>>O=Cc1ccc(/C=C/c2ccncc2)cc1F
 Heck,C=Cc1ccncc1.CC(=O)c1ccc(Br)cc1F>>CC(=O)c1ccc(/C=C/c2ccncc2)cc1F
 Heck,C=Cc1ccncc1.Cc1cc(Br)ccc1C=O>>Cc1cc(/C=C/c2ccncc2)ccc1C=O
 Heck,C=Cc1ccccn1.Brc1cnc2ccnn2c1>>C(=C/c1ccccn1)\c1cnc2ccnn2c1
+Heck,C=Cc1ccccn1.Brc1ccc2cn[nH]c2c1>>C(=C/c1ccccn1)\c1ccc2cn[nH]c2c1
 Heck,C=Cc1ccccn1.Brc1ccc2nccn2c1>>C(=C/c1ccccn1)\c1ccc2nccn2c1
 Heck,C=Cc1ccccn1.Brc1ccc2ncnn2c1>>C(=C/c1ccccn1)\c1ccc2ncnn2c1
 Heck,C=Cc1ccccn1.Brc1ccc2occc2c1>>C(=C/c1ccccn1)\c1ccc2occc2c1
@@ -3084,7 +3520,9 @@ Heck,C=CC(=O)NC(C)(C)C.COc1cncc(Br)c1>>COc1cncc(/C=C/C(=O)NC(C)(C)C)c1
 Heck,C=Cc1ccc(N)cc1.Cc1ccnc(Br)c1>>Cc1ccnc(/C=C/c2ccc(N)cc2)c1
 Heck,C=CC(=O)N1CCOCC1.Brc1ccc2nccn2c1>>O=C(/C=C/c1ccc2nccn2c1)N1CCOCC1
 Heck,C=CC(=O)N1CCOCC1.CN(C)c1ccc(Br)cc1>>CN(C)c1ccc(/C=C/C(=O)N2CCOCC2)cc1
+Heck,C=CC(=O)N1CCOCC1.Cc1cccc(Br)n1>>Cc1cccc(/C=C/C(=O)N2CCOCC2)n1
 Heck,C=CC(=O)N1CCOCC1.Brc1ccc2occc2c1>>O=C(/C=C/c1ccc2occc2c1)N1CCOCC1
+Heck,C=CC(=O)N1CCOCC1.Brc1ccc2[nH]ncc2c1>>O=C(/C=C/c1ccc2[nH]ncc2c1)N1CCOCC1
 Heck,C=CC(=O)N1CCOCC1.Brc1ccc2[nH]c3ccccc3c2c1>>O=C(/C=C/c1ccc2[nH]c3ccccc3c2c1)N1CCOCC1
 Heck,C=CC(=O)N1CCOCC1.COC(=O)c1ccnc(Br)c1>>COC(=O)c1ccnc(/C=C/C(=O)N2CCOCC2)c1
 Heck,C=CC(=O)N1CCOCC1.COC(=O)c1cc(Br)ccn1>>COC(=O)c1cc(/C=C/C(=O)N2CCOCC2)ccn1
@@ -3117,7 +3555,9 @@ Heck,C=CN1CCCC1=O.Cc1ccnc(Br)c1>>Cc1ccnc(/C=C/N2CCCC2=O)c1
 Heck,C=CN1CCCC1=O.Brc1ccccn1>>O=C1CCCN1/C=C/c1ccccn1
 Heck,C=CN1CCCC1=O.COc1cccnc1Br>>COc1cccnc1/C=C/N1CCCC1=O
 Heck,C=CN1CCCC1=O.Brc1ccc2ccccc2n1>>O=C1CCCN1/C=C/c1ccc2ccccc2n1
+Heck,C=CN1CCCC1=O.Cc1cccnc1Br>>Cc1cccnc1/C=C/N1CCCC1=O
 Heck,C=CN1CCCC1=O.COc1ccc(Br)nc1>>COc1ccc(/C=C/N2CCCC2=O)nc1
+Heck,C=CN1CCCC1=O.Brc1cn2ccnc2cn1>>O=C1CCCN1/C=C/c1cn2ccnc2cn1
 Heck,C=CN1CCCC1=O.Cc1ccc(Br)cn1>>Cc1ccc(/C=C/N2CCCC2=O)cn1
 Heck,C=CN1CCCC1=O.Brc1cnc2[nH]ccc2c1>>O=C1CCCN1/C=C/c1cnc2[nH]ccc2c1
 Heck,C=CC(=O)NC(C)C.Brc1ccc2ncccc2c1>>CC(C)NC(=O)/C=C/c1ccc2ncccc2c1
@@ -3125,25 +3565,43 @@ Heck,C=CN1CCCC1=O.Cc1n[nH]c(C)c1Br>>Cc1n[nH]c(C)c1/C=C/N1CCCC1=O
 Heck,C=CN1CCCC1=O.CN(C)c1ccc(Br)cc1>>CN(C)c1ccc(/C=C/N2CCCC2=O)cc1
 Heck,C=CN1CCCC1=O.Cc1ccc(Br)nc1>>Cc1ccc(/C=C/N2CCCC2=O)nc1
 Heck,C=CN1CCCC1=O.Cc1cccc(Br)n1>>Cc1cccc(/C=C/N2CCCC2=O)n1
+Heck,C=CN1CCCC1=O.Cn1cncc1Br>>Cn1cncc1/C=C/N1CCCC1=O
 Heck,C=CN1CCCC1=O.Brc1ccc2[nH]c3ccccc3c2c1>>O=C1CCCN1/C=C/c1ccc2[nH]c3ccccc3c2c1
+Heck,C=CN1CCCC1=O.Brc1cccc2[nH]ncc12>>O=C1CCCN1/C=C/c1cccc2[nH]ncc12
+Heck,C=CN1CCCC1=O.Cc1cc(Br)ccn1>>Cc1cc(/C=C/N2CCCC2=O)ccn1
 Heck,C=CN1CCCC1=O.COC(=O)c1cc(Br)ccn1>>COC(=O)c1cc(/C=C/N2CCCC2=O)ccn1
+Heck,C=CN1CCCC1=O.O=Cc1ccc(Br)c(F)c1F>>O=Cc1ccc(/C=C/N2CCCC2=O)c(F)c1F
+Heck,C=CN1CCCC1=O.O=Cc1ccc(Br)cc1F>>O=Cc1ccc(/C=C/N2CCCC2=O)cc1F
 Heck,C=C1CCc2c(c3ccccc3n2C)C1=O.Cc1cccnc1Br>>Cc1cccnc1/C=C1\CCc2c(c3ccccc3n2C)C1=O
+Heck,C=C1CCc2c(c3ccccc3n2C)C1=O.COc1ccc(Br)nc1>>COc1ccc(/C=C2\CCc3c(c4ccccc4n3C)C2=O)nc1
 Heck,C=CN1CCCC1=O.COC(=O)c1cncc(Br)c1>>COC(=O)c1cncc(/C=C/N2CCCC2=O)c1
+Heck,C=C1CCc2c(c3ccccc3n2C)C1=O.Brc1cn2ccnc2cn1>>Cn1c2c(c3ccccc31)C(=O)/C(=C/c1cn3ccnc3cn1)CC2
+Heck,C=C1CCc2c(c3ccccc3n2C)C1=O.Cc1n[nH]c(C)c1Br>>Cc1n[nH]c(C)c1/C=C1\CCc2c(c3ccccc3n2C)C1=O
 Heck,C=C1CCc2c(c3ccccc3n2C)C1=O.Brc1ccc2ncnn2c1>>Cn1c2c(c3ccccc31)C(=O)/C(=C/c1ccc3ncnn3c1)CC2
+Heck,C=C1CCc2c(c3ccccc3n2C)C1=O.Cc1ccc(Br)nc1>>Cc1ccc(/C=C2\CCc3c(c4ccccc4n3C)C2=O)nc1
+Heck,C=C1CCc2c(c3ccccc3n2C)C1=O.Cc1cccc(Br)n1>>Cc1cccc(/C=C2\CCc3c(c4ccccc4n3C)C2=O)n1
 Heck,C=C1CCc2c(c3ccccc3n2C)C1=O.Brc1ccc2occc2c1>>Cn1c2c(c3ccccc31)C(=O)/C(=C/c1ccc3occc3c1)CC2
+Heck,C=C1CCc2c(c3ccccc3n2C)C1=O.Cn1cncc1Br>>Cn1cncc1/C=C1\CCc2c(c3ccccc3n2C)C1=O
+Heck,C=C1CCc2c(c3ccccc3n2C)C1=O.Brc1ccc2[nH]c3ccccc3c2c1>>Cn1c2c(c3ccccc31)C(=O)/C(=C/c1ccc3[nH]c4ccccc4c3c1)CC2
+Heck,C=C1CCc2c(c3ccccc3n2C)C1=O.Brc1cccc2[nH]ncc12>>Cn1c2c(c3ccccc31)C(=O)/C(=C/c1cccc3[nH]ncc13)CC2
 Heck,C=C1CCc2c(c3ccccc3n2C)C1=O.Brc1cnc2ccnn2c1>>Cn1c2c(c3ccccc31)C(=O)/C(=C/c1cnc3ccnn3c1)CC2
 Heck,C=C1CCc2c(c3ccccc3n2C)C1=O.Cc1cc(Br)ccn1>>Cc1cc(/C=C2\CCc3c(c4ccccc4n3C)C2=O)ccn1
+Heck,C=C1CCc2c(c3ccccc3n2C)C1=O.COC(=O)c1ccnc(Br)c1>>COC(=O)c1ccnc(/C=C2\CCc3c(c4ccccc4n3C)C2=O)c1
 Heck,C=C1CCc2c(c3ccccc3n2C)C1=O.Cc1ccc(Br)c(C)n1>>Cc1ccc(/C=C2\CCc3c(c4ccccc4n3C)C2=O)c(C)n1
 Heck,C=C1CCc2c(c3ccccc3n2C)C1=O.Cc1cc(C=O)ccc1Br>>Cc1cc(C=O)ccc1/C=C1\CCc2c(c3ccccc3n2C)C1=O
 Heck,C=C1CCc2c(c3ccccc3n2C)C1=O.Cc1cc(Br)ccc1C=O>>Cc1cc(/C=C2\CCc3c(c4ccccc4n3C)C2=O)ccc1C=O
+Heck,C=C1CCc2c(c3ccccc3n2C)C1=O.Brc1ccc(N2CCOCC2)nc1>>Cn1c2c(c3ccccc31)C(=O)/C(=C/c1ccc(N3CCOCC3)nc1)CC2
+Heck,C=C(C)c1ccccc1.Brc1ccccn1>>C/C(=C\c1ccccn1)c1ccccc1
 Heck,C=C(C)c1ccccc1.COc1cccnc1Br>>COc1cccnc1/C=C(\C)c1ccccc1
 Heck,C=C(C)c1ccccc1.Cc1cccnc1Br>>C/C(=C\c1ncccc1C)c1ccccc1
 Heck,C=C(C)c1ccccc1.COc1ccc(Br)nc1>>COc1ccc(/C=C(\C)c2ccccc2)nc1
 Heck,C=C(C)c1ccccc1.Brc1cn2ccnc2cn1>>C/C(=C\c1cn2ccnc2cn1)c1ccccc1
 Heck,C=C(C)c1ccccc1.Cc1ccc(Br)cn1>>C/C(=C\c1ccc(C)nc1)c1ccccc1
 Heck,C=C(C)c1ccccc1.Brc1ccc2cn[nH]c2c1>>C/C(=C\c1ccc2cn[nH]c2c1)c1ccccc1
+Heck,C=C(C)c1ccccc1.Cn1ccc(Br)n1>>C/C(=C\c1ccn(C)n1)c1ccccc1
 Heck,C=C(C)c1ccccc1.Cc1n[nH]c(C)c1Br>>C/C(=C\c1c(C)n[nH]c1C)c1ccccc1
 Heck,C=C(C)c1ccccc1.Brc1ccc2ncnn2c1>>C/C(=C\c1ccc2ncnn2c1)c1ccccc1
+Heck,C=C(C)c1ccccc1.CN(C)c1cccc(Br)c1>>C/C(=C\c1cccc(N(C)C)c1)c1ccccc1
 Heck,C=C(C)c1ccccc1.Cc1ccc(Br)nc1>>C/C(=C\c1ccc(C)cn1)c1ccccc1
 Hiyama,CO[Si](OC)(OC)c1ccccc1.Cc1ccc(Br)cn1>>Cc1ccc(-c2ccccc2)cn1
 Hiyama,CO[Si](OC)(OC)c1ccccc1.Cc1cccc(Br)n1>>Cc1cccc(-c2ccccc2)n1
@@ -3177,10 +3635,13 @@ Hiyama,CCO[Si](CCC1CCC2OC2C1)(OCC)OCC.Brc1ccc2[nH]c3ccccc3c2c1>>c1ccc2c(c1)[nH]c
 Hiyama,CCO[Si](CCC1CCC2OC2C1)(OCC)OCC.CCc1cnc(Cl)nc1>>CCc1cnc(CCC2CCC3OC3C2)nc1
 Hiyama,CCO[Si](CCC1CCC2OC2C1)(OCC)OCC.Cc1cccc(Cl)n1>>Cc1cccc(CCC2CCC3OC3C2)n1
 Hiyama,CCO[Si](CCC1CCC2OC2C1)(OCC)OCC.Cc1cccnc1Cl>>Cc1cccnc1CCC1CCC2OC2C1
+Hiyama,CCO[Si](CCC1CCC2OC2C1)(OCC)OCC.Clc1nc2ccccc2[nH]1>>c1ccc2[nH]c(CCC3CCC4OC4C3)nc2c1
 Hiyama,CCO[Si](CNc1ccccc1)(OCC)OCC.Cc1cccc(Br)n1>>Cc1cccc(CNc2ccccc2)n1
 Hiyama,CCO[Si](CNc1ccccc1)(OCC)OCC.Brc1cnc2[nH]ccc2c1>>c1ccc(NCc2cnc3[nH]ccc3c2)cc1
 Hiyama,CCO[Si](CNc1ccccc1)(OCC)OCC.Cc1ccnc(Br)c1>>Cc1ccnc(CNc2ccccc2)c1
+Hiyama,CCO[Si](CNc1ccccc1)(OCC)OCC.COc1cccnc1Br>>COc1cccnc1CNc1ccccc1
 Hiyama,CCO[Si](CNc1ccccc1)(OCC)OCC.Cc1ccnc(Cl)c1>>Cc1ccnc(CNc2ccccc2)c1
+Hiyama,CCO[Si](CNc1ccccc1)(OCC)OCC.Cc1cc(Cl)nc2ccccc12>>Cc1cc(CNc2ccccc2)nc2ccccc12
 Hiyama,CCO[Si](CNc1ccccc1)(OCC)OCC.COc1ccnc(Cl)c1>>COc1ccnc(CNc2ccccc2)c1
 Hiyama,CCO[Si](CCP(=O)(OCC)OCC)(OCC)OCC.Cc1cccc(Br)n1>>CCOP(=O)(CCc1cccc(C)n1)OCC
 Hiyama,CCO[Si](CCP(=O)(OCC)OCC)(OCC)OCC.CC(=O)c1cncc(Br)c1>>CCOP(=O)(CCc1cncc(C(C)=O)c1)OCC
@@ -3275,10 +3736,13 @@ Hiyama,CO[Si](OC)(OC)c1ccccc1.COc1ccnc(Cl)c1>>COc1ccnc(-c2ccccc2)c1
 Hiyama,CO[Si](OC)(OC)c1ccccc1.COc1cnc(Cl)nc1>>COc1cnc(-c2ccccc2)nc1
 Hiyama,CO[Si](OC)(OC)c1ccc(C)cc1.Brc1cncc2ccccc12>>Cc1ccc(-c2cncc3ccccc23)cc1
 Hiyama,CO[Si](OC)(OC)c1cccc2ccccc12.COc1nc(Cl)nc(OC)n1>>COc1nc(OC)nc(-c2cccc3ccccc23)n1
+Hiyama,CO[Si](OC)(OC)c1cccc2ccccc12.Cc1ccc(Cl)nc1>>Cc1ccc(-c2cccc3ccccc23)nc1
 Hiyama,CCO[Si](OCC)(OCC)c1cccc2ccccc12.Cc1ccc(Br)cn1>>Cc1ccc(-c2cccc3ccccc23)cn1
 Hiyama,CCO[Si](OCC)(OCC)c1cccc2ccccc12.Cn1cc(Br)cn1>>Cn1cc(-c2cccc3ccccc23)cn1
 Hiyama,CCO[Si](OCC)(OCC)c1cccc2ccccc12.Cc1cccc(Br)n1>>Cc1cccc(-c2cccc3ccccc23)n1
 Hiyama,CCO[Si](OCC)(OCC)c1cccc2ccccc12.CC(=O)c1cncc(Br)c1>>CC(=O)c1cncc(-c2cccc3ccccc23)c1
+Hiyama,CCO[Si](CCC1CCC2OC2C1)(OCC)OCC.Brc1ccc2[nH]cnc2c1>>c1nc2cc(CCC3CCC4OC4C3)ccc2[nH]1
+Hiyama,CO[Si](CCc1ccccc1)(OC)OC.Cc1ncccc1Br>>Cc1ncccc1CCc1ccccc1
 Kumada,Nc1ccc(Cl)cn1.CC[Mg]Br>>CCc1ccc(N)nc1
 Kumada,Nc1ccncc1Cl.CC[Mg]Br>>CCc1cnccc1N
 Kumada,Cc1ccnc(Br)c1N.CC[Mg]Br>>CCc1nccc(C)c1N
@@ -3792,6 +4256,7 @@ SNAr,CC1CCCNC1.N#Cc1ccc(F)cc1C(F)(F)F>>CC1CCCN(c2ccc(C#N)c(C(F)(F)F)c2)C1
 SNAr,NC1CCCC1.Cc1n[nH]c2ccc(Br)cc12>>Cc1n[nH]c2ccc(NC3CCCC3)cc12
 SNAr,Cc1ccc2[nH]cnc2c1.N#Cc1ccc(F)cc1C(F)(F)F>>Cc1ccc2c(c1)ncn2-c1ccc(C#N)c(C(F)(F)F)c1
 SNAr,C1CCN(C2CCNCC2)CC1.Cc1n[nH]c2ccc(Br)cc12>>Cc1n[nH]c2ccc(N3CCC(N4CCCCC4)CC3)cc12
+SNAr,CNC1CCCCC1.Cc1n[nH]c2ccc(Br)cc12>>Cc1n[nH]c2ccc(N(C)C3CCCCC3)cc12
 SNAr,NC1CCCC1.Cc1cc(Br)ccn1>>Cc1cc(NC2CCCC2)ccn1
 SNAr,CC1CCCNC1.Cc1cc(Br)ccn1>>Cc1cc(N2CCCC(C)C2)ccn1
 SNAr,CNC1CCCCC1.Cc1cc(Br)ccn1>>Cc1cc(N(C)C2CCCCC2)ccn1
@@ -3910,12 +4375,18 @@ SNAr,COCCNC(C)C.Brc1ccc2cn[nH]c2c1>>COCCN(c1ccc2cn[nH]c2c1)C(C)C
 SNAr,CC1COCCN1.Brc1ccc2cn[nH]c2c1>>CC1COCCN1c1ccc2cn[nH]c2c1
 SNAr,C#CC(N)=O.Brc1ccc2cn[nH]c2c1>>C#CC(=O)Nc1ccc2cn[nH]c2c1
 SNAr,C#CC(N)=O.Brc1ccc2[nH]ncc2c1>>C#CC(=O)Nc1ccc2[nH]ncc2c1
+SNAr,NCC1CCCCC1.Brc1cnc2ccnn2c1>>c1cc2ncc(NCC3CCCCC3)cn2n1
+SNAr,C1CCN(C2CCNCC2)CC1.Brc1cnc2ccnn2c1>>c1cc2ncc(N3CCC(N4CCCCC4)CC3)cn2n1
 SNAr,CNC1CCCCC1.Brc1cnc2ccnn2c1>>CN(c1cnc2ccnn2c1)C1CCCCC1
 SNAr,C1COCCN1.Brc1cnc2ccnn2c1>>c1cc2ncc(N3CCOCC3)cn2n1
+SNAr,COCCN1CCNCC1.Brc1cnc2ccnn2c1>>COCCN1CCN(c2cnc3ccnn3c2)CC1
 SNAr,COCCNC(C)C.Brc1cnc2ccnn2c1>>COCCN(c1cnc2ccnn2c1)C(C)C
 SNAr,CC1COCCN1.Brc1cnc2ccnn2c1>>CC1COCCN1c1cnc2ccnn2c1
 SNAr,NC1CCCC1.CN(C)c1cccc(Br)c1>>CN(C)c1cccc(NC2CCCC2)c1
 SNAr,NC1CCCCC1.CN(C)c1cccc(Br)c1>>CN(C)c1cccc(NC2CCCCC2)c1
+SNAr,NCC1CCCCC1.CN(C)c1cccc(Br)c1>>CN(C)c1cccc(NCC2CCCCC2)c1
+SNAr,CN1CCNCC1.CN(C)c1cccc(Br)c1>>CN1CCN(c2cccc(N(C)C)c2)CC1
+SNAr,C1CCN(C2CCNCC2)CC1.CN(C)c1cccc(Br)c1>>CN(C)c1cccc(N2CCC(N3CCCCC3)CC2)c1
 SNAr,CC1CCCNC1.CN(C)c1cccc(Br)c1>>CC1CCCN(c2cccc(N(C)C)c2)C1
 SNAr,CNC1CCCCC1.CN(C)c1cccc(Br)c1>>CN(C)c1cccc(N(C)C2CCCCC2)c1
 SNAr,C1COCCN1.CN(C)c1cccc(Br)c1>>CN(C)c1cccc(N2CCOCC2)c1
@@ -3997,10 +4468,16 @@ SNAr,NC1CCCCC1.O=[N+]([O-])c1cc(Br)cc([N+](=O)[O-])c1>>O=[N+]([O-])c1cc(NC2CCCCC
 SNAr,NCC1CCCCC1.O=[N+]([O-])c1cc(Br)cc([N+](=O)[O-])c1>>O=[N+]([O-])c1cc(NCC2CCCCC2)cc([N+](=O)[O-])c1
 SNAr,COCCN1CCNCC1.O=[N+]([O-])c1cc(Br)cc([N+](=O)[O-])c1>>COCCN1CCN(c2cc([N+](=O)[O-])cc([N+](=O)[O-])c2)CC1
 SNAr,CC1CCCNC1.Brc1cnccn1>>CC1CCCN(c2cnccn2)C1
+SNAr,CNC1CCCCC1.Brc1cnccn1>>CN(c1cnccn1)C1CCCCC1
 SNAr,NC1CCCCC1.N#Cc1ccc(Br)nc1>>N#Cc1ccc(NC2CCCCC2)nc1
 SNAr,CC1CCCNC1.N#Cc1ccc(Br)nc1>>CC1CCCN(c2ccc(C#N)cn2)C1
+SNAr,CNC1CCCCC1.N#Cc1ccc(Br)nc1>>CN(c1ccc(C#N)cn1)C1CCCCC1
+SNAr,CC1CCCNC1.N#Cc1ncc(Br)cn1>>CC1CCCN(c2cnc(C#N)nc2)C1
 SNAr,Cc1ccc(N)c(C)c1.Cc1ccc(Cl)nc1>>Cc1ccc(Nc2ccc(C)cc2C)nc1
 SNAr,COC(=O)c1cc(F)ccc1N.Cc1ccc(Cl)nc1>>COC(=O)c1cc(F)ccc1Nc1ccc(C)cn1
+SNAr,COc1ccc(C(=O)O)c(N)c1.Cc1ccc(Cl)nc1>>COc1ccc(C(=O)O)c(Nc2ccc(C)cn2)c1
+SNAr,Fc1cccc2[nH]ccc12.Cc1cc(Cl)nc2ccccc12>>Cc1cc(-n2ccc3c(F)cccc32)nc2ccccc12
+SNAr,Cc1cc2ccccc2[nH]1.Cc1cc(Cl)nc2ccccc12>>Cc1cc(-n2c(C)cc3ccccc32)nc2ccccc12
 SNAr,C=CCNCC=C.COc1cncc(Br)c1>>C=CCN(CC=C)c1cncc(OC)c1
 SNAr,OCC1CCCN1.Brc1ccc2ccccc2n1>>OCC1CCCN1c1ccc2ccccc2n1
 SNAr,OCC1CCCN1.Cc1ncccc1Br>>Cc1ncccc1N1CCCC1CO
@@ -4107,6 +4584,7 @@ SNAr,COC(=O)[C@@H]1CCCN1.Clc1nc2ccccc2[nH]1>>COC(=O)[C@@H]1CCCN1c1nc2ccccc2[nH]1
 SNAr,COC(=O)[C@@H]1CCCN1.Cc1ccc2ccc(Cl)cc2n1>>COC(=O)[C@@H]1CCCN1c1ccc2ccc(C)nc2c1
 SNAr,CC(=O)Nc1ccc([N+](=O)[O-])cn1.Cc1ccc2cc(F)ccc2n1>>CC(=O)N(c1ccc2nc(C)ccc2c1)c1ccc([N+](=O)[O-])cn1
 SNAr,CC(=O)Nc1ccc([N+](=O)[O-])cn1.Clc1nc2ccccc2[nH]1>>CC(=O)N(c1ccc([N+](=O)[O-])cn1)c1nc2ccccc2[nH]1
+SNAr,COCCN1CCNCC1.Clc1ncc2cc[nH]c2n1>>COCCN1CCN(c2ncc3cc[nH]c3n2)CC1
 SNAr,c1cc[nH]c1.Clc1ncc2cc[nH]c2n1>>c1ccn(-c2ncc3cc[nH]c3n2)c1
 SNAr,CC(C)Nc1ccccc1.COc1cnc(Cl)nc1>>COc1cnc(N(c2ccccc2)C(C)C)nc1
 SNAr,CN1CCNCC1.CC(=O)c1ccc(Cl)cc1>>CC(=O)c1ccc(N2CCN(C)CC2)cc1
@@ -4117,14 +4595,22 @@ SNAr,Cc1ccc[nH]1.Clc1ccc2ccccc2n1>>Cc1cccn1-c1ccc2ccccc2n1
 SNAr,CCNc1ccccc1.Clc1ccc2ccccc2n1>>CCN(c1ccccc1)c1ccc2ccccc2n1
 SNAr,CNc1cccc(C)c1.Clc1ccc2ccccc2n1>>Cc1cccc(N(C)c2ccc3ccccc3n2)c1
 SNAr,OCCNc1ccccc1.Clc1ccc2ccccc2n1>>OCCN(c1ccccc1)c1ccc2ccccc2n1
+SNAr,CN1CCNCC1.Clc1nccc2ccccc12>>CN1CCN(c2nccc3ccccc23)CC1
 SNAr,Cc1ccc(Nc2ccccc2)cc1.Clc1nccc2ccccc12>>Cc1ccc(N(c2ccccc2)c2nccc3ccccc23)cc1
+SNAr,Cc1cccc2cc[nH]c12.Clc1nccc2ccccc12>>Cc1cccc2ccn(-c3nccc4ccccc34)c12
+SNAr,Cc1ccc[nH]1.Clc1nccc2ccccc12>>Cc1cccn1-c1nccc2ccccc12
 SNAr,CNc1ccc(OC)cc1.Clc1nccc2ccccc12>>COc1ccc(N(C)c2nccc3ccccc23)cc1
+SNAr,CNc1ccccc1F.Clc1nccc2ccccc12>>CN(c1ccccc1F)c1nccc2ccccc12
 SNAr,COCCNC(C)C.Clc1nccc2ccccc12>>COCCN(c1nccc2ccccc12)C(C)C
 SNAr,CCNC(C)C.Clc1nccc2ccccc12>>CCN(c1nccc2ccccc12)C(C)C
+SNAr,COC(=O)c1ccc(N)cc1.Cc1cnc(Br)nc1>>COC(=O)c1ccc(Nc2ncc(C)cn2)cc1
 SNAr,Cc1ccc(N)c(C(=O)O)c1.Cc1cnc(Br)nc1>>Cc1cnc(Nc2ccc(C)cc2C(=O)O)nc1
 SNAr,Nc1ccccc1CO.Cc1cnc(Br)nc1>>Cc1cnc(Nc2ccccc2CO)nc1
 SNAr,Nc1ccccc1C=O.Cc1cnc(Br)nc1>>Cc1cnc(Nc2ccccc2C=O)nc1
+SNAr,COc1ccc(OC)c(N)c1.Cc1cnc(Br)nc1>>COc1ccc(OC)c(Nc2ncc(C)cn2)c1
+SNAr,COc1ccc(N)cc1C.Cc1cnc(Br)nc1>>COc1ccc(Nc2ncc(C)cn2)cc1C
 SNAr,Cc1cc(N)ccc1O.Cc1cnc(Br)nc1>>Cc1cnc(Nc2ccc(O)c(C)c2)nc1
+SNAr,CCc1cccc(N)c1.Cc1cnc(Br)nc1>>CCc1cccc(Nc2ncc(C)cn2)c1
 SNAr,CC(C)S(=O)(=O)c1ccccc1N.Cc1cnc(Br)nc1>>Cc1cnc(Nc2ccccc2S(=O)(=O)C(C)C)nc1
 SNAr,CC(=O)c1cccc(N)c1.Cc1cnc(Br)nc1>>CC(=O)c1cccc(Nc2ncc(C)cn2)c1
 SNAr,Fc1ccc2[nH]ccc2c1.Cc1cnc(Br)nc1>>Cc1cnc(-n2ccc3cc(F)ccc32)nc1
@@ -4134,33 +4620,71 @@ SNAr,c1cc[nH]c1.Cc1cnc(Br)nc1>>Cc1cnc(-n2cccc2)nc1
 SNAr,CCNc1ccccc1.Cc1cnc(Br)nc1>>CCN(c1ccccc1)c1ncc(C)cn1
 SNAr,CNc1cccc(C)c1.Cc1cnc(Br)nc1>>Cc1cnc(N(C)c2cccc(C)c2)nc1
 SNAr,CC(C)Nc1ccccc1.Cc1cnc(Br)nc1>>Cc1cnc(N(c2ccccc2)C(C)C)nc1
+SNAr,OCCNc1ccccc1.Cc1cnc(Br)nc1>>Cc1cnc(N(CCO)c2ccccc2)nc1
 SNAr,CNc1ccc(F)cc1.Cc1cnc(Br)nc1>>Cc1cnc(N(C)c2ccc(F)cc2)nc1
+SNAr,CC1COCCN1.Cc1cnc(Br)nc1>>Cc1cnc(N2CCOCC2C)nc1
 SNAr,COCCNC(C)C.Clc1ccc2ccccc2n1>>COCCN(c1ccc2ccccc2n1)C(C)C
 SNAr,CC1COCCN1.Clc1ccc2ccccc2n1>>CC1COCCN1c1ccc2ccccc2n1
 SNAr,CCNC(C)C.Clc1ccc2ccccc2n1>>CCN(c1ccc2ccccc2n1)C(C)C
+SNAr,Cc1ccc(N)c(C)c1.N#Cc1ccc(Cl)nc1>>Cc1ccc(Nc2ccc(C#N)cn2)c(C)c1
+SNAr,CSc1ccc(N)cc1.N#Cc1ccc(Cl)nc1>>CSc1ccc(Nc2ccc(C#N)cn2)cc1
+SNAr,CSc1cccc(N)c1.N#Cc1ccc(Cl)nc1>>CSc1cccc(Nc2ccc(C#N)cn2)c1
+SNAr,Cc1ccc(N)c(C(=O)O)c1.N#Cc1ccc(Cl)nc1>>Cc1ccc(Nc2ccc(C#N)cn2)c(C(=O)O)c1
 SNAr,COc1ccc(N)cc1OC.N#Cc1ccc(Cl)nc1>>COc1ccc(Nc2ccc(C#N)cn2)cc1OC
+SNAr,COc1ccc(OC)c(N)c1.N#Cc1ccc(Cl)nc1>>COc1ccc(OC)c(Nc2ccc(C#N)cn2)c1
+SNAr,CCc1cccc(N)c1.N#Cc1ccc(Cl)nc1>>CCc1cccc(Nc2ccc(C#N)cn2)c1
+SNAr,Cc1cn(-c2cc(N)cc(C(F)(F)F)c2)cn1.N#Cc1ccc(Cl)nc1>>Cc1cn(-c2cc(Nc3ccc(C#N)cn3)cc(C(F)(F)F)c2)cn1
 SNAr,CC(=O)c1cccc(N)c1.N#Cc1ccc(Cl)nc1>>CC(=O)c1cccc(Nc2ccc(C#N)cn2)c1
 SNAr,COc1cc(F)c([N+](=O)[O-])cc1N.N#Cc1ccc(Cl)nc1>>COc1cc(F)c([N+](=O)[O-])cc1Nc1ccc(C#N)cn1
 SNAr,Cc1ccc(Nc2ccc(C)cc2)cc1.N#Cc1ccc(Cl)nc1>>Cc1ccc(N(c2ccc(C)cc2)c2ccc(C#N)cn2)cc1
 SNAr,Cc1cc2ccccc2[nH]1.N#Cc1ccc(Cl)nc1>>Cc1cc2ccccc2n1-c1ccc(C#N)cn1
 SNAr,Cc1cccc2cc[nH]c12.N#Cc1ccc(Cl)nc1>>Cc1cccc2ccn(-c3ccc(C#N)cn3)c12
+SNAr,CNc1cccc(C)c1.N#Cc1ccc(Cl)nc1>>Cc1cccc(N(C)c2ccc(C#N)cn2)c1
 SNAr,N#CCCNc1ccccc1.N#Cc1ccc(Cl)nc1>>N#CCCN(c1ccccc1)c1ccc(C#N)cn1
 SNAr,CNc1ccccc1F.N#Cc1ccc(Cl)nc1>>CN(c1ccc(C#N)cn1)c1ccccc1F
+SNAr,Cc1cc[nH]c1.N#Cc1ccc(Cl)nc1>>Cc1ccn(-c2ccc(C#N)cn2)c1
+SNAr,C1CCN(C2CCNCC2)CC1.N#Cc1ccc(Cl)nc1>>N#Cc1ccc(N2CCC(N3CCCCC3)CC2)nc1
+SNAr,CCCNC.N#Cc1ccc(Cl)nc1>>CCCN(C)c1ccc(C#N)cn1
+SNAr,Cc1ccc(N)cc1.Cc1ccc(Cl)nc1>>Cc1ccc(Nc2ccc(C)cn2)cc1
 SNAr,C#Cc1cccc(N)c1.Cc1ccc(Cl)nc1>>C#Cc1cccc(Nc2ccc(C)cn2)c1
 SNAr,Cc1ccc([N+](=O)[O-])cc1N.Cc1ccc(Cl)nc1>>Cc1ccc(Nc2cc([N+](=O)[O-])ccc2C)nc1
 SNAr,COc1ccc(N)cc1.Cc1ccc(Cl)nc1>>COc1ccc(Nc2ccc(C)cn2)cc1
 SNAr,Cc1cc(C)c(N)c([N+](=O)[O-])c1.Cc1ccc(Cl)nc1>>Cc1ccc(Nc2c(C)cc(C)cc2[N+](=O)[O-])nc1
 SNAr,COC(=O)Cc1ccc(N)cc1.Cc1ccc(Cl)nc1>>COC(=O)Cc1ccc(Nc2ccc(C)cn2)cc1
+SNAr,Cc1cc(N)ccc1O.Cc1ccc(Cl)nc1>>Cc1ccc(Nc2ccc(O)c(C)c2)nc1
 SNAr,CCc1cccc(N)c1.Cc1ccc(Cl)nc1>>CCc1cccc(Nc2ccc(C)cn2)c1
 SNAr,Nc1cc(C(F)(F)F)ccc1C(F)(F)F.Cc1ccc(Cl)nc1>>Cc1ccc(Nc2cc(C(F)(F)F)ccc2C(F)(F)F)nc1
 SNAr,Cc1ccc(Nc2ccc(C)cc2)cc1.Cc1cc(Cl)nc2ccccc12>>Cc1ccc(N(c2ccc(C)cc2)c2cc(C)c3ccccc3n2)cc1
 SNAr,Cc1ccc(Nc2ccccc2)cc1.Cc1cc(Cl)nc2ccccc12>>Cc1ccc(N(c2ccccc2)c2cc(C)c3ccccc3n2)cc1
 SNAr,COc1cccc2[nH]ccc12.Cc1cc(Cl)nc2ccccc12>>COc1cccc2c1ccn2-c1cc(C)c2ccccc2n1
+SNAr,c1cc2[nH]ccc2cn1.Cc1cc(Cl)nc2ccccc12>>Cc1cc(-n2ccc3cnccc32)nc2ccccc12
+SNAr,Cc1ccc2[nH]cnc2c1.Clc1ccc2ccccc2n1>>Cc1ccc2c(c1)ncn2-c1ccc2ccccc2n1
 SNAr,COc1ccc(Nc2ccc(OC)cc2)cc1.N#Cc1ccnc(Cl)c1>>COc1ccc(N(c2ccc(OC)cc2)c2cc(C#N)ccn2)cc1
 SNAr,Cc1cc2ccccc2[nH]1.N#Cc1ccnc(Cl)c1>>Cc1cc2ccccc2n1-c1cc(C#N)ccn1
+SNAr,Cc1cc[nH]c1.N#Cc1ccnc(Cl)c1>>Cc1ccn(-c2cc(C#N)ccn2)c1
+SNAr,CNC1CCCCC1.N#Cc1ccnc(Cl)c1>>CN(c1cc(C#N)ccn1)C1CCCCC1
+SNAr,COCCNC(C)C.N#Cc1ccnc(Cl)c1>>COCCN(c1cc(C#N)ccn1)C(C)C
+SNAr,c1cnc2cc[nH]c2c1.Cc1cc(Cl)nc2ccccc12>>Cc1cc(-n2ccc3ncccc32)nc2ccccc12
+SNAr,c1cc[nH]c1.Cc1cc(Cl)nc2ccccc12>>Cc1cc(-n2cccc2)nc2ccccc12
+SNAr,CNc1cccc(C)c1.Cc1cc(Cl)nc2ccccc12>>Cc1cccc(N(C)c2cc(C)c3ccccc3n2)c1
 SNAr,N#CCCNc1ccccc1.Cc1cc(Cl)nc2ccccc12>>Cc1cc(N(CCC#N)c2ccccc2)nc2ccccc12
 SNAr,C1CCC2NCCCC2C1.Cc1cc(Cl)nc2ccccc12>>Cc1cc(N2CCCC3CCCCC32)nc2ccccc12
 SNAr,CC(C)NC(C)C.Cc1cc(Cl)nc2ccccc12>>Cc1cc(N(C(C)C)C(C)C)nc2ccccc12
+SNAr,c1ccc2c(c1)CCNC2.Cc1cc(Cl)nc2ccccc12>>Cc1cc(N2CCc3ccccc3C2)nc2ccccc12
+SNAr,c1ccc2c(c1)Nc1ccccc1S2.Cc1cc(Cl)nc2ccccc12>>Cc1cc(N2c3ccccc3Sc3ccccc32)nc2ccccc12
+SNAr,Cc1ccc(N)cc1.CCc1cnc(Cl)nc1>>CCc1cnc(Nc2ccc(C)cc2)nc1
+SNAr,CCc1ccc(N)cc1.CCc1cnc(Cl)nc1>>CCc1ccc(Nc2ncc(CC)cn2)cc1
+SNAr,CSc1cccc(N)c1.CCc1cnc(Cl)nc1>>CCc1cnc(Nc2cccc(SC)c2)nc1
+SNAr,Nc1cc(C(F)(F)F)ccc1C(F)(F)F.CCc1cnc(Cl)nc1>>CCc1cnc(Nc2cc(C(F)(F)F)ccc2C(F)(F)F)nc1
+SNAr,COC(=O)c1ccc(N)cc1OC.CCc1cnc(Cl)nc1>>CCc1cnc(Nc2ccc(C(=O)OC)c(OC)c2)nc1
+SNAr,Nc1ccc2nccnc2c1.CCc1cnc(Cl)nc1>>CCc1cnc(Nc2ccc3nccnc3c2)nc1
+SNAr,CCOC(=O)c1cccc(N)c1.CCc1cnc(Cl)nc1>>CCOC(=O)c1cccc(Nc2ncc(CC)cn2)c1
+SNAr,COc1ccc(OC)c(N)c1.CCc1cnc(Cl)nc1>>CCc1cnc(Nc2cc(OC)ccc2OC)nc1
+SNAr,COc1ccc(N)cc1C.CCc1cnc(Cl)nc1>>CCc1cnc(Nc2ccc(OC)c(C)c2)nc1
+SNAr,Cc1cc(C(F)(F)F)ccc1N.CCc1cnc(Cl)nc1>>CCc1cnc(Nc2ccc(C(F)(F)F)cc2C)nc1
+SNAr,Cc1nccn1-c1ccc(N)cc1.CCc1cnc(Cl)nc1>>CCc1cnc(Nc2ccc(-n3ccnc3C)cc2)nc1
+SNAr,Cc1cc(N)ccc1O.CCc1cnc(Cl)nc1>>CCc1cnc(Nc2ccc(O)c(C)c2)nc1
+SNAr,Cc1ccc(N)c(C(=O)O)c1.CCc1cnc(Cl)nc1>>CCc1cnc(Nc2ccc(C)cc2C(=O)O)nc1
 SNAr,Cc1cccc(N)c1C.CCc1cnc(Cl)nc1>>CCc1cnc(Nc2cccc(C)c2C)nc1
 SNAr,COc1cc(F)c([N+](=O)[O-])cc1N.Clc1ncc2cc[nH]c2n1>>COc1cc(F)c([N+](=O)[O-])cc1Nc1ncc2cc[nH]c2n1
 SNAr,COc1cccc2[nH]ccc12.Clc1ncccn1>>COc1cccc2c1ccn2-c1ncccn1
@@ -4169,6 +4693,7 @@ SNAr,COc1ccc(Nc2ccc(OC)cc2)cc1.Cc1cnc(Cl)nc1>>COc1ccc(N(c2ccc(OC)cc2)c2ncc(C)cn2
 SNAr,c1ccc2[nH]ccc2c1.Cc1cnc(Cl)nc1>>Cc1cnc(-n2ccc3ccccc32)nc1
 SNAr,Cc1cc2ccccc2[nH]1.Cc1cnc(Cl)nc1>>Cc1cnc(-n2c(C)cc3ccccc32)nc1
 SNAr,Cc1cccc2cc[nH]c12.Cc1cnc(Cl)nc1>>Cc1cnc(-n2ccc3cccc(C)c32)nc1
+SNAr,c1cc2[nH]ccc2cn1.Cc1cnc(Cl)nc1>>Cc1cnc(-n2ccc3cnccc32)nc1
 SNAr,CC(C)Nc1ccccc1.Cc1cnc(Cl)nc1>>Cc1cnc(N(c2ccccc2)C(C)C)nc1
 SNAr,NCc1ccccc1F.Clc1ncnc2ccsc12>>Fc1ccccc1CNc1ncnc2ccsc12
 SNAr,COc1ccc(N)cc1C.Clc1ncnc2ccsc12>>COc1ccc(Nc2ncnc3ccsc23)cc1C
@@ -4178,8 +4703,20 @@ SNAr,Cc1ccc(N)c(C(=O)O)c1.CCOC(=O)c1cnc(Cl)nc1>>CCOC(=O)c1cnc(Nc2ccc(C)cc2C(=O)O
 SNAr,Cc1ccc([N+](=O)[O-])cc1N.CCOC(=O)c1cnc(Cl)nc1>>CCOC(=O)c1cnc(Nc2cc([N+](=O)[O-])ccc2C)nc1
 SNAr,COc1ccc(C(=O)O)c(N)c1.CCOC(=O)c1cnc(Cl)nc1>>CCOC(=O)c1cnc(Nc2cc(OC)ccc2C(=O)O)nc1
 SNAr,CCCCN1CCNCC1.CCOC(=O)c1cnc(Cl)nc1>>CCCCN1CCN(c2ncc(C(=O)OCC)cn2)CC1
+SNAr,COCCN1CCNCC1.O=C(c1ccccc1)c1ccccc1F>>COCCN1CCN(c2ccccc2C(=O)c2ccccc2)CC1
+SNAr,Cc1ncc[nH]1.O=C(c1ccccc1)c1ccccc1F>>Cc1nccn1-c1ccccc1C(=O)c1ccccc1
+SNAr,Cc1ccc(Nc2ccccc2)cc1.O=C(c1ccccc1)c1ccccc1F>>Cc1ccc(N(c2ccccc2)c2ccccc2C(=O)c2ccccc2)cc1
+SNAr,CNc1cccc(C)c1.O=C(c1ccccc1)c1ccccc1F>>Cc1cccc(N(C)c2ccccc2C(=O)c2ccccc2)c1
 SNAr,CNC1CCCCC1.O=C(c1ccccc1)c1ccccc1F>>CN(c1ccccc1C(=O)c1ccccc1)C1CCCCC1
+SNAr,Cc1cc(N)ccc1O.N#Cc1ccc(F)c(C(F)(F)F)c1>>Cc1cc(Nc2ccc(C#N)cc2C(F)(F)F)ccc1O
+SNAr,Cc1cn(-c2cc(N)cc(C(F)(F)F)c2)cn1.CC(=O)c1cccc(F)c1>>CC(=O)c1cccc(Nc2cc(-n3cnc(C)c3)cc(C(F)(F)F)c2)c1
+SNAr,Cc1ccc(Nc2ccc(C)cc2)cc1.N#CCC(=O)c1ccc(F)cc1>>Cc1ccc(N(c2ccc(C)cc2)c2ccc(C(=O)CC#N)cc2)cc1
+SNAr,Cc1ccc(Nc2ccccc2)cc1.N#CCC(=O)c1ccc(F)cc1>>Cc1ccc(N(c2ccccc2)c2ccc(C(=O)CC#N)cc2)cc1
+SNAr,CNc1cccc(C)c1.N#CCC(=O)c1ccc(F)cc1>>Cc1cccc(N(C)c2ccc(C(=O)CC#N)cc2)c1
+SNAr,CC1CCCNC1.N#CCC(=O)c1ccc(F)cc1>>CC1CCCN(c2ccc(C(=O)CC#N)cc2)C1
 SNAr,CCNC(C)C.N#CCC(=O)c1ccc(F)cc1>>CCN(c1ccc(C(=O)CC#N)cc1)C(C)C
+SNAr,Cc1ccc2[nH]cnc2c1.N#CCC(=O)c1ccc(F)cc1>>Cc1ccc2c(c1)ncn2-c1ccc(C(=O)CC#N)cc1
+SNAr,Cc1ccc(=O)[nH]c1.CC(=O)c1ccc(F)cc1>>CC(=O)c1ccc(-n2cc(C)ccc2=O)cc1
 SNAr,C1CCNC1.CC(=O)c1ccc(F)cc1>>CC(=O)c1ccc(N2CCCC2)cc1
 SNAr,COC(=O)Cc1ccc(N)cc1.Cc1cc([N+](=O)[O-])cnc1F>>COC(=O)Cc1ccc(Nc2ncc([N+](=O)[O-])cc2C)cc1
 SNAr,CCc1ccc(N)cc1.N#Cc1ccc(F)nc1>>CCc1ccc(Nc2ccc(C#N)cn2)cc1
@@ -4242,6 +4779,7 @@ Sonogashira,C#Cc1ccccn1.Cc1ccc(Br)cc1F>>Cc1ccc(C#Cc2ccccn2)cc1F
 Sonogashira,C#Cc1ccccn1.Cc1cccc(Br)c1C#N>>Cc1cccc(C#Cc2ccccn2)c1C#N
 Sonogashira,C#Cc1ccccn1.Brc1ccc2cn[nH]c2c1>>C(#Cc1ccccn1)c1ccc2cn[nH]c2c1
 Sonogashira,C#Cc1ccccn1.CCOc1ccccc1Br>>CCOc1ccccc1C#Cc1ccccn1
+Sonogashira,C#Cc1ccccn1.Cc1cc(Br)cc(C)c1F>>Cc1cc(C#Cc2ccccn2)cc(C)c1F
 Sonogashira,C#Cc1ccccn1.CC(C)c1ccccc1Br>>CC(C)c1ccccc1C#Cc1ccccn1
 Sonogashira,C#Cc1ccccn1.Cc1cc(C)c(Br)cc1C>>Cc1cc(C)c(C#Cc2ccccn2)cc1C
 Sonogashira,C#Cc1ccccn1.CCCc1ccc(Br)cc1>>CCCc1ccc(C#Cc2ccccn2)cc1
@@ -4272,6 +4810,7 @@ Sonogashira,C#CC(C)(C)N.Brc1ccc2cn[nH]c2c1>>CC(C)(N)C#Cc1ccc2cn[nH]c2c1
 Sonogashira,C#Cc1ccccc1.Brc1ccc2cn[nH]c2c1>>C(#Cc1ccc2cn[nH]c2c1)c1ccccc1
 Sonogashira,C#Cc1cccc(N)c1.Brc1ccc2cn[nH]c2c1>>Nc1cccc(C#Cc2ccc3cn[nH]c3c2)c1
 Sonogashira,C#CCOc1ccccc1.Brc1ccc2cn[nH]c2c1>>C(#Cc1ccc2cn[nH]c2c1)COc1ccccc1
+Sonogashira,C#Cc1ccncc1.Cc1ccc(Br)nc1>>Cc1ccc(C#Cc2ccncc2)nc1
 Sonogashira,C#Cc1ccsc1.Cc1ccc(Br)nc1>>Cc1ccc(C#Cc2ccsc2)nc1
 Sonogashira,C#Cc1ccccc1.Cc1ccc(Br)nc1>>Cc1ccc(C#Cc2ccccc2)nc1
 Sonogashira,C#Cc1cccs1.Cc1ccc(Br)nc1>>Cc1ccc(C#Cc2cccs2)nc1
@@ -4306,6 +4845,7 @@ Sonogashira,C#CC(C)(O)c1ccccc1.Brc1ccc2ccccc2n1>>CC(O)(C#Cc1ccc2ccccc2n1)c1ccccc
 Sonogashira,C#Cc1cccc(C)c1.Brc1ccc2ccccc2n1>>Cc1cccc(C#Cc2ccc3ccccc3n2)c1
 Sonogashira,C#Cc1ccccc1.CN(C)c1ccc(Br)cc1>>CN(C)c1ccc(C#Cc2ccccc2)cc1
 Sonogashira,C#Cc1ccccc1.Cc1cccc(Br)n1>>Cc1cccc(C#Cc2ccccc2)n1
+Sonogashira,C#Cc1ccccc1.Brc1cccc2cn[nH]c12>>C(#Cc1cccc2cn[nH]c12)c1ccccc1
 Sonogashira,C#Cc1ccccc1.Cc1cc(Br)ccn1>>Cc1cc(C#Cc2ccccc2)ccn1
 Sonogashira,C#Cc1ccccn1.COc1cc(Br)ccc1[N+](=O)[O-]>>COc1cc(C#Cc2ccccn2)ccc1[N+](=O)[O-]
 Sonogashira,C#Cc1ccccn1.O=Cc1ccc(Br)cc1>>O=Cc1ccc(C#Cc2ccccn2)cc1
@@ -4323,6 +4863,7 @@ Sonogashira,C#CCOc1cccnc1.Fc1cncc(Br)c1>>Fc1cncc(C#CCOc2cccnc2)c1
 Sonogashira,C#CCOc1cccnc1.O=c1ccc2cc(Br)ccc2o1>>O=c1ccc2cc(C#CCOc3cccnc3)ccc2o1
 Sonogashira,C#CC(O)CC.Brc1ccc2[nH]nnc2c1>>CCC(O)C#Cc1ccc2[nH]nnc2c1
 Sonogashira,C#Cc1ccc(C(C)(C)C)cc1.Brc1ccc2[nH]nnc2c1>>CC(C)(C)c1ccc(C#Cc2ccc3[nH]nnc3c2)cc1
+Sonogashira,C#CCCC(=O)OC.Brc1ccccn1>>COC(=O)CCC#Cc1ccccn1
 Sonogashira,C#CCOC1CCCCO1.Brc1ccccn1>>C(#Cc1ccccn1)COC1CCCCO1
 Sonogashira,C#Cc1ccc(OCC)cc1.Brc1ccccn1>>CCOc1ccc(C#Cc2ccccn2)cc1
 Sonogashira,C#Cc1cccc(C)c1.Brc1ccccn1>>Cc1cccc(C#Cc2ccccn2)c1
@@ -4355,6 +4896,7 @@ Sonogashira,C#Cc1cccnc1.COc1ccccc1I>>COc1ccccc1C#Cc1cccnc1
 Sonogashira,C#Cc1cccc(N)c1.COc1ccccc1I>>COc1ccccc1C#Cc1cccc(N)c1
 Sonogashira,C#Cc1cccnc1.Cc1ccccc1I>>Cc1ccccc1C#Cc1cccnc1
 Sonogashira,C#Cc1cccc(N)c1.Cc1ccccc1I>>Cc1ccccc1C#Cc1cccc(N)c1
+Suzuki Bpin,O=Cc1cc(Br)cs1.Cn1nccc1B1OC(C)(C)C(C)(C)O1>>Cn1nccc1-c1csc(C=O)c1
 Suzuki Bpin,COc1ccnc(Cl)c1.CC1(C)OB(c2ccco2)OC1(C)C>>COc1ccnc(-c2ccco2)c1
 Suzuki Bpin,Brc1cccnc1.CC(C)(C)OC(=O)n1cc(B2OC(C)(C)C(C)(C)O2)c2ccccc21>>CC(C)(C)OC(=O)n1cc(-c2cccnc2)c2ccccc21
 Suzuki Bpin,Clc1nccc(N2CCOCC2)n1.Cn1cc(B2OC(C)(C)C(C)(C)O2)cn1>>Cn1cc(-c2nccc(N3CCOCC3)n2)cn1
@@ -4562,6 +5104,7 @@ Ullmann,Cc1cccc(O)c1.Cc1cc(Br)ccn1>>Cc1cccc(Oc2ccnc(C)c2)c1
 Ullmann,Cc1ccccc1O.Brc1ccc(N2CCOCC2)nc1>>Cc1ccccc1Oc1ccc(N2CCOCC2)nc1
 Ullmann,Cc1ccccc1O.OCc1ccc(Br)nc1>>Cc1ccccc1Oc1ccc(CO)cn1
 Ullmann,Cc1ccccc1O.CCOC(=O)c1cccc(Br)n1>>CCOC(=O)c1cccc(Oc2ccccc2C)n1
+Ullmann,CC(c1cccc(O)c1)N(C)C.Brc1ccccn1>>CC(c1cccc(Oc2ccccn2)c1)N(C)C
 Ullmann,CC(c1cccc(O)c1)N(C)C.Clc1ccc2ccccc2n1>>CC(c1cccc(Oc2ccc3ccccc3n2)c1)N(C)C
 Ullmann,Cc1cc(O)cc(C)c1C#N.Brc1ccc2scnc2c1>>Cc1cc(Oc2ccc3scnc3c2)cc(C)c1C#N
 Ullmann,Oc1ccc2ccccc2c1.Cc1ccc(Br)nc1>>Cc1ccc(Oc2ccc3ccccc3c2)nc1
@@ -4740,6 +5283,7 @@ Ullmann,Oc1cccc2cccnc12.Brc1cncnc1>>c1cnc2c(Oc3cncnc3)cccc2c1
 Ullmann,Oc1cccc2cccnc12.Brc1ccc2[nH]ccc2c1>>c1cnc2c(Oc3ccc4[nH]ccc4c3)cccc2c1
 Ullmann,Oc1cccc2cccnc12.Brc1ccc2cc[nH]c2c1>>c1cnc2c(Oc3ccc4cc[nH]c4c3)cccc2c1
 Ullmann,Oc1cccc2cccnc12.COc1cc(Br)cc(OC)c1OC>>COc1cc(Oc2cccc3cccnc23)cc(OC)c1OC
+Ullmann,COc1ccc(O)cc1.CN(C)c1ccc(Br)cc1>>COc1ccc(Oc2ccc(N(C)C)cc2)cc1
 Ullmann,COc1ccc(O)cc1.Cc1ncccc1Br>>COc1ccc(Oc2cccnc2C)cc1
 Ullmann,COc1ccc(O)cc1.Brc1ccc2ncccc2c1>>COc1ccc(Oc2ccc3ncccc3c2)cc1
 Ullmann,COc1ccc(O)cc1.Brc1cncnc1>>COc1ccc(Oc2cncnc2)cc1
@@ -4754,3 +5298,217 @@ Ullmann,COc1cccc(C)c1O.Cc1ccc(Br)nc1>>COc1cccc(C)c1Oc1ccc(C)cn1
 Ullmann,COc1cccc(C)c1O.Cc1cccnc1Br>>COc1cccc(C)c1Oc1ncccc1C
 Ullmann,COc1cccc(C)c1O.Cc1cccc(Br)n1>>COc1cccc(C)c1Oc1cccc(C)n1
 Ullmann,COc1cccc(C)c1O.Cc1cnc(Br)nc1>>COc1cccc(C)c1Oc1ncc(C)cn1
+Buchwald-Hartwig CMC,Cc1ccc(N)cc1.Brc1cc[nH]n1>>Cc1ccc(Nc2cc[nH]n2)cc1
+Buchwald-Hartwig CMC,Cc1ccc(N)cc1.CC(=O)c1ccc(Br)cc1>>CC(=O)c1ccc(Nc2ccc(C)cc2)cc1
+Buchwald-Hartwig CMC,Nc1ccccn1.Brc1cncnc1>>c1ccc(Nc2cncnc2)nc1
+Buchwald-Hartwig CMC,Nc1ccccc1.Brc1ccc2ncnn2c1>>c1ccc(Nc2ccc3ncnn3c2)cc1
+Buchwald-Hartwig CMC,Cc1cc(N)no1.Cc1noc(C)c1Br>>Cc1cc(Nc2c(C)noc2C)no1
+Buchwald-Hartwig CMC,Nc1cccc(F)c1.Brc1ccc2cnccc2c1>>Fc1cccc(Nc2ccc3cnccc3c2)c1
+Buchwald-Hartwig CMC,Cc1ccc([N+](=O)[O-])cc1N.Cn1cc(Br)cn1>>Cc1ccc([N+](=O)[O-])cc1Nc1cnn(C)c1
+Buchwald-Hartwig CMC,N#Cc1ccc(N)cn1.Brc1ncc[nH]1>>N#Cc1ccc(Nc2ncc[nH]2)cn1
+Buchwald-Hartwig CMC,COc1ccc(N)cn1.Fc1ccccc1Br>>COc1ccc(Nc2ccccc2F)cn1
+Buchwald-Hartwig CMC,COc1ccnc(N)c1.Brc1ncc[nH]1>>COc1ccnc(Nc2ncc[nH]2)c1
+Buchwald-Hartwig CMC,Nc1ccc(Cl)cc1.Cc1n[nH]cc1Br>>Cc1n[nH]cc1Nc1ccc(Cl)cc1
+Buchwald-Hartwig CMC,Nc1ncc(C=O)s1.Cc1n[nH]cc1Br>>Cc1n[nH]cc1Nc1ncc(C=O)s1
+Buchwald-Hartwig CMC,Nc1ccc(Cl)cn1.Cc1n[nH]cc1Br>>Cc1n[nH]cc1Nc1ccc(Cl)cn1
+Buchwald-Hartwig CMC,Nc1ccc([N+](=O)[O-])cn1.Cc1n[nH]c(C)c1Br>>Cc1n[nH]c(C)c1Nc1ccc([N+](=O)[O-])cn1
+Buchwald-Hartwig CMC,Nc1ccc([N+](=O)[O-])cn1.Brc1cnoc1>>O=[N+]([O-])c1ccc(Nc2cnoc2)nc1
+Buchwald-Hartwig CMC,Nc1ccc2[nH]ccc2c1.Brc1cncnc1>>c1ncc(Nc2ccc3[nH]ccc3c2)cn1
+Buchwald-Hartwig CMC,Cc1ccc(N)cc1.Brc1cncnc1>>Cc1ccc(Nc2cncnc2)cc1
+Buchwald-Hartwig CMC,Cc1ccc(N)cc1.CC(=O)c1ccc(Br)cc1F>>CC(=O)c1ccc(Nc2ccc(C)cc2)cc1F
+Buchwald-Hartwig CMC,Cc1ccc(N)cc1.Brc1ccc2ocnc2c1>>Cc1ccc(Nc2ccc3ocnc3c2)cc1
+Buchwald-Hartwig CMC,Nc1cc(C(F)(F)F)ccc1C(F)(F)F.Cc1ccc(Br)nc1>>Cc1ccc(Nc2cc(C(F)(F)F)ccc2C(F)(F)F)nc1
+Buchwald-Hartwig CMC,Nc1cc(C(F)(F)F)ccc1C(F)(F)F.Brc1cnc2ccccc2n1>>FC(F)(F)c1ccc(C(F)(F)F)c(Nc2cnc3ccccc3n2)c1
+Buchwald-Hartwig CMC,Nc1ccccn1.O=Cc1cc(Br)cs1>>O=Cc1cc(Nc2ccccn2)cs1
+Buchwald-Hartwig CMC,COC(=O)c1ccc(N)cc1OC.Brc1cccs1>>COC(=O)c1ccc(Nc2cccs2)cc1OC
+Buchwald-Hartwig CMC,Nc1ccccc1.Cn1cncc1Br>>Cn1cncc1Nc1ccccc1
+Buchwald-Hartwig CMC,Nc1ccccc1.Cc1n[nH]cc1Br>>Cc1n[nH]cc1Nc1ccccc1
+Buchwald-Hartwig CMC,Cc1cc(N)no1.Brc1cc[nH]n1>>Cc1cc(Nc2cc[nH]n2)no1
+Buchwald-Hartwig CMC,Cc1cc(N)no1.Cn1ccc(Br)n1>>Cc1cc(Nc2ccn(C)n2)no1
+Buchwald-Hartwig CMC,Cc1cc(N)no1.Cn1cc2ccc(Br)cc2n1>>Cc1cc(Nc2ccc3cn(C)nc3c2)no1
+Buchwald-Hartwig CMC,COc1ccc(N)cc1OC.Cc1ncc(Br)cn1>>COc1ccc(Nc2cnc(C)nc2)cc1OC
+Buchwald-Hartwig CMC,Cc1cc(N)ccn1.Cc1ccc(Br)nc1>>Cc1ccc(Nc2ccnc(C)c2)nc1
+Buchwald-Hartwig CMC,Cc1ccc([N+](=O)[O-])cc1N.O=[N+]([O-])c1cccc2c(Br)n[nH]c12>>Cc1ccc([N+](=O)[O-])cc1Nc1n[nH]c2c([N+](=O)[O-])cccc12
+Buchwald-Hartwig CMC,Cc1ccc([N+](=O)[O-])cc1N.Cc1noc(C)c1Br>>Cc1ccc([N+](=O)[O-])cc1Nc1c(C)noc1C
+Buchwald-Hartwig CMC,N#Cc1ccc(N)cc1.COC(=O)c1cncc(Br)c1>>COC(=O)c1cncc(Nc2ccc(C#N)cc2)c1
+Buchwald-Hartwig CMC,N#Cc1ccc(N)cn1.Brc1ccc2ncnn2c1>>N#Cc1ccc(Nc2ccc3ncnn3c2)cn1
+Buchwald-Hartwig CMC,N#Cc1ccc(N)cn1.Brc1ccc2ccccc2n1>>N#Cc1ccc(Nc2ccc3ccccc3n2)cn1
+Buchwald-Hartwig CMC,COc1ccc(N)cn1.Brc1ccsc1>>COc1ccc(Nc2ccsc2)cn1
+Buchwald-Hartwig CMC,COc1ccc(N)cn1.COC(=O)c1ccc(Br)c(C)c1>>COC(=O)c1ccc(Nc2ccc(OC)nc2)c(C)c1
+Buchwald-Hartwig CMC,COc1ccnc(N)c1.Brc1ccc2ncnn2c1>>COc1ccnc(Nc2ccc3ncnn3c2)c1
+Buchwald-Hartwig CMC,COc1ccnc(N)c1.COc1cncc(Br)c1>>COc1cncc(Nc2cc(OC)ccn2)c1
+Buchwald-Hartwig CMC,Nc1ccc(Cl)cc1.Brc1ccc2ncnn2c1>>Clc1ccc(Nc2ccc3ncnn3c2)cc1
+Buchwald-Hartwig CMC,Nc1ncc(C=O)s1.COc1cncc(Br)c1>>COc1cncc(Nc2ncc(C=O)s2)c1
+Buchwald-Hartwig CMC,Nc1ncc(C=O)s1.Brc1ccc2nccn2c1>>O=Cc1cnc(Nc2ccc3nccn3c2)s1
+Buchwald-Hartwig CMC,Nc1ccc(Cl)cn1.Brc1ccc2cn[nH]c2c1>>Clc1ccc(Nc2ccc3cn[nH]c3c2)nc1
+Buchwald-Hartwig CMC,Nc1ccc(Cl)cn1.Brc1cn2ccnc2cn1>>Clc1ccc(Nc2cn3ccnc3cn2)nc1
+Buchwald-Hartwig CMC,Nc1ccncc1Cl.Cn1cncc1Br>>Cn1cncc1Nc1ccncc1Cl
+Buchwald-Hartwig CMC,CSc1ccc(N)cc1.Brc1ccc2sccc2c1>>CSc1ccc(Nc2ccc3sccc3c2)cc1
+Buchwald-Hartwig CMC,Nc1ccc2[nH]ccc2c1.Brc1cn[nH]c1>>c1cc2cc(Nc3cn[nH]c3)ccc2[nH]1
+Buchwald-Hartwig CMC,CC(=O)c1ccc(N)cc1.COC(=O)c1ccnc(Br)c1>>COC(=O)c1ccnc(Nc2ccc(C(C)=O)cc2)c1
+Buchwald-Hartwig CMC,CC(=O)c1ccc(N)cc1.Brc1cccc2ccoc12>>CC(=O)c1ccc(Nc2cccc3ccoc23)cc1
+Buchwald-Hartwig CMC,Nc1ccc2nccnc2c1.COc1ccc2cc(Br)ccc2c1>>COc1ccc2cc(Nc3ccc4nccnc4c3)ccc2c1
+Buchwald-Hartwig CMC,CCOc1ccc(N)cc1.Brc1ccccn1>>CCOc1ccc(Nc2ccccn2)cc1
+Buchwald-Hartwig CMC,CCOc1ccc(N)cc1.Brc1ccc2cnccc2c1>>CCOc1ccc(Nc2ccc3cnccc3c2)cc1
+Buchwald-Hartwig CMC,Nc1ccc2c(c1)OCO2.Brc1ccc2cn[nH]c2c1>>c1cc2c(cc1Nc1ccc3cn[nH]c3c1)OCO2
+Buchwald-Hartwig CMC,Nc1ccc([N+](=O)[O-])cc1.Cc1ccc(Br)nc1>>Cc1ccc(Nc2ccc([N+](=O)[O-])cc2)nc1
+Buchwald-Hartwig CMC,Nc1ccncc1[N+](=O)[O-].Fc1ncc(Br)cn1>>O=[N+]([O-])c1cnccc1Nc1cnc(F)nc1
+Buchwald-Hartwig CMC,Nc1ccncc1[N+](=O)[O-].Clc1cnc(Br)cn1>>O=[N+]([O-])c1cnccc1Nc1cnc(Cl)cn1
+Buchwald-Hartwig CMC,Cc1c(N)cccc1Cl.Brc1ccc2cnccc2c1>>Cc1c(Cl)cccc1Nc1ccc2cnccc2c1
+Buchwald-Hartwig CMC,Cc1c(N)cccc1Cl.Brc1cncc2ccccc12>>Cc1c(Cl)cccc1Nc1cncc2ccccc12
+Buchwald-Hartwig CMC,Cc1cc(C)nc(N)n1.Brc1cccs1>>Cc1cc(C)nc(Nc2cccs2)n1
+Buchwald-Hartwig CMC,Cc1cc(Cl)nc(N)n1.Brc1ccc2ocnc2c1>>Cc1cc(Cl)nc(Nc2ccc3ocnc3c2)n1
+Buchwald-Hartwig CMC,Cc1cc(Cl)nc(N)n1.Brc1ccc2[nH]ccc2c1>>Cc1cc(Cl)nc(Nc2ccc3[nH]ccc3c2)n1
+Buchwald-Hartwig CMC,COC(=O)c1cc(N)ccn1.Cc1ccc(Br)nc1>>COC(=O)c1cc(Nc2ccc(C)cn2)ccn1
+Buchwald-Hartwig CMC,COC(=O)c1cc(N)ccn1.Cn1cncc1Br>>COC(=O)c1cc(Nc2cncn2C)ccn1
+Buchwald-Hartwig CMC,Nc1ccc2c(c1)OCO2.Brc1ncc[nH]1>>c1c[nH]c(Nc2ccc3c(c2)OCO3)n1
+Buchwald-Hartwig CMC,Nc1ccc2c(c1)OCO2.Cn1cncc1Br>>Cn1cncc1Nc1ccc2c(c1)OCO2
+Buchwald-Hartwig CMC,Cc1ccc(N)nc1.Cn1cc(Br)cn1>>Cc1ccc(Nc2cnn(C)c2)nc1
+Buchwald-Hartwig CMC,CCOC(=O)c1cccc(N)c1.Brc1ccc2[nH]ccc2c1>>CCOC(=O)c1cccc(Nc2ccc3[nH]ccc3c2)c1
+Buchwald-Hartwig CMC,COc1cc(N)cc(OC)c1.Brc1cncc2ccccc12>>COc1cc(Nc2cncc3ccccc23)cc(OC)c1
+Buchwald-Hartwig CMC,COc1cc(N)cc(OC)c1.Cn1cncc1Br>>COc1cc(Nc2cncn2C)cc(OC)c1
+Buchwald-Hartwig CMC,COc1c(N)cccc1Cl.Cc1ccsc1Br>>COc1c(Cl)cccc1Nc1sccc1C
+Buchwald-Hartwig CMC,COc1ccc(Cl)c(N)c1.Brc1cccc2cnccc12>>COc1ccc(Cl)c(Nc2cccc3cnccc23)c1
+Buchwald-Hartwig CMC,Cc1ccc2cccc(N)c2n1.Brc1ccncc1>>Cc1ccc2cccc(Nc3ccncc3)c2n1
+Buchwald-Hartwig CMC,Nc1ccc(C(F)(F)F)cc1.Fc1ccnc(Br)c1>>Fc1ccnc(Nc2ccc(C(F)(F)F)cc2)c1
+Buchwald-Hartwig CMC,Nc1ccc(Cl)cn1.Brc1ccc2cnccc2c1>>Clc1ccc(Nc2ccc3cnccc3c2)nc1
+Buchwald-Hartwig CMC,Nc1cccc(F)n1.COC(=O)c1ccnc(Br)c1>>COC(=O)c1ccnc(Nc2cccc(F)n2)c1
+Buchwald-Hartwig CMC,Cc1ccccc1N.Fc1ccnc(Br)c1>>Cc1ccccc1Nc1cc(F)ccn1
+Buchwald-Hartwig CMC,COc1ccc(OC)c(N)c1.Cc1cccnc1Br>>COc1ccc(OC)c(Nc2ncccc2C)c1
+Buchwald-Hartwig CMC,Nc1ccc2nccnc2c1.COc1c(Br)cccc1[N+](=O)[O-]>>COc1c(Nc2ccc3nccnc3c2)cccc1[N+](=O)[O-]
+Buchwald-Hartwig CMC,CCOc1ccc(N)cc1.Cn1cncc1Br>>CCOc1ccc(Nc2cncn2C)cc1
+Buchwald-Hartwig CMC,CCOc1ccc(N)cc1.COC(=O)c1ccnc(Br)c1>>CCOc1ccc(Nc2cc(C(=O)OC)ccn2)cc1
+Buchwald-Hartwig CMC,Nc1ccc2c(c1)OCO2.COc1cncc(Br)c1>>COc1cncc(Nc2ccc3c(c2)OCO3)c1
+Buchwald-Hartwig CMC,Nc1ccc([N+](=O)[O-])cc1.Brc1cnc2cccnn12>>O=[N+]([O-])c1ccc(Nc2cnc3cccnn23)cc1
+Buchwald-Hartwig CMC,Nc1ccncc1[N+](=O)[O-].Fc1ccnc(Br)c1>>O=[N+]([O-])c1cnccc1Nc1cc(F)ccn1
+Buchwald-Hartwig CMC,Nc1ccncc1[N+](=O)[O-].Cn1cc(Br)cn1>>Cn1cc(Nc2ccncc2[N+](=O)[O-])cn1
+Buchwald-Hartwig CMC,Cc1c(N)cccc1Cl.Brc1cnc2ccccc2n1>>Cc1c(Cl)cccc1Nc1cnc2ccccc2n1
+Buchwald-Hartwig CMC,Cc1cc(C)nc(N)n1.Brc1cnc2ccnn2c1>>Cc1cc(C)nc(Nc2cnc3ccnn3c2)n1
+Buchwald-Hartwig CMC,Cc1cc(C)nc(N)n1.Brc1ccccc1>>Cc1cc(C)nc(Nc2ccccc2)n1
+Buchwald-Hartwig CMC,Cc1cc(C)nc(N)n1.Brc1cnoc1>>Cc1cc(C)nc(Nc2cnoc2)n1
+Buchwald-Hartwig CMC,Nc1ccc(F)nc1.COC(=O)c1ccnc(Br)c1>>COC(=O)c1ccnc(Nc2ccc(F)nc2)c1
+Buchwald-Hartwig CMC,Cc1ccc2cccc(N)c2n1.COc1cncc(Br)c1>>COc1cncc(Nc2cccc3ccc(C)nc23)c1
+Buchwald-Hartwig CMC,Cc1ccc2cccc(N)c2n1.Brc1ccc2ccccc2n1>>Cc1ccc2cccc(Nc3ccc4ccccc4n3)c2n1
+Buchwald-Hartwig CMC,Cc1ccc(N)nc1.Brc1cnn2cccnc12>>Cc1ccc(Nc2cnn3cccnc23)nc1
+Buchwald-Hartwig CMC,Cc1ccnc(N)c1[N+](=O)[O-].Brc1ccc2nccn2c1>>Cc1ccnc(Nc2ccc3nccn3c2)c1[N+](=O)[O-]
+Buchwald-Hartwig CMC,COc1ccc(Cl)c(N)c1.Brc1ccncc1>>COc1ccc(Cl)c(Nc2ccncc2)c1
+Buchwald-Hartwig CMC,Nc1ccc(C(F)(F)F)cc1.Cc1noc(C)c1Br>>Cc1noc(C)c1Nc1ccc(C(F)(F)F)cc1
+Buchwald-Hartwig CMC,Nc1cc(C(F)(F)F)ccc1C(F)(F)F.Brc1ccc2ccccc2n1>>FC(F)(F)c1ccc(C(F)(F)F)c(Nc2ccc3ccccc3n2)c1
+Buchwald-Hartwig CMC,Cc1ccccc1N.Brc1cn[nH]c1>>Cc1ccccc1Nc1cn[nH]c1
+Buchwald-Hartwig CMC,Cc1ccccc1N.Brc1cnn2cccnc12>>Cc1ccccc1Nc1cnn2cccnc12
+Buchwald-Hartwig CMC,CCOC(=O)c1cccc(N)c1.Brc1cc[nH]n1>>CCOC(=O)c1cccc(Nc2cc[nH]n2)c1
+Buchwald-Hartwig CMC,CCOC(=O)c1cccc(N)c1.Cc1ccc(Br)s1>>CCOC(=O)c1cccc(Nc2ccc(C)s2)c1
+Buchwald-Hartwig CMC,CCOC(=O)c1cccc(N)c1.Brc1cnccn1>>CCOC(=O)c1cccc(Nc2cnccn2)c1
+Buchwald-Hartwig CMC,Nc1cncc2ccccc12.Brc1cnn2cccnc12>>c1ccc2c(Nc3cnn4cccnc34)cncc2c1
+Buchwald-Hartwig CMC,NC1C=CN=N1.Brc1cn[nH]c1>>C1=CC(Nc2cn[nH]c2)N=N1
+Buchwald-Hartwig CMC,Nc1ccon1.COc1cncc(Br)c1>>COc1cncc(Nc2ccon2)c1
+Buchwald-Hartwig CMC,NC1CC1.Brc1ncc[nH]1>>c1c[nH]c(NC2CC2)n1
+Buchwald-Hartwig CMC,NC1CC1.Brc1cnc2cccnn12>>c1cnn2c(NC3CC3)cnc2c1
+Buchwald-Hartwig CMC,Nc1ccc2scnc2c1.COC(=O)c1ccnc(Br)c1>>COC(=O)c1ccnc(Nc2ccc3scnc3c2)c1
+Buchwald-Hartwig CMC,Nc1ccc2c(c1)OCCO2.COc1ccc(Br)nc1>>COc1ccc(Nc2ccc3c(c2)OCCO3)nc1
+Buchwald-Hartwig CMC,CC(=O)c1cc(F)ccc1N.Brc1cc[nH]n1>>CC(=O)c1cc(F)ccc1Nc1cc[nH]n1
+Buchwald-Hartwig CMC,CC(=O)c1cc(F)ccc1N.Clc1ncnc2sc(Br)cc12>>CC(=O)c1cc(F)ccc1Nc1cc2c(Cl)ncnc2s1
+Buchwald-Hartwig CMC,Nc1cccc(C(F)(F)F)c1.Cc1cc(Br)cs1>>Cc1cc(Nc2cccc(C(F)(F)F)c2)cs1
+Buchwald-Hartwig CMC,Nc1cccc(C(F)(F)F)c1.FC(F)(F)c1ccc(Br)nc1>>FC(F)(F)c1ccc(Nc2cccc(C(F)(F)F)c2)nc1
+Buchwald-Hartwig CMC,Cc1ncccc1N.COc1ccc2cc(Br)ccc2c1>>COc1ccc2cc(Nc3cccnc3C)ccc2c1
+Buchwald-Hartwig CMC,Cc1ncccc1N.Cc1ncc(Br)cn1>>Cc1ncc(Nc2cccnc2C)cn1
+Buchwald-Hartwig CMC,C=Cc1ccc(N)cc1.FC(F)(F)c1ccc(Br)nc1>>C=Cc1ccc(Nc2ccc(C(F)(F)F)cn2)cc1
+Buchwald-Hartwig CMC,Nc1cccn2ccnc12.FC(F)(F)c1ccc(Br)nc1>>FC(F)(F)c1ccc(Nc2cccn3ccnc23)nc1
+Buchwald-Hartwig CMC,Nc1ccnc(C(F)(F)F)c1.Brc1cncnc1>>FC(F)(F)c1cc(Nc2cncnc2)ccn1
+Buchwald-Hartwig CMC,Nc1ccnc(C(F)(F)F)c1.Cc1ncc(Br)cn1>>Cc1ncc(Nc2ccnc(C(F)(F)F)c2)cn1
+Buchwald-Hartwig CMC,CSc1ccc(N)cc1.FC(F)(F)c1cc(Br)cc(C(F)(F)F)c1>>CSc1ccc(Nc2cc(C(F)(F)F)cc(C(F)(F)F)c2)cc1
+Buchwald-Hartwig CMC,NC1CC1.Brc1ccccn1>>c1ccc(NC2CC2)nc1
+Buchwald-Hartwig CMC,NC1CCCCC1.Cn1cncc1Br>>Cn1cncc1NC1CCCCC1
+Buchwald-Hartwig CMC,COC(=O)c1ccc(N)cc1.Brc1ccc2sccc2c1>>COC(=O)c1ccc(Nc2ccc3sccc3c2)cc1
+Buchwald-Hartwig CMC,COc1ccc(OC)c(N)c1.Brc1ccsc1>>COc1ccc(OC)c(Nc2ccsc2)c1
+Buchwald-Hartwig CMC,COc1ccc(OC)c(N)c1.COc1ccc(Br)cn1>>COc1ccc(OC)c(Nc2ccc(OC)nc2)c1
+Buchwald-Hartwig CMC,COc1ccc(OC)c(N)c1.Clc1cnc(Br)cn1>>COc1ccc(OC)c(Nc2cnc(Cl)cn2)c1
+Buchwald-Hartwig CMC,Cc1cc(C(F)(F)F)ccc1N.Brc1cnn2cccnc12>>Cc1cc(C(F)(F)F)ccc1Nc1cnn2cccnc12
+Buchwald-Hartwig CMC,Cc1cc(C(F)(F)F)ccc1N.Cc1ccsc1Br>>Cc1cc(C(F)(F)F)ccc1Nc1sccc1C
+Buchwald-Hartwig CMC,Nc1cncc2ccccc12.Brc1ccccc1>>c1ccc(Nc2cncc3ccccc23)cc1
+Buchwald-Hartwig CMC,Nc1cncc2ccccc12.FC(F)(F)c1ccc(Br)nc1>>FC(F)(F)c1ccc(Nc2cncc3ccccc23)nc1
+Buchwald-Hartwig CMC,Nc1ccc2ncccc2c1.Brc1cn[nH]c1>>c1cnc2ccc(Nc3cn[nH]c3)cc2c1
+Buchwald-Hartwig CMC,Nc1ccc2ncccc2c1.Cc1n[nH]c(C)c1Br>>Cc1n[nH]c(C)c1Nc1ccc2ncccc2c1
+Buchwald-Hartwig CMC,Nc1ccc2scnc2c1.COc1ccc(Br)nc1>>COc1ccc(Nc2ccc3scnc3c2)nc1
+Buchwald-Hartwig CMC,CC(=O)c1cc(F)ccc1N.Cc1cccnc1Br>>CC(=O)c1cc(F)ccc1Nc1ncccc1C
+Buchwald-Hartwig CMC,Nc1cccc(C(F)(F)F)c1.O=Cc1cccc(Br)n1>>O=Cc1cccc(Nc2cccc(C(F)(F)F)c2)n1
+Buchwald-Hartwig CMC,Nc1cccc(C(F)(F)F)c1.Brc1cnccn1>>FC(F)(F)c1cccc(Nc2cnccn2)c1
+Buchwald-Hartwig CMC,C=Cc1ccc(N)cc1.COc1ccc(Br)cn1>>C=Cc1ccc(Nc2ccc(OC)nc2)cc1
+Buchwald-Hartwig CMC,Nc1cccc(F)n1.Cn1cncc1Br>>Cn1cncc1Nc1cccc(F)n1
+Buchwald-Hartwig CMC,Nc1ccnc(C(F)(F)F)c1.COc1ccc2cc(Br)ccc2c1>>COc1ccc2cc(Nc3ccnc(C(F)(F)F)c3)ccc2c1
+Buchwald-Hartwig CMC,COC(=O)c1cc(N)ccn1.COC(=O)c1ccnc(Br)c1>>COC(=O)c1ccnc(Nc2ccnc(C(=O)OC)c2)c1
+Buchwald-Hartwig CMC,CSc1ccc(N)cc1.FC(F)(F)c1ccc(Br)nc1>>CSc1ccc(Nc2ccc(C(F)(F)F)cn2)cc1
+Buchwald-Hartwig CMC,NC1CCCCC1.Brc1ccc2cn[nH]c2c1>>c1cc2cn[nH]c2cc1NC1CCCCC1
+Buchwald-Hartwig CMC,COC(=O)c1ccc(N)cc1.COc1ccc(Br)cc1>>COC(=O)c1ccc(Nc2ccc(OC)cc2)cc1
+Buchwald-Hartwig CMC,Cc1ccc(N)cc1.Brc1cnoc1>>Cc1ccc(Nc2cnoc2)cc1
+Buchwald-Hartwig CMC,Nc1cc(C(F)(F)F)ccc1C(F)(F)F.Brc1ccc2nccn2c1>>FC(F)(F)c1ccc(C(F)(F)F)c(Nc2ccc3nccn3c2)c1
+Buchwald-Hartwig CMC,Nc1ccccn1.COc1cc(Br)ccc1F>>COc1cc(Nc2ccccn2)ccc1F
+Buchwald-Hartwig CMC,Nc1ccccn1.COc1cc(Br)ccc1C=O>>COc1cc(Nc2ccccn2)ccc1C=O
+Buchwald-Hartwig CMC,Cc1cc(C)nc(N)n1.COc1ccc(Br)cn1>>COc1ccc(Nc2nc(C)cc(C)n2)cn1
+Buchwald-Hartwig CMC,Nc1ccccc1.Brc1cn2ccnc2cn1>>c1ccc(Nc2cn3ccnc3cn2)cc1
+Buchwald-Hartwig CMC,Cc1cc(N)no1.Brc1cn[nH]c1>>Cc1cc(Nc2cn[nH]c2)no1
+Buchwald-Hartwig CMC,COc1ccc(N)cc1OC.Brc1cccc2cc[nH]c12>>COc1ccc(Nc2cccc3cc[nH]c23)cc1OC
+Buchwald-Hartwig CMC,Nc1cccc(F)c1.Brc1cn2ccnc2cn1>>Fc1cccc(Nc2cn3ccnc3cn2)c1
+Buchwald-Hartwig CMC,Nc1ccc(F)nc1.Cc1n[nH]c2ccc(Br)cc12>>Cc1n[nH]c2ccc(Nc3ccc(F)nc3)cc12
+Buchwald-Hartwig CMC,Cc1ccc([N+](=O)[O-])cc1N.Brc1ccc2ocnc2c1>>Cc1ccc([N+](=O)[O-])cc1Nc1ccc2ocnc2c1
+Buchwald-Hartwig CMC,COc1ccc(N)cn1.COc1ccc(Br)cc1>>COc1ccc(Nc2ccc(OC)nc2)cc1
+Buchwald-Hartwig CMC,Nc1ccc([N+](=O)[O-])cn1.FC(F)(F)c1cccnc1Br>>O=[N+]([O-])c1ccc(Nc2ncccc2C(F)(F)F)nc1
+Buchwald-Hartwig CMC,Nc1ccc(Cl)cc1.COc1cncc(Br)c1>>COc1cncc(Nc2ccc(Cl)cc2)c1
+Buchwald-Hartwig CMC,Nc1ncc(C=O)s1.Brc1ncc[nH]1>>O=Cc1cnc(Nc2ncc[nH]2)s1
+Buchwald-Hartwig CMC,Nc1ccc(Cl)cn1.Brc1cccc2ccoc12>>Clc1ccc(Nc2cccc3ccoc23)nc1
+Buchwald-Hartwig CMC,Nc1ccc(F)c(F)c1.Cc1ncc(Br)cn1>>Cc1ncc(Nc2ccc(F)c(F)c2)cn1
+Buchwald-Hartwig CMC,Nc1ccc(F)c(F)c1.COc1cc(Br)ccc1C=O>>COc1cc(Nc2ccc(F)c(F)c2)ccc1C=O
+Buchwald-Hartwig CMC,Nc1ccc2[nH]ccc2c1.Cc1ncc(Br)cn1>>Cc1ncc(Nc2ccc3[nH]ccc3c2)cn1
+Buchwald-Hartwig CMC,Nc1ccc2[nH]ccc2c1.COc1cc(Br)ccc1F>>COc1cc(Nc2ccc3[nH]ccc3c2)ccc1F
+Buchwald-Hartwig CMC,CC(=O)c1ccc(N)cc1.Brc1cnc2ccccc2n1>>CC(=O)c1ccc(Nc2cnc3ccccc3n2)cc1
+Buchwald-Hartwig CMC,CC(=O)c1ccc(N)cc1.COc1cncc(Br)c1>>COc1cncc(Nc2ccc(C(C)=O)cc2)c1
+Buchwald-Hartwig CMC,CCOc1ccc(N)cc1.Brc1ccc2ncnn2c1>>CCOc1ccc(Nc2ccc3ncnn3c2)cc1
+Buchwald-Hartwig CMC,Nc1ccc2c(c1)OCO2.Cc1n[nH]c2ccc(Br)cc12>>Cc1n[nH]c2ccc(Nc3ccc4c(c3)OCO4)cc12
+Buchwald-Hartwig CMC,Nc1ccncc1[N+](=O)[O-].Cc1noc(C)c1Br>>Cc1noc(C)c1Nc1ccncc1[N+](=O)[O-]
+Buchwald-Hartwig CMC,Nc1ccncc1[N+](=O)[O-].COC(=O)c1ccc(Br)c(C)c1>>COC(=O)c1ccc(Nc2ccncc2[N+](=O)[O-])c(C)c1
+Buchwald-Hartwig CMC,Nc1ccncc1[N+](=O)[O-].O=Cc1cc(Br)cs1>>O=Cc1cc(Nc2ccncc2[N+](=O)[O-])cs1
+Buchwald-Hartwig CMC,Cc1c(N)cccc1Cl.Cn1cncc1Br>>Cc1c(Cl)cccc1Nc1cncn1C
+Buchwald-Hartwig CMC,Cc1c(N)cccc1Cl.Brc1ccc2cn[nH]c2c1>>Cc1c(Cl)cccc1Nc1ccc2cn[nH]c2c1
+Buchwald-Hartwig CMC,Cc1cc(C)nc(N)n1.COc1c(Br)cccc1[N+](=O)[O-]>>COc1c(Nc2nc(C)cc(C)n2)cccc1[N+](=O)[O-]
+Buchwald-Hartwig CMC,COc1ccc(N)cc1OC.Brc1ccc2sccc2c1>>COc1ccc(Nc2ccc3sccc3c2)cc1OC
+Buchwald-Hartwig CMC,CC(C)(C)c1ccccc1N.Brc1cn2ccnc2cn1>>CC(C)(C)c1ccccc1Nc1cn2ccnc2cn1
+Buchwald-Hartwig CMC,Cc1ccc(N)nc1.Cc1cc(Br)cs1>>Cc1ccc(Nc2csc(C)c2)nc1
+Buchwald-Hartwig CMC,Cc1ccc(N)nc1.Clc1cnc(Br)cn1>>Cc1ccc(Nc2cnc(Cl)cn2)nc1
+Buchwald-Hartwig CMC,Cc1ccc(N)nc1.CC(=O)c1ccc(Br)cc1>>CC(=O)c1ccc(Nc2ccc(C)cn2)cc1
+Buchwald-Hartwig CMC,Cc1ccc(N)nc1.Brc1cccc2cc[nH]c12>>Cc1ccc(Nc2cccc3cc[nH]c23)nc1
+Buchwald-Hartwig CMC,Cc1ccnc(N)c1[N+](=O)[O-].Brc1cn2ccnc2cn1>>Cc1ccnc(Nc2cn3ccnc3cn2)c1[N+](=O)[O-]
+Buchwald-Hartwig CMC,CCOC(=O)c1cccc(N)c1.Cc1cccnc1Br>>CCOC(=O)c1cccc(Nc2ncccc2C)c1
+Buchwald-Hartwig CMC,CCOC(=O)c1cccc(N)c1.Brc1cccs1>>CCOC(=O)c1cccc(Nc2cccs2)c1
+Buchwald-Hartwig CMC,COc1cc(N)cc(OC)c1.Brc1nc2ccccc2[nH]1>>COc1cc(Nc2nc3ccccc3[nH]2)cc(OC)c1
+Buchwald-Hartwig CMC,Cc1ccc2cccc(N)c2n1.Brc1cn2ccnc2cn1>>Cc1ccc2cccc(Nc3cn4ccnc4cn3)c2n1
+Buchwald-Hartwig CMC,Nc1ccc(C(F)(F)F)cc1.COc1c(Br)cccc1[N+](=O)[O-]>>COc1c(Nc2ccc(C(F)(F)F)cc2)cccc1[N+](=O)[O-]
+Buchwald-Hartwig CMC,Nc1ccc2c(c1)OCCO2.Brc1ccc2ncnn2c1>>c1nc2ccc(Nc3ccc4c(c3)OCCO4)cn2n1
+Buchwald-Hartwig CMC,Nc1ccc2[nH]ccc2c1.COc1cncc(Br)c1>>COc1cncc(Nc2ccc3[nH]ccc3c2)c1
+Buchwald-Hartwig CMC,Cc1ccccc1N.CC(=O)c1ccc(Br)cc1>>CC(=O)c1ccc(Nc2ccccc2C)cc1
+Buchwald-Hartwig CMC,Cc1ccccc1N.COc1ccc2cc(Br)ccc2c1>>COc1ccc2cc(Nc3ccccc3C)ccc2c1
+Buchwald-Hartwig CMC,Cc1cc(C)nc(N)c1.CC(=O)c1ccc(Br)cc1F>>CC(=O)c1ccc(Nc2cc(C)cc(C)n2)cc1F
+Buchwald-Hartwig CMC,COc1ccc(OC)c(N)c1.COc1ncc(Br)cn1>>COc1ccc(OC)c(Nc2cnc(OC)nc2)c1
+Buchwald-Hartwig CMC,COc1ccc(OC)c(N)c1.COC(=O)c1ccc(Br)c(C)c1>>COC(=O)c1ccc(Nc2cc(OC)ccc2OC)c(C)c1
+Buchwald-Hartwig CMC,COc1ccc(OC)c(N)c1.FC(F)(F)c1cccnc1Br>>COc1ccc(OC)c(Nc2ncccc2C(F)(F)F)c1
+Buchwald-Hartwig CMC,Cc1cc(C(F)(F)F)ccc1N.Brc1cnccn1>>Cc1cc(C(F)(F)F)ccc1Nc1cnccn1
+Buchwald-Hartwig CMC,CCOC(=O)c1cccc(N)c1.Brc1cncnc1>>CCOC(=O)c1cccc(Nc2cncnc2)c1
+Buchwald-Hartwig CMC,Nc1cncc2ccccc12.Cn1cc2ccc(Br)cc2n1>>Cn1cc2ccc(Nc3cncc4ccccc34)cc2n1
+Buchwald-Hartwig CMC,NC1C=CN=N1.Fc1ncc(Br)cn1>>Fc1ncc(NC2C=CN=N2)cn1
+Buchwald-Hartwig CMC,Nc1ccon1.Brc1ccc2cn[nH]c2c1>>c1cc(Nc2ccc3cn[nH]c3c2)no1
+Buchwald-Hartwig CMC,Cc1cc(N)ccn1.Brc1cccc2ccoc12>>Cc1cc(Nc2cccc3ccoc23)ccn1
+Buchwald-Hartwig CMC,Nc1ccc2ncccc2c1.O=Cc1cccc(Br)n1>>O=Cc1cccc(Nc2ccc3ncccc3c2)n1
+Buchwald-Hartwig CMC,Nc1ccc2ncccc2c1.COc1ccc(Br)cc1>>COc1ccc(Nc2ccc3ncccc3c2)cc1
+Buchwald-Hartwig CMC,Nc1ccc2scnc2c1.Cn1cncc1Br>>Cn1cncc1Nc1ccc2scnc2c1
+Buchwald-Hartwig CMC,Nc1ccc2scnc2c1.Brc1ccc2ncnn2c1>>c1nc2ccc(Nc3ccc4scnc4c3)cn2n1
+Buchwald-Hartwig CMC,Nc1ccc2c(c1)OCCO2.Brc1ccc2cnccc2c1>>c1cc2cc(Nc3ccc4c(c3)OCCO4)ccc2cn1
+Buchwald-Hartwig CMC,CC(=O)c1cc(F)ccc1N.O=[N+]([O-])c1cccc2c(Br)n[nH]c12>>CC(=O)c1cc(F)ccc1Nc1n[nH]c2c([N+](=O)[O-])cccc12
+Buchwald-Hartwig CMC,Nc1cccc(C(F)(F)F)c1.COc1cc(Br)ccc1F>>COc1cc(Nc2cccc(C(F)(F)F)c2)ccc1F
+Buchwald-Hartwig CMC,Cc1ncccc1N.COc1c(Br)cccc1[N+](=O)[O-]>>COc1c(Nc2cccnc2C)cccc1[N+](=O)[O-]
+Buchwald-Hartwig CMC,Nc1ccnc(C(F)(F)F)c1.Cc1cnc(Br)nc1>>Cc1cnc(Nc2ccnc(C(F)(F)F)c2)nc1
+Buchwald-Hartwig CMC,COC(=O)c1cc(N)ccn1.Cc1n[nH]c2ccc(Br)cc12>>COC(=O)c1cc(Nc2ccc3[nH]nc(C)c3c2)ccn1
+Buchwald-Hartwig CMC,CSc1ccc(N)cc1.Cc1ccc(Br)s1>>CSc1ccc(Nc2ccc(C)s2)cc1
+Buchwald-Hartwig CMC,NC1CCCCC1.Brc1ccccn1>>c1ccc(NC2CCCCC2)nc1
+Buchwald-Hartwig CMC,NC1CCCCC1.Brc1ccncc1>>c1cc(NC2CCCCC2)ccn1
+Buchwald-Hartwig CMC,COC(=O)c1ccc(N)cc1.COc1ncc(Br)cn1>>COC(=O)c1ccc(Nc2cnc(OC)nc2)cc1
+Buchwald-Hartwig CMC,COC(=O)c1ccc(N)cc1.COc1cc(Br)ccc1C=O>>COC(=O)c1ccc(Nc2ccc(C=O)c(OC)c2)cc1
+Buchwald-Hartwig CMC,COC(=O)c1ccc(N)cc1.O=Cc1ccc(Br)o1>>COC(=O)c1ccc(Nc2ccc(C=O)o2)cc1

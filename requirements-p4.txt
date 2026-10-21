@@ -6,3 +6,6 @@ rdkit==2025.03.2
 matplotlib==3.10.1
 scipy==1.15.2
 openpyxl==3.1.5
+svglib==2.3.0
+reportlab==5.0.1
+PyMuPDF==1.28.2

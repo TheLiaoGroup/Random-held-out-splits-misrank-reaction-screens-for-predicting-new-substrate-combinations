@@ -1,47 +1,169 @@
 {
-  "model": "MLP of p4_mlp_oof.py on pretrained rxnfp reaction embeddings plus condition one-hot; see p4_rxnfp_oof.py",
+  "model": "rxnfp embedding + condition MLP",
   "subsets": {
     "all_18": {
-      "screens": 18,
-      "rxnfp_between_task_r2_rank_rho": 0.7275541795665634,
-      "rxnfp_screens_with_lower_new_combination_r2": 18,
-      "median_rxnfp_delta_r2": 0.33614995682502785,
-      "rho_rxnfp_vs_rf_r2_loss": 0.7213622291021672,
-      "rho_rxnfp_vs_rf_new_combination_r2": 0.8658410732714137,
-      "rho_pair_share_vs_rxnfp_r2_loss": 0.29205366357069146,
-      "median_rxnfp_row_pair_level_r2": 0.8083186085308094,
-      "median_rxnfp_group_pair_level_r2": 0.1573111691838955,
-      "median_rxnfp_row_within_pair_r2": 0.24882673659839538,
-      "median_rxnfp_group_within_pair_r2": 0.2317569645792122,
+      "screens": 19,
+      "rxnfp_between_task_r2_rank_rho": 0.7298245614035088,
+      "rxnfp_screens_with_lower_new_combination_r2": 19,
+      "median_rxnfp_delta_r2": 0.3167510012712944,
+      "rho_rxnfp_vs_rf_r2_loss": 0.7333333333333334,
+      "rho_rxnfp_vs_rf_new_combination_r2": 0.8614035087719297,
+      "rho_pair_share_vs_rxnfp_r2_loss": 0.3403508771929824,
+      "median_rxnfp_row_pair_level_r2": 0.808154391109196,
+      "median_rxnfp_group_pair_level_r2": 0.19301801781964778,
+      "median_rxnfp_row_within_pair_r2": 0.2506161400700212,
+      "median_rxnfp_group_within_pair_r2": 0.21240706988865368,
       "rxnfp_paired_gain_over_rf_row_r2": {
-        "median": -0.045171525493209075,
-        "min": -0.19670814153970267,
+        "median": -0.02986136209818402,
+        "min": -0.19224340779568483,
         "min_screen": "Grignard",
-        "max": 0.09061075369933363,
+        "max": 0.11625302480013905,
         "max_screen": "Allylic-substitution",
-        "screens_above_rf": 7
+        "screens_above_rf": 9
       },
       "rxnfp_paired_gain_over_rf_group_r2": {
-        "median": -0.06748770922072829,
-        "min": -0.6526174916335336,
+        "median": -0.048863412477780276,
+        "min": -0.6490131691472351,
         "min_screen": "Hiyama",
-        "max": 0.12070567565469491,
+        "max": 0.14235968921088538,
+        "max_screen": "Grignard",
+        "screens_above_rf": 6
+      },
+      "rxnfp_screens_with_lower_new_combination_mae_than_rf": 1,
+      "design_rho_by_model": {
+        "rf": {
+          "pair_variance_share": 0.5228070175438596,
+          "substrate_levels_per_pair": 0.5421052631578946
+        },
+        "additive": {
+          "pair_variance_share": 0.3543859649122807,
+          "substrate_levels_per_pair": 0.7298245614035088
+        },
+        "rxnfp": {
+          "pair_variance_share": 0.3403508771929824,
+          "substrate_levels_per_pair": 0.368421052631579
+        }
+      },
+      "ranks": {
+        "Acylation": {
+          "held_out_wells": 1,
+          "new_combinations": 1
+        },
+        "Suzuki": {
+          "held_out_wells": 8,
+          "new_combinations": 3
+        },
+        "Buchwald-Hartwig": {
+          "held_out_wells": 11,
+          "new_combinations": 5
+        },
+        "Allylic-substitution": {
+          "held_out_wells": 18,
+          "new_combinations": 16
+        },
+        "C-O competitive reactions": {
+          "held_out_wells": 17,
+          "new_combinations": 15
+        },
+        "Chan-Lam": {
+          "held_out_wells": 9,
+          "new_combinations": 7
+        },
+        "Esterification": {
+          "held_out_wells": 12,
+          "new_combinations": 6
+        },
+        "Grignard": {
+          "held_out_wells": 10,
+          "new_combinations": 14
+        },
+        "Heck": {
+          "held_out_wells": 2,
+          "new_combinations": 2
+        },
+        "Hiyama": {
+          "held_out_wells": 14,
+          "new_combinations": 18
+        },
+        "Kumada": {
+          "held_out_wells": 6,
+          "new_combinations": 12
+        },
+        "Minisci": {
+          "held_out_wells": 19,
+          "new_combinations": 19
+        },
+        "Pd-carbonylation": {
+          "held_out_wells": 16,
+          "new_combinations": 17
+        },
+        "Reductive-amination": {
+          "held_out_wells": 13,
+          "new_combinations": 9
+        },
+        "SNAr": {
+          "held_out_wells": 3,
+          "new_combinations": 8
+        },
+        "Sonogashira": {
+          "held_out_wells": 7,
+          "new_combinations": 10
+        },
+        "Suzuki Bpin": {
+          "held_out_wells": 5,
+          "new_combinations": 13
+        },
+        "Ullmann": {
+          "held_out_wells": 4,
+          "new_combinations": 4
+        },
+        "Buchwald-Hartwig CMC": {
+          "held_out_wells": 15,
+          "new_combinations": 11
+        }
+      }
+    },
+    "mean_yield_at_least_5pct": {
+      "screens": 11,
+      "rxnfp_between_task_r2_rank_rho": 0.4090909090909091,
+      "rxnfp_screens_with_lower_new_combination_r2": 11,
+      "median_rxnfp_delta_r2": 0.2229022826261962,
+      "rho_rxnfp_vs_rf_r2_loss": 0.8454545454545455,
+      "rho_rxnfp_vs_rf_new_combination_r2": 0.8909090909090911,
+      "rho_pair_share_vs_rxnfp_r2_loss": 0.8636363636363636,
+      "median_rxnfp_row_pair_level_r2": 0.8132256237661297,
+      "median_rxnfp_group_pair_level_r2": 0.20653973751074917,
+      "median_rxnfp_row_within_pair_r2": 0.34304639158048583,
+      "median_rxnfp_group_within_pair_r2": 0.3331667381018961,
+      "rxnfp_paired_gain_over_rf_row_r2": {
+        "median": 0.006245931125418491,
+        "min": -0.19224340779568483,
+        "min_screen": "Grignard",
+        "max": 0.06019266436696569,
+        "max_screen": "Ullmann",
+        "screens_above_rf": 6
+      },
+      "rxnfp_paired_gain_over_rf_group_r2": {
+        "median": -0.03271149031802678,
+        "min": -0.13149142610581616,
+        "min_screen": "Esterification",
+        "max": 0.14235968921088538,
         "max_screen": "Grignard",
         "screens_above_rf": 4
       },
       "rxnfp_screens_with_lower_new_combination_mae_than_rf": 1,
       "design_rho_by_model": {
         "rf": {
-          "pair_variance_share": 0.5376676986584108,
-          "substrate_levels_per_pair": 0.6202270381836945
+          "pair_variance_share": 0.6727272727272727,
+          "substrate_levels_per_pair": 0.6363636363636364
         },
         "additive": {
-          "pair_variance_share": 0.4592363261093911,
-          "substrate_levels_per_pair": 0.7110423116615068
+          "pair_variance_share": 0.48181818181818187,
+          "substrate_levels_per_pair": 0.8272727272727273
         },
         "rxnfp": {
-          "pair_variance_share": 0.29205366357069146,
-          "substrate_levels_per_pair": 0.4840041279669762
+          "pair_variance_share": 0.8636363636363636,
+          "substrate_levels_per_pair": 0.5
         }
       },
       "ranks": {
@@ -51,132 +173,14 @@
         },
         "Suzuki": {
           "held_out_wells": 7,
-          "new_combinations": 4
-        },
-        "Buchwald-Hartwig": {
-          "held_out_wells": 14,
-          "new_combinations": 6
-        },
-        "Allylic-substitution": {
-          "held_out_wells": 17,
-          "new_combinations": 15
-        },
-        "C-O competitive reactions": {
-          "held_out_wells": 16,
-          "new_combinations": 14
-        },
-        "Chan-Lam": {
-          "held_out_wells": 9,
-          "new_combinations": 5
-        },
-        "Esterification": {
-          "held_out_wells": 11,
-          "new_combinations": 7
-        },
-        "Grignard": {
-          "held_out_wells": 10,
-          "new_combinations": 13
-        },
-        "Heck": {
-          "held_out_wells": 3,
-          "new_combinations": 2
-        },
-        "Hiyama": {
-          "held_out_wells": 13,
-          "new_combinations": 17
-        },
-        "Kumada": {
-          "held_out_wells": 6,
-          "new_combinations": 11
-        },
-        "Minisci": {
-          "held_out_wells": 18,
-          "new_combinations": 18
-        },
-        "Pd-carbonylation": {
-          "held_out_wells": 15,
-          "new_combinations": 16
-        },
-        "Reductive-amination": {
-          "held_out_wells": 12,
-          "new_combinations": 9
-        },
-        "SNAr": {
-          "held_out_wells": 2,
-          "new_combinations": 8
-        },
-        "Sonogashira": {
-          "held_out_wells": 8,
-          "new_combinations": 10
-        },
-        "Suzuki Bpin": {
-          "held_out_wells": 5,
-          "new_combinations": 12
-        },
-        "Ullmann": {
-          "held_out_wells": 4,
           "new_combinations": 3
-        }
-      }
-    },
-    "mean_yield_at_least_5pct": {
-      "screens": 11,
-      "rxnfp_between_task_r2_rank_rho": 0.45454545454545453,
-      "rxnfp_screens_with_lower_new_combination_r2": 11,
-      "median_rxnfp_delta_r2": 0.2273145771687467,
-      "rho_rxnfp_vs_rf_r2_loss": 0.9090909090909091,
-      "rho_rxnfp_vs_rf_new_combination_r2": 0.881818181818182,
-      "rho_pair_share_vs_rxnfp_r2_loss": 0.8454545454545455,
-      "median_rxnfp_row_pair_level_r2": 0.8084828259524229,
-      "median_rxnfp_group_pair_level_r2": 0.19301801781964778,
-      "median_rxnfp_row_within_pair_r2": 0.34136780855651555,
-      "median_rxnfp_group_within_pair_r2": 0.3334616694794195,
-      "rxnfp_paired_gain_over_rf_row_r2": {
-        "median": -0.02986136209818402,
-        "min": -0.19670814153970267,
-        "min_screen": "Grignard",
-        "max": 0.053566644390128704,
-        "max_screen": "Ullmann",
-        "screens_above_rf": 5
-      },
-      "rxnfp_paired_gain_over_rf_group_r2": {
-        "median": -0.03615423277560409,
-        "min": -0.13204043108663316,
-        "min_screen": "Esterification",
-        "max": 0.12070567565469491,
-        "max_screen": "Grignard",
-        "screens_above_rf": 3
-      },
-      "rxnfp_screens_with_lower_new_combination_mae_than_rf": 1,
-      "design_rho_by_model": {
-        "rf": {
-          "pair_variance_share": 0.690909090909091,
-          "substrate_levels_per_pair": 0.6727272727272727
-        },
-        "additive": {
-          "pair_variance_share": 0.5090909090909091,
-          "substrate_levels_per_pair": 0.8181818181818182
-        },
-        "rxnfp": {
-          "pair_variance_share": 0.8454545454545455,
-          "substrate_levels_per_pair": 0.5272727272727273
-        }
-      },
-      "ranks": {
-        "Acylation": {
-          "held_out_wells": 1,
-          "new_combinations": 1
-        },
-        "Suzuki": {
-          "held_out_wells": 6,
-          "new_combinations": 4
         },
         "Buchwald-Hartwig": {
-          "held_out_wells": 11,
+          "held_out_wells": 9,
           "new_combinations": 5
         },
         "Esterification": {
-          "held_out_wells": 9,
+          "held_out_wells": 10,
           "new_combinations": 6
         },
         "Grignard": {
@@ -192,11 +196,11 @@
           "new_combinations": 9
         },
         "Reductive-amination": {
-          "held_out_wells": 10,
+          "held_out_wells": 11,
           "new_combinations": 7
         },
         "Sonogashira": {
-          "held_out_wells": 7,
+          "held_out_wells": 6,
           "new_combinations": 8
         },
         "Suzuki Bpin": {
@@ -205,7 +209,7 @@
         },
         "Ullmann": {
           "held_out_wells": 3,
-          "new_combinations": 3
+          "new_combinations": 4
         }
       }
     }

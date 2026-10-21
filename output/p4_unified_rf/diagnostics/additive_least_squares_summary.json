@@ -2,74 +2,74 @@
   "per_screen": {
     "Acylation": {
       "row": {
-        "r2_least_squares": 0.5377784141764733,
-        "r2_backfitting": 0.5377784141764733,
-        "rf_skill_over_least_squares": 0.4712903082582901
+        "r2_least_squares": 0.5309242101936038,
+        "r2_backfitting": 0.5309242101936037,
+        "rf_skill_over_least_squares": 0.46344915590925045
       },
       "group": {
-        "r2_least_squares": 0.4975214529314737,
-        "r2_backfitting": 0.497323454566987,
-        "rf_skill_over_least_squares": 0.330329892984242
+        "r2_least_squares": 0.4959023318505567,
+        "r2_backfitting": 0.49602871650261166,
+        "rf_skill_over_least_squares": 0.3037932900831691
       }
     },
     "Suzuki": {
       "row": {
         "r2_least_squares": 0.4502033599190846,
         "r2_backfitting": 0.4502033599190839,
-        "rf_skill_over_least_squares": 0.16057542898103708
+        "rf_skill_over_least_squares": 0.16057399389994892
       },
       "group": {
         "r2_least_squares": 0.2992888151777965,
-        "r2_backfitting": 0.29323905240530457,
-        "rf_skill_over_least_squares": 0.0387163858838373
+        "r2_backfitting": 0.2932390524053045,
+        "rf_skill_over_least_squares": 0.03875423751968714
       }
     },
     "Buchwald-Hartwig": {
       "row": {
-        "r2_least_squares": 0.37958560324586027,
-        "r2_backfitting": 0.3795856032458607,
-        "rf_skill_over_least_squares": 0.13192640040248083
+        "r2_least_squares": 0.37681361049182427,
+        "r2_backfitting": 0.37681361049182466,
+        "rf_skill_over_least_squares": 0.14341846844366996
       },
       "group": {
-        "r2_least_squares": 0.2486087902466509,
-        "r2_backfitting": 0.24303489117608623,
-        "rf_skill_over_least_squares": 0.15680340361360737
+        "r2_least_squares": 0.24424555588975333,
+        "r2_backfitting": 0.23835135346724265,
+        "rf_skill_over_least_squares": 0.14530302861485175
       }
     },
     "Allylic-substitution": {
       "row": {
-        "r2_least_squares": 0.3135074915301986,
-        "r2_backfitting": 0.3133940845518165,
-        "rf_skill_over_least_squares": -0.06644596687274906
+        "r2_least_squares": 0.30624716167943017,
+        "r2_backfitting": 0.3061580240440348,
+        "rf_skill_over_least_squares": -0.10520515788423875
       },
       "group": {
-        "r2_least_squares": -0.07533958855488683,
-        "r2_backfitting": -0.07441437866630504,
-        "rf_skill_over_least_squares": -0.11474262453153687
+        "r2_least_squares": -0.07511010501458544,
+        "r2_backfitting": -0.07281365191646375,
+        "rf_skill_over_least_squares": -0.08105392247239455
       }
     },
     "C-O competitive reactions": {
       "row": {
-        "r2_least_squares": 0.345251306412155,
-        "r2_backfitting": 0.3452513064121558,
-        "rf_skill_over_least_squares": 0.10704747516930549
+        "r2_least_squares": 0.3394984646785602,
+        "r2_backfitting": 0.33949846467858974,
+        "rf_skill_over_least_squares": 0.12735669833469596
       },
       "group": {
-        "r2_least_squares": -0.08717371545605782,
-        "r2_backfitting": -0.08702080322905655,
-        "rf_skill_over_least_squares": 0.0808834672277379
+        "r2_least_squares": -0.0756863895531451,
+        "r2_backfitting": -0.07596152037194376,
+        "rf_skill_over_least_squares": 0.08977626398284196
       }
     },
     "Chan-Lam": {
       "row": {
-        "r2_least_squares": 0.41192018500377703,
-        "r2_backfitting": 0.4119280922409313,
-        "rf_skill_over_least_squares": 0.27514677807338794
+        "r2_least_squares": 0.39732564965389877,
+        "r2_backfitting": 0.3973333688330876,
+        "rf_skill_over_least_squares": 0.2838704395998488
       },
       "group": {
-        "r2_least_squares": 0.136507723195942,
-        "r2_backfitting": 0.13178394608793137,
-        "rf_skill_over_least_squares": 0.27132795610430305
+        "r2_least_squares": 0.12856711048417607,
+        "r2_backfitting": 0.12412846393669083,
+        "rf_skill_over_least_squares": 0.2799247758092594
       }
     },
     "Esterification": {
@@ -86,45 +86,45 @@
     },
     "Grignard": {
       "row": {
-        "r2_least_squares": 0.5654543055055272,
-        "r2_backfitting": 0.5654543055055259,
-        "rf_skill_over_least_squares": 0.25812130818336143
+        "r2_least_squares": 0.5719414592024064,
+        "r2_backfitting": 0.5719414592024226,
+        "rf_skill_over_least_squares": 0.2537479517440704
       },
       "group": {
-        "r2_least_squares": -0.014616687339245371,
-        "r2_backfitting": -0.01115898938364048,
-        "rf_skill_over_least_squares": 0.011040552275280623
+        "r2_least_squares": -0.005478117274242011,
+        "r2_backfitting": -0.00261230047000874,
+        "rf_skill_over_least_squares": 0.011407420237339205
       }
     },
     "Heck": {
       "row": {
-        "r2_least_squares": 0.46165036903233264,
-        "r2_backfitting": 0.4616503690323337,
-        "rf_skill_over_least_squares": 0.15812778649873496
+        "r2_least_squares": 0.46319959356146423,
+        "r2_backfitting": 0.4631995935614645,
+        "rf_skill_over_least_squares": 0.21303645252584857
       },
       "group": {
-        "r2_least_squares": 0.37269170578575583,
-        "r2_backfitting": 0.371298736251923,
-        "rf_skill_over_least_squares": 0.16971554407840134
+        "r2_least_squares": 0.38321437140327264,
+        "r2_backfitting": 0.3828387731797051,
+        "rf_skill_over_least_squares": 0.18772130791347422
       }
     },
     "Hiyama": {
       "row": {
-        "r2_least_squares": 0.2624051806995289,
-        "r2_backfitting": 0.2623170656151146,
-        "rf_skill_over_least_squares": 0.21738650296201611
+        "r2_least_squares": 0.26452295263234554,
+        "r2_backfitting": 0.2644382125637976,
+        "rf_skill_over_least_squares": 0.20824875434708529
       },
       "group": {
-        "r2_least_squares": 0.08287334291939445,
-        "r2_backfitting": 0.07487346884771792,
-        "rf_skill_over_least_squares": 0.18100778997873346
+        "r2_least_squares": 0.08578190597895552,
+        "r2_backfitting": 0.0772195552456849,
+        "rf_skill_over_least_squares": 0.17650073302951994
       }
     },
     "Kumada": {
       "row": {
         "r2_least_squares": 0.5047995181814571,
         "r2_backfitting": 0.5047995181814569,
-        "rf_skill_over_least_squares": 0.1479866753384478
+        "rf_skill_over_least_squares": 0.14798667533844775
       },
       "group": {
         "r2_least_squares": 0.29856805197834785,
@@ -136,19 +136,19 @@
       "row": {
         "r2_least_squares": 0.45329655145302433,
         "r2_backfitting": 0.45329655145310827,
-        "rf_skill_over_least_squares": -0.0813684522401752
+        "rf_skill_over_least_squares": -0.08136845224017523
       },
       "group": {
         "r2_least_squares": 0.015175130250801949,
         "r2_backfitting": -0.15275318054354342,
-        "rf_skill_over_least_squares": 0.004650627233485772
+        "rf_skill_over_least_squares": 0.004650627233485816
       }
     },
     "Pd-carbonylation": {
       "row": {
         "r2_least_squares": 0.2877768666655586,
         "r2_backfitting": 0.2877725999589684,
-        "rf_skill_over_least_squares": 0.31613508191698464
+        "rf_skill_over_least_squares": 0.3161350819169846
       },
       "group": {
         "r2_least_squares": -0.7110472147619523,
@@ -165,72 +165,84 @@
       "group": {
         "r2_least_squares": 0.09734768861655725,
         "r2_backfitting": 0.09299535764290405,
-        "rf_skill_over_least_squares": 0.23386751581905743
+        "rf_skill_over_least_squares": 0.23386751581905746
       }
     },
     "SNAr": {
       "row": {
-        "r2_least_squares": 0.5705530814265372,
-        "r2_backfitting": 0.5705530814265332,
-        "rf_skill_over_least_squares": 0.26547020728636317
+        "r2_least_squares": 0.5655635963006329,
+        "r2_backfitting": 0.5655634068722714,
+        "rf_skill_over_least_squares": 0.2753454774416578
       },
       "group": {
-        "r2_least_squares": 0.03264181248418583,
-        "r2_backfitting": -0.015164024228185361,
-        "rf_skill_over_least_squares": 0.3217969087660929
+        "r2_least_squares": 0.09104227067057677,
+        "r2_backfitting": 0.06941234707078156,
+        "rf_skill_over_least_squares": 0.29055082214481137
       }
     },
     "Sonogashira": {
       "row": {
-        "r2_least_squares": 0.5331242253785913,
-        "r2_backfitting": 0.5331289871641915,
-        "rf_skill_over_least_squares": -0.07751140803990589
+        "r2_least_squares": 0.534499903101272,
+        "r2_backfitting": 0.5345128600914129,
+        "rf_skill_over_least_squares": -0.0800968892001086
       },
       "group": {
-        "r2_least_squares": 0.12051147954201,
-        "r2_backfitting": 0.11802495426728137,
-        "rf_skill_over_least_squares": 0.04512383208590678
+        "r2_least_squares": 0.11913877156360883,
+        "r2_backfitting": 0.11633626198429844,
+        "rf_skill_over_least_squares": 0.055019604616558235
       }
     },
     "Suzuki Bpin": {
       "row": {
-        "r2_least_squares": 0.6494947414810796,
-        "r2_backfitting": 0.649493784733455,
-        "rf_skill_over_least_squares": 0.0014548026313776496
+        "r2_least_squares": 0.6496503742909141,
+        "r2_backfitting": 0.6496585427857943,
+        "rf_skill_over_least_squares": 0.0073411273593842145
       },
       "group": {
-        "r2_least_squares": 0.13977407607794134,
-        "r2_backfitting": 0.12030014742064879,
-        "rf_skill_over_least_squares": 0.046857019787708246
+        "r2_least_squares": 0.14027199139881097,
+        "r2_backfitting": 0.12037968449070169,
+        "rf_skill_over_least_squares": 0.043887155262055444
       }
     },
     "Ullmann": {
       "row": {
-        "r2_least_squares": 0.5115353378610049,
-        "r2_backfitting": 0.5115335456201007,
-        "rf_skill_over_least_squares": 0.040776261580532956
+        "r2_least_squares": 0.5113600978348253,
+        "r2_backfitting": 0.5113586526792848,
+        "rf_skill_over_least_squares": 0.04557852966773268
       },
       "group": {
-        "r2_least_squares": 0.19989494520537096,
-        "r2_backfitting": 0.18439695052335292,
-        "rf_skill_over_least_squares": 0.1475284595124471
+        "r2_least_squares": 0.20060864483011365,
+        "r2_backfitting": 0.1852247004581975,
+        "rf_skill_over_least_squares": 0.1482079051890417
+      }
+    },
+    "Buchwald-Hartwig CMC": {
+      "row": {
+        "r2_least_squares": 0.36006533759451914,
+        "r2_backfitting": 0.3600653375958024,
+        "rf_skill_over_least_squares": -0.11256616553956271
+      },
+      "group": {
+        "r2_least_squares": -0.041664790942567455,
+        "r2_backfitting": -0.04805301289544902,
+        "rf_skill_over_least_squares": 0.2107634817062422
       }
     }
   },
   "subsets": {
     "all_18": {
-      "screens": 18,
-      "max_abs_held_out_well_r2_difference_from_backfitting": 0.00011340697838208014,
-      "screens_where_rf_beats_least_squares_on_new_combinations": 17,
-      "rho_pair_share_vs_rf_skill_over_least_squares_new_combinations": -0.31475748194014447,
-      "p_pair_share_vs_rf_skill_over_least_squares_new_combinations": 0.20331354771785815
+      "screens": 19,
+      "max_abs_held_out_well_r2_difference_from_backfitting": 8.913763539536435e-05,
+      "screens_where_rf_beats_least_squares_on_new_combinations": 18,
+      "rho_pair_share_vs_rf_skill_over_least_squares_new_combinations": -0.3175438596491228,
+      "p_pair_share_vs_rf_skill_over_least_squares_new_combinations": 0.1852467926295408
     },
     "mean_yield_at_least_5pct": {
       "screens": 11,
-      "max_abs_held_out_well_r2_difference_from_backfitting": 4.7617856002712955e-06,
+      "max_abs_held_out_well_r2_difference_from_backfitting": 1.2956990140811087e-05,
       "screens_where_rf_beats_least_squares_on_new_combinations": 11,
-      "rho_pair_share_vs_rf_skill_over_least_squares_new_combinations": -0.7727272727272727,
-      "p_pair_share_vs_rf_skill_over_least_squares_new_combinations": 0.005299487178643863
+      "rho_pair_share_vs_rf_skill_over_least_squares_new_combinations": -0.7000000000000001,
+      "p_pair_share_vs_rf_skill_over_least_squares_new_combinations": 0.01647097883651441
     }
   }
 }

@@ -2,97 +2,116 @@
   "per_screen": {
     "Acylation": {
       "row": {
-        "r2_additive": 0.5377784141764733,
-        "r2_rf": 0.7556187819480238,
-        "mae_percentage_points_additive": 16.484707354128453,
-        "mae_percentage_points_rf": 8.796471647599942,
-        "rf_skill_over_additive": 0.4712903082582901
+        "r2_additive": 0.5309242101936037,
+        "r2_rf": 0.7483168314775052,
+        "mae_percentage_points_additive": 16.14331455226823,
+        "mae_percentage_points_rf": 8.257602683131598,
+        "rf_skill_over_additive": 0.4634491559092506
       },
       "group": {
-        "r2_additive": 0.49732345456698707,
-        "r2_rf": 0.6634997801961452,
-        "mae_percentage_points_additive": 17.134099356440988,
-        "mae_percentage_points_rf": 11.018040014140604,
-        "rf_skill_over_additive": 0.3305933888653757,
-        "rf_skill_over_additive_both_seen": 0.33404943977715285,
-        "rf_skill_over_additive_within_component": 0.33404943977715285,
-        "cross_component_share_of_both_seen": 0.0
+        "r2_additive": 0.49602871650261166,
+        "r2_rf": 0.6490500267429684,
+        "mae_percentage_points_additive": 16.691807884375418,
+        "mae_percentage_points_rf": 10.372721000893202,
+        "rf_skill_over_additive": 0.30362234248246117,
+        "rf_skill_over_additive_both_seen": 0.30929406847039637,
+        "rf_skill_over_additive_within_component": 0.30915288106424416,
+        "cross_component_share_of_both_seen": 0.0004873541744931043
       }
     },
     "Allylic-substitution": {
       "row": {
-        "r2_additive": 0.3133940845518165,
-        "r2_rf": 0.26790619594925086,
-        "mae_percentage_points_additive": 5.790133956289582,
-        "mae_percentage_points_rf": 3.1614384675259215,
-        "rf_skill_over_additive": -0.06627002917278993
+        "r2_additive": 0.3061580240440348,
+        "r2_rf": 0.23327186646638878,
+        "mae_percentage_points_additive": 5.764502068829353,
+        "mae_percentage_points_rf": 3.1692782857974473,
+        "rf_skill_over_additive": -0.10506324351875448
       },
       "group": {
-        "r2_additive": -0.0744143786663051,
-        "r2_rf": -0.1930599875068105,
-        "mae_percentage_points_additive": 7.743709364845328,
-        "mae_percentage_points_rf": 5.219040054431807,
-        "rf_skill_over_additive": -0.11563150540934478,
-        "rf_skill_over_additive_both_seen": -0.12350412316353339,
-        "rf_skill_over_additive_within_component": -0.12396209786756725,
-        "cross_component_share_of_both_seen": 0.017127745604583765
+        "r2_additive": -0.07281365191646376,
+        "r2_rf": -0.1572863888040558,
+        "mae_percentage_points_additive": 7.654634646513148,
+        "mae_percentage_points_rf": 5.023421352362275,
+        "rf_skill_over_additive": -0.08353447831160979,
+        "rf_skill_over_additive_both_seen": -0.08167486541012477,
+        "rf_skill_over_additive_within_component": -0.08138914482388973,
+        "cross_component_share_of_both_seen": 0.01696342318227999
       }
     },
     "Buchwald-Hartwig": {
       "row": {
-        "r2_additive": 0.37958560324586077,
-        "r2_rf": 0.46143462028175397,
-        "mae_percentage_points_additive": 10.776413284986436,
-        "mae_percentage_points_rf": 7.488912852607896,
-        "rf_skill_over_additive": 0.13192640040248022
+        "r2_additive": 0.37681361049182466,
+        "r2_rf": 0.46619075452380254,
+        "mae_percentage_points_additive": 10.58618957338814,
+        "mae_percentage_points_rf": 7.224542496909821,
+        "rf_skill_over_additive": 0.1434184684436694
       },
       "group": {
-        "r2_additive": 0.24303489117608623,
-        "r2_rf": 0.36648654896162,
-        "mae_percentage_points_additive": 12.432341474054443,
-        "mae_percentage_points_rf": 9.16375472591044,
-        "rf_skill_over_additive": 0.16298849139442348,
-        "rf_skill_over_additive_both_seen": 0.13973713482386507,
-        "rf_skill_over_additive_within_component": 0.13887260173010413,
-        "cross_component_share_of_both_seen": 0.013259843929638016
+        "r2_additive": 0.2383513534672427,
+        "r2_rf": 0.35406231788295284,
+        "mae_percentage_points_additive": 12.206860654835538,
+        "mae_percentage_points_rf": 8.92075639331232,
+        "rf_skill_over_additive": 0.15188472909175305,
+        "rf_skill_over_additive_both_seen": 0.12882132136792948,
+        "rf_skill_over_additive_within_component": 0.12767430601404045,
+        "cross_component_share_of_both_seen": 0.012569803168334715
+      }
+    },
+    "Buchwald-Hartwig CMC": {
+      "row": {
+        "r2_additive": 0.3600653375958024,
+        "r2_rf": 0.28803801072014024,
+        "mae_percentage_points_additive": 5.329955292763385,
+        "mae_percentage_points_rf": 3.375962764551601,
+        "rf_skill_over_additive": -0.11256616554179585
+      },
+      "group": {
+        "r2_additive": -0.048053012895449054,
+        "r2_rf": 0.18387835124887575,
+        "mae_percentage_points_additive": 7.599725098418975,
+        "mae_percentage_points_rf": 4.356683372755205,
+        "rf_skill_over_additive": 0.21585547519288345,
+        "rf_skill_over_additive_both_seen": 0.22057703390146552,
+        "rf_skill_over_additive_within_component": 0.23283206961083228,
+        "cross_component_share_of_both_seen": 0.06786740161667279
       }
     },
     "C-O competitive reactions": {
       "row": {
-        "r2_additive": 0.3452513064121558,
-        "r2_rf": 0.4153323130866557,
-        "mae_percentage_points_additive": 3.9298459987645153,
-        "mae_percentage_points_rf": 2.2489405491578025,
-        "rf_skill_over_additive": 0.10704747516930431
+        "r2_additive": 0.33949846467858974,
+        "r2_rf": 0.4236137345725048,
+        "mae_percentage_points_additive": 3.667953763253043,
+        "mae_percentage_points_rf": 2.0319891690120064,
+        "rf_skill_over_additive": 0.127356698334657
       },
       "group": {
-        "r2_additive": -0.08702080322905652,
-        "r2_rf": 0.02518967830262031,
-        "mae_percentage_points_additive": 5.073154183389097,
-        "mae_percentage_points_rf": 3.53331267249285,
-        "rf_skill_over_additive": 0.08064201683857994,
-        "rf_skill_over_additive_both_seen": 0.09770165723560939,
-        "rf_skill_over_additive_within_component": 0.09689776515846209,
-        "cross_component_share_of_both_seen": 0.01706532538165826
+        "r2_additive": -0.07596152037194374,
+        "r2_rf": 0.04603705356078647,
+        "mae_percentage_points_additive": 4.645456699079975,
+        "mae_percentage_points_rf": 3.1793154077132932,
+        "rf_skill_over_additive": 0.0899493444974073,
+        "rf_skill_over_additive_both_seen": 0.10783913631211577,
+        "rf_skill_over_additive_within_component": 0.10780831249611203,
+        "cross_component_share_of_both_seen": 0.017303850514188746
       }
     },
     "Chan-Lam": {
       "row": {
-        "r2_additive": 0.4119280922409313,
-        "r2_rf": 0.5737201608743996,
-        "mae_percentage_points_additive": 5.149281380383151,
-        "mae_percentage_points_rf": 2.6216150380121985,
-        "rf_skill_over_additive": 0.27513705821813195
+        "r2_additive": 0.3973333688330876,
+        "r2_rf": 0.5684074253015521,
+        "mae_percentage_points_additive": 5.187851079581462,
+        "mae_percentage_points_rf": 2.601873358294689,
+        "rf_skill_over_additive": 0.28386125415227986
       },
       "group": {
-        "r2_additive": 0.1317839460879314,
-        "r2_rf": 0.3709698323174341,
-        "mae_percentage_points_additive": 6.385989468324697,
-        "mae_percentage_points_rf": 3.8012370547461627,
-        "rf_skill_over_additive": 0.2752977381782561,
-        "rf_skill_over_additive_both_seen": 0.2861434261524665,
-        "rf_skill_over_additive_within_component": 0.2889217100196872,
-        "cross_component_share_of_both_seen": 0.008046413730476187
+        "r2_additive": 0.12412846393669089,
+        "r2_rf": 0.3724939454430047,
+        "mae_percentage_points_additive": 6.3786535818506325,
+        "mae_percentage_points_rf": 3.7297907315796435,
+        "rf_skill_over_additive": 0.2835935072471328,
+        "rf_skill_over_additive_both_seen": 0.2893232210271745,
+        "rf_skill_over_additive_within_component": 0.29217249546331175,
+        "cross_component_share_of_both_seen": 0.007890193655816469
       }
     },
     "Esterification": {
@@ -107,7 +126,7 @@
         "r2_additive": 0.15003313260018963,
         "r2_rf": 0.4235211791732034,
         "mae_percentage_points_additive": 12.870520855864413,
-        "mae_percentage_points_rf": 8.535379944357736,
+        "mae_percentage_points_rf": 8.535379944357734,
         "rf_skill_over_additive": 0.3205528858542569,
         "rf_skill_over_additive_both_seen": 0.471883324678645,
         "rf_skill_over_additive_within_component": 0.4689623525248578,
@@ -116,59 +135,59 @@
     },
     "Grignard": {
       "row": {
-        "r2_additive": 0.5654543055055259,
-        "r2_rf": 0.6776206217763664,
-        "mae_percentage_points_additive": 12.128028708904374,
-        "mae_percentage_points_rf": 8.909320879813219,
-        "rf_skill_over_additive": 0.25812130818336393
+        "r2_additive": 0.5719414592024226,
+        "r2_rf": 0.6805507476816445,
+        "mae_percentage_points_additive": 12.04113303008215,
+        "mae_percentage_points_rf": 8.853338703487575,
+        "rf_skill_over_additive": 0.2537479517440415
       },
       "group": {
-        "r2_additive": -0.011158989383640506,
-        "r2_rf": -0.003370601020413977,
-        "mae_percentage_points_additive": 19.552904701700225,
-        "mae_percentage_points_rf": 19.161155331587615,
-        "rf_skill_over_additive": 0.007640125431651201,
-        "rf_skill_over_additive_both_seen": -0.01504021168890406,
-        "rf_skill_over_additive_within_component": -0.007300128805998019,
+        "r2_additive": -0.0026123004700087547,
+        "r2_rf": 0.005451035691747164,
+        "mae_percentage_points_additive": 19.554401225615578,
+        "mae_percentage_points_rf": 19.121409486810272,
+        "rf_skill_over_additive": 0.008429716002012477,
+        "rf_skill_over_additive_both_seen": -0.018773507497031706,
+        "rf_skill_over_additive_within_component": -0.009882581698595816,
         "cross_component_share_of_both_seen": 0.014731107332946336
       }
     },
     "Heck": {
       "row": {
-        "r2_additive": 0.4616503690323337,
-        "r2_rf": 0.5467776708833859,
-        "mae_percentage_points_additive": 12.349126108583249,
-        "mae_percentage_points_rf": 8.237551565595815,
-        "rf_skill_over_additive": 0.15812778649873324
+        "r2_additive": 0.4631995935614645,
+        "r2_rf": 0.5775562601461711,
+        "mae_percentage_points_additive": 11.501323854849272,
+        "mae_percentage_points_rf": 6.978947315317685,
+        "rf_skill_over_additive": 0.21303645252584813
       },
       "group": {
-        "r2_additive": 0.37129873625192306,
-        "r2_rf": 0.47947921430789886,
-        "mae_percentage_points_additive": 13.521086712440987,
-        "mae_percentage_points_rf": 9.67136951009886,
-        "rf_skill_over_additive": 0.17157854659852095,
-        "rf_skill_over_additive_both_seen": 0.17178060398990402,
-        "rf_skill_over_additive_within_component": 0.17120174868752544,
-        "cross_component_share_of_both_seen": 0.001264494818317119
+        "r2_additive": 0.38283877317970516,
+        "r2_rf": 0.49936922259515465,
+        "mae_percentage_points_additive": 12.443476766831704,
+        "mae_percentage_points_rf": 8.385860631631184,
+        "rf_skill_over_additive": 0.18821286355506855,
+        "rf_skill_over_additive_both_seen": 0.19460579742047243,
+        "rf_skill_over_additive_within_component": 0.19451691468344695,
+        "cross_component_share_of_both_seen": 0.0010525564031409473
       }
     },
     "Hiyama": {
       "row": {
-        "r2_additive": 0.2623170656151146,
-        "r2_rf": 0.4227623027629493,
-        "mae_percentage_points_additive": 2.197018481398639,
-        "mae_percentage_points_rf": 0.907084997740899,
-        "rf_skill_over_additive": 0.21747999023799536
+        "r2_additive": 0.2644382125637976,
+        "r2_rf": 0.4177154801539045,
+        "mae_percentage_points_additive": 2.184817938153209,
+        "mae_percentage_points_rf": 0.901057810619798,
+        "rf_skill_over_additive": 0.2083399774436352
       },
       "group": {
-        "r2_additive": 0.07487346884771792,
-        "r2_rf": 0.24873154407606127,
-        "mae_percentage_points_additive": 2.605482082203076,
-        "mae_percentage_points_rf": 1.2507710614864374,
-        "rf_skill_over_additive": 0.18805537816271117,
-        "rf_skill_over_additive_both_seen": 0.1364934097799615,
-        "rf_skill_over_additive_within_component": 0.13594743229607187,
-        "cross_component_share_of_both_seen": 0.0035245666123934426
+        "r2_additive": 0.07721955524568495,
+        "r2_rf": 0.2469643913536319,
+        "mae_percentage_points_additive": 2.584376525055335,
+        "mae_percentage_points_rf": 1.2330652027554445,
+        "rf_skill_over_additive": 0.1841163718562302,
+        "rf_skill_over_additive_both_seen": 0.1324611003406264,
+        "rf_skill_over_additive_within_component": 0.13191121406451803,
+        "cross_component_share_of_both_seen": 0.0034856335374470193
       }
     },
     "Kumada": {
@@ -177,7 +196,7 @@
         "r2_rf": 0.5780843991297899,
         "mae_percentage_points_additive": 10.315136359122551,
         "mae_percentage_points_rf": 7.250432401815718,
-        "rf_skill_over_additive": 0.14798667533844825
+        "rf_skill_over_additive": 0.1479866753384482
       },
       "group": {
         "r2_additive": 0.2843455164064815,
@@ -186,25 +205,25 @@
         "mae_percentage_points_rf": 11.31733023018985,
         "rf_skill_over_additive": 0.030579783410254868,
         "rf_skill_over_additive_both_seen": -0.008498383694349276,
-        "rf_skill_over_additive_within_component": -0.018276027286074602,
+        "rf_skill_over_additive_within_component": -0.018276027286074626,
         "cross_component_share_of_both_seen": 0.01625470690666153
       }
     },
     "Minisci": {
       "row": {
         "r2_additive": 0.45329655145310827,
-        "r2_rf": 0.40916021494395005,
+        "r2_rf": 0.40916021494395,
         "mae_percentage_points_additive": 5.20055705597996,
         "mae_percentage_points_rf": 3.071136143784722,
-        "rf_skill_over_additive": -0.08136845224033884
+        "rf_skill_over_additive": -0.08136845224033888
       },
       "group": {
         "r2_additive": -0.15275318054354342,
-        "r2_rf": 0.015537464564115422,
+        "r2_rf": 0.015537464564115467,
         "mae_percentage_points_additive": 7.787342229798435,
         "mae_percentage_points_rf": 4.715358167187499,
-        "rf_skill_over_additive": 0.14979231773526416,
-        "rf_skill_over_additive_both_seen": 0.14331456985148144,
+        "rf_skill_over_additive": 0.1497923177352642,
+        "rf_skill_over_additive_both_seen": 0.14331456985148142,
         "rf_skill_over_additive_within_component": 1.0,
         "cross_component_share_of_both_seen": 0.6307693544062755
       }
@@ -212,16 +231,16 @@
     "Pd-carbonylation": {
       "row": {
         "r2_additive": 0.2877725999589685,
-        "r2_rf": 0.5128446985633038,
+        "r2_rf": 0.5128446985633037,
         "mae_percentage_points_additive": 4.084897048889817,
         "mae_percentage_points_rf": 1.6572624487528735,
         "rf_skill_over_additive": 0.3161391358324227
       },
       "group": {
         "r2_additive": -0.7030157900680977,
-        "r2_rf": -0.12735059536695728,
+        "r2_rf": -0.1273505953669573,
         "mae_percentage_points_additive": 7.010983654611053,
-        "mae_percentage_points_rf": 3.366714837945402,
+        "mae_percentage_points_rf": 3.366714837945401,
         "rf_skill_over_additive": 0.313340588693925,
         "rf_skill_over_additive_both_seen": 0.3784844223563777,
         "rf_skill_over_additive_within_component": 0.38712286837348653,
@@ -233,14 +252,14 @@
         "r2_additive": 0.42421774912947735,
         "r2_rf": 0.5300331185809959,
         "mae_percentage_points_additive": 10.098697501865894,
-        "mae_percentage_points_rf": 5.817343615133056,
+        "mae_percentage_points_rf": 5.817343615133055,
         "rf_skill_over_additive": 0.1837779132289304
       },
       "group": {
         "r2_additive": 0.09299535764290409,
         "r2_rf": 0.309527644800948,
         "mae_percentage_points_additive": 12.759551341505565,
-        "mae_percentage_points_rf": 7.709785943638112,
+        "mae_percentage_points_rf": 7.70978594363811,
         "rf_skill_over_additive": 0.23760345417693357,
         "rf_skill_over_additive_both_seen": 0.26080485228451267,
         "rf_skill_over_additive_within_component": 0.2496842556932398,
@@ -249,159 +268,159 @@
     },
     "SNAr": {
       "row": {
-        "r2_additive": 0.5705530814265332,
-        "r2_rf": 0.6845600058524972,
-        "mae_percentage_points_additive": 4.58621138550186,
-        "mae_percentage_points_rf": 2.350826479014537,
-        "rf_skill_over_additive": 0.2654702072863697
+        "r2_additive": 0.5655634068722714,
+        "r2_rf": 0.6851899503475906,
+        "mae_percentage_points_additive": 4.317417004535881,
+        "mae_percentage_points_rf": 2.113015754421729,
+        "rf_skill_over_additive": 0.2753459108671285
       },
       "group": {
-        "r2_additive": -0.015164024228185347,
-        "r2_rf": 0.3488992918856676,
-        "mae_percentage_points_additive": 7.606835661347486,
-        "mae_percentage_points_rf": 4.258646696429581,
-        "rf_skill_over_additive": 0.35117892988974175,
-        "rf_skill_over_additive_both_seen": 0.3366337444805878,
-        "rf_skill_over_additive_within_component": 0.3248759527766053,
-        "cross_component_share_of_both_seen": 0.0200755190971905
+        "r2_additive": 0.06941234707078159,
+        "r2_rf": 0.3572727575699934,
+        "mae_percentage_points_additive": 6.655528164543725,
+        "mae_percentage_points_rf": 3.7348216772397493,
+        "rf_skill_over_additive": 0.3071893982545319,
+        "rf_skill_over_additive_both_seen": 0.2667594449589576,
+        "rf_skill_over_additive_within_component": 0.25762863396364577,
+        "cross_component_share_of_both_seen": 0.014180174114289002
       }
     },
     "Sonogashira": {
       "row": {
-        "r2_additive": 0.5331289871641915,
-        "r2_rf": 0.4969273990468458,
-        "mae_percentage_points_additive": 11.690570948179204,
-        "mae_percentage_points_rf": 9.79552453907244,
-        "rf_skill_over_additive": -0.07752239748722797
+        "r2_additive": 0.5345128600914129,
+        "r2_rf": 0.49721542767805016,
+        "mae_percentage_points_additive": 11.64766446253638,
+        "mae_percentage_points_rf": 9.753437783459919,
+        "rf_skill_over_additive": -0.08012696394420629
       },
       "group": {
-        "r2_additive": 0.1180249542672814,
-        "r2_rf": 0.17110119849247796,
-        "mae_percentage_points_additive": 16.463545579939225,
-        "mae_percentage_points_rf": 14.61480752800335,
-        "rf_skill_over_additive": 0.047653386401511774,
-        "rf_skill_over_additive_both_seen": 0.22420920919738632,
-        "rf_skill_over_additive_within_component": 0.23542503924222807,
-        "cross_component_share_of_both_seen": 0.11625905091410342
+        "r2_additive": 0.11633626198429847,
+        "r2_rf": 0.17853516812589543,
+        "mae_percentage_points_additive": 16.46615909777362,
+        "mae_percentage_points_rf": 14.546408205931849,
+        "rf_skill_over_additive": 0.05791327194970837,
+        "rf_skill_over_additive_both_seen": 0.21740472720204504,
+        "rf_skill_over_additive_within_component": 0.22764822433020387,
+        "cross_component_share_of_both_seen": 0.11526483253746811
       }
     },
     "Suzuki": {
       "row": {
         "r2_additive": 0.4502033599190839,
-        "r2_rf": 0.5384876261168567,
+        "r2_rf": 0.5384868341055096,
         "mae_percentage_points_additive": 16.2924926056257,
-        "mae_percentage_points_rf": 12.517598634462106,
-        "rf_skill_over_additive": 0.1605754289810381
+        "mae_percentage_points_rf": 12.517553870256922,
+        "rf_skill_over_additive": 0.16057399389995
       },
       "group": {
-        "r2_additive": 0.2932390524053046,
-        "r2_rf": 0.32640410690656835,
+        "r2_additive": 0.29323905240530457,
+        "r2_rf": 0.32642975219795733,
         "mae_percentage_points_additive": 18.465467467817447,
-        "mae_percentage_points_rf": 17.066518094788286,
-        "rf_skill_over_additive": 0.04694254653003307,
-        "rf_skill_over_additive_both_seen": 0.03253427013478938,
-        "rf_skill_over_additive_within_component": 0.03253427013478938,
+        "mae_percentage_points_rf": 17.06679272262164,
+        "rf_skill_over_additive": 0.04697965153759458,
+        "rf_skill_over_additive_both_seen": 0.03264538153076613,
+        "rf_skill_over_additive_within_component": 0.03264538153076613,
         "cross_component_share_of_both_seen": 0.0
       }
     },
     "Suzuki Bpin": {
       "row": {
-        "r2_additive": 0.649493784733455,
-        "r2_rf": 0.6500041553234901,
-        "mae_percentage_points_additive": 14.174540170493643,
-        "mae_percentage_points_rf": 11.722503804209442,
-        "rf_skill_over_additive": 0.0014575801344442808
+        "r2_additive": 0.6496585427857943,
+        "r2_rf": 0.652219639429579,
+        "mae_percentage_points_additive": 14.177754709066923,
+        "mae_percentage_points_rf": 11.666978215093376,
+        "rf_skill_over_additive": 0.007318035104413112
       },
       "group": {
-        "r2_additive": 0.1203001474206488,
-        "r2_rf": 0.1831602002605248,
-        "mae_percentage_points_additive": 22.80995017372839,
-        "mae_percentage_points_rf": 21.34400224877711,
-        "rf_skill_over_additive": 0.06987992443483175,
-        "rf_skill_over_additive_both_seen": 0.17162726100152143,
-        "rf_skill_over_additive_within_component": 0.13883857454805953,
+        "r2_additive": 0.12037968449070176,
+        "r2_rf": 0.18071452928461806,
+        "mae_percentage_points_additive": 22.810639786619795,
+        "mae_percentage_points_rf": 21.31606656388244,
+        "rf_skill_over_additive": 0.06708727901177367,
+        "rf_skill_over_additive_both_seen": 0.17830552637267155,
+        "rf_skill_over_additive_within_component": 0.15411939094675337,
         "cross_component_share_of_both_seen": 0.22577112943872865
       }
     },
     "Ullmann": {
       "row": {
-        "r2_additive": 0.5115335456201007,
-        "r2_rf": 0.5314518835369255,
-        "mae_percentage_points_additive": 9.56061990762559,
-        "mae_percentage_points_rf": 6.625054952674643,
-        "rf_skill_over_additive": 0.04077977094689038
+        "r2_additive": 0.5113586526792848,
+        "r2_rf": 0.5336308931399012,
+        "mae_percentage_points_additive": 9.560330751147992,
+        "mae_percentage_points_rf": 6.616932131340673,
+        "rf_skill_over_additive": 0.045581366735293116
       },
       "group": {
-        "r2_additive": 0.18439695052335298,
-        "r2_rf": 0.3183426916447205,
-        "mae_percentage_points_additive": 13.071867628202735,
-        "mae_percentage_points_rf": 9.416035186197549,
-        "rf_skill_over_additive": 0.1638226905800609,
-        "rf_skill_over_additive_both_seen": 0.017177680458409707,
-        "rf_skill_over_additive_within_component": 0.02497386662768828,
-        "cross_component_share_of_both_seen": 0.006359470413385249
+        "r2_additive": 0.18522470045819756,
+        "r2_rf": 0.3193911107364885,
+        "mae_percentage_points_additive": 13.066217445335985,
+        "mae_percentage_points_rf": 9.383121722478363,
+        "rf_skill_over_additive": 0.1643934135500179,
+        "rf_skill_over_additive_both_seen": 0.020552056148108733,
+        "rf_skill_over_additive_within_component": 0.027145644050738917,
+        "cross_component_share_of_both_seen": 0.006358454421467407
       }
     }
   },
   "subsets": {
     "all_18": {
-      "screens": 18,
-      "median_additive_r2_loss": 0.3291794932916605,
-      "median_rf_r2_loss": 0.2461257337952092,
-      "additive_r2_rank_rho_between_tasks": 0.31888544891640863,
-      "screens_where_rf_beats_additive_on_new_combinations": 17,
-      "median_additive_fraction_of_rf_held_out_well_r2": 0.8352608905551722,
-      "median_rf_skill_over_additive_new_combinations": 0.1634055909872422,
-      "rho_pair_share_vs_rf_skill_over_additive_new_combinations": -0.3065015479876161,
-      "p_pair_share_vs_rf_skill_over_additive_new_combinations": 0.21606379461125766,
-      "rho_rf_held_out_well_r2_vs_rf_skill_over_additive_new_combinations": 0.2672858617131063,
-      "rho_additive_r2_loss_vs_rf_r2_loss": 0.894736842105263,
-      "rho_pair_share_vs_rf_skill_over_additive_both_seen": -0.281733746130031,
-      "screens_where_rf_beats_additive_within_component": 15,
-      "median_rf_skill_over_additive_within_component": 0.15503717520881477,
-      "rho_pair_share_vs_rf_skill_over_additive_within_component": -0.28998968008255926,
-      "p_pair_share_vs_rf_skill_over_additive_within_component": 0.2430922860390451,
-      "median_cross_component_share_of_both_seen": 0.016660016144159896,
+      "screens": 19,
+      "median_additive_r2_loss": 0.3312223914865733,
+      "median_rf_r2_loss": 0.22050547378004787,
+      "additive_r2_rank_rho_between_tasks": 0.38070175438596493,
+      "screens_where_rf_beats_additive_on_new_combinations": 18,
+      "median_additive_fraction_of_rf_held_out_well_r2": 0.8360526783666401,
+      "median_rf_skill_over_additive_new_combinations": 0.1643934135500179,
+      "rho_pair_share_vs_rf_skill_over_additive_new_combinations": -0.3245614035087719,
+      "p_pair_share_vs_rf_skill_over_additive_new_combinations": 0.17518568656196792,
+      "rho_rf_held_out_well_r2_vs_rf_skill_over_additive_new_combinations": 0.1649122807017544,
+      "rho_additive_r2_loss_vs_rf_r2_loss": 0.8421052631578947,
+      "rho_pair_share_vs_rf_skill_over_additive_both_seen": -0.28421052631578947,
+      "screens_where_rf_beats_additive_within_component": 16,
+      "median_rf_skill_over_additive_within_component": 0.19451691468344695,
+      "rho_pair_share_vs_rf_skill_over_additive_within_component": -0.2368421052631579,
+      "p_pair_share_vs_rf_skill_over_additive_within_component": 0.32893104152682706,
+      "median_cross_component_share_of_both_seen": 0.01625470690666153,
       "range_cross_component_share_of_both_seen": [
         0.0,
         0.6307693544062755
       ],
-      "rho_substrate_levels_per_pair_vs_additive_fraction_of_rf_held_out_well_r2": 0.541795665634675
+      "rho_substrate_levels_per_pair_vs_additive_fraction_of_rf_held_out_well_r2": 0.6035087719298246
     },
     "mean_yield_at_least_5pct": {
       "screens": 11,
       "median_additive_r2_loss": 0.32237992650176583,
-      "median_rf_r2_loss": 0.213109191892205,
-      "additive_r2_rank_rho_between_tasks": -0.23636363636363636,
+      "median_rf_r2_loss": 0.21423978240341268,
+      "additive_r2_rank_rho_between_tasks": -0.3090909090909091,
       "screens_where_rf_beats_additive_on_new_combinations": 11,
-      "median_additive_fraction_of_rf_held_out_well_r2": 0.8443109395569891,
-      "median_rf_skill_over_additive_new_combinations": 0.16298849139442348,
-      "rho_pair_share_vs_rf_skill_over_additive_new_combinations": -0.7272727272727273,
-      "p_pair_share_vs_rf_skill_over_additive_new_combinations": 0.011204967253592057,
-      "rho_rf_held_out_well_r2_vs_rf_skill_over_additive_new_combinations": -0.10000000000000002,
-      "rho_additive_r2_loss_vs_rf_r2_loss": 0.9181818181818183,
-      "rho_pair_share_vs_rf_skill_over_additive_both_seen": -0.7363636363636363,
+      "median_additive_fraction_of_rf_held_out_well_r2": 0.8404097139717958,
+      "median_rf_skill_over_additive_new_combinations": 0.15188472909175305,
+      "rho_pair_share_vs_rf_skill_over_additive_new_combinations": -0.690909090909091,
+      "p_pair_share_vs_rf_skill_over_additive_new_combinations": 0.018565033381595004,
+      "rho_rf_held_out_well_r2_vs_rf_skill_over_additive_new_combinations": -0.15454545454545454,
+      "rho_additive_r2_loss_vs_rf_r2_loss": 0.8909090909090911,
+      "rho_pair_share_vs_rf_skill_over_additive_both_seen": -0.6818181818181819,
       "screens_where_rf_beats_additive_within_component": 9,
-      "median_rf_skill_over_additive_within_component": 0.13887260173010413,
-      "rho_pair_share_vs_rf_skill_over_additive_within_component": -0.790909090909091,
-      "p_pair_share_vs_rf_skill_over_additive_within_component": 0.003746082953397406,
+      "median_rf_skill_over_additive_within_component": 0.15411939094675337,
+      "rho_pair_share_vs_rf_skill_over_additive_within_component": -0.6727272727272727,
+      "p_pair_share_vs_rf_skill_over_additive_within_component": 0.023313039833185972,
       "median_cross_component_share_of_both_seen": 0.014731107332946336,
       "range_cross_component_share_of_both_seen": [
         0.0,
         0.22577112943872865
       ],
-      "rho_substrate_levels_per_pair_vs_additive_fraction_of_rf_held_out_well_r2": 0.7363636363636363
+      "rho_substrate_levels_per_pair_vs_additive_fraction_of_rf_held_out_well_r2": 0.8363636363636365
     }
   },
   "convergence": {
     "tolerance": 1e-12,
     "max_cycles_allowed": 50000,
-    "fits": 900,
+    "fits": 950,
     "max_cycles_used": 3447,
-    "median_cycles_used": 163.0,
+    "median_cycles_used": 171.0,
     "max_cycles_used_by_task": {
       "group": 3447,
-      "row": 1496
+      "row": 1672
     }
   }
 }

@@ -82,11 +82,11 @@
     "row_pair_level_r2": 0.9997298751713639,
     "row_within_pair_r2": 0.7392172401586563,
     "row_sister_well_mean_r2": 0.3807838881962026,
-    "group_r2": 0.04365816469396242,
-    "group_pair_level_r2": -0.09546533493060409,
-    "group_within_pair_r2": 0.1305573295335575,
+    "group_r2": 0.04365816469396235,
+    "group_pair_level_r2": -0.09546533493060408,
+    "group_within_pair_r2": 0.13055732953355742,
     "group_both_seen_share": 0.8,
-    "r2_lost": 0.7957186345356211,
+    "r2_lost": 0.7957186345356212,
     "per_seed": [
       {
         "seed": 42,
@@ -95,7 +95,7 @@
         "row_within_pair_r2": 0.7394114728907828,
         "row_sister_well_mean_r2": 0.38072451069899194,
         "group_r2": 0.3060008305094739,
-        "group_pair_level_r2": 0.35506728979496194,
+        "group_pair_level_r2": 0.35506728979496205,
         "group_within_pair_r2": 0.2753529935512953,
         "group_both_seen_share": 0.8
       },
@@ -114,11 +114,11 @@
         "seed": 20261008,
         "row_r2": 0.8370236910725328,
         "row_pair_level_r2": 0.999742230642103,
-        "row_within_pair_r2": 0.7353866187542528,
+        "row_within_pair_r2": 0.7353866187542529,
         "row_sister_well_mean_r2": 0.3815325541504725,
         "group_r2": -0.3025699155653907,
         "group_pair_level_r2": -0.6130596954473992,
-        "group_within_pair_r2": -0.10863213628448554,
+        "group_within_pair_r2": -0.10863213628448576,
         "group_both_seen_share": 0.8
       },
       {
@@ -127,7 +127,7 @@
         "row_pair_level_r2": 0.9997078401396816,
         "row_within_pair_r2": 0.7420224877951926,
         "row_sister_well_mean_r2": 0.38074204768423736,
-        "group_r2": 0.12905803971539542,
+        "group_r2": 0.1290580397153951,
         "group_pair_level_r2": -0.0675075560728422,
         "group_within_pair_r2": 0.2518366224587165,
         "group_both_seen_share": 0.8
@@ -140,7 +140,7 @@
         "row_sister_well_mean_r2": 0.379822930089631,
         "group_r2": -0.18480179698562327,
         "group_pair_level_r2": -0.4925963537965352,
-        "group_within_pair_r2": 0.007452495073017373,
+        "group_within_pair_r2": 0.007452495073017151,
         "group_both_seen_share": 0.8
       }
     ]

@@ -1,45 +1,12 @@
 {
-  "audit_date": "2026-09-20",
-  "title": "Data-centric ultra-high-throughput experimentation enables AI-ready reaction-space mapping",
-  "author_line_verbatim": "Lin Tan1, Majian Zeng1, Minghui Liang1, Qianghua Lin2, Yuefeng Wei1, Chan Zhu2, Yaxian Kong2, Kai Xue2, Kuangbiao Liao1*",
-  "version": "0612-corrected DOCX; corresponding 0612 PDF retains an acylation-CV discrepancy",
-  "public_status": "Local unpublished/unverified-publication manuscript record; no public DOI established in this audit.",
-  "source_files": [
-    {
-      "path": "Ultra_HTE_manuscript-0612-corrected.docx",
-      "bytes": 12626012,
-      "sha256": "81e8b9e1562774795026473a6de8740d768b3d76ba9d59b2ab4837fdb360ade1"
-    },
-    {
-      "path": "Supplementary Information-0612-corrected.docx",
-      "bytes": 63694840,
-      "sha256": "ce82f874b8682bf54bf171d90ee83caa663c629409a96e307978dec4a3ab0f5b"
-    },
-    {
-      "path": "Supplementary Information-0612.pdf",
-      "bytes": 6692595,
-      "sha256": "22f9c57dfb2862e8746076679eb18cdcf9a3d93b2d14c336c275fefdf9ed62bb"
-    },
-    {
-      "path": "Supplementary Information-0609.pdf",
-      "bytes": 64414416,
-      "sha256": "35834d0ef0c58226714096d043ee78a866e4439ffb59b54759daafa41953cf45"
-    }
-  ],
   "endpoint": "Within-plate end-to-end yield repeatability of a single repeated reaction per class, 96 wells each; not low-yield analytical precision.",
   "concentration_and_reaction_volume": "Not specified for these three validation plates.",
-  "batch_information": "One full 96-well plate is described per reaction class. Plate identifiers, dates and independent day/batch replicate counts are not supplied for these tables.",
-  "analytical_method_scope": "The general platform workflow is DESI-TOF-MS triage, selected UPLC-UV/MS and selected 1H NMR calibration. Tables S8-S10 label values Yield; their individual well-level measurement tier is not specified.",
-  "statistics_convention": "Recalculated from 96 published integer-percentage entries in each source table. Sample CV = stdev(ddof=1)/mean*100; population CV also supplied. Original unrounded measurements are not present in these tables.",
+  "batch_information": "One full 96-well plate per reaction class. Plate identifiers, dates and independent day/batch replicate counts are not supplied with these benchmark data.",
+  "analytical_method_scope": "The platform workflow is DESI-TOF-MS triage, selected UPLC-UV/MS and selected 1H NMR calibration. Individual well-level measurement tiers are not specified.",
+  "statistics_convention": "Recalculated from 96 recorded integer-percentage yields per reaction class. Sample CV = stdev(ddof=1)/mean*100; population CV also supplied. Original unrounded measurements are not included.",
   "benchmarks": [
     {
       "reaction_class": "acylation",
-      "source_table": "S8",
-      "docx_table_index_one_based": 8,
-      "pdf_pages_one_based": [
-        32,
-        33
-      ],
       "n": 96,
       "mean_yield_percent": 68.78125,
       "min_yield_percent": 58.0,
@@ -47,19 +14,11 @@
       "sample_sd_yield_percentage_points": 3.9528886839080632,
       "sample_CV_percent": 5.747043974786825,
       "population_CV_percent": 5.717033096163793,
-      "CV_percent_reported_in_corrected_DOCX": 5.7,
-      "CV_percent_reported_in_PDF": 5.8,
       "reaction_scale_mmol": 0.025,
-      "recipe_transcribed_by_visual_inspection": "4-aminoacetophenone (0.025 mmol) + 2-(4-methylphenyl)acetic acid (1.2 eq); HATU (1.5 eq), DIPEA (3.0 eq), DMF, 30 C, 3 h",
-      "DOCX_table_values_equal_PDF_table_values": true
+      "reaction_conditions": "4-aminoacetophenone (0.025 mmol) + 2-(4-methylphenyl)acetic acid (1.2 eq); HATU (1.5 eq), DIPEA (3.0 eq), DMF, 30 C, 3 h"
     },
     {
       "reaction_class": "suzuki_miyaura",
-      "source_table": "S9",
-      "docx_table_index_one_based": 9,
-      "pdf_pages_one_based": [
-        33
-      ],
       "n": 96,
       "mean_yield_percent": 79.94791666666667,
       "min_yield_percent": 66.0,
@@ -67,19 +26,11 @@
       "sample_sd_yield_percentage_points": 4.643886284628576,
       "sample_CV_percent": 5.80863952214128,
       "population_CV_percent": 5.778306993552895,
-      "CV_percent_reported_in_corrected_DOCX": 5.8,
-      "CV_percent_reported_in_PDF": 5.8,
       "reaction_scale_mmol": 0.025,
-      "recipe_transcribed_by_visual_inspection": "3-bromo-2-methylpyridine (0.025 mmol) + 4-methoxyphenylboronic acid (1.5 eq); XPhos Pd G3 (5 mol%), K3PO4 (3 eq), 1,4-dioxane/H2O (4:1), 100 C, 12 h",
-      "DOCX_table_values_equal_PDF_table_values": true
+      "reaction_conditions": "3-bromo-2-methylpyridine (0.025 mmol) + 4-methoxyphenylboronic acid (1.5 eq); XPhos Pd G3 (5 mol%), K3PO4 (3 eq), 1,4-dioxane/H2O (4:1), 100 C, 12 h"
     },
     {
       "reaction_class": "buchwald_hartwig",
-      "source_table": "S10",
-      "docx_table_index_one_based": 10,
-      "pdf_pages_one_based": [
-        34
-      ],
       "n": 96,
       "mean_yield_percent": 75.5625,
       "min_yield_percent": 62.0,
@@ -87,11 +38,8 @@
       "sample_sd_yield_percentage_points": 5.200834953209563,
       "sample_CV_percent": 6.882825413676842,
       "population_CV_percent": 6.846883520943883,
-      "CV_percent_reported_in_corrected_DOCX": 6.9,
-      "CV_percent_reported_in_PDF": 6.9,
       "reaction_scale_mmol": 0.025,
-      "recipe_transcribed_by_visual_inspection": "1-bromo-3,5-dimethoxybenzene (0.025 mmol) + 4-methoxyaniline (1.2 eq); Pd2(dba)3 (10 mol%, as drawn), XantPhos (20 mol%), K3PO4 (3 eq), 1,4-dioxane, 100 C, 16 h; scheme appears on PDF p33",
-      "DOCX_table_values_equal_PDF_table_values": true
+      "reaction_conditions": "1-bromo-3,5-dimethoxybenzene (0.025 mmol) + 4-methoxyaniline (1.2 eq); Pd2(dba)3 (10 mol%), XantPhos (20 mol%), K3PO4 (3 eq), 1,4-dioxane, 100 C, 16 h"
     }
   ]
 }
