@@ -1,4 +1,4 @@
-# Held-out wells and new substrate combinations: code and data
+# Whether a reaction screen predicts new substrate combinations can be anticipated from its yield table: code and data
 
 This directory contains the released records, results and code for **Whether a reaction screen predicts new substrate combinations can be anticipated from its yield table**. The 19 high-throughput screens (arrays) in 17 transformations contain 406,909 records. The analysis uses 378,070 records: 357,356 recorded numerical yields and 20,714 zeros assigned by the measurement-status rule below. The package contains the data and summaries needed to redraw the figures. The repository is https://github.com/TheLiaoGroup/Random-held-out-splits-misrank-reaction-screens-for-predicting-new-substrate-combinations. The DOI https://doi.org/10.5281/zenodo.23319287 is reserved for an unpublished Zenodo draft and does not yet identify a published dataset. File names keep the project prefix `p4_`. The code is released under the MIT License and the data and results under CC BY 4.0 (see `LICENSE`).
 
