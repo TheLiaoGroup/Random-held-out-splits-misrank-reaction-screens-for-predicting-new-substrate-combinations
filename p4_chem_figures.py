@@ -284,11 +284,14 @@ def figure1():
     molecules += text(44, 79.5, f"pair mean {means.iloc[0] * 100:.0f}%", anchor="middle")
     molecules += line(79.5, first_y, tx - 3, first_y, sw=0.5)
     low_height = chem.extent("methylamino_acetophenone")[1] * 72
-    molecules += chem.svg_group("methylamino_acetophenone", 0.5, last_y - low_height / 2)
-    molecules += svg_reagent_label(44, 121, (("+ 4-Me", False), ("2", True), ("NC", False),
+    low_offset = 24
+    low_y = last_y + low_offset
+    molecules += chem.svg_group("methylamino_acetophenone", 0.5, low_y - low_height / 2)
+    molecules += svg_reagent_label(44, 121 + low_offset, (("+ 4-Me", False), ("2", True), ("NC", False),
                                    ("6", True), ("H", False), ("4", True), ("MgBr", False)))
-    molecules += text(44, 131.5, f"pair mean {means.iloc[-1] * 100:.0f}%", anchor="middle")
-    molecules += line(79.5, last_y, tx - 3, last_y, sw=0.5)
+    molecules += text(44, 131.5 + low_offset, f"pair mean {means.iloc[-1] * 100:.0f}%", anchor="middle")
+    molecules += line(81.5, low_y, tx - 3, low_y, sw=0.5)
+    molecules += line(tx - 3, low_y, tx - 3, last_y, sw=0.5)
     body += group("A-native-chemistry", molecules)
     for y, value, flagged, label in ((144, 0, False, "0% yield"),
                                     (157, np.nan, False, "No record")):
@@ -593,7 +596,7 @@ def figure3():
     ax.text(0.2, 0.735, f"pair's other wells: {100 * ratio_sister:.0f}%", ha="left", va="center",
             color=INK)
     g = high.set_index("screen").loc["Grignard"]
-    ax.annotate("Grignard", (g.rf_row_r2, g.row_sister_well_mean_r2), xytext=(0.72, 0.62), textcoords="data",
+    ax.annotate("Grignard", (g.rf_row_r2, g.row_sister_well_mean_r2), xytext=(0.7605, 0.61), textcoords="data",
                 ha="center", va="center", color=INK, arrowprops=dict(arrowstyle="-", color=GRAY, lw=0.5, shrinkB=3))
     ax.set_xlim(lim)
     ax.set_ylim(lim)
@@ -615,7 +618,7 @@ def figure3():
                 (100 * g.pair_variance_share, 100 * g.both_seen_relative_mae_increase), xytext=(-6, -2),
                 textcoords="offset points", ha="right", va="center", color=INK)
     ax.annotate("Esterification", (100 * e.pair_variance_share, 100 * e.both_seen_relative_mae_increase),
-                xytext=(6, -5), textcoords="offset points", ha="left", va="top", color=INK)
+                xytext=(10, -3), textcoords="offset points", ha="left", va="top", color=INK)
     ax.text(22, 118, f"ρ = {rho_seen:.2f}", ha="left", va="top", color=INK, weight="bold")
     ax.set_xlim(20, 75)
     ax.set_ylim(0, 120)
@@ -880,14 +883,18 @@ def figure4():
     fig_w, fig_h = WIDTH, fig.get_figheight()
     col_w = gb.width * fig_w / 4
     left_in = gb.x0 * fig_w
-    row_h = gb.height * fig_h / 2
     box_h = [max(chem.extent(e[2])[1] for e in examples[4 * r:4 * r + 4]) for r in range(2)]
+    row_heights = [height + 0.42 for height in box_h]
+    spare = gb.height * fig_h - sum(row_heights)
+    if spare < 0:
+        raise ValueError("Native structures need more gallery height")
+    row_heights = [height + spare / 2 for height in row_heights]
     for k, (row, mean, asset, formula, _) in enumerate(examples):
         r, c = divmod(k, 4)
         cx = left_in + (c + 0.5) * col_w
-        top_in = (gb.y0 + gb.height) * fig_h - r * row_h
+        top_in = (gb.y0 + gb.height) * fig_h - sum(row_heights[:r])
         ex, ey = chem.extent(asset)
-        if ex > col_w - 0.08 or box_h[r] + 0.42 > row_h:
+        if ex > col_w - 0.08 or box_h[r] + 0.42 > row_heights[r]:
             raise ValueError(f"Native structure needs more gallery space: {asset}")
         cy = top_in - 0.06 - box_h[r] / 2
         chem.place(fig, asset, centre_in=(cx, cy))
@@ -907,21 +914,28 @@ def figure4():
     ax = fig.add_axes([0.215, box.y0 + 0.015, 0.68, box.height - 0.015])
     ax.set_xlim(0, 100)
     ax.set_ylim(-0.45, 1.6)
-    ax.set_yticks([1, 0], ["Amino or N–H", "Other partners"])
+    ax.set_yticks([1.15, 0], ["Amino or N–H", "Other partners"])
     ax.set_xticks([0, 25, 50, 75, 100], ["0", "25", "50", "75", "100%"])
     ax.set_xlabel("Measured pair mean yield, %", labelpad=2)
     despine(ax, keep=("bottom",))
+    # Keep the mean annotation inside the plot, above a separate tick-label band.
+    ax.spines["bottom"].set_position(("outward", 10))
     ax.tick_params(axis="y", length=0, pad=5)
     fig.canvas.draw()
     distributions = {}
-    for included, row, colour in ((True, 1, PURPLE), (False, 0, MID)):
+    for included, row, colour in ((True, 1.15, PURPLE), (False, 0, MID)):
         values = comparison.loc[comparison.amino_or_protic == included, "mean_percent"].to_numpy()
         ys = stacked_pair_positions(ax, values, row)
         ax.scatter(values, ys, s=7.8, color=colour, linewidths=0, zorder=3, clip_on=False)
         mean = values.mean()
         mean_y = ys.min() - 0.22
+        if not included:
+            points_per_y = (ax.transData.transform((0, 1))[1] - ax.transData.transform((0, 0))[1]) * 72 / fig.dpi
+            mean_y += 1.5 / points_per_y
         ax.plot([mean], [mean_y], marker="|", ms=5, mew=1.4, color=INK, zorder=4, clip_on=False)
-        ax.text(mean + 1.6, mean_y, f"{mean:.0f}%", ha="left", va="center", color=INK, weight="bold")
+        ax.annotate(f"{mean:.0f}%", (mean + 1.6, mean_y),
+                    xytext=(2, -1.5) if included else (7, 1.5), textcoords="offset points",
+                    ha="left", va="center", color=INK, weight="bold", annotation_clip=False)
         ax.text(102, row, f"n = {len(values)}", ha="left", va="center", color=GRAY)
         distributions["amino_or_protic" if included else "other"] = {
             "n": len(values), "mean_percent": float(mean), "values": values.tolist(),
@@ -970,7 +984,7 @@ def figure5():
         colour = HIGHLIGHT.get(row.screen, MID)
         ax.scatter(row.pair_pct, row.substrate_levels_per_pair, s=area(row.rf_delta_r2), color=colour,
                    alpha=0.85 if row.screen in HIGHLIGHT else 0.5, edgecolor="white", linewidths=0.6, zorder=3)
-    for screen, (dx, dy, ha) in {"Grignard": (0, 14, "center"), "Esterification": (0, 9, "center"),
+    for screen, (dx, dy, ha) in {"Grignard": (0, 17, "center"), "Esterification": (0, 9, "center"),
                                  "Heck": (7, 0, "left"), "Suzuki Bpin": (0, 12, "center")}.items():
         row = high.set_index("screen").loc[screen]
         ax.annotate(name(screen), (row.pair_pct, row.substrate_levels_per_pair), xytext=(dx, dy),
@@ -978,10 +992,10 @@ def figure5():
                     weight="bold" if screen in HIGHLIGHT else "normal")
     ax.text(0.03, 0.04, f"rank-sum ρ = {r_comb:.2f}", transform=ax.transAxes, ha="left", va="bottom", color=INK,
             weight="bold")
-    for k, loss in enumerate((0.1, 0.3, 0.6)):  # size key, lower right, clear of the arrays
-        ax.scatter(61 + 6.5 * k, 0.17, s=area(loss), color="white", edgecolor=GRAY, linewidths=0.6)
-        ax.text(61 + 6.5 * k, 0.01, f"{loss:.1f}", ha="center", va="bottom", color=INK)
-    ax.text(68.5, 0.3, "R² lost", ha="center", va="bottom", color=GRAY)
+    for x, loss in zip((53, 63, 73), (0.1, 0.3, 0.6)):  # size key, clear of the arrays and each other
+        ax.scatter(x, 0.17, s=area(loss), color="white", edgecolor=GRAY, linewidths=0.6)
+        ax.text(x, 0.01, f"{loss:.1f}", ha="center", va="bottom", color=INK)
+    ax.text(63, 0.3, "R² lost", ha="center", va="bottom", color=GRAY)
     ax.set_xlim(18, 78)
     ax.set_ylim(-0.02, 1.0)
     ax.set_xlabel("Between-pair share of yield variance, %")

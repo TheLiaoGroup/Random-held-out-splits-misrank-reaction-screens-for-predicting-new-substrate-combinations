@@ -9,14 +9,14 @@
   </fonttable>
   <page id="101" BoundingBox="0 0 240 75" WidthPages="1" HeightPages="1">
     <fragment id="102">
-      <n id="103" p="12.00000 62.17046" Element="6" NumHydrogens="3" />
-      <n id="104" p="19.20000 49.69969" Element="6" NumHydrogens="0" />
-      <n id="105" p="12.00000 37.22892" Element="8" NumHydrogens="0">
-        <t p="9.30000 40.12892" LabelJustification="Left" LabelAlignment="Left">
+      <n id="103" p="19.07910 68.43420" Element="6" NumHydrogens="3" />
+      <n id="104" p="23.52894 54.73898" Element="6" NumHydrogens="0" />
+      <n id="105" p="13.89346 44.03770" Element="8" NumHydrogens="0">
+        <t p="11.19346 46.93770" LabelJustification="Left" LabelAlignment="Left">
           <s font="3" size="8" face="96">O</s>
         </t>
       </n>
-      <n id="106" p="33.60000 49.69969" Element="6" NumHydrogens="2" />
+      <n id="106" p="37.61427 51.74505" Element="6" NumHydrogens="2" />
       <n id="107" p="42.06411 38.04984" Element="6" NumHydrogens="0" />
       <n id="108" p="33.60000 26.40000" Element="6" NumHydrogens="1" />
       <n id="109" p="42.06411 14.75016" Element="7" NumHydrogens="1">

@@ -1,7 +1,7 @@
 {
   "title": "Whether a reaction screen predicts new substrate combinations can be anticipated from its yield table",
   "doi": "https://doi.org/10.5281/zenodo.23319287",
-  "github": "https://github.com/TheLiaoGroup/Random-held-out-splits-misrank-reaction-screens-for-predicting-new-substrate-combinations",
+  "github": "https://github.com/TheLiaoGroup/Yield-table-predictability",
   "license": {
     "code": "MIT",
     "data_and_results": "CC BY 4.0"
@@ -16,7 +16,7 @@
     "array_metadata": "data/p4_screens.json"
   },
   "file_count": 110,
-  "total_bytes": 23169324,
+  "total_bytes": 23171617,
   "files": [
     {
       "path": ".gitattributes",
@@ -35,13 +35,13 @@
     },
     {
       "path": "README.md",
-      "bytes": 11953,
-      "sha256": "9213d4bf22cb698a9cd40c81c74b9c6013ad51ebf35e69c409b3001c9a37cb80"
+      "bytes": 11946,
+      "sha256": "4841243e46fc538560532218eda5cd45557d54e27b3928d2e02d2b6ee2615744"
     },
     {
       "path": "chemical_assets/assets.json",
       "bytes": 5821,
-      "sha256": "74598ca0c55eab38ee43c795b6586c49b953466fbba979ab0c925f6fefcabb8c"
+      "sha256": "a2658ab6cd8165f239b68f04fd7f005d8532c2fc26dd95dcb1923167d5ce471e"
     },
     {
       "path": "chemical_assets/chloronicotinaldehyde.cdxml",
@@ -95,13 +95,13 @@
     },
     {
       "path": "chemical_assets/indolyl_acetone.cdxml",
-      "bytes": 2679,
-      "sha256": "b0886a08e24ea7657550878de2c23bee6791ad07cb7849f0e0f35bd11880bc86"
+      "bytes": 2680,
+      "sha256": "83eae3ebc35cf56fa0b0eb4b48fec406764e8312847ab215b2d0f5b1929d1b6c"
     },
     {
       "path": "chemical_assets/indolyl_acetone.svg",
-      "bytes": 4686,
-      "sha256": "9a5e12c9fd70c63354028935768bfe5ae479a35d9e4498cdd4ea3af221788004"
+      "bytes": 4662,
+      "sha256": "f908814dd21376a321d985bc1624211844663dfb4c6f94faebe09d895aa21242"
     },
     {
       "path": "chemical_assets/methylamino_acetophenone.cdxml",
@@ -115,13 +115,13 @@
     },
     {
       "path": "chemical_assets/phenyl_methyl_pyrazolone.cdxml",
-      "bytes": 2840,
-      "sha256": "0db3960ac98fd0c2e99130266f880bffcfac395135bc32e482c30384b98aeaaf"
+      "bytes": 2839,
+      "sha256": "ef13f2b6133f241ae3442453e0180ccf09b3859932811ca5282bc9d1c70f5c2e"
     },
     {
       "path": "chemical_assets/phenyl_methyl_pyrazolone.svg",
-      "bytes": 4837,
-      "sha256": "d5c2dd3cb6a2d7ea56f5ce77bee944e9cf5869b0c9c95d05128224095e72511a"
+      "bytes": 4833,
+      "sha256": "15c7df7fb4303908cd20c55936d979804e03989194d70d353168b6d202abde13"
     },
     {
       "path": "chemical_assets/piperidinyl_acetophenone.cdxml",
@@ -135,13 +135,13 @@
     },
     {
       "path": "chemical_assets/quinoline_8_carbaldehyde.cdxml",
-      "bytes": 2568,
-      "sha256": "73fedb78275db72c492801a016bbbe380075c49b544a963b17d71d4331ea1603"
+      "bytes": 2569,
+      "sha256": "c79f2d48ff8e073a9532f05fa0b4e28c91a34241bae58c347baf6a2f4cd12e20"
     },
     {
       "path": "chemical_assets/quinoline_8_carbaldehyde.svg",
-      "bytes": 4489,
-      "sha256": "89399d541fb9fca7011468d2166d7cc47eaa4333a7f7ba9f0610571bfcfa49ca"
+      "bytes": 4477,
+      "sha256": "113bb84606ac0a0e99e2880c1391d046cb11850ada49c034bb5dee0d4a102167"
     },
     {
       "path": "data/benchmarks/README.md",
@@ -175,18 +175,18 @@
     },
     {
       "path": "figures/Figure_1.pdf",
-      "bytes": 79670,
-      "sha256": "9da799bfcefa26023613a2f3b016ecb9c1b3491a1c0969fbfcb59ef2c5c236c2"
+      "bytes": 79687,
+      "sha256": "04b0b9ba3fd53b8556a3d0ed9b91e1db69ad18dba40f7e7ecdd0fe15575b838f"
     },
     {
       "path": "figures/Figure_1.png",
-      "bytes": 193456,
-      "sha256": "85d89a4998aaab3c28fb7811b2ec19aed2f85aca33937306a2aa7f71374297c2"
+      "bytes": 193682,
+      "sha256": "541b8c0b5dd7bbc0a5c1598672a031d82946f73793b37214b8af9eec4c0b71e7"
     },
     {
       "path": "figures/Figure_1.svg",
-      "bytes": 35544,
-      "sha256": "bba348e300dc958ac365101dea1f7e16fb8f6b620f0f95033f9e4e21ebf7646d"
+      "bytes": 35654,
+      "sha256": "a54945cad634dd3b7a2bcd1adc669e258742bcce8a35cccb357315ce84e0bc1e"
     },
     {
       "path": "figures/Figure_2.pdf",
@@ -195,38 +195,38 @@
     },
     {
       "path": "figures/Figure_2.png",
-      "bytes": 343868,
-      "sha256": "ad10a040836cb19a7a25b2ac1abaa502fd807ef4c580dba3010db0deb31de194"
+      "bytes": 343735,
+      "sha256": "267ca09ab05eb5d6a709f88d9fdc173fd28e71617a9835a55a9b3648a328d857"
     },
     {
       "path": "figures/Figure_3.pdf",
-      "bytes": 77235,
-      "sha256": "7611e753ccd6398e42030d655ff280fc638974218052087a3955679dd01b73e2"
+      "bytes": 77232,
+      "sha256": "0205524539a7f6504c0b3e6bab4ae05c607fc4add0bdf6ffaf969294b0af44d2"
     },
     {
       "path": "figures/Figure_3.png",
-      "bytes": 388741,
-      "sha256": "5119b40fd4cb954e792bccfb40b962e9c6207565c9728d8b21d08246e1b3e555"
+      "bytes": 389067,
+      "sha256": "d9f5442ef7dcd5468b08fc508e0f2cd2195073abcc43a2c6163749d71a5ffca7"
     },
     {
       "path": "figures/Figure_4.pdf",
-      "bytes": 196887,
-      "sha256": "4cb4ae375a78bc6caaf508d61f142b8ff645e1779a7979636936e41d6d5f4b99"
+      "bytes": 196901,
+      "sha256": "f138605a1ae981ed254f247095f62e9d50a3e9a8c3824c2ea079659249b4b0b6"
     },
     {
       "path": "figures/Figure_4.png",
-      "bytes": 471342,
-      "sha256": "e7cacfb6f3adc4b8554a22d555193a1247f775a082723d2f4e3f57775923573a"
+      "bytes": 471681,
+      "sha256": "f3f11b190ec9bee38b6696565e35b880155ce2f023b9924e0983ba97baa6de75"
     },
     {
       "path": "figures/Figure_5.pdf",
-      "bytes": 59414,
-      "sha256": "a338adbac3dfe684f77b7482d15bab3094b718ef528eb51965a265e11f259286"
+      "bytes": 59420,
+      "sha256": "b3e383e943e280b68f4ac204e1e4262bb8d305ec7b93a2d1747af718d72092b2"
     },
     {
       "path": "figures/Figure_5.png",
-      "bytes": 174255,
-      "sha256": "5481a771dc3e9d447a8e71de66ebd14094ee2bdd2fc494473e1142f662f8d5e2"
+      "bytes": 174311,
+      "sha256": "9190f516ee1607515d257a152a12b261153016cdaf36fe9b36fb7bc2e9e629f7"
     },
     {
       "path": "figures/Figure_S1.pdf",
@@ -235,18 +235,18 @@
     },
     {
       "path": "figures/Figure_S1.png",
-      "bytes": 81917,
-      "sha256": "0392b6e5e716a31cabcdb9b31fef6f3e02ec6bffc1b9efd0fdfcfc25f9ad0dea"
+      "bytes": 81901,
+      "sha256": "a34e3e5bda8ebdcc96ae817a27b38ccc4f1dbb7c18d468a21d297e94c2c73161"
     },
     {
       "path": "figures/Figure_S2.pdf",
       "bytes": 53727,
-      "sha256": "124225cbce844b0a6eb55f3262b453e8963edcec54f71f02aaf58edd24750622"
+      "sha256": "1ee183503b6b318b4ca3b20dc28868308b7f581766052d43fbbf8e8639e2d2c7"
     },
     {
       "path": "figures/Figure_S2.png",
-      "bytes": 170081,
-      "sha256": "2fe8026c3acf4845f243c14f75cc7e712cb49cc44facc355b21f800e4e953e90"
+      "bytes": 170155,
+      "sha256": "9fefa1106957229d781ab2e6549fc9928904a8aca929d07849724061b34e11e2"
     },
     {
       "path": "figures/Figure_S3.pdf",
@@ -255,8 +255,8 @@
     },
     {
       "path": "figures/Figure_S3.png",
-      "bytes": 157238,
-      "sha256": "13715abae3c1cb5493ff3d4332274fc53a3b5b67b93697ac3b12855f402c49ac"
+      "bytes": 157351,
+      "sha256": "806c8262557942e55489c5c1c4fcbc34e1238f7a0147814c1729de81b3d0e64c"
     },
     {
       "path": "figures/Figure_S4.pdf",
@@ -265,8 +265,8 @@
     },
     {
       "path": "figures/Figure_S4.png",
-      "bytes": 309446,
-      "sha256": "f958411837f7b5a581105565930bba263c17115d185e14c031675aeb30e556bf"
+      "bytes": 309490,
+      "sha256": "1e2c9149a10050b60626978641cf4f17b75d881f7531b6a8f45d2bc5ed2764de"
     },
     {
       "path": "figures/Figure_S5.pdf",
@@ -275,8 +275,8 @@
     },
     {
       "path": "figures/Figure_S5.png",
-      "bytes": 91192,
-      "sha256": "975060e4868ae4b694e28c3a360923ff5c847b176380afd0601c2270c5ca4418"
+      "bytes": 91210,
+      "sha256": "99e73af61320353a4426508cfb703ee9af23eded0255bdeaf83a9d4ec786d80a"
     },
     {
       "path": "figures/Figure_S6.pdf",
@@ -285,8 +285,8 @@
     },
     {
       "path": "figures/Figure_S6.png",
-      "bytes": 196945,
-      "sha256": "558418d685a4782df8c493bfa937ffc8c86828c6728807ebf624e0787522893b"
+      "bytes": 197140,
+      "sha256": "6025afa5e7a9a5c715977bbd7e958901542cfd2947179a5b755db060d6d7b1f1"
     },
     {
       "path": "figures/Figure_S7.pdf",
@@ -295,8 +295,8 @@
     },
     {
       "path": "figures/Figure_S7.png",
-      "bytes": 164381,
-      "sha256": "28c0c335016b0341ba683ece53d3d66dd9bf1f64de145c1ac4cf4efc7bf93eb3"
+      "bytes": 164356,
+      "sha256": "611401b36422580fee4c9bfff01105d8906f59212fceb05e689e1e0973c34cbd"
     },
     {
       "path": "figures/TOC.pdf",
@@ -490,8 +490,8 @@
     },
     {
       "path": "p4_chem_figures.py",
-      "bytes": 59188,
-      "sha256": "d0997e704c1122d1a49fcb9b36b7a8cd703df728054609a0f7533b200eb05aa0"
+      "bytes": 60033,
+      "sha256": "8e6d7464c1ab67a5cfb49b8e30c6fe9464996abb874a74bd00f538138ebf615d"
     },
     {
       "path": "p4_external_hte_check.py",
@@ -550,8 +550,8 @@
     },
     {
       "path": "p4_supplementary_figures.py",
-      "bytes": 20210,
-      "sha256": "8f2dc9a18f3b20726b5c64afbe25a1c2003d92cab83ab88e485f580590a33dfa"
+      "bytes": 20343,
+      "sha256": "1ce6c7ca151af59aba8025d0d189c722d328271fb19b72783eab65b8424206d2"
     },
     {
       "path": "p4_u0_model_analysis_20261007.py",
@@ -570,11 +570,11 @@
     }
   ],
   "figure_pipeline": {
-    "identity": "chem_final_labels_and_calibrated_titles_20261022_v7",
+    "identity": "chem_approved_geometry_and_repository_20261022_v8",
     "source_scripts_sha256": {
-      "p4_chem_figures.py": "d0997e704c1122d1a49fcb9b36b7a8cd703df728054609a0f7533b200eb05aa0",
+      "p4_chem_figures.py": "8e6d7464c1ab67a5cfb49b8e30c6fe9464996abb874a74bd00f538138ebf615d",
       "p4_structure_drawing.py": "d5672b0e92c95ff98f0399f77469cde7795a4345cc1f9b4a55aa0ad88cfd4076",
-      "p4_supplementary_figures.py": "8f2dc9a18f3b20726b5c64afbe25a1c2003d92cab83ab88e485f580590a33dfa",
+      "p4_supplementary_figures.py": "1ce6c7ca151af59aba8025d0d189c722d328271fb19b72783eab65b8424206d2",
       "p4_figure_style.py": "2b06fbf2247d5ee99695574374958661e4b83174d7e0e28f9932f9462ab8188f"
     },
     "recompute_commands": [
@@ -2173,6 +2173,422 @@
         "after": {
           "bytes": 11953,
           "sha256": "9213d4bf22cb698a9cd40c81c74b9c6013ad51ebf35e69c409b3001c9a37cb80"
+        }
+      }
+    ]
+  },
+  "online_refresh_revision": {
+    "identity": "chem_approved_geometry_and_repository_20261022_v8",
+    "scope": "Install only the latest approved drawing sources, native chemical assets, exact submission figure PDFs, regenerated drawing outputs and renamed repository URL. Preserve all scientific inputs, model sources, saved results and complete prior release history. No new fits; Zenodo remains an unpublished draft.",
+    "prior_manifest_sha256": "1238eaf2828d39d9a3a0415716f7c13f643794475a68b603da96b3367e1f5738",
+    "github_before": "https://github.com/TheLiaoGroup/Random-held-out-splits-misrank-reaction-screens-for-predicting-new-substrate-combinations",
+    "github_after": "https://github.com/TheLiaoGroup/Yield-table-predictability",
+    "figure_pipeline_before": {
+      "identity": "chem_final_labels_and_calibrated_titles_20261022_v7",
+      "source_scripts_sha256": {
+        "p4_chem_figures.py": "d0997e704c1122d1a49fcb9b36b7a8cd703df728054609a0f7533b200eb05aa0",
+        "p4_structure_drawing.py": "d5672b0e92c95ff98f0399f77469cde7795a4345cc1f9b4a55aa0ad88cfd4076",
+        "p4_supplementary_figures.py": "8f2dc9a18f3b20726b5c64afbe25a1c2003d92cab83ab88e485f580590a33dfa",
+        "p4_figure_style.py": "2b06fbf2247d5ee99695574374958661e4b83174d7e0e28f9932f9462ab8188f"
+      },
+      "recompute_commands": [
+        "python p4_chem_figures.py --output-dir figures",
+        "python p4_supplementary_figures.py --output-dir figures"
+      ],
+      "outputs": [
+        "figures/Figure_1.pdf",
+        "figures/Figure_1.png",
+        "figures/Figure_1.svg",
+        "figures/Figure_2.pdf",
+        "figures/Figure_2.png",
+        "figures/Figure_3.pdf",
+        "figures/Figure_3.png",
+        "figures/Figure_4.pdf",
+        "figures/Figure_4.png",
+        "figures/Figure_5.pdf",
+        "figures/Figure_5.png",
+        "figures/Figure_S1.pdf",
+        "figures/Figure_S1.png",
+        "figures/Figure_S2.pdf",
+        "figures/Figure_S2.png",
+        "figures/Figure_S3.pdf",
+        "figures/Figure_S3.png",
+        "figures/Figure_S4.pdf",
+        "figures/Figure_S4.png",
+        "figures/Figure_S5.pdf",
+        "figures/Figure_S5.png",
+        "figures/Figure_S6.pdf",
+        "figures/Figure_S6.png",
+        "figures/Figure_S7.pdf",
+        "figures/Figure_S7.png",
+        "figures/TOC.pdf",
+        "figures/TOC.png"
+      ],
+      "new_fits": 0,
+      "retired_scripts": [
+        "p4_manuscript_figures_20261008.py",
+        "p4_rf_figure.py"
+      ],
+      "presentation_revision": {
+        "identity": "chem_figure_pipeline_20261021_v1",
+        "added_paths": [
+          "figures/Figure_1.svg",
+          "figures/Figure_S1.pdf",
+          "figures/Figure_S1.png",
+          "figures/Figure_S2.pdf",
+          "figures/Figure_S2.png",
+          "figures/Figure_S3.pdf",
+          "figures/Figure_S3.png",
+          "figures/Figure_S4.pdf",
+          "figures/Figure_S4.png",
+          "figures/Figure_S5.pdf",
+          "figures/Figure_S5.png",
+          "figures/Figure_S6.pdf",
+          "figures/Figure_S6.png",
+          "figures/TOC.pdf",
+          "figures/TOC.png",
+          "p4_chem_figures.py",
+          "p4_structure_drawing.py",
+          "p4_supplementary_figures.py"
+        ],
+        "retired_paths": [
+          "figures/Extended_Data_Figure_1.pdf",
+          "figures/Extended_Data_Figure_1.png",
+          "figures/Extended_Data_Figure_2.pdf",
+          "figures/Extended_Data_Figure_2.png",
+          "figures/Extended_Data_Figure_3.pdf",
+          "figures/Extended_Data_Figure_3.png",
+          "p4_manuscript_figures_20261008.py",
+          "p4_rf_figure.py"
+        ],
+        "mutable_paths": [
+          "README.md",
+          "figures/Figure_1.pdf",
+          "figures/Figure_1.png",
+          "figures/Figure_2.pdf",
+          "figures/Figure_2.png",
+          "figures/Figure_3.pdf",
+          "figures/Figure_3.png",
+          "figures/Figure_4.pdf",
+          "figures/Figure_4.png",
+          "figures/Figure_5.pdf",
+          "figures/Figure_5.png",
+          "p4_figure_style.py",
+          "requirements-p4.txt"
+        ],
+        "scope": "Figure source, figure outputs, usage documentation and drawing dependencies only; data, results, model sources and historical run manifests retain their prior bytes.",
+        "preserved_inventory_sha256": "646f9437a02277a25d0ef6cd650253b240da9c16b0e3587c9d42bb188be57dda",
+        "preserved_file_count": 56,
+        "prior_manifest_sha256": "d8c64b8029bf4721f8027daf070943bd79c37de860456147174910ed62d3e85b"
+      }
+    },
+    "changed_files": [
+      {
+        "path": "README.md",
+        "before": {
+          "bytes": 11953,
+          "sha256": "9213d4bf22cb698a9cd40c81c74b9c6013ad51ebf35e69c409b3001c9a37cb80"
+        },
+        "after": {
+          "bytes": 11946,
+          "sha256": "4841243e46fc538560532218eda5cd45557d54e27b3928d2e02d2b6ee2615744"
+        }
+      },
+      {
+        "path": "chemical_assets/assets.json",
+        "before": {
+          "bytes": 5821,
+          "sha256": "74598ca0c55eab38ee43c795b6586c49b953466fbba979ab0c925f6fefcabb8c"
+        },
+        "after": {
+          "bytes": 5821,
+          "sha256": "a2658ab6cd8165f239b68f04fd7f005d8532c2fc26dd95dcb1923167d5ce471e"
+        }
+      },
+      {
+        "path": "chemical_assets/indolyl_acetone.cdxml",
+        "before": {
+          "bytes": 2679,
+          "sha256": "b0886a08e24ea7657550878de2c23bee6791ad07cb7849f0e0f35bd11880bc86"
+        },
+        "after": {
+          "bytes": 2680,
+          "sha256": "83eae3ebc35cf56fa0b0eb4b48fec406764e8312847ab215b2d0f5b1929d1b6c"
+        }
+      },
+      {
+        "path": "chemical_assets/indolyl_acetone.svg",
+        "before": {
+          "bytes": 4686,
+          "sha256": "9a5e12c9fd70c63354028935768bfe5ae479a35d9e4498cdd4ea3af221788004"
+        },
+        "after": {
+          "bytes": 4662,
+          "sha256": "f908814dd21376a321d985bc1624211844663dfb4c6f94faebe09d895aa21242"
+        }
+      },
+      {
+        "path": "chemical_assets/phenyl_methyl_pyrazolone.cdxml",
+        "before": {
+          "bytes": 2840,
+          "sha256": "0db3960ac98fd0c2e99130266f880bffcfac395135bc32e482c30384b98aeaaf"
+        },
+        "after": {
+          "bytes": 2839,
+          "sha256": "ef13f2b6133f241ae3442453e0180ccf09b3859932811ca5282bc9d1c70f5c2e"
+        }
+      },
+      {
+        "path": "chemical_assets/phenyl_methyl_pyrazolone.svg",
+        "before": {
+          "bytes": 4837,
+          "sha256": "d5c2dd3cb6a2d7ea56f5ce77bee944e9cf5869b0c9c95d05128224095e72511a"
+        },
+        "after": {
+          "bytes": 4833,
+          "sha256": "15c7df7fb4303908cd20c55936d979804e03989194d70d353168b6d202abde13"
+        }
+      },
+      {
+        "path": "chemical_assets/quinoline_8_carbaldehyde.cdxml",
+        "before": {
+          "bytes": 2568,
+          "sha256": "73fedb78275db72c492801a016bbbe380075c49b544a963b17d71d4331ea1603"
+        },
+        "after": {
+          "bytes": 2569,
+          "sha256": "c79f2d48ff8e073a9532f05fa0b4e28c91a34241bae58c347baf6a2f4cd12e20"
+        }
+      },
+      {
+        "path": "chemical_assets/quinoline_8_carbaldehyde.svg",
+        "before": {
+          "bytes": 4489,
+          "sha256": "89399d541fb9fca7011468d2166d7cc47eaa4333a7f7ba9f0610571bfcfa49ca"
+        },
+        "after": {
+          "bytes": 4477,
+          "sha256": "113bb84606ac0a0e99e2880c1391d046cb11850ada49c034bb5dee0d4a102167"
+        }
+      },
+      {
+        "path": "figures/Figure_1.pdf",
+        "before": {
+          "bytes": 79670,
+          "sha256": "9da799bfcefa26023613a2f3b016ecb9c1b3491a1c0969fbfcb59ef2c5c236c2"
+        },
+        "after": {
+          "bytes": 79687,
+          "sha256": "04b0b9ba3fd53b8556a3d0ed9b91e1db69ad18dba40f7e7ecdd0fe15575b838f"
+        }
+      },
+      {
+        "path": "figures/Figure_1.png",
+        "before": {
+          "bytes": 193456,
+          "sha256": "85d89a4998aaab3c28fb7811b2ec19aed2f85aca33937306a2aa7f71374297c2"
+        },
+        "after": {
+          "bytes": 193682,
+          "sha256": "541b8c0b5dd7bbc0a5c1598672a031d82946f73793b37214b8af9eec4c0b71e7"
+        }
+      },
+      {
+        "path": "figures/Figure_1.svg",
+        "before": {
+          "bytes": 35544,
+          "sha256": "bba348e300dc958ac365101dea1f7e16fb8f6b620f0f95033f9e4e21ebf7646d"
+        },
+        "after": {
+          "bytes": 35654,
+          "sha256": "a54945cad634dd3b7a2bcd1adc669e258742bcce8a35cccb357315ce84e0bc1e"
+        }
+      },
+      {
+        "path": "figures/Figure_2.png",
+        "before": {
+          "bytes": 343868,
+          "sha256": "ad10a040836cb19a7a25b2ac1abaa502fd807ef4c580dba3010db0deb31de194"
+        },
+        "after": {
+          "bytes": 343735,
+          "sha256": "267ca09ab05eb5d6a709f88d9fdc173fd28e71617a9835a55a9b3648a328d857"
+        }
+      },
+      {
+        "path": "figures/Figure_3.pdf",
+        "before": {
+          "bytes": 77235,
+          "sha256": "7611e753ccd6398e42030d655ff280fc638974218052087a3955679dd01b73e2"
+        },
+        "after": {
+          "bytes": 77232,
+          "sha256": "0205524539a7f6504c0b3e6bab4ae05c607fc4add0bdf6ffaf969294b0af44d2"
+        }
+      },
+      {
+        "path": "figures/Figure_3.png",
+        "before": {
+          "bytes": 388741,
+          "sha256": "5119b40fd4cb954e792bccfb40b962e9c6207565c9728d8b21d08246e1b3e555"
+        },
+        "after": {
+          "bytes": 389067,
+          "sha256": "d9f5442ef7dcd5468b08fc508e0f2cd2195073abcc43a2c6163749d71a5ffca7"
+        }
+      },
+      {
+        "path": "figures/Figure_4.pdf",
+        "before": {
+          "bytes": 196887,
+          "sha256": "4cb4ae375a78bc6caaf508d61f142b8ff645e1779a7979636936e41d6d5f4b99"
+        },
+        "after": {
+          "bytes": 196901,
+          "sha256": "f138605a1ae981ed254f247095f62e9d50a3e9a8c3824c2ea079659249b4b0b6"
+        }
+      },
+      {
+        "path": "figures/Figure_4.png",
+        "before": {
+          "bytes": 471342,
+          "sha256": "e7cacfb6f3adc4b8554a22d555193a1247f775a082723d2f4e3f57775923573a"
+        },
+        "after": {
+          "bytes": 471681,
+          "sha256": "f3f11b190ec9bee38b6696565e35b880155ce2f023b9924e0983ba97baa6de75"
+        }
+      },
+      {
+        "path": "figures/Figure_5.pdf",
+        "before": {
+          "bytes": 59414,
+          "sha256": "a338adbac3dfe684f77b7482d15bab3094b718ef528eb51965a265e11f259286"
+        },
+        "after": {
+          "bytes": 59420,
+          "sha256": "b3e383e943e280b68f4ac204e1e4262bb8d305ec7b93a2d1747af718d72092b2"
+        }
+      },
+      {
+        "path": "figures/Figure_5.png",
+        "before": {
+          "bytes": 174255,
+          "sha256": "5481a771dc3e9d447a8e71de66ebd14094ee2bdd2fc494473e1142f662f8d5e2"
+        },
+        "after": {
+          "bytes": 174311,
+          "sha256": "9190f516ee1607515d257a152a12b261153016cdaf36fe9b36fb7bc2e9e629f7"
+        }
+      },
+      {
+        "path": "figures/Figure_S1.png",
+        "before": {
+          "bytes": 81917,
+          "sha256": "0392b6e5e716a31cabcdb9b31fef6f3e02ec6bffc1b9efd0fdfcfc25f9ad0dea"
+        },
+        "after": {
+          "bytes": 81901,
+          "sha256": "a34e3e5bda8ebdcc96ae817a27b38ccc4f1dbb7c18d468a21d297e94c2c73161"
+        }
+      },
+      {
+        "path": "figures/Figure_S2.pdf",
+        "before": {
+          "bytes": 53727,
+          "sha256": "124225cbce844b0a6eb55f3262b453e8963edcec54f71f02aaf58edd24750622"
+        },
+        "after": {
+          "bytes": 53727,
+          "sha256": "1ee183503b6b318b4ca3b20dc28868308b7f581766052d43fbbf8e8639e2d2c7"
+        }
+      },
+      {
+        "path": "figures/Figure_S2.png",
+        "before": {
+          "bytes": 170081,
+          "sha256": "2fe8026c3acf4845f243c14f75cc7e712cb49cc44facc355b21f800e4e953e90"
+        },
+        "after": {
+          "bytes": 170155,
+          "sha256": "9fefa1106957229d781ab2e6549fc9928904a8aca929d07849724061b34e11e2"
+        }
+      },
+      {
+        "path": "figures/Figure_S3.png",
+        "before": {
+          "bytes": 157238,
+          "sha256": "13715abae3c1cb5493ff3d4332274fc53a3b5b67b93697ac3b12855f402c49ac"
+        },
+        "after": {
+          "bytes": 157351,
+          "sha256": "806c8262557942e55489c5c1c4fcbc34e1238f7a0147814c1729de81b3d0e64c"
+        }
+      },
+      {
+        "path": "figures/Figure_S4.png",
+        "before": {
+          "bytes": 309446,
+          "sha256": "f958411837f7b5a581105565930bba263c17115d185e14c031675aeb30e556bf"
+        },
+        "after": {
+          "bytes": 309490,
+          "sha256": "1e2c9149a10050b60626978641cf4f17b75d881f7531b6a8f45d2bc5ed2764de"
+        }
+      },
+      {
+        "path": "figures/Figure_S5.png",
+        "before": {
+          "bytes": 91192,
+          "sha256": "975060e4868ae4b694e28c3a360923ff5c847b176380afd0601c2270c5ca4418"
+        },
+        "after": {
+          "bytes": 91210,
+          "sha256": "99e73af61320353a4426508cfb703ee9af23eded0255bdeaf83a9d4ec786d80a"
+        }
+      },
+      {
+        "path": "figures/Figure_S6.png",
+        "before": {
+          "bytes": 196945,
+          "sha256": "558418d685a4782df8c493bfa937ffc8c86828c6728807ebf624e0787522893b"
+        },
+        "after": {
+          "bytes": 197140,
+          "sha256": "6025afa5e7a9a5c715977bbd7e958901542cfd2947179a5b755db060d6d7b1f1"
+        }
+      },
+      {
+        "path": "figures/Figure_S7.png",
+        "before": {
+          "bytes": 164381,
+          "sha256": "28c0c335016b0341ba683ece53d3d66dd9bf1f64de145c1ac4cf4efc7bf93eb3"
+        },
+        "after": {
+          "bytes": 164356,
+          "sha256": "611401b36422580fee4c9bfff01105d8906f59212fceb05e689e1e0973c34cbd"
+        }
+      },
+      {
+        "path": "p4_chem_figures.py",
+        "before": {
+          "bytes": 59188,
+          "sha256": "d0997e704c1122d1a49fcb9b36b7a8cd703df728054609a0f7533b200eb05aa0"
+        },
+        "after": {
+          "bytes": 60033,
+          "sha256": "8e6d7464c1ab67a5cfb49b8e30c6fe9464996abb874a74bd00f538138ebf615d"
+        }
+      },
+      {
+        "path": "p4_supplementary_figures.py",
+        "before": {
+          "bytes": 20210,
+          "sha256": "8f2dc9a18f3b20726b5c64afbe25a1c2003d92cab83ab88e485f580590a33dfa"
+        },
+        "after": {
+          "bytes": 20343,
+          "sha256": "1ce6c7ca151af59aba8025d0d189c722d328271fb19b72783eab65b8424206d2"
         }
       }
     ]

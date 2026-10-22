@@ -93,16 +93,16 @@
     {
       "name": "indolyl_acetone",
       "cdxml": "indolyl_acetone.cdxml",
-      "cdxml_sha256": "b0886a08e24ea7657550878de2c23bee6791ad07cb7849f0e0f35bd11880bc86",
+      "cdxml_sha256": "83eae3ebc35cf56fa0b0eb4b48fec406764e8312847ab215b2d0f5b1929d1b6c",
       "svg": "indolyl_acetone.svg",
-      "svg_sha256": "9a5e12c9fd70c63354028935768bfe5ae479a35d9e4498cdd4ea3af221788004",
-      "width_pt": 76.5,
-      "height_pt": 62.25,
+      "svg_sha256": "f908814dd21376a321d985bc1624211844663dfb4c6f94faebe09d895aa21242",
+      "width_pt": 75.0,
+      "height_pt": 68.25,
       "svg_viewbox": [
         0.0,
         0.0,
-        102.0,
-        83.0
+        100.0,
+        91.0
       ],
       "svg_units_per_point": 1.3333333333333333,
       "source_smiles": "CC(=O)Cc1c[nH]c2ccccc12"
@@ -127,15 +127,15 @@
     {
       "name": "phenyl_methyl_pyrazolone",
       "cdxml": "phenyl_methyl_pyrazolone.cdxml",
-      "cdxml_sha256": "0db3960ac98fd0c2e99130266f880bffcfac395135bc32e482c30384b98aeaaf",
+      "cdxml_sha256": "ef13f2b6133f241ae3442453e0180ccf09b3859932811ca5282bc9d1c70f5c2e",
       "svg": "phenyl_methyl_pyrazolone.svg",
-      "svg_sha256": "d5c2dd3cb6a2d7ea56f5ce77bee944e9cf5869b0c9c95d05128224095e72511a",
-      "width_pt": 84.0,
+      "svg_sha256": "15c7df7fb4303908cd20c55936d979804e03989194d70d353168b6d202abde13",
+      "width_pt": 82.5,
       "height_pt": 54.75,
       "svg_viewbox": [
         0.0,
         0.0,
-        112.0,
+        110.0,
         73.0
       ],
       "svg_units_per_point": 1.3333333333333333,
@@ -161,16 +161,16 @@
     {
       "name": "quinoline_8_carbaldehyde",
       "cdxml": "quinoline_8_carbaldehyde.cdxml",
-      "cdxml_sha256": "73fedb78275db72c492801a016bbbe380075c49b544a963b17d71d4331ea1603",
+      "cdxml_sha256": "c79f2d48ff8e073a9532f05fa0b4e28c91a34241bae58c347baf6a2f4cd12e20",
       "svg": "quinoline_8_carbaldehyde.svg",
-      "svg_sha256": "89399d541fb9fca7011468d2166d7cc47eaa4333a7f7ba9f0610571bfcfa49ca",
-      "width_pt": 70.5,
-      "height_pt": 41.25,
+      "svg_sha256": "113bb84606ac0a0e99e2880c1391d046cb11850ada49c034bb5dee0d4a102167",
+      "width_pt": 58.5,
+      "height_pt": 57.75,
       "svg_viewbox": [
         0.0,
         0.0,
-        94.0,
-        55.0
+        78.0,
+        77.0
       ],
       "svg_units_per_point": 1.3333333333333333,
       "source_smiles": "O=Cc1cccc2cccnc12"

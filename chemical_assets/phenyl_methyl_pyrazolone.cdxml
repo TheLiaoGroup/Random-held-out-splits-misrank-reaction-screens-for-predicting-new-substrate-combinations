@@ -9,12 +9,12 @@
   </fonttable>
   <page id="101" BoundingBox="0 0 240 75" WidthPages="1" HeightPages="1">
     <fragment id="102">
-      <n id="103" p="12.00000 12.82092" Element="6" NumHydrogens="3" />
+      <n id="103" p="14.04537 8.80666" Element="6" NumHydrogens="3" />
       <n id="104" p="25.69521 17.27077" Element="6" NumHydrogens="0" />
       <n id="105" p="25.69521 31.67077" Element="6" NumHydrogens="1" />
       <n id="106" p="39.39043 36.12061" Element="6" NumHydrogens="0" />
-      <n id="107" p="34.94058 49.81582" Element="8" NumHydrogens="0">
-        <t p="32.24058 52.71582" LabelJustification="Left" LabelAlignment="Left">
+      <n id="107" p="43.84027 49.81582" Element="8" NumHydrogens="0">
+        <t p="41.14027 52.71582" LabelJustification="Left" LabelAlignment="Left">
           <s font="3" size="8" face="96">O</s>
         </t>
       </n>

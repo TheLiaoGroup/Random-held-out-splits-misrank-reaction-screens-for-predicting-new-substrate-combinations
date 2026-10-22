@@ -93,7 +93,9 @@ def figure_s2():
     previous = None
     for c, r, e in zip(cut, values, sweep):
         if e["screens"] != previous:
-            ax.text(c, r + 0.04, str(e["screens"]), ha="center", va="bottom", color=GRAY)
+            ax.annotate(str(e["screens"]), (c, r + 0.04),
+                        xytext=(6, 0) if e["screens"] == 11 else (0, 0), textcoords="offset points",
+                        ha="center", va="bottom", color=GRAY)
         previous = e["screens"]
     ax.axhline(0, color=LIGHT, lw=0.6)
     ax.set_xlim(-0.6, 12.6)
