@@ -102,7 +102,31 @@ def despine(ax, keep=("left", "bottom")):
 
 
 def save(fig, stem: str):
-    style.finalize(fig)
+    style.finalize(fig, figure_name=stem)
+    if stem == "Figure_2":
+        for label in fig.texts:
+            if label.get_text() == "C":
+                x, y = label.get_position()
+                label.set_position((x, y + 10.8 / (72 * fig.get_figheight())))
+        style.check_text_bounds(fig)
+    if stem == "Figure_3":
+        for label in fig.texts:
+            if label.get_text() in ("C", "D"):
+                x, y = label.get_position()
+                label.set_position((x, y + 9.6 / (72 * fig.get_figheight())))
+        style.check_text_bounds(fig)
+    if stem == "Figure_4":
+        for ax in fig.axes:
+            for label in ax.texts:
+                if label.get_gid() == "pale-yield-number":
+                    label.set_color("#4d565c")
+    if stem == "TOC":
+        scores = [text for ax in fig.axes for text in ax.texts if text.get_gid() == "toc-score"]
+        if len(scores) != 2:
+            raise ValueError("The graphical abstract must have exactly two score labels")
+        for score in scores:
+            score.set_fontsize(16)
+        style.check_text_bounds(fig)
     fig.savefig(OUT / f"{stem}.pdf", metadata={"CreationDate": None, "ModDate": None})
     if chem.compose_pdf(fig, OUT / f"{stem}.pdf"):
         import pymupdf
@@ -120,7 +144,7 @@ def rho(a, b) -> float:
 
 
 SVG_GREY, SVG_LIGHT, CELL = "#7a8389", "#c3c8cd", "#d9dde1"
-W, H = 510, 334
+W, H = 510, 214
 
 
 def text(x, y, s, size=8, weight="normal", anchor="start", fill=INK, style=""):
@@ -129,13 +153,33 @@ def text(x, y, s, size=8, weight="normal", anchor="start", fill=INK, style=""):
             f'text-anchor="{anchor}" fill="{fill}"{st}>{escape(s)}</text>')
 
 
+def svg_reagent_label(x, y, pieces):
+    """Use positioned Arial digits because the system font lacks Unicode subscripts."""
+    from matplotlib.font_manager import FontProperties, findfont
+    from reportlab.pdfbase import pdfmetrics
+    from reportlab.pdfbase.ttfonts import TTFont
+
+    font_name = "ChemArialMetrics"
+    if font_name not in pdfmetrics.getRegisteredFontNames():
+        pdfmetrics.registerFont(TTFont(font_name, findfont(FontProperties(family="Arial"), fallback_to_default=False)))
+    widths = [pdfmetrics.stringWidth(token, font_name, 8) for token, _ in pieces]
+    cursor = x - sum(widths) / 2
+    spans = []
+    for (token, subscript), width in zip(pieces, widths):
+        offset = 1.8 if subscript else 0
+        spans.append(f'<tspan x="{cursor:.4f}" y="{y + offset:.1f}">{escape(token)}</tspan>')
+        cursor += width
+    return (f'<text x="{x:.1f}" y="{y:.1f}" font-family="Arial" font-size="8" '
+            f'text-anchor="start" fill="{INK}">' + "".join(spans) + '</text>')
+
+
 def lines(x, y, rows, size=8, gap=9.6, **kw):
     return "".join(text(x, y + i * gap, r, size=size, **kw) for i, r in enumerate(rows))
 
 
 def rect(x, y, w, h, fill="none", stroke="none", sw=0.6, dash="", rx=0):
     d = f' stroke-dasharray="{dash}"' if dash else ""
-    return (f'<rect x="{x:.1f}" y="{y:.1f}" width="{w:.1f}" height="{h:.1f}" rx="{rx}" fill="{fill}" '
+    return (f'<rect x="{x:.4f}" y="{y:.4f}" width="{w:.4f}" height="{h:.4f}" rx="{rx}" fill="{fill}" '
             f'stroke="{stroke}" stroke-width="{sw}"{d}/>')
 
 
@@ -162,140 +206,171 @@ def group(name, body):
     return f'<g id="{name}">{body}</g>\n'
 
 
+OVERVIEW_PAIRS = (
+    "Grignard-pair-00040", "Grignard-pair-00019", "Grignard-pair-00042", "Grignard-pair-00045",
+    "Grignard-pair-00064", "Grignard-pair-00094", "Grignard-pair-00138", "Grignard-pair-00143",
+)
+OVERVIEW_CONDITIONS = ("C38", "C14", "C46", "C25", "C27", "C48", "C47", "C24", "C12", "C6", "C31", "C8")
+OVERVIEW_CMAP = LinearSegmentedColormap.from_list("overview", ["#f1f5f9", "#c6d5e6", "#5d86b0", "#1d3557"])
+
+
+def overview_data():
+    """The approved 8-pair, 12-condition illustration, with full-pair means kept distinct from block means."""
+    grid, flags, analysed = matrix(records(["Grignard"]))
+    assert grid.shape == (136, 47) and len(analysed) == 5361
+    row_ids = grid.index.get_indexer(OVERVIEW_PAIRS)
+    col_ids = grid.columns.get_indexer(OVERVIEW_CONDITIONS)
+    assert (row_ids >= 0).all() and (col_ids >= 0).all()
+    values = grid.values[np.ix_(row_ids, col_ids)]
+    missing = flags[np.ix_(row_ids, col_ids)]
+    means = analysed.groupby("pair_key").yield_fraction.mean().reindex(OVERVIEW_PAIRS)
+    assert abs(means.iloc[0] * 100 - 75.0293617021) < 1e-6 and means.iloc[-1] == 0
+    assert np.isfinite(values).sum() == 95 and missing.sum() == 0
+    assert not np.isfinite(values[3, 5])  # Pair 00045, condition C48 has no source record.
+    return values, missing, means
+
+
+def overview_colour(value, missing=False):
+    if missing:
+        return "#e4e7ea"
+    return matplotlib.colors.to_hex(OVERVIEW_CMAP(value)) if np.isfinite(value) else "#ffffff"
+
+
+def overview_svg_cell(x, y, width, height, value, missing=False):
+    body = rect(x, y, width, height, fill=overview_colour(value, missing),
+                stroke=SVG_LIGHT if not np.isfinite(value) else "none", sw=0.5)
+    if missing:
+        for offset in np.arange(-height, width, 3):
+            start, end = max(0, -offset), min(height, width - offset)
+            if end > start:
+                body += line(x + offset + start, y + height - start,
+                             x + offset + end, y + height - end, stroke=MID, sw=0.5, cap="butt")
+    return body
+
+
 def figure1():
-    """Layered SVG: one real screening table (Grignard) whose highlighted row splits into the two tests."""
+    """The approved V5 layout, populated from the measured cells and unrounded array scores."""
     table = structure()
     high = table[table.high].copy()
     high["row_rank"] = high.rf_row_r2.rank(ascending=False).astype(int)
     high["group_rank"] = high.rf_group_r2.rank(ascending=False).astype(int)
     ranks = high.set_index("screen")
     rho11 = high[["rf_row_r2", "rf_group_r2"]].corr(method="spearman").iloc[0, 1]
-    med = high[["row_pair_level_r2", "group_pair_level_r2", "row_within_pair_r2", "group_within_pair_r2"]].median()
-    r_share = high[["pair_variance_share", "rf_delta_r2"]].corr(method="spearman").iloc[0, 1]
-    r_levels = high[["substrate_levels_per_pair", "rf_delta_r2"]].corr(method="spearman").iloc[0, 1]
-    records_n = int(table.numeric_records.sum())
-    assert records_n == 378070 and len(table) == 19
+    assert int(table.numeric_records.sum()) == 378070 and len(table) == 19
     assert (ranks.loc["Grignard", "row_rank"], ranks.loc["Grignard", "group_rank"]) == (2, 11)
     assert (ranks.loc["Buchwald-Hartwig", "row_rank"], ranks.loc["Buchwald-Hartwig", "group_rank"]) == (11, 4)
-    g_row = ranks.loc["Grignard"]
-    grignard, g_flags, _ = matrix(records(["Grignard"]))
-    n_rows, n_cols = grignard.shape
-    assert (n_rows, n_cols) == (136, 47)
+    grignard = ranks.loc["Grignard"]
+    values, missing, means = overview_data()
 
-    def colour(value, flagged):
-        if flagged:
-            return MISSING
-        if not np.isfinite(value):
-            return "white"
-        return matplotlib.colors.to_hex(CMAP(value))
+    def title(x, y, letter, words):
+        return text(x, y, letter, size=9, weight="bold") + text(x + 11, y, words, size=9, weight="bold")
 
-    parts = [group("question", text(6, 14, "Is this reaction worth modelling for substrate pairs not yet run?", size=9,
-                                    weight="bold")),
-             group("scale", text(W - 6, 14, f"19 arrays · 17 reaction families · {records_n:,} yields",
-                                 anchor="end", fill=SVG_GREY))]
+    parts = []
+    # A: both branches begin at the same highlighted first row.
+    body = title(2, 11, "A", "One pair, two tests")
+    tx, ty, cell, cell_size = 86, 38, 7.4, 6.6
+    cells = ""
+    for i in range(8):
+        for j in range(12):
+            cells += overview_svg_cell(tx + j * cell, ty + i * cell, cell_size, cell_size,
+                                       values[i, j], missing[i, j])
+    body += group("A-measured-cells", cells)
+    body += rect(tx - 1.2, ty - 1.2, 90.4, 9.0, stroke=PURPLE, sw=1.1)
+    body += text(tx, 110.2, "Grignard yields, 8 of 136 pairs", fill=SVG_GREY)
+    first_y, last_y = ty + cell_size / 2, ty + 7 * cell + cell_size / 2
+    molecules = chem.svg_group("chloronicotinaldehyde", 12.5, 12.575)
+    molecules += svg_reagent_label(44, 69, (("+ 4-FC", False), ("6", True), ("H", False),
+                                           ("4", True), ("MgBr", False)))
+    molecules += text(44, 79.5, f"pair mean {means.iloc[0] * 100:.0f}%", anchor="middle")
+    molecules += line(79.5, first_y, tx - 3, first_y, sw=0.5)
+    low_height = chem.extent("methylamino_acetophenone")[1] * 72
+    molecules += chem.svg_group("methylamino_acetophenone", 0.5, last_y - low_height / 2)
+    molecules += svg_reagent_label(44, 121, (("+ 4-Me", False), ("2", True), ("NC", False),
+                                   ("6", True), ("H", False), ("4", True), ("MgBr", False)))
+    molecules += text(44, 131.5, f"pair mean {means.iloc[-1] * 100:.0f}%", anchor="middle")
+    molecules += line(79.5, last_y, tx - 3, last_y, sw=0.5)
+    body += group("A-native-chemistry", molecules)
+    for y, value, flagged, label in ((144, 0, False, "0% yield"),
+                                    (157, np.nan, False, "No record")):
+        body += overview_svg_cell(tx, y, 7, 7, value, flagged)
+        body += text(tx + 11, y + 6.5, label, fill=SVG_GREY)
 
-    # visual centre: the real Grignard table, one row highlighted
-    hx, hy, hw, hh = 8, 50, 118, 176
-    cw, ch = hw / n_cols, hh / n_rows
-    pick = 24  # a productive pair whose row is shown in both branches
-    body = text(hx, hy - 16, "One screening table", weight="bold")
-    body += text(hx, hy - 6, f"Grignard addition: {n_rows} pairs × {n_cols} conditions", fill=SVG_GREY)
-    for r in range(n_rows):
-        for c in range(n_cols):
-            body += rect(hx + c * cw, hy + r * ch, cw + 0.05, ch + 0.05,
-                         fill=colour(grignard.values[r, c], g_flags[r, c]))
-    body += rect(hx - 0.8, hy - 0.8, hw + 1.6, hh + 1.6, stroke=PURPLE, sw=1.2)
-    body += rect(hx - 0.4, hy + pick * ch - 0.6, hw + 0.8, ch + 1.2, stroke=INK, sw=0.9)
-    body += text(hx, hy + hh + 10, "rows: pairs · columns: conditions", fill=SVG_GREY)
-    parts.append(group("table", body))
+    sx, step = 201, 7.4
+    branches = arrow(tx + 12 * cell + 2, first_y, sx - 4, 48, c1=(sx - 12, 48))
+    branches += arrow(tx + 12 * cell + 2, first_y, sx - 4, 92, c1=(sx - 12, 92))
+    branches += text(sx, 37, "Held-out wells", weight="bold")
+    for j, value in enumerate(values[0]):
+        hidden = j in (2, 6, 9)
+        branches += rect(sx + j * step + (0.6 if hidden else 0), 43 + (0.6 if hidden else 0),
+                         5.6 if hidden else 6.6, 8.8 if hidden else 10,
+                         fill="white" if hidden else overview_colour(value),
+                         stroke=TEAL if hidden else "none", sw=1.0)
+    branches += text(sx, 81, "New pairs", weight="bold")
+    branches += rect(sx + 0.6, 87.6, 87.4, 8.8, fill="white", stroke=ORANGE, sw=1.2)
+    branches += text(sx + 44.4, 95, "?", anchor="middle", weight="bold")
+    body += group("A-two-test-branches", branches)
+    scores = text(sx, 119, "Grignard array, R²", weight="bold")
+    score_scale = 76.0
+    for y, label, score, colour in ((138, "Held-out wells", grignard.rf_row_r2, TEAL),
+                                     (164, "New pairs", grignard.rf_group_r2, ORANGE)):
+        width = float(score) * score_scale
+        scores += line(sx, y - 1, sx, y + 9, sw=0.5)
+        scores += text(sx, y - 4, label, fill=SVG_GREY)
+        scores += group("A-score-" + ("held-out" if colour == TEAL else "new-pairs"),
+                        rect(sx, y, width, 8, fill=colour))
+        scores += text(sx + width + 4, y + 7, f"{score:.2f}", size=9, weight="bold")
+    body += group("A-common-zero-scores", scores)
+    parts.append(group("A-one-pair-two-tests", body))
 
-    # the table read before modelling, written where it applies
-    body = text(hx, hy + hh + 26, "Read before modelling", weight="bold")
-    body += text(hx, hy + hh + 37, f"between-pair share {100 * g_row.pair_variance_share:.0f}%")
-    body += text(hx, hy + hh + 47, f"pairing sparsity {g_row.substrate_levels_per_pair:.2f}")
-    body += text(hx, hy + hh + 59, f"both track the loss: {r_share:.2f}, {r_levels:.2f}", fill=SVG_GREY)
-    body += text(hx, hy + hh + 69, "(rank correlations, 11 arrays)", fill=SVG_GREY)
-    parts.append(group("before-modelling", body))
-
-    # two branches built from the highlighted row
-    bx, sw_cell = 150, 3.1
-    strip_w = n_cols * sw_cell
-    up_y, lo_y = 72, 168
-    values, flags = grignard.values[pick], g_flags[pick]
-    held = {4, 12, 21, 30, 39}
-    row_y = hy + (pick + 0.5) * ch
-    body = arrow(hx + hw + 3, row_y, bx - 5, up_y + 5, c1=(bx - 18, up_y + 5))
-    body += arrow(hx + hw + 3, row_y, bx - 5, lo_y + 5, c1=(bx - 18, lo_y + 5))
-    body += text(bx, up_y - 6, "Held-out wells", weight="bold")
-    for c in range(n_cols):
-        if c in held:
-            body += rect(bx + c * sw_cell + 0.4, up_y + 0.4, sw_cell - 0.8, 9.2, fill="white", stroke=TEAL, sw=0.9)
-        else:
-            body += rect(bx + c * sw_cell, up_y, sw_cell + 0.05, 10, fill=colour(values[c], flags[c]))
-    body += lines(bx, up_y + 22, ["a few wells are hidden; the pair's other", "wells stay in training: the model recalls"])
-    body += text(bx, up_y + 44, "random splits: Ahneman 2018, Schwaller 2021", fill=SVG_GREY)
-    body += text(bx, lo_y - 6, "New pairs", weight="bold")
-    body += rect(bx + 0.4, lo_y + 0.4, strip_w - 0.8, 9.2, fill="white", stroke=ORANGE, sw=1.2)
-    body += text(bx + strip_w / 2, lo_y + 8.2, "?", anchor="middle", weight="bold")
-    body += lines(bx, lo_y + 22, ["the whole pair and its plates are withheld:", "the model must predict the pair"])
-    body += lines(bx, lo_y + 44, ["withheld components or pairs:", "Sandfort 2020, Ismail 2026,",
-                                  "Götz 2025, Neves 2026"], fill=SVG_GREY)
-    parts.append(group("branches", body))
-
-    # what the forest loses on new pairs, beside the branch where it happens
-    ly = lo_y + 86
-    body = rect(bx, ly - 7, 16, 7, fill="#55606a")
-    body += text(bx + 21, ly, f"pair mean R² {med.row_pair_level_r2:.2f} → {med.group_pair_level_r2:.2f}",
-                 weight="bold")
-    for k, dy in enumerate((3, -2, 4, -3, 2)):
-        body += line(bx + 2 + 3 * k, ly + 8, bx + 2 + 3 * k, ly + 8 - dy, stroke=SVG_GREY, sw=1.0, cap="butt")
-    body += text(bx + 21, ly + 11, f"within pair {med.row_within_pair_r2:.2f} → {med.group_within_pair_r2:.2f}")
-    body += text(bx + 21, ly + 21, "median R², 11 arrays", fill=SVG_GREY)
-    parts.append(group("lost", body))
-
-    # rank ladder fed by the two branches
-    lx0, lx1, ly0, step = 392, 450, 88, 13
-    bottom = ly0 + 10 * step
-    body = ""
-    for x, label, hidden in ((lx0, "held-out", True), (lx1, "new pairs", False)):
-        for c in range(6):
-            if hidden:
-                held_cell = c in (1, 4)
-                body += rect(x - 15 + 5 * c + 0.3, ly0 - 31.7, 4.4, 5.4, fill="white" if held_cell else CELL,
-                             stroke=TEAL if held_cell else "none", sw=0.8 if held_cell else 0.6)
-        if not hidden:
-            body += rect(x - 15, ly0 - 32, 29.6, 6, fill=ORANGE)
-        body += text(x, ly0 - 14, label, anchor="middle", fill=SVG_GREY)
+    # B: rankings use the five-seed mean scores of all 11 higher-yield arrays.
+    lx0, lx1, ly0, step = 388, 412, 41, 12.2
+    body = title(280, 11, "B", "The ranking of reactions flips")
+    body += text(lx0 - 4, 29, "held-out", anchor="end", fill=SVG_GREY)
+    body += text(lx1 + 4, 29, "new pairs", fill=SVG_GREY)
     order = sorted(ranks.index, key=lambda s: (s in ("Grignard", "Buchwald-Hartwig"), s))
     for screen in order:
         r, g = ranks.loc[screen, "row_rank"], ranks.loc[screen, "group_rank"]
-        stroke, sw = SVG_LIGHT, 0.9
+        stroke, sw = SVG_LIGHT, 0.7
         if screen == "Grignard":
-            stroke, sw = PURPLE, 2.6
+            stroke, sw = PURPLE, 2.0
         elif screen == "Buchwald-Hartwig":
-            stroke, sw = INK, 1.8
+            stroke, sw = INK, 1.4
         body += line(lx0, ly0 + (r - 1) * step, lx1, ly0 + (g - 1) * step, stroke=stroke, sw=sw)
+        emphasized = screen in ("Grignard", "Buchwald-Hartwig")
+        left_name, right_name = name(screen), name(screen)
+        if emphasized:
+            ordinal = {2: "2nd", 4: "4th", 11: "11th"}
+            left_name += " " + ordinal[r]
+            right_name = ordinal[g] + " " + right_name
+        body += text(lx0 - 7, ly0 + (r - 1) * step + 3, left_name, anchor="end",
+                     weight="bold" if emphasized else "normal", fill=INK if emphasized else SVG_GREY)
+        body += text(lx1 + 7, ly0 + (g - 1) * step + 3, right_name,
+                     weight="bold" if emphasized else "normal", fill=INK if emphasized else SVG_GREY)
     for k in range(11):
         for x in (lx0, lx1):
-            body += f'<circle cx="{x}" cy="{ly0 + k * step:.1f}" r="2.1" fill="{SVG_GREY}"/>'
-    body += text(lx0 - 6, ly0 + step + 3, "Grignard 2nd", anchor="end", weight="bold")
-    body += text(lx0 - 6, ly0 + 10 * step + 3, "Buchwald–Hartwig 11th", anchor="end", weight="bold")
-    body += text(lx1 + 6, ly0 + 3 * step + 3, "4th", weight="bold")
-    body += text(lx1 + 6, ly0 + 10 * step + 3, "11th", weight="bold")
-    body += text((lx0 + lx1) / 2, bottom + 28, f"rank correlation {rho11:.2f}", anchor="middle", weight="bold")
-    body += text((lx0 + lx1) / 2, bottom + 38, "11 arrays averaging ≥5% yield", anchor="middle", fill=SVG_GREY)
-    parts.append(group("ladder", body))
+            body += f'<circle cx="{x}" cy="{ly0 + k * step:.1f}" r="1.5" fill="{SVG_GREY}"/>'
+    body += text(400, 183, f"ρ = {rho11:.2f}", size=9, anchor="middle", weight="bold")
+    parts.append(group("B-ranks", body))
 
-    # the gap: no earlier work compared the order of reactions
-    body = rect(lx0 - 76, 24, 178, 28, stroke=INK, sw=0.9, dash="3 2")
-    body += text(lx0 - 70, 35, "Does the order of reactions survive?", weight="bold")
-    body += text(lx0 - 70, 46, "not compared before: this work", fill=SVG_GREY)
-    parts.append(group("gap", body))
+    # C: compact visual pointers to the two full-table properties in Figure 5.
+    body = title(2, 202, "C", "Read before modelling:")
+    dark, mid, pale = "#55606a", "#a4acb2", "#dde1e4"
+    ix, iy, ic = 140, 191, 3.6
+    for i, shade in enumerate((dark, mid, pale, mid)):
+        for j in range(5):
+            body += rect(ix + j * ic, iy + i * ic, 3.1, 3.1, fill=shade)
+    body += text(163, 202, "between-pair share")
+    ix, iy2 = 252, 191
+    filled = {(0, 0), (0, 4), (1, 1), (2, 2), (2, 3), (3, 4)}
+    for i in range(4):
+        for j in range(5):
+            body += rect(ix + j * ic, iy2 + i * ic, 3.1, 3.1, fill=dark if (i, j) in filled else "white",
+                         stroke="none" if (i, j) in filled else SVG_LIGHT, sw=0.5)
+    body += text(275, 202, "pairing sparsity")
+    body += text(352, 202, "(Figure 5)", fill=SVG_GREY)
+    parts.append(group("C-properties", body))
 
-    parts.append(group("grignard-chemistry", text(bx + 150, H - 52, "Grignard addition", weight="bold")
-                       + chem.svg_group("grignard_addition", bx + 150, H - 47)))
-
-    svg = (f'<svg xmlns="http://www.w3.org/2000/svg" width="180mm" height="{H * 25.4 / 72:.1f}mm" '
+    svg = (f'<svg xmlns="http://www.w3.org/2000/svg" width="180mm" height="{180 * H / W:.12g}mm" '
            f'viewBox="0 0 {W} {H}">\n'
            f'<rect width="{W}" height="{H}" fill="white"/>\n' + "".join(parts) + "</svg>\n")
     (OUT / "Figure_1.svg").write_text(svg, encoding="utf-8")
@@ -341,7 +416,7 @@ def figure2():
 
     # a: rank slope chart (hero)
     ax = fig.add_subplot(grid[:, 0])
-    style.panel_title(ax, "a  Grignard falls from 2nd to 11th")
+    style.panel_title(ax, "A  Grignard falls from 2nd to 11th")
     order = [s for s in high.sort_values("row_rank").screen]
     for screen in order:
         r, g = ranks.loc[screen, "row_rank"], ranks.loc[screen, "group_rank"]
@@ -359,17 +434,15 @@ def figure2():
     ax.text(1, 0.1, "New\npairs", ha="center", va="bottom", color=INK, weight="bold")
     motif_row(ax, 0, -1.75, hidden=(1, 4))
     motif_row(ax, 1, -1.75, hidden="all")
-    ax.text(0.5, 12.25, f"Rank correlation {rho11:.2f} (11 arrays)\n"
-                        f"{reversals['reversed_in_mean']} of {reversals['pairs']} array pairs change order, "
-                        f"{reversals['reversed_in_all_seeds']} in all five seeds",
-            ha="center", va="top", color=INK)
+    ax.text(0.5, 12.25, f"ρ = {rho11:.2f}", ha="center", va="top", color=INK, weight="bold")
+    assert reversals["pairs"] == 55
     ax.set_xlim(-1.75, 2.05)
     ax.set_ylim(13.4, -2.25)
     ax.axis("off")
 
     # b: held-out vs new R2, all 19 arrays
     ax = fig.add_subplot(grid[0, 1])
-    style.panel_title(ax, "b  Every array loses accuracy on new pairs")
+    style.panel_title(ax, "B  Every array loses accuracy on new pairs")
     lim = (-0.3, 0.85)
     ax.plot(lim, lim, ls=(0, (3, 2)), color=GRAY, lw=0.7, zorder=1)
     for row in table.itertuples():
@@ -384,9 +457,7 @@ def figure2():
             ax.annotate(name(row.screen), (row.rf_row_r2, row.rf_group_r2), xytext=(tx, ty), textcoords="data",
                         ha=ha, va="center", color=INK,
                         arrowprops=dict(arrowstyle="-", color=GRAY, lw=0.5, shrinkA=1, shrinkB=3) if leader else None)
-    ax.text(-0.27, 0.8, f"{losses_all} of {len(rf_seed)} array × seed comparisons\nfall below the line; "
-                        f"median loss {table.rf_delta_r2.median():.2f}", ha="left", va="top", color=INK)
-    ax.text(0.83, -0.27, "open: arrays averaging < 5% yield", ha="right", va="bottom", color=GRAY)
+    ax.text(-0.27, 0.8, f"{losses_all}/{len(rf_seed)} below y = x", ha="left", va="top", color=INK, weight="bold")
     ax.set_xlim(lim)
     ax.set_ylim(lim)
     ax.set_xlabel("R² on held-out wells")
@@ -395,16 +466,16 @@ def figure2():
 
     # c: picking arrays by either score
     ax = fig.add_subplot(grid[1, 1])
-    style.panel_title(ax, "c  Picking by held-out wells is no better than random")
+    style.panel_title(ax, "C  The top three by held-out wells\nfall below a random pick")
     ks = [r["k"] for r in selection]
     by_row = [r["group_r2_mean_row_selected"] for r in selection]
     by_group = [r["group_r2_mean_group_selected"] for r in selection]
     ax.axhline(random_pick, color=GRAY, ls=(0, (3, 2)), lw=0.7)
     ax.plot(ks, by_group, color=ORANGE, lw=1.6, marker="o", ms=3.2)
     ax.plot(ks, by_row, color=TEAL, lw=1.6, marker="o", ms=3.2)
-    ax.text(5.3, 0.475, "picked by new-pair R²\n(best possible)", color=INK, ha="left", va="bottom")
-    ax.text(4.4, 0.222, "picked by held-out-well R²", color=INK, ha="left", va="bottom")
-    ax.text(11, random_pick - 0.014, f"random pick, {random_pick:.2f}", color=INK, ha="right", va="top")
+    ax.text(5.3, 0.475, "by new-pair R²", color=INK, ha="left", va="bottom")
+    ax.text(4.4, 0.222, "by held-out-well R²", color=INK, ha="left", va="bottom")
+    ax.text(11, random_pick - 0.014, f"random, {random_pick:.2f}", color=INK, ha="right", va="top")
     ax.annotate(f"{by_row[2]:.2f}", (3, by_row[2]), xytext=(0, -7), textcoords="offset points", ha="center",
                 va="top", color=INK)
     ax.annotate(f"{by_group[2]:.2f}", (3, by_group[2]), xytext=(5, 5), textcoords="offset points", ha="left",
@@ -447,13 +518,13 @@ def figure3():
         assert len(frame) == 11
         models[label] = (frame, prefix)
 
-    fig = plt.figure(figsize=(WIDTH, 4.6))
-    grid = GridSpec(2, 2, figure=fig, width_ratios=[0.95, 1], height_ratios=[0.8, 1.2], wspace=0.42, hspace=0.62,
-                    left=0.215, right=0.985, top=0.9, bottom=0.1)
+    fig = plt.figure(figsize=(WIDTH, 6.4))
+    grid = GridSpec(3, 2, figure=fig, width_ratios=[0.95, 1], height_ratios=[0.8, 1.1, 1.1], wspace=0.42,
+                    hspace=0.62, left=0.215, right=0.985, top=0.93, bottom=0.07)
 
     # a: per-array dumbbells (hero)
     ax = fig.add_subplot(grid[:, 0])
-    style.panel_title(ax, "a  New pairs lose mainly the pair mean")
+    style.panel_title(ax, "A  New pairs lose mainly the pair mean")
     rows = list(high.itertuples())
     ys = list(range(len(rows)))
     for y, row in zip(ys, rows):
@@ -471,7 +542,7 @@ def figure3():
         ax.text(-0.3, y, f"{label}  {100 * e['pair_variance_share']:.0f}%", ha="right", va="center", color=INK)
     ax.axhline(len(rows) + 0.2, color=LIGHT, lw=0.6)
     ax.text(-0.3, len(rows) + 0.42, "Other laboratories", ha="right", va="center", color=GRAY, style="italic")
-    ax.text(-0.3, -1.05, "Array  share of yield\nvariance between pairs", ha="right", va="bottom", color=GRAY)
+    ax.text(-0.3, -1.05, "between-pair share", ha="right", va="bottom", color=GRAY)
     # key with the motif: a pair's row is its mean (dark bar, circles) plus deviations within it (ticks, triangles)
     ax.add_patch(Rectangle((0.2, -1.06), 0.15, 0.2, facecolor="#55606a", lw=0, clip_on=False))
     ax.text(0.4, -0.96, "pair mean (circles)", ha="left", va="center", color=INK)
@@ -489,7 +560,7 @@ def figure3():
 
     # b: three models, medians
     ax = fig.add_subplot(grid[0, 1])
-    style.panel_title(ax, "b  Three models all lose the pair mean")
+    style.panel_title(ax, "B  Three models all lose the pair mean")
     for y, (label, (frame, prefix)) in enumerate(models.items()):
         m = [frame[f"{prefix}{c}"].median() for c in
              ("row_pair_level_r2", "group_pair_level_r2", "row_within_pair_r2", "group_within_pair_r2")]
@@ -507,7 +578,7 @@ def figure3():
 
     # c: chemistry-free references on held-out wells
     ax = fig.add_subplot(grid[1, 1])
-    style.panel_title(ax, "c  No chemistry needed on held-out wells")
+    style.panel_title(ax, "C  Most held-out-well accuracy\nneeds no molecular representation")
     lim = (0.15, 0.8)
     ax.plot(lim, lim, ls=(0, (3, 2)), color=GRAY, lw=0.7, zorder=1)
     add = high.screen.map(lambda s: additive[s]["row"]["r2_additive"])
@@ -521,7 +592,6 @@ def figure3():
     ax.scatter([0.18], [0.735], s=26, marker="D", facecolor="white", edgecolor=TEAL, linewidths=1.0)
     ax.text(0.2, 0.735, f"pair's other wells: {100 * ratio_sister:.0f}%", ha="left", va="center",
             color=INK)
-    ax.text(0.2, 0.682, "medians, as % of the forest", ha="left", va="center", color=GRAY)
     g = high.set_index("screen").loc["Grignard"]
     ax.annotate("Grignard", (g.rf_row_r2, g.row_sister_well_mean_r2), xytext=(0.72, 0.62), textcoords="data",
                 ha="center", va="center", color=INK, arrowprops=dict(arrowstyle="-", color=GRAY, lw=0.5, shrinkB=3))
@@ -529,6 +599,28 @@ def figure3():
     ax.set_ylim(lim)
     ax.set_xlabel("Random forest R², held-out wells")
     ax.set_ylabel("Reference R², held-out wells")
+    despine(ax)
+
+    # d: wells whose two substrates were both in training still lose accuracy, most where the pair sets the yield
+    ax = fig.add_subplot(grid[2, 1])
+    style.panel_title(ax, "D  Familiar substrates still lose accuracy,\nmost where the pair sets the yield")
+    rho_seen = load_json(DIAG / "rf_ranking_structure_summary.json")[
+        "pair_share_vs_both_seen_relative_mae_increase_rho"]["mean_yield_at_least_5pct"]
+    for row in high.itertuples():
+        colour = HIGHLIGHT.get(row.screen, MID)
+        ax.scatter(100 * row.pair_variance_share, 100 * row.both_seen_relative_mae_increase, s=26, color=colour,
+                   edgecolor="white", linewidths=0.5, zorder=3)
+    g, e = high.set_index("screen").loc["Grignard"], high.set_index("screen").loc["Esterification"]
+    ax.annotate(f"Grignard, error ×{1 + g.both_seen_relative_mae_increase:.1f}",
+                (100 * g.pair_variance_share, 100 * g.both_seen_relative_mae_increase), xytext=(-6, -2),
+                textcoords="offset points", ha="right", va="center", color=INK)
+    ax.annotate("Esterification", (100 * e.pair_variance_share, 100 * e.both_seen_relative_mae_increase),
+                xytext=(6, -5), textcoords="offset points", ha="left", va="top", color=INK)
+    ax.text(22, 118, f"ρ = {rho_seen:.2f}", ha="left", va="top", color=INK, weight="bold")
+    ax.set_xlim(20, 75)
+    ax.set_ylim(0, 120)
+    ax.set_xlabel("Between-pair share of yield variance, %")
+    ax.set_ylabel("Error increase, %")
     despine(ax)
     save(fig, "Figure_3")
 
@@ -607,6 +699,131 @@ def heatmap(ax, grid, flags, hatch=True):
         side.set_linewidth(0.6)
 
 
+BLOCK_CMAP = LinearSegmentedColormap.from_list("block", ["#ffffff", "#c6d5e6", "#5d86b0", "#1d3557"])
+BLOCK_ROWS, BLOCK_COLS = 16, 12
+
+
+def shares(values):
+    """Between-row and between-column shares of the sum of squares over the measured cells of a block."""
+    mean = np.nanmean(values)
+    total = np.nansum((values - mean) ** 2)
+    rows = sum(np.isfinite(r).sum() * (np.nanmean(r) - mean) ** 2 for r in values if np.isfinite(r).any())
+    cols = sum(np.isfinite(c).sum() * (np.nanmean(c) - mean) ** 2 for c in values.T if np.isfinite(c).any())
+    return rows / total, cols / total
+
+
+def pick_block(grid):
+    """16 pairs evenly spaced by pair mean and 12 conditions evenly spaced by condition mean among the 60% of
+    conditions measured most often; the full table is already ordered by both means."""
+    rows = [int(round(i)) for i in np.linspace(0, grid.shape[0] - 1, BLOCK_ROWS)]
+    coverage = np.isfinite(grid.values).mean(0)
+    candidates = [c for c in range(grid.shape[1]) if coverage[c] >= np.quantile(coverage, 0.4)]
+    cols = [candidates[int(round(i))] for i in np.linspace(0, len(candidates) - 1, BLOCK_COLS)]
+    return rows, cols
+
+
+def block_panel(fig, frame, grid, flags, rows, cols, colour, scheme, name_, table_row, row_labels=None):
+    """A reaction scheme over a numbered yield block with row-mean and column-mean margins."""
+    fig_w, fig_h = fig.get_figwidth(), fig.get_figheight()
+    box = frame.get_position()
+    left, top = box.x0 * fig_w, (box.y0 + box.height) * fig_h  # inches
+    cell_w, cell_h = 0.2, 0.16
+    bx, by_top = left + 0.42, top - 0.76
+    bw, bh = BLOCK_COLS * cell_w, BLOCK_ROWS * cell_h
+    values = grid.values[np.ix_(rows, cols)] * 100
+    missing = flags[np.ix_(rows, cols)]
+    # scheme header
+    sw, sh = chem.extent(scheme)
+    chem.place(fig, scheme, centre_in=(bx + sw / 2 - 0.05, top - 0.12 - sh / 2))
+    # block
+    ax = fig.add_axes([bx / fig_w, (by_top - bh) / fig_h, bw / fig_w, bh / fig_h])
+    ax.imshow(values, cmap=BLOCK_CMAP, vmin=0, vmax=100, aspect="auto", interpolation="nearest")
+    for r in range(BLOCK_ROWS):
+        for c in range(BLOCK_COLS):
+            v = values[r, c]
+            if missing[r, c]:
+                ax.add_patch(Rectangle((c - 0.5, r - 0.5), 1, 1, facecolor=MISSING, edgecolor=MISSING_HATCH, lw=0,
+                                       hatch="//////"))
+            elif not np.isfinite(v):
+                ax.add_patch(Rectangle((c - 0.5, r - 0.5), 1, 1, facecolor="white", lw=0))
+            else:
+                ax.text(c, r, f"{v:.0f}", ha="center", va="center", color="white" if v >= 60 else GRAY,
+                        gid=None if v >= 60 else "pale-yield-number")
+    ax.set_xticks(np.arange(-0.5, BLOCK_COLS), minor=True)
+    ax.set_yticks(np.arange(-0.5, BLOCK_ROWS), minor=True)
+    ax.grid(which="minor", color="white", lw=0.6)
+    ax.tick_params(which="both", length=0)
+    ax.set_xticks([])
+    ax.set_yticks([])
+    for side in ax.spines.values():
+        side.set_visible(False)
+    ax.set_ylabel(f"{BLOCK_ROWS} of {grid.shape[0]} substrate pairs", labelpad=12 if row_labels else 3)
+    if row_labels:
+        for r, label in row_labels.items():
+            ax.text(-0.75, r, label, ha="right", va="center", color=INK, weight="bold")
+    # margins: row means at right, column means below, in the reaction's colour
+    row_mean, col_mean = np.nanmean(values, 1), np.nanmean(values, 0)
+    rx = fig.add_axes([(bx + bw + 0.05) / fig_w, (by_top - bh) / fig_h, 0.38 / fig_w, bh / fig_h])
+    rx.barh(range(BLOCK_ROWS), row_mean, height=0.7, color=colour)
+    rx.set_ylim(BLOCK_ROWS - 0.5, -0.5)
+    rx.set_xlim(0, 100)
+    rx.axis("off")
+    rx.text(0, -0.75, "pair mean", ha="left", va="bottom", color=GRAY)
+    cx = fig.add_axes([bx / fig_w, (by_top - bh - 0.3) / fig_h, bw / fig_w, 0.26 / fig_h])
+    cx.bar(range(BLOCK_COLS), col_mean, width=0.7, color=colour)
+    cx.set_xlim(-0.5, BLOCK_COLS - 0.5)
+    cx.set_ylim(100, 0)
+    cx.axis("off")
+    cx.text(BLOCK_COLS - 0.3, 50, "condition" + chr(10) + "mean", ha="left", va="center", color=GRAY)
+    pair_share, condition_share = 100 * table_row.pair_variance_share, 100 * table_row.condition_variance_share
+    fig.text((bx + bw / 2) / fig_w, (by_top - bh - 0.36) / fig_h, f"{BLOCK_COLS} of {grid.shape[1]} conditions",
+             ha="center", va="top", color=INK)
+    fig.text((bx + bw / 2) / fig_w, (by_top - bh - 0.56) / fig_h,
+             f"full table: between pairs {pair_share:.1f}%, between conditions {condition_share:.1f}%",
+             ha="center", va="top", color=INK, weight="bold")
+    return shares(values / 100)
+
+
+def productive_grignard_pairs(frame):
+    """Equal-weight measured pair means after excluding only all-zero reagents."""
+    numeric = frame[(frame.screen == "Grignard") & frame.measurement_status.isin(ANALYSED)]
+    reagent_max = numeric.groupby("sub_1_smiles").yield_fraction.max()
+    productive = set(reagent_max[reagent_max > 0].index)
+    pairs = numeric[numeric.sub_1_smiles.isin(productive)].groupby("pair_key").agg(
+        reagent=("sub_1_smiles", "first"), carbonyl=("sub_2_smiles", "first"),
+        mean_percent=("yield_fraction", lambda values: 100 * values.mean()))
+    classification = {}
+    for smiles in pairs.carbonyl.unique():
+        molecule = Chem.MolFromSmiles(smiles)
+        if molecule is None:
+            raise ValueError(f"Invalid carbonyl partner SMILES: {smiles}")
+        classification[smiles] = molecule.HasSubstructMatch(AMINO) or molecule.HasSubstructMatch(PROTIC)
+    pairs["amino_or_protic"] = pairs.carbonyl.map(classification)
+    assert len(pairs) == 123 and pairs.reagent.nunique() == 19
+    assert pairs.amino_or_protic.sum() == 12 and (~pairs.amino_or_protic).sum() == 111
+    return pairs
+
+
+def stacked_pair_positions(ax, values, row, separation_pt=3.5):
+    """Greedily stack at fixed x values, with collision distances measured in print points."""
+    transform = ax.transData
+    px_per_pt = ax.figure.dpi / 72
+    y_per_pt = separation_pt * px_per_pt / (transform.transform((0, 1))[1] - transform.transform((0, 0))[1])
+    placed, offsets = [], np.zeros(len(values))
+    for index in np.argsort(values, kind="stable"):
+        x = transform.transform((values[index], row))[0] / px_per_pt
+        level = 0
+        while True:
+            offset = (0 if level == 0 else ((level + 1) // 2) * (1 if level % 2 else -1))
+            if all((x - other_x) ** 2 + ((offset - other_y) * separation_pt) ** 2
+                   >= separation_pt ** 2 - 1e-9 for other_x, other_y in placed):
+                break
+            level += 1
+        placed.append((x, offset))
+        offsets[index] = offset * y_per_pt
+    return row + offsets
+
+
 def figure4():
     plt.rcParams["hatch.linewidth"] = 0.3
     table = structure().set_index("screen")
@@ -614,8 +831,6 @@ def figure4():
     grignard, g_flags, g_analysed = matrix(data[data.screen == "Grignard"])
     ester, e_flags, _ = matrix(data[data.screen == "Esterification"])
     assert grignard.shape == (136, 47) and ester.shape == (80, 95), (grignard.shape, ester.shape)
-    measured, missing = int(np.isfinite(grignard.values).sum()), int(g_flags.sum())
-    assert (measured, missing, grignard.size - measured - missing) == (5361, 116, 915)
 
     pair_info = g_analysed.groupby("pair_key").agg(reagent=("sub_1_smiles", "first"), carbonyl=("sub_2_smiles", "first"))
     reagent_max = g_analysed.groupby("sub_1_smiles").yield_fraction.max()
@@ -624,168 +839,94 @@ def figure4():
     flag_carbonyl = {s: (lambda m: m.HasSubstructMatch(AMINO) or m.HasSubstructMatch(PROTIC))(Chem.MolFromSmiles(s))
                      for s in pair_info.carbonyl.unique()}
     rows = pair_info.reindex(grignard.index)
-    amino_rows = rows.carbonyl.map(flag_carbonyl).values
-    dead_rows = rows.reagent.isin(dead_reagents).values
-    assert amino_rows.sum() == 18 and len(set(rows.carbonyl[amino_rows])) == 12
     pair_mean = g_analysed.groupby("pair_key").yield_fraction.mean()
     examples = []
     for reagent, carbonyl, asset, formula in EXAMPLES:
         match = rows.index[(rows.reagent == reagent) & (rows.carbonyl == carbonyl)]
         assert len(match) == 1 and reagent not in dead_reagents, (reagent, carbonyl)
         examples.append((grignard.index.get_loc(match[0]), 100 * pair_mean[match[0]], asset, formula, carbonyl))
-    examples.sort(key=lambda e: e[0])  # number the call-outs from the top row down
+    examples.sort(key=lambda e: e[0])  # number from the top row down
     top4 = sorted(pair_mean.values, reverse=True)[:4]
     assert [round(e[1], 1) for e in examples[:4]] == [round(100 * v, 1) for v in top4]
     assert all(flag_carbonyl[e[4]] for e in examples[4:]) and not any(flag_carbonyl[e[4]] for e in examples[:4])
 
-    fig = plt.figure(figsize=(WIDTH, 9.8))
-    grid = GridSpec(3, 2, figure=fig, height_ratios=[2.4, 2.4, 1.05], width_ratios=[1, 1], hspace=0.27,
-                    wspace=0.42, left=0.075, right=0.985, top=0.955, bottom=0.06)
+    g_rows, g_cols = pick_block(grignard)
+    e_rows, e_cols = pick_block(ester)
 
-    # a: two heatmaps with their schemes; the frame axis carries the panel title
-    frame = fig.add_subplot(grid[0, :])
-    style.panel_title(frame, "a  Grignard yields follow the substrate pair; esterification yields follow the conditions")
-    frame.axis("off")
+    fig = plt.figure(figsize=(WIDTH, 8.5))
+    grid = GridSpec(3, 2, figure=fig, height_ratios=[4.07, 2.6, 0.75], width_ratios=[1, 1],
+                    hspace=0.093, wspace=0.08, left=0.01, right=0.99, top=0.975, bottom=0.048)
+    g_frame = fig.add_subplot(grid[0, 0])
+    e_frame = fig.add_subplot(grid[0, 1])
+    style.panel_title(g_frame, "A  Grignard yields follow the substrate pair")
+    style.panel_title(e_frame, "B  Esterification yields follow the conditions")
+    for frame in (g_frame, e_frame):
+        frame.axis("off")
     fig.canvas.draw()
-    box = frame.get_position()
-    x0, y0, w, h = box.x0, box.y0, box.width, box.height
-    hm_bottom, hm_height = y0 + 0.17 * h, 0.58 * h
-    g_w, e_x, e_w = 0.40 * w, 0.585 * w, 0.415 * w
-    g_ax = fig.add_axes([x0, hm_bottom, g_w, hm_height])
-    e_ax = fig.add_axes([x0 + e_x, hm_bottom, e_w, hm_height])
-    heatmap(g_ax, grignard, g_flags)
-    heatmap(e_ax, ester, e_flags)
-    for ax, rx, shape in [(g_ax, table.loc["Grignard"], grignard.shape), (e_ax, table.loc["Esterification"], ester.shape)]:
-        ax.set_ylabel(f"{shape[0]} substrate pairs", labelpad=2)
-        ax.set_xlabel(f"{shape[1]} conditions", labelpad=2)
-        ax.text(0.5, -0.075, f"between pairs {100 * rx.pair_variance_share:.1f}%;  "
-                           f"between conditions {100 * rx.condition_variance_share:.1f}%",
-                ha="center", va="top", transform=ax.transAxes, color=INK)
-    scheme_y = (y0 + 0.85 * h) * fig.get_figheight()
-    for asset, label, centre_x in (
-            ("grignard_addition", "Grignard addition", (x0 + g_w / 2) * WIDTH),
-            ("esterification", "Esterification", (x0 + e_x + e_w / 2) * WIDTH)):
-        chem.place(fig, asset, centre_in=(centre_x, scheme_y))
-        _, scheme_height = chem.extent(asset)
-        fig.text(centre_x / WIDTH, (scheme_y + scheme_height / 2 + 0.07) / fig.get_figheight(),
-                 label, ha="center", va="bottom", weight="bold", color=INK)
+    g_shares = block_panel(fig, g_frame, grignard, g_flags, g_rows, g_cols, PURPLE, "grignard_addition",
+                           "Grignard addition", table.loc["Grignard"])
+    e_shares = block_panel(fig, e_frame, ester, e_flags, e_rows, e_cols, GREEN, "esterification",
+                           "Esterification", table.loc["Esterification"])
+    # each block keeps the direction of its full table
+    assert g_shares[0] > g_shares[1] and e_shares[1] > e_shares[0], (g_shares, e_shares)
+    figure4.block_shares = {"Grignard": g_shares, "Esterification": e_shares}
 
-    # strips beside the Grignard rows, then numbered call-outs to panel b
-    strip_w = 0.011 * w
-    for k, (mask, colour) in enumerate([(amino_rows, PURPLE), (dead_rows, INK)]):
-        sax = fig.add_axes([x0 + g_w + 0.006 * w + k * (strip_w + 0.004 * w), hm_bottom, strip_w, hm_height])
-        sax.imshow(np.where(mask, 1.0, np.nan)[:, None], cmap=ListedColormap([colour]), aspect="auto",
-                   interpolation="nearest", vmin=0, vmax=1)
-        sax.set_xlim(-0.5, 0.5)
-        sax.set_xticks([])
-        sax.set_yticks([])
-        for side in sax.spines.values():
-            side.set_color(LIGHT)
-            side.set_linewidth(0.5)
-    n = len(grignard)
-    call = fig.add_axes([x0 + g_w + 0.04 * w, hm_bottom, 0.07 * w, hm_height])
-    call.set_xlim(0, 1)
-    call.set_ylim(n - 0.5, -0.5)
-    call.axis("off")
-    label_rows = list(np.linspace(4, 34, 4)) + list(np.linspace(n - 31, n - 1, 4))
-    for k, ((row, *_), target) in enumerate(zip(examples, label_rows), start=1):
-        call.plot([0.0, 0.3, 0.62], [row, row, target], color=GRAY, lw=0.5, clip_on=False)
-        call.text(0.72, target, str(k), ha="left", va="center", color=INK, weight="bold")
-
-    # keys
-    key_ax = fig.add_axes([x0, y0 - 0.03 * h, w, 0.07 * h])
-    key_ax.axis("off")
-    keys = [(PURPLE, PURPLE, None, "amino or N–H on carbonyl"), (INK, INK, None, "reagent never gave product"),
-            (MISSING, MISSING_HATCH, "//////", "no numerical yield"), ("white", GRAY, None, "no record")]
-    for k, (fc, ec, hatch, label) in enumerate(keys):
-        kx = (0.0, 0.245, 0.49, 0.665)[k]
-        key_ax.add_patch(Rectangle((kx, 0.25), 0.014, 0.5, fc=fc, ec=ec, lw=0.5 if hatch is None else 0,
-                                   hatch=hatch, transform=key_ax.transAxes, clip_on=False))
-        key_ax.text(kx + 0.022, 0.5, label, va="center", transform=key_ax.transAxes, color=INK)
-    cax = fig.add_axes([x0 + 0.81 * w, y0 - 0.02 * h, 0.15 * w, 0.035 * h])
-    bar = fig.colorbar(plt.cm.ScalarMappable(cmap=CMAP, norm=plt.Normalize(0, 100)), cax=cax,
-                       orientation="horizontal")
-    bar.set_ticks([0, 50, 100])
-    bar.outline.set_linewidth(0.5)
-    bar.outline.set_edgecolor(GRAY)
-    cax.tick_params(labelsize=8, length=2, pad=1)
-    cax.text(0.5, 1.25, "yield, %", transform=cax.transAxes, ha="center", va="bottom", color=INK, fontsize=8)
-
-    # b: the eight selected carbonyl partners, two rows of four
+    # C: the eight selected carbonyl partners, two rows of four
     gallery = fig.add_subplot(grid[1, :])
-    style.panel_title(gallery, "b  Selected carbonyl partners: amino or N–H groups give little product")
+    style.panel_title(gallery, "C  Amino or N–H carbonyl partners give little Grignard product")
     gallery.axis("off")
     fig.canvas.draw()
     gb = gallery.get_position()
     fig_w, fig_h = WIDTH, fig.get_figheight()
-    row_names = ("highest\npair means", "amino\nor N–H\npartners")
     col_w = gb.width * fig_w / 4
     left_in = gb.x0 * fig_w
     row_h = gb.height * fig_h / 2
-    # structures are centred in a box as tall as the tallest one in their row, so labels share one baseline
     box_h = [max(chem.extent(e[2])[1] for e in examples[4 * r:4 * r + 4]) for r in range(2)]
     for k, (row, mean, asset, formula, _) in enumerate(examples):
         r, c = divmod(k, 4)
         cx = left_in + (c + 0.5) * col_w
         top_in = (gb.y0 + gb.height) * fig_h - r * row_h
         ex, ey = chem.extent(asset)
-        if ex > col_w - 0.08 or box_h[r] + 0.49 > row_h:
+        if ex > col_w - 0.08 or box_h[r] + 0.42 > row_h:
             raise ValueError(f"Native structure needs more gallery space: {asset}")
-        cy = top_in - 0.12 - box_h[r] / 2
+        cy = top_in - 0.06 - box_h[r] / 2
         chem.place(fig, asset, centre_in=(cx, cy))
-        fig.text((cx - col_w / 2 + 0.02) / fig_w, (top_in - 0.05) / fig_h, str(k + 1), ha="left", va="top",
+        fig.text((cx - col_w / 2 + 0.12) / fig_w, (top_in - 0.02) / fig_h, str(k + 1), ha="left", va="top",
                  weight="bold", color=INK)
-        base = top_in - 0.12 - box_h[r]
-        reagent_label(fig, cx, base - 0.15, formula)
-        fig.text(cx / fig_w, (base - 0.30) / fig_h, f"pair mean {mean:.0f}%", ha="center",
-                 va="baseline", color=INK, weight="bold")
-        if c == 0:
-            fig.text(0.020, (top_in - 0.45 * row_h) / fig_h, row_names[r], ha="left", va="center", color=GRAY)
+        base = top_in - 0.06 - box_h[r]
+        reagent_label(fig, cx, base - 0.14, formula)
+        fig.text(cx / fig_w, (base - 0.28) / fig_h, f"pair mean {mean:.0f}%", ha="center", va="baseline",
+                 color=INK, weight="bold")
 
-    # c: R2 under the two tests
-    high = structure()
-    high = high[high.high]
-    ax = fig.add_subplot(grid[2, 0])
-    style.panel_title(ax, "c  Grignard keeps almost none of its accuracy")
-    for row in high.itertuples():
-        colour = {"Grignard": PURPLE, "Esterification": GREEN}.get(row.screen, LIGHT)
-        lw = 2.2 if colour != LIGHT else 0.9
-        ax.plot([0, 1], [row.rf_row_r2, row.rf_group_r2], color=colour, lw=lw, zorder=3 if lw > 1 else 1,
-                marker="o", ms=3.5 if lw > 1 else 2.5)
-        if row.screen in ("Grignard", "Esterification"):
-            ax.text(1.06, row.rf_group_r2, f"{name(row.screen)}  {row.rf_row_r2:.2f} → {row.rf_group_r2:.2f}",
-                    ha="left", va="center", color=INK)
-    ax.set_xticks([0, 1])
-    ax.set_xticklabels(["Held-out wells", "New pairs"])
-    ax.set_xlim(-0.15, 2.2)
-    ax.set_ylim(-0.05, 0.8)
-    ax.set_ylabel("R²")
-    despine(ax)
-    ax.spines["bottom"].set_bounds(0, 1)
-    ax.text(1.06, 0.72, "grey: the other\nnine arrays", ha="left", va="top", color=GRAY)
-
-    # d: both substrates seen, error still rises with the pair share
-    ax = fig.add_subplot(grid[2, 1])
-    style.panel_title(ax, "d  Seen substrates do not rescue Grignard")
-    rho_seen = load_json(DIAG / "rf_ranking_structure_summary.json")[
-        "pair_share_vs_both_seen_relative_mae_increase_rho"]["mean_yield_at_least_5pct"]
-    for row in high.itertuples():
-        colour = {"Grignard": PURPLE, "Esterification": GREEN}.get(row.screen, MID)
-        ax.scatter(100 * row.pair_variance_share, 100 * row.both_seen_relative_mae_increase, s=26, color=colour,
-                   edgecolor="white", linewidths=0.5, zorder=3)
-    g, e = high.set_index("screen").loc["Grignard"], high.set_index("screen").loc["Esterification"]
-    ax.annotate(f"Grignard, error ×{1 + g.both_seen_relative_mae_increase:.1f}",
-                (100 * g.pair_variance_share, 100 * g.both_seen_relative_mae_increase), xytext=(0, -8),
-                textcoords="offset points", ha="right", va="top", color=INK)
-    ax.annotate("Esterification", (100 * e.pair_variance_share, 100 * e.both_seen_relative_mae_increase),
-                xytext=(6, -5), textcoords="offset points", ha="left", va="top", color=INK)
-    ax.text(22, 118, f"wells whose two substrates were\nboth in training; rank correlation {rho_seen:.2f}",
-            ha="left", va="top", color=INK)
-    ax.set_xlim(20, 75)
-    ax.set_ylim(0, 120)
-    ax.set_xlabel("Yield variance between pairs, %")
-    ax.set_ylabel("Error increase, %")
-    despine(ax)
+    # D includes every measured pair from the 19 reagents that produced product anywhere in the array.
+    comparison = productive_grignard_pairs(data)
+    summary = fig.add_subplot(grid[2, :])
+    style.panel_title(summary, "D  Amino or N–H partners average 21% versus 36%")
+    summary.axis("off")
+    box = summary.get_position()
+    ax = fig.add_axes([0.215, box.y0 + 0.015, 0.68, box.height - 0.015])
+    ax.set_xlim(0, 100)
+    ax.set_ylim(-0.45, 1.6)
+    ax.set_yticks([1, 0], ["Amino or N–H", "Other partners"])
+    ax.set_xticks([0, 25, 50, 75, 100], ["0", "25", "50", "75", "100%"])
+    ax.set_xlabel("Measured pair mean yield, %", labelpad=2)
+    despine(ax, keep=("bottom",))
+    ax.tick_params(axis="y", length=0, pad=5)
+    fig.canvas.draw()
+    distributions = {}
+    for included, row, colour in ((True, 1, PURPLE), (False, 0, MID)):
+        values = comparison.loc[comparison.amino_or_protic == included, "mean_percent"].to_numpy()
+        ys = stacked_pair_positions(ax, values, row)
+        ax.scatter(values, ys, s=7.8, color=colour, linewidths=0, zorder=3, clip_on=False)
+        mean = values.mean()
+        mean_y = ys.min() - 0.22
+        ax.plot([mean], [mean_y], marker="|", ms=5, mew=1.4, color=INK, zorder=4, clip_on=False)
+        ax.text(mean + 1.6, mean_y, f"{mean:.0f}%", ha="left", va="center", color=INK, weight="bold")
+        ax.text(102, row, f"n = {len(values)}", ha="left", va="center", color=GRAY)
+        distributions["amino_or_protic" if included else "other"] = {
+            "n": len(values), "mean_percent": float(mean), "values": values.tolist(),
+            "y": ys.tolist(), "mean_marker_y": float(mean_y)}
+    figure4.pair_distributions = distributions
     save(fig, "Figure_4")
 
 
@@ -805,116 +946,115 @@ def label(ax, frame, x, screen, offset, ha):
 
 def figure5():
     table = structure()
+    table["pair_pct"] = 100 * table.pair_variance_share
     high = table[table.high].copy()
+    assert len(high) == 11
     summary = load_json(DIAG / "rf_ranking_structure_summary.json")
     high["combined"] = high.pair_variance_share.rank() + high.substrate_levels_per_pair.rank()
     r_comb = rho(high.combined, high.rf_delta_r2)
     expected = summary["two_design_properties"]["mean_yield_at_least_5pct"]["rho_rank_sum_vs_rf_delta_r2"]
     assert abs(r_comb - expected) < 1e-9, (r_comb, expected)
-    assert len(high) == 11
+    r_share, r_share19 = rho(high.pair_variance_share, high.rf_delta_r2), rho(table.pair_variance_share, table.rf_delta_r2)
+    r_levels = rho(high.substrate_levels_per_pair, high.rf_delta_r2)
+    r_levels19 = rho(table.substrate_levels_per_pair, table.rf_delta_r2)
 
-    fig = plt.figure(figsize=(WIDTH, 3.6))
-    ax = fig.add_subplot(GridSpec(1, 1, figure=fig, left=0.085, right=0.615, bottom=0.14, top=0.86)[0, 0])
-    style.panel_title(ax, "Two table properties anticipate the accuracy lost on new pairs")
-    area = lambda loss: 1000 * loss  # noqa: E731  marker area in points^2, proportional to the loss
+    fig = plt.figure(figsize=(WIDTH, 3.2))
+    grid = GridSpec(1, 3, figure=fig, width_ratios=[1.45, 1, 1], wspace=0.36, left=0.075, right=0.985, top=0.87,
+                    bottom=0.16)
+
+    # A: both properties at once; circle area is the loss
+    ax = fig.add_subplot(grid[0, 0])
+    style.panel_title(ax, "A  Pair-led, sparsely paired arrays lose more")
+    area = lambda loss: 700 * loss  # noqa: E731  marker area in points^2, proportional to the loss
     for row in high.sort_values("rf_delta_r2", ascending=False).itertuples():
         colour = HIGHLIGHT.get(row.screen, MID)
-        ax.scatter(100 * row.pair_variance_share, row.substrate_levels_per_pair, s=area(row.rf_delta_r2),
-                   color=colour, alpha=0.85 if row.screen in HIGHLIGHT else 0.55, edgecolor="white",
-                   linewidths=0.6, zorder=3)
-    offsets = {"Grignard": (0, 15, "center"), "Esterification": (10, 10, "center"),
-               "Suzuki Bpin": (0, 14, "center"), "Sonogashira": (-9, 6, "right"), "Ullmann": (8, -6, "left"),
-               "Kumada": (9, 0, "left"), "Heck": (7, 0, "left"), "Acylation": (7, 0, "left"),
-               "Suzuki": (7, -2, "left"), "Buchwald-Hartwig": (0, -11, "center"),
-               "Reductive-amination": (0, 12, "center")}
-    for row in high.itertuples():
-        dx, dy, ha = offsets[row.screen]
-        bold = "bold" if row.screen in HIGHLIGHT else "normal"
-        ax.annotate(name(row.screen), (100 * row.pair_variance_share, row.substrate_levels_per_pair),
-                    xytext=(dx, dy), textcoords="offset points", ha=ha, va="center", color=INK, weight=bold)
-    ax.text(0.02, 0.03, f"rank correlation of the summed ranks with the loss: {r_comb:.2f} (11 arrays)",
-            transform=ax.transAxes, ha="left", va="bottom", color=INK)
+        ax.scatter(row.pair_pct, row.substrate_levels_per_pair, s=area(row.rf_delta_r2), color=colour,
+                   alpha=0.85 if row.screen in HIGHLIGHT else 0.5, edgecolor="white", linewidths=0.6, zorder=3)
+    for screen, (dx, dy, ha) in {"Grignard": (0, 14, "center"), "Esterification": (0, 9, "center"),
+                                 "Heck": (7, 0, "left"), "Suzuki Bpin": (0, 12, "center")}.items():
+        row = high.set_index("screen").loc[screen]
+        ax.annotate(name(screen), (row.pair_pct, row.substrate_levels_per_pair), xytext=(dx, dy),
+                    textcoords="offset points", ha=ha, va="center", color=INK,
+                    weight="bold" if screen in HIGHLIGHT else "normal")
+    ax.text(0.03, 0.04, f"rank-sum ρ = {r_comb:.2f}", transform=ax.transAxes, ha="left", va="bottom", color=INK,
+            weight="bold")
+    for k, loss in enumerate((0.1, 0.3, 0.6)):  # size key, lower right, clear of the arrays
+        ax.scatter(61 + 6.5 * k, 0.17, s=area(loss), color="white", edgecolor=GRAY, linewidths=0.6)
+        ax.text(61 + 6.5 * k, 0.01, f"{loss:.1f}", ha="center", va="bottom", color=INK)
+    ax.text(68.5, 0.3, "R² lost", ha="center", va="bottom", color=GRAY)
     ax.set_xlim(18, 78)
-    ax.set_ylim(0, 1.0)
+    ax.set_ylim(-0.02, 1.0)
     ax.set_xlabel("Between-pair share of yield variance, %")
     ax.set_ylabel("Pairing sparsity")
     despine(ax)
 
-    # right column: how to read both quantities from the yield table, and the size key
-    x0 = 0.665
-    fig.text(x0, 0.80, "From the yield table, before modelling", weight="bold", color=INK, ha="left", va="baseline",
-             fontsize=8)
-    icon = 0.0135  # icon cell, figure-width units
-
-    def cells(left, bottom, shades):
-        h = icon * WIDTH / 3.6
-        for r, row in enumerate(shades):
-            for c, shade in enumerate(row):
-                if shade is None:
-                    fig.patches.append(Rectangle((left + c * icon, bottom + (len(shades) - 1 - r) * h), icon * 0.88,
-                                                 h * 0.88, transform=fig.transFigure, facecolor="white",
-                                                 edgecolor=LIGHT, lw=0.4))
-                else:
-                    fig.patches.append(Rectangle((left + c * icon, bottom + (len(shades) - 1 - r) * h), icon * 0.88,
-                                                 h * 0.88, transform=fig.transFigure, facecolor=shade, lw=0))
-
-    # between-pair share: rows (pairs) differ in their mean, columns barely matter
-    dark, mid, pale = "#55606a", "#a4acb2", "#dde1e4"
-    cells(x0, 0.64, [[dark] * 5, [mid] * 5, [pale] * 5, [mid] * 5])
-    fig.text(x0 + 6.2 * icon, 0.735, "Between-pair share", ha="left", va="baseline", color=INK, fontsize=8)
-    fig.text(x0 + 6.2 * icon, 0.665, r"$\Sigma_p\, n_p(\bar{y}_p-\bar{y})^2 \,/\, \Sigma_i\, (y_i-\bar{y})^2$",
-             ha="left", va="baseline", color=INK, fontsize=8)
-    fig.text(x0, 0.585, "how much of the yield follows the pair", ha="left", va="baseline", color=GRAY, fontsize=8)
-    # pairing sparsity: substrate 1 x substrate 2 grid, filled cells are measured pairs
-    f = dark
-    cells(x0, 0.395, [[f, None, None, None, f], [None, f, None, None, None], [None, None, f, f, None],
-                      [None, None, None, None, f]])
-    fig.text(x0 + 6.2 * icon, 0.49, "Pairing sparsity", ha="left", va="baseline", color=INK, fontsize=8)
-    fig.text(x0 + 6.2 * icon, 0.42, r"$(n_1+n_2-1)\,/\,n_{\mathrm{pairs}}$", ha="left", va="baseline",
-             color=INK, fontsize=8)
-    fig.text(x0, 0.34, "substrate levels per measured pair;", ha="left", va="baseline", color=GRAY, fontsize=8)
-    fig.text(x0, 0.29, "high when substrates have few partners", ha="left", va="baseline", color=GRAY, fontsize=8)
-    # size key
-    fig.text(x0, 0.19, "R² lost on new pairs", ha="left", va="baseline", color=INK, fontsize=8)
-    key = fig.add_axes([x0, 0.02, 0.3, 0.14])
-    key.axis("off")
-    key.set_xlim(0, 3)
-    key.set_ylim(0, 1)
-    for k, loss in enumerate((0.1, 0.3, 0.6)):
-        key.scatter(0.25 + k * 0.95, 0.55, s=area(loss), color=MID, alpha=0.55, edgecolor="white", linewidths=0.6,
-                    clip_on=False)
-        key.text(0.25 + k * 0.95 + 0.32, 0.55, f"{loss:.1f}", ha="left", va="center", color=INK)
+    # B, C: each property alone against the loss, all 19 arrays
+    for spec, column, title, rho11, rho19, xlabel, xlim in (
+            (grid[0, 1], "pair_pct", "B  Pair-led yields lose more", r_share, r_share19,
+             "Between-pair share, %", (20, 75)),
+            (grid[0, 2], "substrate_levels_per_pair", "C  Sparse pairing loses more", r_levels, r_levels19,
+             "Pairing sparsity", (0, 1.05))):
+        ax = fig.add_subplot(spec)
+        style.panel_title(ax, title)
+        points(ax, table, column)
+        label(ax, table, column, "Grignard", (0, -9) if column == "pair_pct" else (-6, 0),
+              "center" if column == "pair_pct" else "right")
+        corner = (0.97, 0.03, "right", "bottom") if column == "pair_pct" else (0.03, 0.75, "left", "top")
+        ax.text(corner[0], corner[1], f"ρ = {rho11:.2f} (11)" + chr(10) + f"ρ = {rho19:.2f} (19)",
+                transform=ax.transAxes, ha=corner[2], va=corner[3], color=INK)
+        ax.set_xlabel(xlabel)
+        ax.set_xlim(*xlim)
+        ax.set_ylim(0, 0.72)
+        if column == "pair_pct":
+            ax.set_ylabel("R² lost on new pairs")
+        despine(ax)
     save(fig, "Figure_5")
 
 
 def toc():
+    """Compact graphical abstract: hide a few wells or the whole row of the same measured pair."""
     table = structure().set_index("screen")
-    data = records(["Grignard", "Esterification"])
-    grignard, g_flags, _ = matrix(data[data.screen == "Grignard"])
-    ester, e_flags, _ = matrix(data[data.screen == "Esterification"])
-    fig = plt.figure(figsize=(3.5, 3.0))
-    fig.text(0.5, 0.955, "Read the yield table before modelling", ha="center", va="top", fontsize=9,
-             weight="bold", color=INK)
-    for x0, grid, flags, screen, colour, verdict in [
-            (0.06, grignard, g_flags, "Grignard", PURPLE, "set by the pair:\nnew pairs not predicted"),
-            (0.54, ester, e_flags, "Esterification", GREEN, "more set by conditions:\nmost accuracy kept")]:
-        ax = fig.add_axes([x0, 0.36, 0.4, 0.47])
-        heatmap(ax, grid, flags)
-        for side in ax.spines.values():
-            side.set_color(colour)
-            side.set_linewidth(1.6)
-        row = table.loc[screen]
-        name = "Grignard addition" if screen == "Grignard" else "Esterification"
-        fig.text(x0 + 0.2, 0.855, name, ha="center", va="bottom", fontsize=8, weight="bold", color=INK)
-        fig.text(x0 + 0.2, 0.33, f"{100 * row.pair_variance_share:.0f}% of yield variance\nbetween pairs",
-                 ha="center", va="top", fontsize=8, color=INK)
-        fig.text(x0 + 0.2, 0.2, f"R² {row.rf_row_r2:.2f} → {row.rf_group_r2:.2f}", ha="center", va="top",
-                 fontsize=8, weight="bold", color=INK)
-        fig.text(x0 + 0.2, 0.12, verdict, ha="center", va="top", fontsize=8, color=GRAY)
-    style.check_text_bounds(fig)
-    fig.savefig(OUT / "TOC.pdf", metadata={"CreationDate": None, "ModDate": None})
-    fig.savefig(OUT / "TOC.png", dpi=300)
-    print("wrote", OUT / "TOC.pdf")
+    values, _, _ = overview_data()
+    g = table.loc["Grignard"]
+    size = 3.3
+    fig = plt.figure(figsize=(size, size))
+    ax = fig.add_axes([0, 0, 1, 1])
+    extent = size * 72
+    ax.set(xlim=(0, extent), ylim=(extent, 0))
+    ax.axis("off")
+    _, scheme_h = chem.extent("grignard_addition")
+    chem.place(fig, "grignard_addition", centre_in=(size / 2, size - 14 / 72 - scheme_h / 2))
+    ax.text(extent / 2, 78, "Same pair, 12 conditions", ha="center", va="baseline", color=INK)
+    row_x, row_y, row_step = (extent - 120) / 2, 86, 10
+    for j, value in enumerate(values[0]):
+        ax.add_patch(Rectangle((row_x + j * row_step, row_y), 9.2, 10,
+                               facecolor=overview_colour(value), lw=0))
+    ax.add_patch(Rectangle((row_x - 1.3, row_y - 1.3), 121.8, 12.6,
+                           facecolor="none", edgecolor=PURPLE, lw=0.8))
+    for centre in (58, extent - 58):
+        ax.annotate("", xy=(centre, 129), xytext=(extent / 2, 102),
+                    arrowprops={"arrowstyle": "-|>", "color": GRAY, "lw": 0.8,
+                                "connectionstyle": "arc3,rad=0"})
+    for left, centre, label, colour, score, whole in (
+            (13, 58, "Held-out wells", TEAL, g.rf_row_r2, False),
+            (extent - 103, extent - 58, "New pairs", ORANGE, g.rf_group_r2, True)):
+        ax.text(centre, 141, label, ha="center", va="baseline", color=INK, weight="bold")
+        if whole:
+            ax.add_patch(Rectangle((left, 149), 90, 10, facecolor="white", edgecolor=colour, lw=1))
+            ax.text(centre, 154, "?", ha="center", va="center", color=INK, weight="bold")
+        else:
+            for j, value in enumerate(values[0]):
+                hidden = j in (2, 6, 9)
+                ax.add_patch(Rectangle((left + j * 7.5, 149), 6.7, 10,
+                                       facecolor="white" if hidden else overview_colour(value),
+                                       edgecolor=colour if hidden else "none", lw=1 if hidden else 0))
+        ax.text(centre, 178, f"{score:.2f}", ha="center", va="baseline", color=INK, weight="bold", fontsize=16,
+                gid="toc-score")
+    ax.text(extent / 2, 197, "Grignard array, R²", ha="center", va="baseline", color=GRAY)
+    ax.text(extent / 2, 222, "Read the yield table before modelling", ha="center", va="baseline",
+            color=INK, weight="bold")
+    save(fig, "TOC")
+
 
 def svg_to_pdf_png(svg_path: Path):
     """Convert the Figure 1 SVG to PDF with Arial embedded, and render a PNG from the PDF."""

@@ -3,8 +3,8 @@
 Run from the package directory:  python p4_supplementary_figures.py --output-dir figures
 S1 plate repeatability; S2 omitting an array and changing the yield cutoff; S3 order reversals between pairs of
 arrays; S4 absolute-error metrics; S5 the forest's gain over the identity model on new pairs; S6 substrate exposure
-of new-pair test wells and errors on wells whose two substrates were seen; S7 the two table properties against
-the forest's loss for all 19 arrays. Style and colours follow
+of new-pair test wells and errors on wells whose two substrates were seen; S7 the full Grignard and
+esterification yield tables. Style and colours follow
 p4_chem_figures.py. Numbers are provisional until the supplementary information is ordered by first citation.
 """
 
@@ -73,7 +73,7 @@ def figure_s2():
     grid = GridSpec(1, 2, figure=fig, width_ratios=[1, 1], wspace=0.45, left=0.17, right=0.985, top=0.86,
                     bottom=0.16)
     ax = fig.add_subplot(grid[0, 0])
-    style.panel_title(ax, f"a  No single array carries the 0.{round(100 * reference):02d}")
+    style.panel_title(ax, f"A  No single array carries the 0.{round(100 * reference):02d}")
     for i, entry in enumerate(omissions):
         colour = PURPLE if entry["omitted_screen"] == "Grignard" else MID
         ax.scatter(entry["rho"], i, s=22, color=colour, zorder=3)
@@ -85,7 +85,7 @@ def figure_s2():
     ax.set_xlabel("Rank correlation without that array")
     despine(ax)
     ax = fig.add_subplot(grid[0, 1])
-    style.panel_title(ax, "b  It stays near zero from a 5% to an 11% cutoff")
+    style.panel_title(ax, "B  It stays near zero from a 5% to an 11% cutoff")
     sweep = [e for e in ranking["mean_yield_cutoff_sweep"] if e["rho_r2"] is not None]
     cut = np.array([e["mean_yield_cutoff_percent"] for e in sweep])
     values = np.array([e["rho_r2"] for e in sweep])
@@ -165,7 +165,7 @@ def figure_s4():
     grid = GridSpec(2, 2, figure=fig, height_ratios=[1.1, 0.9], wspace=0.45, hspace=0.55, left=0.08, right=0.985,
                     top=0.93, bottom=0.08)
     ax = fig.add_subplot(grid[0, 0])
-    style.panel_title(ax, "a  The gain over a median collapses in some arrays")
+    style.panel_title(ax, "A  The gain over a median collapses in some arrays")
     emphasis = {"Grignard": PURPLE, "Reductive-amination": INK, "Acylation": "#55606a"}
     for screen in high:
         left, right = 100 * base[screen]["row"]["gain"], 100 * base[screen]["group"]["gain"]
@@ -183,7 +183,7 @@ def figure_s4():
     despine(ax)
     ax.spines["bottom"].set_bounds(0, 1)
     ax = fig.add_subplot(grid[0, 1])
-    style.panel_title(ax, "b  Raw error follows the yield spread")
+    style.panel_title(ax, "B  Raw error follows the yield spread")
     model = np.array([base[s]["group"]["model"] for s in high])
     reference = np.array([base[s]["group"]["median"] for s in high])
     ax.plot((5, 30), (5, 30), color=GRAY, ls=(0, (3, 2)), lw=0.7)
@@ -202,7 +202,7 @@ def figure_s4():
     ax.set_ylabel("Model MAE on new pairs, pp")
     despine(ax)
     ax = fig.add_subplot(grid[1, :])
-    style.panel_title(ax, "c  How much of the order survives depends on the metric")
+    style.panel_title(ax, "C  How much of the order survives depends on the metric")
     labels = ("R²", "RMSE", "MAE", "MAE gain over median")
     groups = {f"all {len(table)} arrays": [ranks["all_screens"]["metric_rho"]["r2"],
                                          ranks["all_screens"]["metric_rho"]["rmse"],
@@ -274,7 +274,7 @@ def figure_s6():
                     bottom=0.1)
     y = np.arange(len(order))
     ax = fig.add_subplot(grid[0, 0])
-    style.panel_title(ax, "a  Most new-pair wells pair two seen substrates")
+    style.panel_title(ax, "A  Most new-pair wells pair two seen substrates")
     left = np.zeros(len(order))
     for stratum, colour, text in zip(STRATA, STRATUM_COLOURS, STRATUM_LABELS):
         shares = strata[strata.stratum == stratum].set_index("screen").loc[order, "row_share_mean"].to_numpy() * 100
@@ -293,7 +293,7 @@ def figure_s6():
     ax.set_ylim(len(order) - 0.5, -2.0)
     despine(ax, keep=("bottom",))
     ax = fig.add_subplot(grid[0, 1])
-    style.panel_title(ax, "b  On those wells error still rises")
+    style.panel_title(ax, "B  On those wells error still rises")
     for i, screen in enumerate(order):
         sel = seen[seen.screen == screen]
         for kind, colour, dy in (("row", TEAL, -0.12), ("group", ORANGE, 0.12)):
@@ -313,70 +313,40 @@ def figure_s6():
 
 
 def figure_s7():
-    """The two table properties and their summed rank against the forest's loss (formerly main Figure 5)."""
-    table = main_figures.structure()
-    table["pair_pct"] = 100 * table.pair_variance_share
-    high = table[table.high].copy()
-    summary = main_figures.load_json(main_figures.DIAG / "rf_ranking_structure_summary.json")
-    r_share = rho(high.pair_variance_share, high.rf_delta_r2)
-    r_levels = rho(high.substrate_levels_per_pair, high.rf_delta_r2)
-    high["combined"] = high.pair_variance_share.rank() + high.substrate_levels_per_pair.rank()
-    r_comb = rho(high.combined, high.rf_delta_r2)
-    expected = summary["two_design_properties"]["mean_yield_at_least_5pct"]["rho_rank_sum_vs_rf_delta_r2"]
-    assert abs(r_comb - expected) < 1e-9, (r_comb, expected)
-    r_share19 = rho(table.pair_variance_share, table.rf_delta_r2)
-    r_levels19 = rho(table.substrate_levels_per_pair, table.rf_delta_r2)
+    """Full Grignard and esterification yield tables, from which the Figure 4 blocks are drawn."""
+    data = main_figures.records(["Grignard", "Esterification"])
+    grignard, g_flags, _ = main_figures.matrix(data[data.screen == "Grignard"])
+    ester, e_flags, _ = main_figures.matrix(data[data.screen == "Esterification"])
+    assert grignard.shape == (136, 47) and ester.shape == (80, 95)
+    table = main_figures.structure().set_index("screen")
 
-    fig = plt.figure(figsize=(WIDTH, 3.15))
-    grid = GridSpec(1, 3, figure=fig, width_ratios=[1.3, 1, 1], wspace=0.38, left=0.075, right=0.985, top=0.86,
-                    bottom=0.27)
-
-    # a: between-pair share (hero)
-    ax = fig.add_subplot(grid[0, 0])
-    style.panel_title(ax, "a  Pair-led yields lose more")
-    main_figures.points(ax, table, "pair_pct")
-    main_figures.label(ax, table, "pair_pct", "Grignard", (-2, -9), "right")
-    main_figures.label(ax, table, "pair_pct", "Heck", (6, -5), "left")
-    est = table.set_index("screen").loc["Esterification"]
-    ax.annotate("Esterification", (est.pair_pct, est.rf_delta_r2), xytext=(21, 0.3), textcoords="data", ha="left",
-                va="center", color=INK, arrowprops=main_figures.LEADER)
-    ax.text(74, 0.555, f"rank correlation {r_share:.2f} (11 arrays)\n{r_share19:.2f} (all 19)",
-            ha="right", va="top", color=INK)
-    ax.set_xlabel("Yield variance between substrate pairs, %")
-    ax.set_ylabel("R² lost on new pairs")
-    ax.set_xlim(20, 75)
-    ax.set_ylim(0, 0.72)
-    despine(ax)
-
-    # b: substrate levels per measured pair
-    ax = fig.add_subplot(grid[0, 1])
-    style.panel_title(ax, "b  Sparse pairing loses more")
-    main_figures.points(ax, table, "substrate_levels_per_pair")
-    main_figures.label(ax, table, "substrate_levels_per_pair", "Grignard", (0, -9), "center")
-    main_figures.label(ax, table, "substrate_levels_per_pair", "Esterification", (0, -9), "center")
-    ax.text(1.04, 0.59, f"rank correlation {r_levels:.2f} (11)\n{r_levels19:.2f} (all 19)",
-            ha="right", va="top", color=INK)
-    ax.set_xlabel("Substrate levels per measured pair")
-    ax.set_xlim(0, 1.05)
-    ax.set_ylim(0, 0.72)
-    despine(ax)
-
-    # c: both together
-    ax = fig.add_subplot(grid[0, 2])
-    style.panel_title(ax, "c  Together they rank it")
-    main_figures.points(ax, high, "combined")
-    main_figures.label(ax, high, "combined", "Grignard", (0, -9), "center")
-    main_figures.label(ax, high, "combined", "Esterification", (6, 0), "left")
-    main_figures.label(ax, high, "combined", "Heck", (6, -2), "left")
-    ax.text(0.03, 0.97, f"rank correlation {r_comb:.2f}\n(11 arrays)", transform=ax.transAxes, ha="left", va="top",
-            color=INK)
-    ax.set_xlabel("Sum of the two ranks")
-    ax.set_xlim(0, 23)
-    ax.set_ylim(0, 0.72)
-    despine(ax)
-
-    fig.text(0.075, 0.055, "Filled, 11 arrays averaging at least 5% yield; open, the other eight.", ha="left",
-             va="bottom", color=GRAY)
+    fig = plt.figure(figsize=(WIDTH, 4.6))
+    grid = GridSpec(1, 2, figure=fig, wspace=0.28, left=0.07, right=0.985, top=0.9, bottom=0.2)
+    for k, (title, frame, flags, screen) in enumerate((
+            ("A  Grignard addition", grignard, g_flags, "Grignard"),
+            ("B  Esterification", ester, e_flags, "Esterification"))):
+        ax = fig.add_subplot(grid[0, k])
+        style.panel_title(ax, title)
+        main_figures.heatmap(ax, frame, flags)
+        row = table.loc[screen]
+        ax.set_ylabel(f"{frame.shape[0]} substrate pairs, by pair mean", labelpad=2)
+        ax.set_xlabel(f"{frame.shape[1]} conditions, by condition mean" + chr(10)
+                      + f"between pairs {100 * row.pair_variance_share:.1f}%; "
+                        f"between conditions {100 * row.condition_variance_share:.1f}%", labelpad=3)
+    cax = fig.add_axes([0.07, 0.05, 0.2, 0.025])
+    bar = fig.colorbar(plt.cm.ScalarMappable(cmap=main_figures.CMAP, norm=plt.Normalize(0, 100)), cax=cax,
+                       orientation="horizontal")
+    bar.set_ticks([0, 50, 100])
+    bar.outline.set_linewidth(0.5)
+    cax.tick_params(labelsize=8, length=2, pad=1)
+    cax.text(1.05, 0.5, "yield, %", transform=cax.transAxes, ha="left", va="center", color=INK)
+    key = fig.add_axes([0.45, 0.03, 0.5, 0.06])
+    key.axis("off")
+    for x, (fc, ec, hatch, label) in zip((0.0, 0.5), ((main_figures.MISSING, main_figures.MISSING_HATCH, "//////",
+                                                      "no numerical yield"), ("white", GRAY, None, "no record"))):
+        key.add_patch(Rectangle((x, 0.2), 0.04, 0.6, fc=fc, ec=ec, lw=0.5 if hatch is None else 0, hatch=hatch,
+                                transform=key.transAxes, clip_on=False))
+        key.text(x + 0.06, 0.5, label, va="center", transform=key.transAxes, color=INK)
     main_figures.save(fig, "Figure_S7")
 
 

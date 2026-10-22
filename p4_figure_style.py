@@ -1,6 +1,6 @@
 """Shared figure style for the approved Chem figures.
 
-Arial throughout; 9-pt bold lowercase panel letters and titles; 8-pt axis titles, tick labels,
+Arial throughout; 9-pt bold uppercase panel letters (Cell Press style) and titles; 8-pt axis titles, tick labels,
 legends and annotations; neutral text (colour is carried by the marks only); no background gridlines.
 Panel letters and titles are placed after layout from the rendered extent of each panel, so that letters
 in one grid row share a baseline, letters in one grid column share a left edge, and each letter sits at or
@@ -11,6 +11,8 @@ from __future__ import annotations
 
 import matplotlib
 from matplotlib.colors import to_hex
+from matplotlib.text import Text
+import re
 
 INK = "#242b30"
 GRAY = "#7a8389"
@@ -49,21 +51,48 @@ def panel_title(ax, text):
 
     A placeholder title of the same size is drawn so that the layout engine reserves its space.
     """
-    letter, title = (text[0], text[3:]) if len(text) > 3 and text[0].islower() and text[1:3] == "  " else (None, text)
+    letter, title = (text[0], text[3:]) if len(text) > 3 and text[0].isalpha() and text[1:3] == "  " else (None, text)
     ax._panel_label = (letter, title)
     ax.set_title(text, loc="left", fontsize=LETTER_SIZE, weight="bold", color=INK)
 
 
-def _neutral(texts):
+def _white_yield_number(text, figure_name):
+    if figure_name not in {"Figure_4", "Figure_4.pdf"} or not re.fullmatch(r"(?:[6-9]\d|100)", text.get_text()):
+        return False
+    ax = text.axes
+    if (ax is None or len(ax.images) != 1 or text.get_transform() != ax.transData
+            or text.get_ha() != "center" or text.get_va() != "center"):
+        return False
+    image = ax.images[0]
+    values = image.get_array()
+    x, y = text.get_position()
+    column, row = round(x), round(y)
+    if (values.shape != (16, 12) or abs(x - column) > 1e-8 or abs(y - row) > 1e-8
+            or not 0 <= column < 12 or not 0 <= row < 16
+            or image.norm.vmin != 0 or image.norm.vmax != 100):
+        return False
+    value = values[row, column]
+    if getattr(value, "mask", False) or not 60 <= float(value) <= 100 or text.get_text() != f"{float(value):.0f}":
+        return False
+    red, green, blue, alpha = image.cmap(image.norm(value))
+    return (alpha == 1 and image.get_alpha() in (None, 1) and text.get_alpha() in (None, 1)
+            and 0.2126 * red + 0.7152 * green + 0.0722 * blue <= 0.6)
+
+
+def _neutral(texts, *, figure_name=None):
     allowed = {to_hex(INK), to_hex(GRAY)}
     for text in texts:
+        if not text.get_visible() or not text.get_text().strip():
+            continue
         if to_hex(text.get_color()) == "#000000":  # matplotlib default, e.g. legend entries
             text.set_color(INK)
-        if text.get_text().strip() and to_hex(text.get_color()) not in allowed:
+        if to_hex(text.get_color()) == "#ffffff" and _white_yield_number(text, figure_name):
+            continue
+        if to_hex(text.get_color()) not in allowed:
             raise ValueError(f"Coloured text in figure: {text.get_text()!r} ({to_hex(text.get_color())})")
 
 
-def finalize(fig):
+def finalize(fig, *, figure_name=None):
     """Apply the type scale, freeze the layout and place panel letters and titles."""
     notes = list(fig.texts)
     for legend in fig.legends:
@@ -78,7 +107,7 @@ def finalize(fig):
         notes += ax.texts
     for text in notes:
         text.set_fontsize(TEXT_SIZE)
-    _neutral(notes + [ax.xaxis.label for ax in fig.axes] + [ax.yaxis.label for ax in fig.axes])
+    _neutral(fig.findobj(match=Text), figure_name=figure_name)
 
     fig.canvas.draw()  # layout with placeholder titles reserving their space
     if fig.get_layout_engine() is not None:
